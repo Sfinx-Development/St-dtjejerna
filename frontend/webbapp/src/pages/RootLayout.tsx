@@ -1,21 +1,50 @@
-// pages/RootLayout.tsx
-
-import { Outlet } from 'react-router-dom';
+import { Outlet } from "react-router-dom";
+import CustomHeader from "../components/CustomHeader";
+import Footer from "../components/Footer";
 
 const RootLayout = () => {
   return (
-    <div>
-      {/* Här kan du lägga till din gemensamma layout, t.ex. en header eller navbar */}
-      <header>
-        <h1>Välkommen till min app</h1>
-        {/* Lägg till navigering här om du vill */}
-      </header>
+    <div
+      style={{
+        display: "flex",
+        flexDirection: "column",
+        flex: 1,
+        height: "100vh",
+        alignItems: "center",
+        width: "100%",
+        margin: 0,
+        padding: 0,
+      }}
+    >
+      <CustomHeader />
       <main
-        className="bg-neutral-100 flex flex-1 flex-col"
-        style={{ width: "100vw" }}
+        style={{
+          display: "flex",
+          flexDirection: "column",
+          flexGrow: 1,
+          width: "100%",
+          backgroundColor: "green",
+          alignItems: "center",
+          padding: 0,
+          margin: 0,
+        }}
       >
         <Outlet />
       </main>
+
+      <footer
+        style={{
+          width: "100%",
+          display: "flex",
+          flex: 1,
+          flexDirection: "column",
+          padding: 0,
+          margin: 0,
+          maxWidth: "none",
+        }}
+      >
+        <Footer />
+      </footer>
     </div>
   );
 };
