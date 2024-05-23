@@ -1,17 +1,16 @@
-// Navigation.tsx
-
-import { BrowserRouter as Router, Route, Routes } from 'react-router-dom';
+import { Route, Routes } from "react-router-dom";
+import Index from "./pages/Index";
 import RootLayout from "./pages/RootLayout";
+import Error from "./pages/Error";
 
 const Navigation = () => {
   return (
-    <Router>
-      <Routes>
+    <Routes>
       <Route element={<RootLayout />}>
-      
-        </Route>
-      </Routes>
-    </Router>
+        <Route index element={<Index />}></Route>
+        <Route path="*" element={<Error />}></Route>
+      </Route>
+    </Routes>
   );
 };
 
