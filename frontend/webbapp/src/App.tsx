@@ -1,35 +1,27 @@
+// eslint-disable-next-line @typescript-eslint/no-unused-vars
 import { useState } from 'react'
-import reactLogo from './assets/react.svg'
-import viteLogo from '/vite.svg'
+import { Outlet } from 'react-router-dom';
+
 import './App.css'
 
 function App() {
-  const [count, setCount] = useState(0)
+ 
 
   return (
-    <>
-      <div>
-        <a href="https://i.imgur.com/KBOAySx.jpeg" target="_blank">
-          <img src={viteLogo} className="logo" alt="Vite logo" />
-        </a>
-        <a href="https://i.imgur.com/KBOAySx.jpeg" target="_blank">
-          <img src={reactLogo} className="logo react" alt="React logo" />
-        </a>
-      </div>
-      <h1>Vite + React</h1>
-      <div className="card">
-        <button onClick={() => setCount((count) => count + 1)}>
-          count is {count}
-        </button>
-        <p>
-          Edit <code>src/App.tsx</code> and save to test HMR
-        </p>
-      </div>
-      <p className="read-the-docs">
-        Click on the Vite and React logos to learn more
-      </p>
-    </>
-  )
+    <div>
+      {/* Här kan du lägga till din gemensamma layout, t.ex. en header eller navbar */}
+      <header>
+        <h1>Välkommen till min app</h1>
+        {/* Lägg till navigering här om du vill */}
+      </header>
+      <main
+        className="bg-neutral-100 flex flex-1 flex-col"
+        style={{ width: "100vw" }}
+      >
+        <Outlet />
+      </main>
+    </div>
+  );
 }
 
 export default App

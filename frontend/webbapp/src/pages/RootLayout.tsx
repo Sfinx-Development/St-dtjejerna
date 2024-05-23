@@ -10,8 +10,11 @@ const RootLayout = () => {
         <h1>Välkommen till min app</h1>
         {/* Lägg till navigering här om du vill */}
       </header>
-      <main>
-        <Outlet /> {/* Renderar de matchande barnrutter */}
+      <main
+        className="bg-neutral-100 flex flex-1 flex-col"
+        style={{ width: "100vw" }}
+      >
+        <Outlet />
       </main>
     </div>
   );
