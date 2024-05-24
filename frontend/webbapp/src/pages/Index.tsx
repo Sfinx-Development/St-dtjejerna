@@ -1,4 +1,8 @@
-import { Box, Typography } from "@mui/material";
+import { Box } from "@mui/material";
+import PresentingImage from "../components/Presentation";
+import Services from "../components/Services";
+import CustomerReviews from "../components/CustomerReviews";
+import Security from "../components/Security";
 
 export default function Index() {
   return (
@@ -16,7 +20,10 @@ export default function Index() {
         flexGrow: 1,
       }}
     >
-      <Typography>Första sidan</Typography>
+      <PresentingImage />
+      <Services />
+      <CustomerReviews />
+      <Security />
     </Box>
   );
 }

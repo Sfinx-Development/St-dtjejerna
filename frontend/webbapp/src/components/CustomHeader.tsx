@@ -22,7 +22,7 @@ export default function CustomHeader2() {
           flexDirection: "row",
           alignItems: "center",
           gap: 2,
-          marginLeft: isMobile ? 0 : 12,
+          marginLeft: isMobile ? 0 : 5,
         }}
       >
         <Link href="/" sx={{ marginY: 1 }}>
@@ -44,16 +44,86 @@ export default function CustomHeader2() {
           >
             <Link
               href="/about"
-              sx={{ textDecoration: "none", marginY: 1, color: "black" }}
+              sx={{
+                textDecoration: "none",
+                marginY: 1,
+                color: "black",
+                "&:hover": {
+                  color: "#d29bbf",
+                },
+              }}
             >
-              <Typography variant="h6">LÄS MER</Typography>
+              <Typography variant="h6">STARTSIDAN</Typography>
             </Link>
             <div style={{ height: 20, width: 2, backgroundColor: "grey" }} />
             <Link
               href="/download"
-              sx={{ textDecoration: "none", marginY: 1, color: "black" }}
+              sx={{
+                textDecoration: "none",
+                marginY: 1,
+                color: "black",
+                "&:hover": {
+                  color: "#d29bbf",
+                },
+              }}
             >
-              <Typography variant="h6">LADDA NED</Typography>
+              <Typography variant="h6">OM OSS</Typography>
+            </Link>
+            <div style={{ height: 20, width: 2, backgroundColor: "grey" }} />
+            <Link
+              href="/download"
+              sx={{
+                textDecoration: "none",
+                marginY: 1,
+                color: "black",
+                "&:hover": {
+                  color: "#d29bbf",
+                },
+              }}
+            >
+              <Typography variant="h6">TJÄNSTER</Typography>
+            </Link>
+            <div style={{ height: 20, width: 2, backgroundColor: "grey" }} />
+            <Link
+              href="/download"
+              sx={{
+                textDecoration: "none",
+                marginY: 1,
+                color: "black",
+                "&:hover": {
+                  color: "#d29bbf",
+                },
+              }}
+            >
+              <Typography variant="h6">ORDER</Typography>
+            </Link>
+            <div style={{ height: 20, width: 2, backgroundColor: "grey" }} />
+            <Link
+              href="/download"
+              sx={{
+                textDecoration: "none",
+                marginY: 1,
+                color: "black",
+                "&:hover": {
+                  color: "#d29bbf",
+                },
+              }}
+            >
+              <Typography variant="h6">KONTAKT</Typography>
+            </Link>
+            <div style={{ height: 20, width: 2, backgroundColor: "grey" }} />
+            <Link
+              href="/download"
+              sx={{
+                textDecoration: "none",
+                marginY: 1,
+                color: "black",
+                "&:hover": {
+                  color: "#d29bbf",
+                },
+              }}
+            >
+              <Typography variant="h6">OFFERT</Typography>
             </Link>
           </Box>
         )}
