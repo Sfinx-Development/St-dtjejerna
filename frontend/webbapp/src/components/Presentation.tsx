@@ -1,4 +1,7 @@
-import { Box, Button, Typography, Link } from "@mui/material";
+import FacebookIcon from "@mui/icons-material/Facebook";
+import InstagramIcon from "@mui/icons-material/Instagram";
+import MailOutlineIcon from "@mui/icons-material/MailOutline";
+import { Box, Button, IconButton, Typography } from "@mui/material";
 
 export default function PresentingImage() {
   return (
@@ -23,7 +26,7 @@ export default function PresentingImage() {
           zIndex: 1,
           width: { xs: "90%", md: "40%" },
           marginBottom: { xs: 4, md: 0 },
-          backgroundColor: "rgba(255, 255, 255, 0.8)",
+          backgroundColor: "rgba(255, 255, 255, 0.6)",
           boxShadow: "0 4px 8px rgba(0, 0, 0, 0.2)",
           borderRadius: 2,
           textAlign: "center",
@@ -32,13 +35,14 @@ export default function PresentingImage() {
           transition: "transform 0.3s ease",
           "&:hover": {
             transform: "scale(1.05)",
+            backgroundColor: "rgba(255, 255, 255, 0.8)",
           },
         }}
       >
-        <Typography variant="h2" sx={{ marginBottom: 2, padding: 2 }}>
+        <Typography sx={{ marginBottom: 2, padding: 1, fontSize: 40 }}>
           Städtjejerna i Borås
         </Typography>
-        <Typography variant="h4" sx={{ marginBottom: 2, padding: 2 }}>
+        <Typography sx={{ padding: 1, fontSize: 30 }}>
           Låt Städtjejerna göra jobbet
         </Typography>
         <Button
@@ -46,44 +50,74 @@ export default function PresentingImage() {
           sx={{
             color: "black",
             borderColor: "#e3c5da",
+            marginY: 4,
+            padding: 1.5,
             backgroundColor: "transparent",
             "&:hover": {
               borderColor: "#e3c5da",
               backgroundColor: "#e3c5da",
-              color: "white",
               transition: "background-color 0.3s ease, color 0.3s ease",
             },
           }}
         >
           Kontakta oss
         </Button>
-        <Link
-          href="/download"
+        <div
+          style={{
+            height: 1,
+            width: "100%",
+            backgroundColor: "#e3c5da",
+          }}
+        />
+        <Box
           sx={{
-            textDecoration: "none",
-            marginY: 1,
-            color: "black",
-            fontSize: "1.25rem",
-            "&:hover": {
-              color: "#e3c5da",
-              transition: "color 0.3s ease",
-            },
+            display: "flex",
+            flex: 1,
+            width: "100%",
+            alignItems: "center",
+            justifyContent: "space-evenly",
           }}
         >
-          <Typography variant="h6">OFFERT</Typography>
-        </Link>
+          <IconButton
+            sx={{
+              marginY: 2,
+              // "&:hover": {
+              //   backgroundColor: "#dbbed1",
+              //   transition: "background-color 0.3s ease, color 0.3s ease",
+              // },
+            }}
+          >
+            <InstagramIcon />
+          </IconButton>
+          <IconButton sx={{ marginY: 2 }}>
+            <FacebookIcon />
+          </IconButton>
+          <IconButton sx={{ marginY: 2 }}>
+            <MailOutlineIcon />
+          </IconButton>
+        </Box>
       </Box>
       <Box
         sx={{
           position: "relative",
           width: { xs: "100%", md: "100%" },
           height: { xs: 300, md: "100%" },
-          background:
-            "url(https://i.imgur.com/5fxRWmH.jpeg) no-repeat center center",
-          backgroundSize: "cover",
           zIndex: 0,
         }}
-      />
+      >
+        <video
+          src="https://i.imgur.com/9HPDDud.mp4"
+          autoPlay
+          loop
+          muted
+          style={{
+            width: "100%",
+            height: "100%",
+            objectFit: "cover",
+            opacity: 0.8,
+          }}
+        />
+      </Box>
     </Box>
   );
 }
