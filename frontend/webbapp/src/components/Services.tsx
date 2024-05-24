@@ -1,7 +1,8 @@
 import { Box, Typography } from "@mui/material";
+import { useState } from "react";
 
 export default function Services() {
-  // const [serviceIdFocused, setServiceIdFocused] = useState(2);
+  const [serviceIdFocused, setServiceIdFocused] = useState<null | number>(null);
   const services = [
     {
       id: 1,
@@ -68,7 +69,13 @@ export default function Services() {
               position: "relative",
               boxShadow: "0 4px 8px rgba(0, 0, 0, 0.2)",
               borderRadius: 2,
+              transition: "transform 0.3s ease",
+              "&:hover": {
+                transform: "scale(1.05)",
+              },
             }}
+            onMouseEnter={() => setServiceIdFocused(service.id)}
+            onMouseLeave={() => setServiceIdFocused(null)}
             // onClick={() => setServiceIdFocused(service.id)}
           >
             <Box
@@ -80,7 +87,12 @@ export default function Services() {
                 width: "100%",
               }}
             >
-              <Typography variant="h6">{service.title}</Typography>
+              <Typography
+                variant="h6"
+                color={serviceIdFocused == service.id ? "#d29bbf" : "white"}
+              >
+                {service.title}
+              </Typography>
               <Typography variant="body2">{service.description}</Typography>
             </Box>
           </Box>
