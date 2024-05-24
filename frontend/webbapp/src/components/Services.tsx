@@ -7,21 +7,24 @@ export default function Services() {
     {
       id: 1,
       title: "Hemstäd",
-      description: "Professionell städning av ditt hem",
+      description:
+        "Vi på Städtjejerna ser till att du kommer hem till ett ren, nystädat och ett väldoftande hem. Allt för att du ska kunna släppa tankarna på städningen och fokusera på annat under tiden. Vår hemstädning gör din vardag lättare så att du har mer tid att lägga på din hobby eller familj.",
       image:
         "https://www.pennmedicine.org/-/media/images/miscellaneous/random%20generic%20photos/cleaning_spray_closeup.ashx?mw=620&mh=408",
     },
     {
       id: 2,
       title: "Flyttstäd",
-      description: "Noggrann städning vid flytt",
+      description:
+        "Allt för att våra kunder ska känna sig nöjda och trygga med att flyttstädningen blir ordentligt genomförd. Ett grundligt städschema utformas tillsammans med kunden och vi går igenom varje moment och specifika önskemål punkt för punkt. Du som kund kan också känna dig trygg med att Städtjejerna ser till att de som flyttar in i ditt gamla boende blir nöjda.",
       image:
         "https://www.pennmedicine.org/-/media/images/miscellaneous/random%20generic%20photos/cleaning_spray_closeup.ashx?mw=620&mh=408",
     },
     {
       id: 3,
       title: "Företagsstäd",
-      description: "Effektiv städning för ditt företag",
+      description:
+        "Städtjejerna tar med sig de rengöringsmedlen som behövs och alla medel ingår i priset. Det finns möjlighet att beställa förbrukningsmaterial som exempelvis tvål, toalettpapper, och pappershanddukar via oss.",
       image:
         "https://www.pennmedicine.org/-/media/images/miscellaneous/random%20generic%20photos/cleaning_spray_closeup.ashx?mw=620&mh=408",
     },
@@ -44,6 +47,7 @@ export default function Services() {
       <Box
         sx={{
           display: "flex",
+          flexDirection: { xs: "column", md: "row" },
           justifyContent: "space-around",
           width: "100%",
           flexWrap: "wrap",
@@ -60,7 +64,7 @@ export default function Services() {
               backgroundSize: "cover",
               backgroundPosition: "center",
               flex: 1,
-              height: 300,
+              height: 400,
               margin: 2,
               display: "flex",
               alignItems: "center",
