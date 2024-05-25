@@ -47,7 +47,7 @@ export default function Security() {
       </Box>
       <Box
         sx={{
-          height: { xs: "auto", md: "90%" },
+          height: { xs: "auto", md: "60%" },
           width: { xs: "90%", md: 1.5 },
           backgroundColor: "#e3c5da",
           marginY: { xs: 2, md: 0 },
