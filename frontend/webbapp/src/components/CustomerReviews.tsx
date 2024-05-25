@@ -1,4 +1,4 @@
-import { Box, Typography } from "@mui/material";
+import { Box } from "@mui/material";
 
 export default function CustomerReviews() {
   return (
@@ -12,9 +12,13 @@ export default function CustomerReviews() {
         fontFamily: "Roboto, sans-serif",
         flex: 1,
         backgroundColor: "white",
+        paddingY: 1,
       }}
     >
-      <Typography variant="h2">KUND RECENSIONER</Typography>
+      <div
+        className="elfsight-app-3cb98f17-fb62-43ae-8296-e90226d10c1d"
+        data-elfsight-app-lazy
+      ></div>
     </Box>
   );
 }
