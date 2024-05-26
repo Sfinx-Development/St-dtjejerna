@@ -5,31 +5,39 @@ export default function CustomHeader2() {
   const theme = useTheme();
   const isMobile = useMediaQuery(theme.breakpoints.down("sm"));
   const [openMenu, setOpenMenu] = useState(null);
-  const anchorRef = useRef(null);
+  const [anchorEl, setAnchorEl] = useState(null);
+  const timeoutRef = useRef(null);
 
   const handleToggleMenu = (event, menuName) => {
+    clearTimeout(timeoutRef.current);
+  
     if (openMenu === menuName) {
       setOpenMenu(null);
+      setAnchorEl(null);
     } else {
+      // Close all other menus first
       setOpenMenu(menuName);
-      anchorRef.current = event.currentTarget;
+      setAnchorEl(event.currentTarget);
     }
   };
+  
+  const handleCloseMenu = () => {
+    // Close the menu only if the anchor element is not hovered
+    if (!anchorEl?.contains(document.activeElement)) {
+      setOpenMenu(null);
+      setAnchorEl(null);
+    }
+  };
+  
 
-  const handleCloseMenu = (event) => {
-    if (anchorRef.current && anchorRef.current.contains(event.target)) {
-      return;
-    }
-    setOpenMenu(null);
-  };
 
   const links = [
-    { label: 'STARTSIDAN', href: '/about', menuItems: ['Option 1', 'Option 2'] },
-    { label: 'OM OSS', href: '/download', menuItems: ['Option 1', 'Option 2'] },
-    { label: 'TJÄNSTER', href: '/download', menuItems: ['Option 1', 'Option 2'] },
-    { label: 'ORDER', href: '/download', menuItems: ['Option 1', 'Option 2'] },
-    { label: 'KONTAKT', href: '/download', menuItems: ['Option 1', 'Option 2'] },
-    { label: 'OFFERT', href: '/download', menuItems: ['Option 1', 'Option 2'] },
+    { label: 'STARTSIDAN', href: '/about' },
+    { label: 'OM OSS', href: '/download' },
+    { label: 'TJÄNSTER', href: '/download', menuItems: ['Byggstäd', 'Hemstäd', 'Flyttstäd', 'Fönsterputs', 'Företagsstäd', 'Trappstäd', 'Trädgårdsfix'] },
+    { label: 'ORTER', href: '/download', menuItems: ['Borås', 'Dalsjöfors', 'Fristad', 'Sandared', 'Sjömarken'] },
+    { label: 'KONTAKT', href: '/download' },
+    { label: 'OFFERT', href: '/download' },
   ];
 
   return (
@@ -45,6 +53,7 @@ export default function CustomHeader2() {
       }}
     >
       <Box
+       onMouseLeave={handleCloseMenu}
         sx={{
           display: "flex",
           flexDirection: "row",
@@ -74,7 +83,7 @@ export default function CustomHeader2() {
               <React.Fragment key={link.label}>
                 <Link
                   href={link.href}
-                  onMouseEnter={(e) => handleToggleMenu(e, link.label)}
+                  onMouseEnter={(e) => link.menuItems && handleToggleMenu(e, link.label)}
                   onMouseLeave={handleCloseMenu}
                   sx={{
                     textDecoration: "none",
@@ -84,36 +93,50 @@ export default function CustomHeader2() {
                       color: "#d29bbf",
                     },
                   }}
-                  ref={anchorRef}
                 >
                   <Typography variant="h6">{link.label}</Typography>
                 </Link>
                 <div style={{ height: 20, width: 2, backgroundColor: "grey" }} />
 
-                <Popper
-                  open={openMenu === link.label}
-                  anchorEl={anchorRef.current}
-                  role={undefined}
-                  transition
-                  disablePortal
-                >
-                  {({ TransitionProps }) => (
-                    <Grow
-                      {...TransitionProps}
-                      style={{ transformOrigin: 'top left' }}
-                    >
-                      <Paper>
-                        <ClickAwayListener onClickAway={handleCloseMenu}>
-                          <MenuList autoFocusItem={openMenu === link.label}>
-                            {link.menuItems.map((item, index) => (
-                              <MenuItem key={index} onClick={handleCloseMenu}>{item}</MenuItem>
-                            ))}
-                          </MenuList>
-                        </ClickAwayListener>
-                      </Paper>
-                    </Grow>
-                  )}
-                </Popper>
+                {link.menuItems && (
+                  <Popper
+                    open={openMenu === link.label}
+                    anchorEl={anchorEl}
+                    role={undefined}
+                    transition
+                    disablePortal
+                    style={{ zIndex: 1 }}
+                    anchorOrigin={{
+                      vertical: 'bottom',
+                      horizontal: 'center',
+                    }}
+                    transformOrigin={{
+                      vertical: 'top',
+                      horizontal: 'center',
+                    }}
+                  >
+                    {({ TransitionProps }) => (
+                      <Grow
+                        {...TransitionProps}
+                        timeout={{ enter: 1000, exit: 100 }}
+                        style={{
+                          transformOrigin: 'top center',
+                          transitionTimingFunction: 'ease-in-out',
+                        }}
+                      >
+                        <Paper>
+                          <ClickAwayListener onClickAway={handleCloseMenu}>
+                            <MenuList autoFocusItem={openMenu === link.label}>
+                              {link.menuItems.map((item, index) => (
+                                <MenuItem key={index} onClick={handleCloseMenu}>{item}</MenuItem>
+                              ))}
+                            </MenuList>
+                          </ClickAwayListener>
+                        </Paper>
+                      </Grow>
+                    )}
+                  </Popper>
+                )}
               </React.Fragment>
             ))}
           </Box>
@@ -141,6 +164,12 @@ export default function CustomHeader2() {
     </Box>
   );
 }
+
+
+
+
+
+
 
 
 // import { Box, Link, Typography, useMediaQuery, useTheme } from "@mui/material";
