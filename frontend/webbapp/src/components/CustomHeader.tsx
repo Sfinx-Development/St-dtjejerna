@@ -1,5 +1,77 @@
 import { Box, Link, Typography, useMediaQuery, useTheme, Popper, Grow, Paper, MenuItem, MenuList, ClickAwayListener } from "@mui/material";
 import React, { useState, useRef } from 'react';
+import KeyboardArrowDownIcon from '@mui/icons-material/KeyboardArrowDown';
+
+type LinkItem = {
+  label: string;
+  href: string;
+  menuItems?: string[];
+};
+
+const MenuLink = ({ link, openMenu, anchorEl, handleMouseEnter, handleMouseLeave, handleSubMenuMouseEnter, handleSubMenuMouseLeave, handleCloseMenu }: { link: LinkItem, openMenu: string | null, anchorEl: HTMLElement | null, handleMouseEnter: (event: React.MouseEvent<HTMLElement>, menuName: string) => void, handleMouseLeave: () => void, handleSubMenuMouseEnter: () => void, handleSubMenuMouseLeave: () => void, handleCloseMenu: () => void }) => (
+  <div
+    onMouseEnter={(e) => handleMouseEnter(e, link.label)}
+    onMouseLeave={handleMouseLeave}
+    style={{ display: 'flex', alignItems: 'center' }}
+  >
+    <Link
+      href={link.href}
+      sx={{
+        textDecoration: "none",
+        marginY: 1,
+        color: "black",
+        "&:hover": {
+          color: "#d29bbf",
+        },
+      }}
+    >
+      <Typography variant="body1">{link.label}</Typography>
+    </Link>
+    {link.menuItems && (
+      <>
+        <KeyboardArrowDownIcon />
+        <Popper
+          open={openMenu === link.label}
+          anchorEl={anchorEl}
+          role={undefined}
+          transition
+          disablePortal
+          style={{ zIndex: 1 }}
+          anchorOrigin={{
+            vertical: 'bottom',
+            horizontal: 'center',
+          }}
+          transformOrigin={{
+            vertical: 'top',
+            horizontal: 'center',
+          }}
+        >
+          {({ TransitionProps }) => (
+            <Grow
+              {...TransitionProps}
+              timeout={{ enter: 1000, exit: 0 }}
+              style={{
+                transformOrigin: 'top center',
+                transitionTimingFunction: 'ease-in-out',
+              }}
+            >
+              <Paper
+                onMouseEnter={handleSubMenuMouseEnter}
+                onMouseLeave={handleSubMenuMouseLeave}
+              >
+                <MenuList autoFocusItem={openMenu === link.label}>
+                  {link.menuItems.map((item, index) => (
+                    <MenuItem key={index} onClick={handleCloseMenu}>{item}</MenuItem>
+                  ))}
+                </MenuList>
+              </Paper>
+            </Grow>
+          )}
+        </Popper>
+      </>
+    )}
+  </div>
+);
 
 export default function CustomHeader2(): JSX.Element {
   const theme = useTheme();
@@ -15,7 +87,6 @@ export default function CustomHeader2(): JSX.Element {
       setOpenMenu(null);
       setAnchorEl(null);
     } else {
-      // Close all other menus first
       setOpenMenu(menuName);
       setAnchorEl(event.currentTarget);
     }
@@ -35,7 +106,7 @@ export default function CustomHeader2(): JSX.Element {
     if (timeoutRef.current) clearTimeout(timeoutRef.current);
     timeoutRef.current = setTimeout(() => {
       handleCloseMenu();
-    }, 0); // Fördröj stängningen för att hantera hovrandet över dropdown-menyn
+    }, 0); 
   };
 
   const handleSubMenuMouseEnter = () => {
@@ -49,19 +120,19 @@ export default function CustomHeader2(): JSX.Element {
     }, 0); 
   };
 
-  const links = [
-    { label: 'STARTSIDAN', href: '/about' },
-    { label: 'OM OSS', href: '/download' },
-    { label: 'TJÄNSTER', href: '/download', menuItems: ['Byggstäd', 'Hemstäd', 'Flyttstäd', 'Fönsterputs', 'Företagsstäd', 'Trappstäd', 'Trädgårdsfix'] },
-    { label: 'ORTER', href: '/download', menuItems: ['Borås', 'Dalsjöfors', 'Fristad', 'Sandared', 'Sjömarken'] },
-    { label: 'KONTAKT', href: '/download' },
-    { label: 'OFFERT', href: '/download' },
+  const links: LinkItem[] = [
+    { label: 'Startsidan', href: '/about' },
+    { label: 'Om oss', href: '/download' },
+    { label: 'Tjänster', href: '/download', menuItems: ['Byggstäd', 'Hemstäd', 'Flyttstäd', 'Fönsterputs', 'Företagsstäd', 'Trappstäd', 'Trädgårdsfix'] },
+    { label: 'Orter', href: '/download', menuItems: ['Borås', 'Dalsjöfors', 'Fristad', 'Sandared', 'Sjömarken'] },
+    { label: 'Kontakt', href: '/download' },
+    { label: 'Offert', href: '/download' },
   ];
 
   return (
     <Box
       sx={{
-        paddingY: 2,
+        paddingY: 0.1,
         display: "flex",
         alignItems: "center",
         justifyContent: "space-between",
@@ -83,8 +154,8 @@ export default function CustomHeader2(): JSX.Element {
           <img
             src="https://i.imgur.com/pdj2vhA.png"
             alt="Logo saying dailyvibe"
-            height={100}
-            width={240}
+            height={70}
+            width={210}
           />
         </Link>
         {!isMobile && (
@@ -93,69 +164,24 @@ export default function CustomHeader2(): JSX.Element {
               display: "flex",
               alignItems: "center",
               gap: 4,
-              marginLeft: 10,
+              justifyContent: "flex-end", // This will move the links to the right
+              marginRight: 1, // Add some margin to the right
+              flexGrow: 1, // Ensure this box takes up remaining space
+                marginLeft: 30,
             }}
           >
             {links.map((link) => (
               <React.Fragment key={link.label}>
-                <div
-                  onMouseEnter={(e) => handleMouseEnter(e, link.label)}
-                  onMouseLeave={handleMouseLeave}
-                >
-                  <Link
-                    href={link.href}
-                    sx={{
-                      textDecoration: "none",
-                      marginY: 1,
-                      color: "black",
-                      "&:hover": {
-                        color: "#d29bbf",
-                      },
-                    }}
-                  >
-                    <Typography variant="h6">{link.label}</Typography>
-                  </Link>
-                  {link.menuItems && (
-                    <Popper
-                      open={openMenu === link.label}
-                      anchorEl={anchorEl}
-                      role={undefined}
-                      transition
-                      disablePortal
-                      style={{ zIndex: 1 }}
-                      anchorOrigin={{
-                        vertical: 'bottom',
-                        horizontal: 'center',
-                      }}
-                      transformOrigin={{
-                        vertical: 'top',
-                        horizontal: 'center',
-                      }}
-                    >
-                      {({ TransitionProps }) => (
-                        <Grow
-                          {...TransitionProps}
-                          timeout={{ enter: 1000, exit: 0 }}
-                          style={{
-                            transformOrigin: 'top center',
-                            transitionTimingFunction: 'ease-in-out',
-                          }}
-                        >
-                          <Paper
-                            onMouseEnter={handleSubMenuMouseEnter}
-                            onMouseLeave={handleSubMenuMouseLeave}
-                          >
-                            <MenuList autoFocusItem={openMenu === link.label}>
-                              {link.menuItems.map((item, index) => (
-                                <MenuItem key={index} onClick={handleCloseMenu}>{item}</MenuItem>
-                              ))}
-                            </MenuList>
-                          </Paper>
-                        </Grow>
-                      )}
-                    </Popper>
-                  )}
-                </div>
+                <MenuLink
+                  link={link}
+                  openMenu={openMenu}
+                  anchorEl={anchorEl}
+                  handleMouseEnter={handleMouseEnter}
+                  handleMouseLeave={handleMouseLeave}
+                  handleSubMenuMouseEnter={handleSubMenuMouseEnter}
+                  handleSubMenuMouseLeave={handleSubMenuMouseLeave}
+                  handleCloseMenu={handleCloseMenu}
+                />
                 <div style={{ height: 20, width: 2, backgroundColor: "grey" }} />
               </React.Fragment>
             ))}
