@@ -1,8 +1,9 @@
 import { Box } from "@mui/material";
-import PresentingImage from "../components/Presentation";
-import Services from "../components/Services";
+import CustomerLogos from "../components/CustomerLogos";
 import CustomerReviews from "../components/CustomerReviews";
+import PresentingImage from "../components/Presentation";
 import Security from "../components/Security";
+import Services from "../components/Services";
 
 export default function Index() {
   return (
@@ -28,6 +29,8 @@ export default function Index() {
       <CustomerReviews />
       <div style={{ height: 1, width: "100%", backgroundColor: "#e3c5da" }} />
       <Security />
+      <div style={{ height: 1, width: "100%", backgroundColor: "#e3c5da" }} />
+      <CustomerLogos />
       <div style={{ height: 1, width: "100%", backgroundColor: "#e3c5da" }} />
     </Box>
   );
