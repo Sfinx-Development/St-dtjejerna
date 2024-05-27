@@ -171,7 +171,7 @@ export const serviceDescriptions = {
     tradgardsfix: {
       image: "/images/tradgardsfix.jpg",
       title: "Trädgårdsfix",
-      description: "Information om Trädgårdsfix. Här kan du lägga till all information om tjänsten Trädgårdsfix."
+      description: "Information om Trädgårdsfix."
     }
   };
   
