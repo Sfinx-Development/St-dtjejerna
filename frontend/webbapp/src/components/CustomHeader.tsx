@@ -164,9 +164,9 @@ export default function CustomHeader2(): JSX.Element {
               display: "flex",
               alignItems: "center",
               gap: 4,
-              justifyContent: "flex-end", // This will move the links to the right
-              marginRight: 1, // Add some margin to the right
-              flexGrow: 1, // Ensure this box takes up remaining space
+              justifyContent: "flex-end", 
+              marginRight: 1, 
+              flexGrow: 1, 
                 marginLeft: 30,
             }}
           >
