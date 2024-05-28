@@ -67,7 +67,7 @@ export default function ContactForm() {
         sx={{
           width: "100%",
           maxWidth: 500,
-          backgroundColor: "#fff",
+          backgroundColor: "rgba(0, 0, 0, 0.5)",
           boxShadow: "0 4px 8px rgba(0,0,0,0.1)",
           borderRadius: 2,
         }}
@@ -91,6 +91,12 @@ export default function ContactForm() {
               borderRadius: 1,
               "& .MuiInputLabel-outlined": {
                 color: "black",
+              },
+              "&:hover fieldset": {
+                borderColor: "lightgray",
+              },
+              "&.Mui-focused fieldset": {
+                borderColor: "lightgray",
               },
               "& .MuiOutlinedInput-root": {
                 "& fieldset": {
@@ -117,6 +123,12 @@ export default function ContactForm() {
               "& .MuiInputLabel-outlined": {
                 color: "black",
               },
+              "&:hover fieldset": {
+                borderColor: "lightgray",
+              },
+              "&.Mui-focused fieldset": {
+                borderColor: "lightgray",
+              },
               "& .MuiOutlinedInput-root": {
                 "& fieldset": {
                   borderColor: "#d4acc7",
@@ -141,6 +153,12 @@ export default function ContactForm() {
               borderRadius: 1,
               "& .MuiInputLabel-outlined": {
                 color: "black",
+              },
+              "&:hover fieldset": {
+                borderColor: "lightgray",
+              },
+              "&.Mui-focused fieldset": {
+                borderColor: "lightgray",
               },
               "& .MuiOutlinedInput-root": {
                 "& fieldset": {
@@ -168,6 +186,12 @@ export default function ContactForm() {
               borderRadius: 1,
               "& .MuiInputLabel-outlined": {
                 color: "black",
+              },
+              "&:hover fieldset": {
+                borderColor: "lightgray",
+              },
+              "&.Mui-focused fieldset": {
+                borderColor: "lightgray",
               },
               "& .MuiOutlinedInput-root": {
                 "& fieldset": {

@@ -1,6 +1,17 @@
-import { Box, Link, Typography, useMediaQuery, useTheme, Popper, Grow, Paper, MenuItem, MenuList, ClickAwayListener } from "@mui/material";
-import React, { useState, useRef } from 'react';
-import KeyboardArrowDownIcon from '@mui/icons-material/KeyboardArrowDown';
+import KeyboardArrowDownIcon from "@mui/icons-material/KeyboardArrowDown";
+import {
+  Box,
+  Grow,
+  Link,
+  MenuItem,
+  MenuList,
+  Paper,
+  Popper,
+  Typography,
+  useMediaQuery,
+  useTheme,
+} from "@mui/material";
+import React, { useRef, useState } from "react";
 
 type LinkItem = {
   label: string;
@@ -8,11 +19,32 @@ type LinkItem = {
   menuItems?: string[];
 };
 
-const MenuLink = ({ link, openMenu, anchorEl, handleMouseEnter, handleMouseLeave, handleSubMenuMouseEnter, handleSubMenuMouseLeave, handleCloseMenu }: { link: LinkItem, openMenu: string | null, anchorEl: HTMLElement | null, handleMouseEnter: (event: React.MouseEvent<HTMLElement>, menuName: string) => void, handleMouseLeave: () => void, handleSubMenuMouseEnter: () => void, handleSubMenuMouseLeave: () => void, handleCloseMenu: () => void }) => (
+const MenuLink = ({
+  link,
+  openMenu,
+  anchorEl,
+  handleMouseEnter,
+  handleMouseLeave,
+  handleSubMenuMouseEnter,
+  handleSubMenuMouseLeave,
+  handleCloseMenu,
+}: {
+  link: LinkItem;
+  openMenu: string | null;
+  anchorEl: HTMLElement | null;
+  handleMouseEnter: (
+    event: React.MouseEvent<HTMLElement>,
+    menuName: string
+  ) => void;
+  handleMouseLeave: () => void;
+  handleSubMenuMouseEnter: () => void;
+  handleSubMenuMouseLeave: () => void;
+  handleCloseMenu: () => void;
+}) => (
   <div
     onMouseEnter={(e) => handleMouseEnter(e, link.label)}
     onMouseLeave={handleMouseLeave}
-    style={{ display: 'flex', alignItems: 'center' }}
+    style={{ display: "flex", alignItems: "center" }}
   >
     <Link
       href={link.href}
@@ -38,12 +70,12 @@ const MenuLink = ({ link, openMenu, anchorEl, handleMouseEnter, handleMouseLeave
           disablePortal
           style={{ zIndex: 1 }}
           anchorOrigin={{
-            vertical: 'bottom',
-            horizontal: 'center',
+            vertical: "bottom",
+            horizontal: "center",
           }}
           transformOrigin={{
-            vertical: 'top',
-            horizontal: 'center',
+            vertical: "top",
+            horizontal: "center",
           }}
         >
           {({ TransitionProps }) => (
@@ -51,8 +83,8 @@ const MenuLink = ({ link, openMenu, anchorEl, handleMouseEnter, handleMouseLeave
               {...TransitionProps}
               timeout={{ enter: 1000, exit: 0 }}
               style={{
-                transformOrigin: 'top center',
-                transitionTimingFunction: 'ease-in-out',
+                transformOrigin: "top center",
+                transitionTimingFunction: "ease-in-out",
               }}
             >
               <Paper
@@ -61,7 +93,9 @@ const MenuLink = ({ link, openMenu, anchorEl, handleMouseEnter, handleMouseLeave
               >
                 <MenuList autoFocusItem={openMenu === link.label}>
                   {link.menuItems.map((item, index) => (
-                    <MenuItem key={index} onClick={handleCloseMenu}>{item}</MenuItem>
+                    <MenuItem key={index} onClick={handleCloseMenu}>
+                      {item}
+                    </MenuItem>
                   ))}
                 </MenuList>
               </Paper>
@@ -80,9 +114,12 @@ export default function CustomHeader2(): JSX.Element {
   const [anchorEl, setAnchorEl] = useState<null | HTMLElement>(null);
   const timeoutRef = useRef<NodeJS.Timeout | null>(null);
 
-  const handleToggleMenu = (event: React.MouseEvent<HTMLElement>, menuName: string) => {
+  const handleToggleMenu = (
+    event: React.MouseEvent<HTMLElement>,
+    menuName: string
+  ) => {
     if (timeoutRef.current) clearTimeout(timeoutRef.current);
-  
+
     if (openMenu === menuName) {
       setOpenMenu(null);
       setAnchorEl(null);
@@ -91,13 +128,16 @@ export default function CustomHeader2(): JSX.Element {
       setAnchorEl(event.currentTarget);
     }
   };
-  
+
   const handleCloseMenu = () => {
     setOpenMenu(null);
     setAnchorEl(null);
   };
 
-  const handleMouseEnter = (event: React.MouseEvent<HTMLElement>, menuName: string) => {
+  const handleMouseEnter = (
+    event: React.MouseEvent<HTMLElement>,
+    menuName: string
+  ) => {
     if (timeoutRef.current) clearTimeout(timeoutRef.current);
     handleToggleMenu(event, menuName);
   };
@@ -106,7 +146,7 @@ export default function CustomHeader2(): JSX.Element {
     if (timeoutRef.current) clearTimeout(timeoutRef.current);
     timeoutRef.current = setTimeout(() => {
       handleCloseMenu();
-    }, 0); 
+    }, 0);
   };
 
   const handleSubMenuMouseEnter = () => {
@@ -117,16 +157,32 @@ export default function CustomHeader2(): JSX.Element {
     if (timeoutRef.current) clearTimeout(timeoutRef.current);
     timeoutRef.current = setTimeout(() => {
       handleCloseMenu();
-    }, 0); 
+    }, 0);
   };
 
   const links: LinkItem[] = [
-    { label: 'Startsidan', href: '/about' },
-    { label: 'Om oss', href: '/download' },
-    { label: 'Tjänster', href: '/download', menuItems: ['Byggstäd', 'Hemstäd', 'Flyttstäd', 'Fönsterputs', 'Företagsstäd', 'Trappstäd', 'Trädgårdsfix'] },
-    { label: 'Orter', href: '/download', menuItems: ['Borås', 'Dalsjöfors', 'Fristad', 'Sandared', 'Sjömarken'] },
-    { label: 'Kontakt', href: '/download' },
-    { label: 'Offert', href: '/download' },
+    { label: "Startsidan", href: "/about" },
+    { label: "Om oss", href: "/download" },
+    {
+      label: "Tjänster",
+      href: "/download",
+      menuItems: [
+        "Byggstäd",
+        "Hemstäd",
+        "Flyttstäd",
+        "Fönsterputs",
+        "Företagsstäd",
+        "Trappstäd",
+        "Trädgårdsfix",
+      ],
+    },
+    {
+      label: "Orter",
+      href: "/download",
+      menuItems: ["Borås", "Dalsjöfors", "Fristad", "Sandared", "Sjömarken"],
+    },
+    { label: "Kontakt", href: "/download" },
+    { label: "Offert", href: "/download" },
   ];
 
   return (
@@ -141,6 +197,21 @@ export default function CustomHeader2(): JSX.Element {
         flexDirection: isMobile ? "column" : "row",
       }}
     >
+      {/* <Box
+      sx={{
+        paddingY: 0.1,
+        display: "flex",
+        alignItems: "center",
+        justifyContent: "space-between",
+        width: "100%",
+        boxShadow: "0px 4px 10px rgba(0, 0, 0, 0.1)",
+        flexDirection: isMobile ? "column" : "row",
+        position: "sticky",
+        top: 0, 
+        backgroundColor: "white", 
+        zIndex: 1000,
+      }}
+    ></Box> */}
       <Box
         sx={{
           display: "flex",
@@ -164,10 +235,10 @@ export default function CustomHeader2(): JSX.Element {
               display: "flex",
               alignItems: "center",
               gap: 4,
-              justifyContent: "flex-end", 
-              marginRight: 1, 
-              flexGrow: 1, 
-                marginLeft: 30,
+              justifyContent: "flex-end",
+              marginRight: 1,
+              flexGrow: 1,
+              marginLeft: 30,
             }}
           >
             {links.map((link) => (
@@ -182,7 +253,9 @@ export default function CustomHeader2(): JSX.Element {
                   handleSubMenuMouseLeave={handleSubMenuMouseLeave}
                   handleCloseMenu={handleCloseMenu}
                 />
-                <div style={{ height: 20, width: 2, backgroundColor: "grey" }} />
+                <div
+                  style={{ height: 20, width: 2, backgroundColor: "grey" }}
+                />
               </React.Fragment>
             ))}
           </Box>
