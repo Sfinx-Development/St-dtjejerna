@@ -21,7 +21,7 @@ const Hemstad: FC = () => {
           objectFit: "cover",
         }}
       />
-      <Typography variant="h2" gutterBottom style={{ textAlign: "center" }}>
+      <Typography variant="h2" gutterBottom style={{ textAlign: "center", color: "#d29bbf" }}>
         Hemstäd
       </Typography>
       <Typography variant="body1" paragraph>
@@ -65,7 +65,7 @@ const Hemstad: FC = () => {
       >
         <Box style={{ maxWidth: "30%" }}>
           
-          <Typography variant="h4" gutterBottom>
+          <Typography variant="h4" gutterBottom style={{color: "#d29bbf"}}>
             Alla rum:
           </Typography>
           <ul>
@@ -87,7 +87,7 @@ const Hemstad: FC = () => {
           </ul>
         </Box>
         <Box style={{ maxWidth: "30%" }}>
-          <Typography variant="h4" gutterBottom>
+        <Typography variant="h4" gutterBottom style={{color: "#d29bbf"}}>
             Badrum:
           </Typography>
           <ul>
@@ -103,7 +103,7 @@ const Hemstad: FC = () => {
           </ul>
         </Box>
         <Box style={{ maxWidth: "30%" }}>
-          <Typography variant="h4" gutterBottom>
+        <Typography variant="h4" gutterBottom style={{color: "#d29bbf"}}>
             Kök:
           </Typography>
           <ul>
@@ -118,7 +118,7 @@ const Hemstad: FC = () => {
           </ul>
         </Box>
       </Box>
-      <Typography variant="h2" gutterBottom style={{ textAlign: "center" }}>
+      <Typography variant="h4" gutterBottom style={{ textAlign: "center" }}>
         Utöver städabonnemang erbjuder vi även storstädning eller hemstäd vid
         enskilda tillfällen när behov finns.
       </Typography>

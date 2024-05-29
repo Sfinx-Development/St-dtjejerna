@@ -10,6 +10,7 @@ import Foretagsstad from "./pages/Foretagsstad";
 import Trappstad from "./pages/Trappstad";
 import Flyttstad from "./pages/Flyttstad";
 import Tradgardsfix from "./pages/Tradgardsfix";
+import AboutUs from "./pages/AboutUs";
 
 
 const Navigation = () => {
@@ -18,6 +19,7 @@ const Navigation = () => {
       <Route element={<RootLayout />}>
         <Route index element={<Index />}></Route>
         <Route path="*" element={<Error />}></Route>
+        <Route path="/om-oss" element={<AboutUs />}></Route>
         <Route path="/hemstad" element={<Hemstad />}></Route>
         <Route path="/byggstad" element={<Byggstad />}></Route>
         <Route path="/flyttstad" element={<Flyttstad />}></Route>

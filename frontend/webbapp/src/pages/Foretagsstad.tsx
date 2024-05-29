@@ -21,7 +21,7 @@ const Foretagsstad: FC = () => {
           objectFit: "cover",
         }}
       />
-      <Typography variant="h2" gutterBottom style={{ textAlign: "center" }}>
+      <Typography variant="h2" gutterBottom style={{ textAlign: "center", color: "#d29bbf" }}>
         Företagsstäd
       </Typography>
       <Typography variant="body1" paragraph>
@@ -67,7 +67,7 @@ const Foretagsstad: FC = () => {
         }}
       >
         <Box style={{ width: "30%" }}>
-          <Typography variant="h4" gutterBottom>
+        <Typography variant="h4" gutterBottom style={{color: "#d29bbf"}}>
             Kontor
           </Typography>
           <ul>
@@ -79,7 +79,7 @@ const Foretagsstad: FC = () => {
           </ul>
         </Box>
         <Box style={{ width: "30%" }}>
-          <Typography variant="h4" gutterBottom>
+        <Typography variant="h4" gutterBottom style={{color: "#d29bbf"}}>
             Toaletter
           </Typography>
           <ul>
@@ -90,7 +90,7 @@ const Foretagsstad: FC = () => {
           </ul>
         </Box>
         <Box style={{ width: "30%" }}>
-          <Typography variant="h4" gutterBottom>
+        <Typography variant="h4" gutterBottom style={{color: "#d29bbf"}}>
             Kök/Pentry
           </Typography>
           <ul>
