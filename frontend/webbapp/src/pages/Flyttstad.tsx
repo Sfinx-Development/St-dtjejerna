@@ -1,8 +1,13 @@
 import React from "react";
 import { Box, Typography } from "@mui/material";
 
+import Fade from '@mui/material/Fade';
+
+
 const Flyttstad = () => {
+  
   return (
+    <Fade in timeout={500}>
     <Box
     sx={{
       display: "flex",
@@ -41,7 +46,7 @@ const Flyttstad = () => {
               left: "50%",
               transform: "translateX(-50%)",
               width: "80px",
-              height: "3px",
+              height: "2px",
               backgroundColor: "#d29bbf",
               borderRadius: "5px",
               opacity: 0.7,
@@ -148,6 +153,7 @@ const Flyttstad = () => {
         </Box>
       </Box>
     </Box>
+    </Fade>
   );
 };
 
