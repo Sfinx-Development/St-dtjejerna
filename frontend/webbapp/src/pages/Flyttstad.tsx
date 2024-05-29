@@ -20,7 +20,7 @@ const Flyttstad = () => {
           objectFit: "cover",
         }}
       />
-      <Typography variant="h2" gutterBottom style={{ textAlign: "center" }}>
+      <Typography variant="h2" gutterBottom style={{ textAlign: "center", color: "#d29bbf" }}>
         Flyttstäd
       </Typography>
       <Typography variant="body1" paragraph>
@@ -55,7 +55,7 @@ const Flyttstad = () => {
         }}
       >
         <Box style={{ maxWidth: "30%" }}>
-          <Typography variant="h4" gutterBottom>
+        <Typography variant="h4" gutterBottom style={{color: "#d29bbf"}}>
             Städoment som utförs i alla rum
           </Typography>
           <ul>
@@ -67,7 +67,7 @@ const Flyttstad = () => {
           </ul>
         </Box>
         <Box style={{ maxWidth: "30%" }}>
-          <Typography variant="h4" gutterBottom>
+        <Typography variant="h4" gutterBottom style={{color: "#d29bbf"}}>
             Badrumsstädning
           </Typography>
           <ul>
@@ -81,7 +81,7 @@ const Flyttstad = () => {
           </ul>
         </Box>
         <Box style={{ maxWidth: "30%" }}>
-          <Typography variant="h4" gutterBottom>
+        <Typography variant="h4" gutterBottom style={{color: "#d29bbf"}}>
             Köksstädning
           </Typography>
           <ul>

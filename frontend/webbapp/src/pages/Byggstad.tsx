@@ -9,7 +9,7 @@ const Byggstad: FC = () => {
         alt="Byggstäd"
         style={{ width: "100%", maxWidth: "100vw",maxHeight: "50vh", objectFit: "cover" }}
       />
-      <Typography variant="h2" gutterBottom style={{ textAlign: "center" }}>
+      <Typography variant="h2" gutterBottom style={{ textAlign: "center", color: "#d29bbf" }}>
         Byggstäd
       </Typography>
       <Typography variant="body1" paragraph>

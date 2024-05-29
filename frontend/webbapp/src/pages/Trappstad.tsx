@@ -21,7 +21,7 @@ const Trappstad: FC = () => {
           objectFit: "cover",
         }}
       />
-      <Typography variant="h2" gutterBottom style={{ textAlign: "center" }}>
+      <Typography variant="h2" gutterBottom style={{ textAlign: "center", color: "#d29bbf" }}>
         Trappstäd
       </Typography>
       <Typography variant="body1" paragraph>
