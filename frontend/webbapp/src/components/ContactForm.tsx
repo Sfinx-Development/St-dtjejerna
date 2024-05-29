@@ -1,16 +1,19 @@
-import { useState } from "react";
-import {
-  Box,
-  Card,
-  CardContent,
-  TextField,
-  Typography,
-  Button,
-} from "@mui/material";
-import PhoneIcon from "@mui/icons-material/Phone";
 import EmailIcon from "@mui/icons-material/Email";
 import LocationOnIcon from "@mui/icons-material/LocationOn";
+import PhoneIcon from "@mui/icons-material/Phone";
+import {
+  Alert,
+  AlertColor,
+  Box,
+  Button,
+  Card,
+  CardContent,
+  Snackbar,
+  TextField,
+  Typography,
+} from "@mui/material";
 import emailjs from "emailjs-com";
+import { useState } from "react";
 
 emailjs.init("C8CxNnxZg6mg-d2tq");
 
@@ -19,6 +22,10 @@ export default function ContactForm() {
   const [phone, setPhone] = useState("");
   const [email, setEmail] = useState("");
   const [message, setMessage] = useState("");
+
+  const [openSnackbar, setOpenSnackbar] = useState(false);
+  const [snackbarMessage, setSnackbarMessage] = useState("");
+  const [snackbarSeverity, setSnackbarSeverity] = useState("success");
 
   const handleSubmit = (e) => {
     e.preventDefault();
@@ -33,12 +40,33 @@ export default function ContactForm() {
       .send("service_f1l2auv", "template_h691rd4", templateParams)
       .then((response) => {
         console.log("Email sent successfully:", response.status, response.text);
-        alert("E-post skickad framgångsrikt!");
+        setSnackbarSeverity("success");
+        setSnackbarMessage("E-post skickad framgångsrikt!");
+        setOpenSnackbar(true);
+        setEmail("");
+        setName("");
+        setMessage("");
+        setPhone("");
       })
       .catch((err) => {
         console.error("Error sending email:", err);
-        alert("Något gick fel när e-posten skickades.");
+        setSnackbarSeverity("error");
+        setSnackbarMessage("Något gick fel när e-posten skickades.");
+        setOpenSnackbar(true);
+        setEmail("");
+        setName("");
+        setMessage("");
+        setPhone("");
       });
+  };
+  const handleSnackbarClose = (
+    event: React.SyntheticEvent,
+    reason?: string
+  ) => {
+    if (reason === "clickaway") {
+      return;
+    }
+    setOpenSnackbar(false);
   };
 
   return (
@@ -98,6 +126,15 @@ export default function ContactForm() {
           <Typography sx={{ color: "grey" }}>50453 Borås</Typography>
         </Box>
       </Box>
+      <Snackbar open={openSnackbar} autoHideDuration={6000}>
+        <Alert
+          onClose={handleSnackbarClose}
+          severity={snackbarSeverity as AlertColor}
+          sx={{ width: "100%" }}
+        >
+          {snackbarMessage}
+        </Alert>
+      </Snackbar>
       <Card
         sx={{
           width: "100%",
