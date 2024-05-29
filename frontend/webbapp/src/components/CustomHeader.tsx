@@ -1,4 +1,15 @@
-import { Box, Link as MuiLink, Typography, useMediaQuery, useTheme, Popper, Grow, Paper, MenuItem, MenuList, ClickAwayListener } from "@mui/material";
+import {
+  Box,
+  Link as MuiLink,
+  Typography,
+  useMediaQuery,
+  useTheme,
+  Popper,
+  Grow,
+  Paper,
+  MenuItem,
+  MenuList
+} from "@mui/material";
 import React, { useState, useRef } from 'react';
 import KeyboardArrowDownIcon from '@mui/icons-material/KeyboardArrowDown';
 import { Link } from "react-router-dom";
@@ -57,30 +68,27 @@ const MenuLink = ({
           transition
           disablePortal
           style={{ zIndex: 1 }}
-          anchorOrigin={{
-            vertical: 'bottom',
-            horizontal: 'center',
-          }}
-          transformOrigin={{
-            vertical: 'top',
-            horizontal: 'center',
-          }}
+          placement="bottom-start"
+          modifiers={[
+            {
+              name: 'offset',
+              options: {
+                offset: [0, 8],
+              },
+            },
+          ]}
         >
           {({ TransitionProps }) => (
             <Grow
               {...TransitionProps}
-              timeout={{ enter: 1000, exit: 0 }}
-              style={{
-                transformOrigin: 'top center',
-                transitionTimingFunction: 'ease-in-out',
-              }}
+              style={{ transformOrigin: 'top center' }}
             >
               <Paper
                 onMouseEnter={handleSubMenuMouseEnter}
                 onMouseLeave={handleSubMenuMouseLeave}
               >
                 <MenuList autoFocusItem={openMenu === link.label}>
-                  {link.menuItems.map((item, index) => (
+                  {link.menuItems?.map((item, index) => (
                     <MenuItem key={index} onClick={handleCloseMenu}>
                       <Link to={item.href} style={{ textDecoration: 'none', color: 'black' }}>
                         {item.label}
@@ -102,7 +110,8 @@ export default function CustomHeader2(): JSX.Element {
   const isMobile = useMediaQuery(theme.breakpoints.down("sm"));
   const [openMenu, setOpenMenu] = useState<string | null>(null);
   const [anchorEl, setAnchorEl] = useState<null | HTMLElement>(null);
-  const timeoutRef = useRef<NodeJS.Timeout | null>(null);
+  const timeoutRef = useRef<number | null>(null);
+
 
   const handleToggleMenu = (event: React.MouseEvent<HTMLElement>, menuName: string) => {
     if (timeoutRef.current) clearTimeout(timeoutRef.current);
