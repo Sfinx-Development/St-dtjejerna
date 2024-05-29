@@ -11,6 +11,7 @@ import Trappstad from "./pages/Trappstad";
 import Flyttstad from "./pages/Flyttstad";
 import Tradgardsfix from "./pages/Tradgardsfix";
 import AboutUs from "./pages/AboutUs";
+import Locations from "./pages/Locations";
 
 
 const Navigation = () => {
@@ -27,6 +28,7 @@ const Navigation = () => {
         <Route path="/foretagsstad" element={<Foretagsstad />}></Route>
         <Route path="/trappstad" element={<Trappstad />}></Route>
         <Route path="/tradgardsfix" element={<Tradgardsfix />}></Route>
+        <Route path="/orter" element={<Locations />}></Route>
        
       </Route>
     </Routes>

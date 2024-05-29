@@ -165,16 +165,17 @@ export default function CustomHeader2(): JSX.Element {
         { label: 'Fönsterputs', href: '/fonsterputs' },
         { label: 'Företagsstäd', href: '/foretagsstad' },
         { label: 'Trappstäd', href: '/trappstad' },
+       
         // { label: 'Trädgårdsfix', href: '/tradgardsfix' }
       ]
     },
     {
       label: 'Orter', href: '/orter', menuItems: [
-        { label: 'Borås', href: '/boras' },
-        { label: 'Dalsjöfors', href: '/dalsjofors' },
-        { label: 'Fristad', href: '/fristad' },
-        { label: 'Sandared', href: '/sandared' },
-        { label: 'Sjömarken', href: '/sjomarken' }
+        { label: 'Borås', href: '/orter' },
+        { label: 'Dalsjöfors', href: '/orter' },
+        { label: 'Fristad', href: '/orter' },
+        { label: 'Sandared', href: '/orter' },
+        { label: 'Sjömarken', href: '/orter' }
       ]
     },
     { label: 'Kontakt', href: '/kontakt' },
