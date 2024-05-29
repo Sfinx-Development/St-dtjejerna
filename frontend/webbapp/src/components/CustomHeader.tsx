@@ -8,10 +8,10 @@ import {
   Grow,
   Paper,
   MenuItem,
-  MenuList
+  MenuList,
 } from "@mui/material";
-import React, { useState, useRef } from 'react';
-import KeyboardArrowDownIcon from '@mui/icons-material/KeyboardArrowDown';
+import React, { useState, useRef } from "react";
+import KeyboardArrowDownIcon from "@mui/icons-material/KeyboardArrowDown";
 import { Link } from "react-router-dom";
 
 type LinkItem = {
@@ -19,7 +19,6 @@ type LinkItem = {
   href: string;
   menuItems?: { label: string; href: string }[];
 };
-
 
 const MenuLink = ({
   link,
@@ -29,12 +28,15 @@ const MenuLink = ({
   handleMouseLeave,
   handleSubMenuMouseEnter,
   handleSubMenuMouseLeave,
-  handleCloseMenu
+  handleCloseMenu,
 }: {
   link: LinkItem;
   openMenu: string | null;
   anchorEl: HTMLElement | null;
-  handleMouseEnter: (event: React.MouseEvent<HTMLElement>, menuName: string) => void;
+  handleMouseEnter: (
+    event: React.MouseEvent<HTMLElement>,
+    menuName: string
+  ) => void;
   handleMouseLeave: () => void;
   handleSubMenuMouseEnter: () => void;
   handleSubMenuMouseLeave: () => void;
@@ -43,9 +45,9 @@ const MenuLink = ({
   <div
     onMouseEnter={(e) => handleMouseEnter(e, link.label)}
     onMouseLeave={handleMouseLeave}
-    style={{ display: 'flex', alignItems: 'center' }}
+    style={{ display: "flex", alignItems: "center" }}
   >
-    <Link to={link.href} style={{ textDecoration: 'none' }}>
+    <Link to={link.href} style={{ textDecoration: "none" }}>
       <Typography
         variant="body1"
         sx={{
@@ -72,7 +74,7 @@ const MenuLink = ({
           placement="bottom-start"
           modifiers={[
             {
-              name: 'offset',
+              name: "offset",
               options: {
                 offset: [0, 8],
               },
@@ -82,7 +84,7 @@ const MenuLink = ({
           {({ TransitionProps }) => (
             <Grow
               {...TransitionProps}
-              style={{ transformOrigin: 'top center' }}
+              style={{ transformOrigin: "top center" }}
             >
               <Paper
                 onMouseEnter={handleSubMenuMouseEnter}
@@ -90,8 +92,23 @@ const MenuLink = ({
               >
                 <MenuList autoFocusItem={openMenu === link.label}>
                   {link.menuItems?.map((item, index) => (
-                    <MenuItem key={index} onClick={handleCloseMenu}>
-                      <Link to={item.href} style={{ textDecoration: 'none', color: 'black' }}>
+                    <MenuItem
+                      key={index}
+                      onClick={handleCloseMenu}
+                      sx={{
+                        "&:hover": {
+                          backgroundColor: "#d29bbf", 
+                          color: "#fff", 
+                        },
+                      }}
+                    >
+                      <Link
+                        to={item.href}
+                        style={{
+                          textDecoration: "none",
+                          color: "#000", 
+                        }}
+                      >
                         {item.label}
                       </Link>
                     </MenuItem>
@@ -113,8 +130,10 @@ export default function CustomHeader2(): JSX.Element {
   const [anchorEl, setAnchorEl] = useState<null | HTMLElement>(null);
   const timeoutRef = useRef<number | null>(null);
 
-
-  const handleToggleMenu = (event: React.MouseEvent<HTMLElement>, menuName: string) => {
+  const handleToggleMenu = (
+    event: React.MouseEvent<HTMLElement>,
+    menuName: string
+  ) => {
     if (timeoutRef.current) clearTimeout(timeoutRef.current);
 
     if (openMenu === menuName) {
@@ -131,7 +150,10 @@ export default function CustomHeader2(): JSX.Element {
     setAnchorEl(null);
   };
 
-  const handleMouseEnter = (event: React.MouseEvent<HTMLElement>, menuName: string) => {
+  const handleMouseEnter = (
+    event: React.MouseEvent<HTMLElement>,
+    menuName: string
+  ) => {
     if (timeoutRef.current) clearTimeout(timeoutRef.current);
     handleToggleMenu(event, menuName);
   };
@@ -155,30 +177,35 @@ export default function CustomHeader2(): JSX.Element {
   };
 
   const links: LinkItem[] = [
-    { label: 'Startsidan', href: '/' },
-    { label: 'Om oss', href: '/om-oss' },
+    { label: "Startsidan", href: "/" },
+    { label: "Om oss", href: "/om-oss" },
     {
-      label: 'Tjänster', href: '/tjanster', menuItems: [
-        { label: 'Byggstäd', href: '/byggstad' },
-        { label: 'Hemstäd', href: '/hemstad' },
-        { label: 'Flyttstäd', href: '/flyttstad' },
-        { label: 'Fönsterputs', href: '/fonsterputs' },
-        { label: 'Företagsstäd', href: '/foretagsstad' },
-        { label: 'Trappstäd', href: '/trappstad' },
+      label: "Tjänster",
+      href: "/tjanster",
+      menuItems: [
+        { label: "Byggstäd", href: "/byggstad" },
+        { label: "Hemstäd", href: "/hemstad" },
+        { label: "Flyttstäd", href: "/flyttstad" },
+        { label: "Fönsterputs", href: "/fonsterputs" },
+        { label: "Företagsstäd", href: "/foretagsstad" },
+        { label: "Trappstäd", href: "/trappstad" },
+
         // { label: 'Trädgårdsfix', href: '/tradgardsfix' }
-      ]
+      ],
     },
     {
-      label: 'Orter', href: '/orter', menuItems: [
-        { label: 'Borås', href: '/boras' },
-        { label: 'Dalsjöfors', href: '/dalsjofors' },
-        { label: 'Fristad', href: '/fristad' },
-        { label: 'Sandared', href: '/sandared' },
-        { label: 'Sjömarken', href: '/sjomarken' }
-      ]
+      label: "Orter",
+      href: "/orter",
+      menuItems: [
+        { label: "Borås", href: "/orter" },
+        { label: "Dalsjöfors", href: "/orter" },
+        { label: "Fristad", href: "/orter" },
+        { label: "Sandared", href: "/orter" },
+        { label: "Sjömarken", href: "/orter" },
+      ],
     },
-    { label: 'Kontakt', href: '/kontakt' },
-    { label: 'Offert', href: '/offert' },
+    { label: "Kontakt", href: "/kontakt" },
+    { label: "Offert", href: "/offert" },
   ];
 
   return (
@@ -234,7 +261,9 @@ export default function CustomHeader2(): JSX.Element {
                   handleSubMenuMouseLeave={handleSubMenuMouseLeave}
                   handleCloseMenu={handleCloseMenu}
                 />
-                <div style={{ height: 20, width: 2, backgroundColor: "grey" }} />
+                <div
+                  style={{ height: 20, width: 2, backgroundColor: "grey" }}
+                />
               </React.Fragment>
             ))}
           </Box>
@@ -255,7 +284,10 @@ export default function CustomHeader2(): JSX.Element {
             <MuiLink href="/about" sx={{ textDecoration: "none", marginY: 1 }}>
               <Typography variant="h6">LÄS MER</Typography>
             </MuiLink>
-            <MuiLink href="/download" sx={{ textDecoration: "none", marginY: 1 }}>
+            <MuiLink
+              href="/download"
+              sx={{ textDecoration: "none", marginY: 1 }}
+            >
               <Typography variant="h6">LADDA NED</Typography>
             </MuiLink>
           </Box>
