@@ -82,6 +82,14 @@ const AboutUs: FC = () => {
             <strong>Josephine</strong> dansar gärna loss med dammtrasan och
             dammsugaren efter sig. Det går undan men rent och prydligt blir det.
           </Typography>
+          <Box
+          sx={{
+            width: "100%",
+            height: "2px",
+            backgroundColor: "#d29bbf",
+            marginBottom: "20px",
+          }}
+        />
         </Box>
         <Box
           sx={{
@@ -107,6 +115,14 @@ const AboutUs: FC = () => {
             ska kunna släppa tankarna på städningen och fokusera på annat under
             tiden.
           </Typography>
+          <Box
+          sx={{
+            width: "100%",
+            height: "2px",
+            backgroundColor: "#d29bbf",
+            marginBottom: "20px",
+          }}
+        />
         </Box>
       </Box>
     </Fade>
