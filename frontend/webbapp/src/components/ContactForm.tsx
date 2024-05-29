@@ -22,42 +22,50 @@ export default function ContactForm() {
   const [phone, setPhone] = useState("");
   const [email, setEmail] = useState("");
   const [message, setMessage] = useState("");
-
+  const [error, setError] = useState(false);
   const [openSnackbar, setOpenSnackbar] = useState(false);
   const [snackbarMessage, setSnackbarMessage] = useState("");
   const [snackbarSeverity, setSnackbarSeverity] = useState("success");
 
   const handleSubmit = (e) => {
     e.preventDefault();
+    setError(false);
+    if (name != "" && message != "" && email != "" && phone != "") {
+      const templateParams = {
+        to_name: "Städtjejerna",
+        from_name: name,
+        message: `Telefon: ${phone}\nEmail: ${email}\nMeddelande: ${message}`,
+      };
 
-    const templateParams = {
-      to_name: "Städtjejerna",
-      from_name: name,
-      message: `Telefon: ${phone}\nEmail: ${email}\nMeddelande: ${message}`,
-    };
-
-    emailjs
-      .send("service_f1l2auv", "template_h691rd4", templateParams)
-      .then((response) => {
-        console.log("Email sent successfully:", response.status, response.text);
-        setSnackbarSeverity("success");
-        setSnackbarMessage("E-post skickad framgångsrikt!");
-        setOpenSnackbar(true);
-        setEmail("");
-        setName("");
-        setMessage("");
-        setPhone("");
-      })
-      .catch((err) => {
-        console.error("Error sending email:", err);
-        setSnackbarSeverity("error");
-        setSnackbarMessage("Något gick fel när e-posten skickades.");
-        setOpenSnackbar(true);
-        setEmail("");
-        setName("");
-        setMessage("");
-        setPhone("");
-      });
+      emailjs
+        .send("service_f1l2auv", "template_h691rd4", templateParams)
+        .then((response) => {
+          console.log(
+            "Email sent successfully:",
+            response.status,
+            response.text
+          );
+          setSnackbarSeverity("success");
+          setSnackbarMessage("E-post skickad framgångsrikt!");
+          setOpenSnackbar(true);
+          setEmail("");
+          setName("");
+          setMessage("");
+          setPhone("");
+        })
+        .catch((err) => {
+          console.error("Error sending email:", err);
+          setSnackbarSeverity("error");
+          setSnackbarMessage("Något gick fel när e-posten skickades.");
+          setOpenSnackbar(true);
+          setEmail("");
+          setName("");
+          setMessage("");
+          setPhone("");
+        });
+    } else {
+      setError(true);
+    }
   };
   const handleSnackbarClose = (
     event: React.SyntheticEvent,
@@ -152,6 +160,9 @@ export default function ContactForm() {
             gap: 2,
           }}
         >
+          {error && (
+            <Typography color="red">Vänligen fyll i alla fält</Typography>
+          )}
           <TextField
             label="Namn"
             variant="outlined"
