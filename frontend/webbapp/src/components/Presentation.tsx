@@ -1,6 +1,9 @@
 import FacebookIcon from "@mui/icons-material/Facebook";
+
 import InstagramIcon from "@mui/icons-material/Instagram";
+
 import MailOutlineIcon from "@mui/icons-material/MailOutline";
+
 import { Box, Button, IconButton, Typography } from "@mui/material";
 
 export default function PresentingImage() {
@@ -8,100 +11,170 @@ export default function PresentingImage() {
     <Box
       sx={{
         display: "flex",
+
         flexDirection: { xs: "column", md: "row" },
+
         alignItems: "center",
+
+        justifyContent: "center",
+
         height: { xs: "auto", md: 500 },
+
         width: "100%",
+
         position: "relative",
+
         fontFamily: "Roboto, sans-serif",
+
+        overflow: "hidden",
       }}
     >
       <Box
         sx={{
           display: "flex",
+
           flexDirection: "column",
+
           justifyContent: "center",
-          alignItems: "center",
+
+          alignItems: { xs: "center", md: "flex-start" },
+
           padding: 4,
+
           zIndex: 1,
+
           width: { xs: "90%", md: "40%" },
-          marginBottom: { xs: 4, md: 0 },
-          backgroundColor: "rgba(255, 255, 255, 0.6)",
-          boxShadow: "0 4px 8px rgba(0, 0, 0, 0.2)",
-          borderRadius: 2,
-          textAlign: "center",
-          position: { xs: "relative", md: "absolute" },
+
+          textAlign: { xs: "center", md: "left" },
+
+          position: "absolute",
+
           left: { xs: "0", md: "50px" },
-          transition: "transform 0.3s ease",
-          "&:hover": {
-            transform: "scale(1.05)",
-            backgroundColor: "rgba(255, 255, 255, 0.8)",
-          },
+
+          // backgroundColor: "rgba(0,0,0,0.5)",
+
+          borderRadius: 2,
         }}
       >
-        <Typography sx={{ marginBottom: 2, padding: 1, fontSize: 40 }}>
-          Städtjejerna i Borås
+        <Typography
+          variant="h2"
+          sx={{
+            marginBottom: 2,
+
+            color: "white",
+
+            letterSpacing: 2,
+
+            fontWeight: "bold",
+          }}
+        >
+          Städtjejerna i 7Härad
         </Typography>
-        <Typography sx={{ padding: 1, fontSize: 30 }}>
+
+        <Typography
+          sx={{
+            fontSize: 24,
+
+            fontWeight: "bold",
+
+            color: "white",
+
+            letterSpacing: 2,
+          }}
+        >
           Låt Städtjejerna göra jobbet
         </Typography>
+
         <Button
           variant="outlined"
           sx={{
-            color: "black",
+            color: "#fff",
+
             borderColor: "#e3c5da",
+
             marginY: 4,
-            padding: 1.5,
-            backgroundColor: "transparent",
+
+            paddingX: 3,
+
+            paddingY: 1,
+
+            backgroundColor: "#dbbed1",
+
             "&:hover": {
               borderColor: "#e3c5da",
+
               backgroundColor: "#e3c5da",
+
+              color: "#333",
+
               transition: "background-color 0.3s ease, color 0.3s ease",
             },
           }}
         >
           Kontakta oss
         </Button>
-        <div
-          style={{
-            height: 1,
-            width: "100%",
-            backgroundColor: "#e3c5da",
-          }}
-        />
+
         <Box
           sx={{
             display: "flex",
-            flex: 1,
+
+            justifyContent: "center",
+
             width: "100%",
-            alignItems: "center",
-            justifyContent: "space-evenly",
+
+            marginTop: 2,
           }}
         >
           <IconButton
             sx={{
-              marginY: 2,
-              // "&:hover": {
-              //   backgroundColor: "#dbbed1",
-              //   transition: "background-color 0.3s ease, color 0.3s ease",
-              // },
+              color: "white",
+
+              "&:hover": {
+                color: "#dbbed1",
+
+                transition: "color 0.3s ease",
+              },
             }}
           >
             <InstagramIcon />
           </IconButton>
-          <IconButton sx={{ marginY: 2 }}>
+
+          <IconButton
+            sx={{
+              color: "white",
+
+              "&:hover": {
+                color: "#dbbed1",
+
+                transition: "color 0.3s ease",
+              },
+            }}
+          >
             <FacebookIcon />
           </IconButton>
-          <IconButton sx={{ marginY: 2 }}>
+
+          <IconButton
+            sx={{
+              color: "white",
+
+              "&:hover": {
+                color: "#dbbed1",
+
+                transition: "color 0.3s ease",
+              },
+            }}
+          >
             <MailOutlineIcon />
           </IconButton>
         </Box>
       </Box>
+
       <Box
         sx={{
-          position: "relative",
           width: { xs: "100%", md: "100%" },
+
           height: { xs: 300, md: "100%" },
+
           zIndex: 0,
         }}
       >
@@ -112,8 +185,11 @@ export default function PresentingImage() {
           muted
           style={{
             width: "100%",
+
             height: "100%",
+
             objectFit: "cover",
+
             opacity: 0.8,
           }}
         />

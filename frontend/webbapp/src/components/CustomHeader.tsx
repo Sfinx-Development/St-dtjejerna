@@ -12,7 +12,6 @@ import {
   useTheme,
 } from "@mui/material";
 import React, { useRef, useState } from "react";
-import { Link } from "react-router-dom";
 
 type LinkItem = {
   label: string;
@@ -94,6 +93,7 @@ const MenuLink = ({
                 onMouseLeave={handleSubMenuMouseLeave}
               >
                 <MenuList autoFocusItem={openMenu === link.label}>
+
                   {link?.menuItems?.map((item, index) => (
                     <MenuItem key={index} onClick={handleCloseMenu}>
                       <Link
@@ -102,6 +102,7 @@ const MenuLink = ({
                       >
                         {item.label}
                       </Link>
+
                     </MenuItem>
                   ))}
                 </MenuList>
@@ -168,6 +169,7 @@ export default function CustomHeader2(): JSX.Element {
   };
 
   const links: LinkItem[] = [
+
     { label: "Startsidan", href: "/" },
     { label: "Om oss", href: "/om-oss" },
     {
@@ -210,6 +212,21 @@ export default function CustomHeader2(): JSX.Element {
         flexDirection: isMobile ? "column" : "row",
       }}
     >
+      {/* <Box
+      sx={{
+        paddingY: 0.1,
+        display: "flex",
+        alignItems: "center",
+        justifyContent: "space-between",
+        width: "100%",
+        boxShadow: "0px 4px 10px rgba(0, 0, 0, 0.1)",
+        flexDirection: isMobile ? "column" : "row",
+        position: "sticky",
+        top: 0, 
+        backgroundColor: "white", 
+        zIndex: 1000,
+      }}
+    ></Box> */}
       <Box
         sx={{
           display: "flex",
