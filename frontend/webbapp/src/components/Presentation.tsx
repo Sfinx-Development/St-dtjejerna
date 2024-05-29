@@ -51,7 +51,7 @@ export default function PresentingImage() {
 
           left: { xs: "0", md: "50px" },
 
-          backgroundColor: "#dbbed1",
+          // backgroundColor: "rgba(0,0,0,0.5)",
 
           borderRadius: 2,
         }}
@@ -68,7 +68,7 @@ export default function PresentingImage() {
             fontWeight: "bold",
           }}
         >
-          Städtjejerna i Borås
+          Städtjejerna i 7Härad
         </Typography>
 
         <Typography

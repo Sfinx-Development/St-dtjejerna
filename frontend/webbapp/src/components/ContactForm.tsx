@@ -30,7 +30,8 @@ export default function ContactForm() {
         justifyContent: "space-around",
         height: { xs: "auto", md: 500 },
         width: "100%",
-        backgroundColor: "#f5f5f5",
+        backgroundColor: "#f7f7f7",
+        padding: 3,
         gap: 4,
       }}
     >
@@ -49,27 +50,42 @@ export default function ContactForm() {
         </Typography>
         <Box sx={{ display: "flex", alignItems: "center", marginBottom: 1 }}>
           <PhoneIcon sx={{ color: "grey", marginRight: 1 }} />
-          <Typography sx={{ color: "grey" }}>033-726 96 76</Typography>
+          <Typography sx={{ color: "grey" }}>
+            <a
+              href="tel:033-7269676"
+              style={{ color: "inherit", textDecoration: "none" }}
+            >
+              033-726 96 76
+            </a>
+          </Typography>
         </Box>
         <Box sx={{ display: "flex", alignItems: "center", marginBottom: 1 }}>
           <EmailIcon sx={{ color: "grey", marginRight: 1 }} />
           <Typography sx={{ color: "grey" }}>
-            stadtjejerna@hotmail.com
+            <a
+              href="mailto:stadtjejerna@hotmail.com"
+              style={{ color: "inherit", textDecoration: "none" }}
+            >
+              stadtjejerna@hotmail.com
+            </a>
           </Typography>
         </Box>
         <Box sx={{ display: "flex", alignItems: "center", marginBottom: 1 }}>
           <LocationOnIcon sx={{ color: "grey", marginRight: 1 }} />
-          <Typography sx={{ color: "grey" }}>Tredje villagatan 17</Typography>
-          <Typography sx={{ color: "grey" }}>50453 Borås</Typography>
+          <Typography sx={{ color: "grey", marginRight: 1 }}>
+            Tredje villagatan 17
+          </Typography>
+          <Typography sx={{ color: "grey" }}>504 53 Borås</Typography>
         </Box>
       </Box>
       <Card
         sx={{
           width: "100%",
           maxWidth: 500,
-          backgroundColor: "rgba(0, 0, 0, 0.5)",
+          backgroundColor: "#fff",
           boxShadow: "0 4px 8px rgba(0,0,0,0.1)",
           borderRadius: 2,
+          padding: 2,
         }}
       >
         <CardContent
@@ -87,26 +103,22 @@ export default function ContactForm() {
             onChange={(event) => setName(event.target.value)}
             fullWidth
             sx={{
-              backgroundColor: "#fff",
-              borderRadius: 1,
-              "& .MuiInputLabel-outlined": {
-                color: "black",
-              },
-              "&:hover fieldset": {
-                borderColor: "lightgray",
-              },
-              "&.Mui-focused fieldset": {
-                borderColor: "lightgray",
-              },
               "& .MuiOutlinedInput-root": {
                 "& fieldset": {
                   borderColor: "#d4acc7",
                 },
-                "&.Mui-focused": {
-                  "& .MuiOutlinedInput-notchedOutline": {
-                    borderColor: "#d4acc7",
-                  },
+                "&:hover fieldset": {
+                  borderColor: "#dbbed1",
                 },
+                "&.Mui-focused fieldset": {
+                  borderColor: "#dbbed1",
+                },
+              },
+              "& .MuiInputLabel-outlined": {
+                color: "#666666",
+              },
+              "&.Mui-focused": {
+                color: "#666666",
               },
             }}
           />
@@ -118,26 +130,22 @@ export default function ContactForm() {
             onChange={(event) => setPhone(event.target.value)}
             fullWidth
             sx={{
-              backgroundColor: "#fff",
-              borderRadius: 1,
-              "& .MuiInputLabel-outlined": {
-                color: "black",
-              },
-              "&:hover fieldset": {
-                borderColor: "lightgray",
-              },
-              "&.Mui-focused fieldset": {
-                borderColor: "lightgray",
-              },
               "& .MuiOutlinedInput-root": {
                 "& fieldset": {
                   borderColor: "#d4acc7",
                 },
-                "&.Mui-focused": {
-                  "& .MuiOutlinedInput-notchedOutline": {
-                    borderColor: "#d4acc7",
-                  },
+                "&:hover fieldset": {
+                  borderColor: "#dbbed1",
                 },
+                "&.Mui-focused fieldset": {
+                  borderColor: "#dbbed1",
+                },
+              },
+              "& .MuiInputLabel-outlined": {
+                color: "#666666",
+              },
+              "&.Mui-focused": {
+                color: "#666666",
               },
             }}
           />
@@ -149,26 +157,22 @@ export default function ContactForm() {
             onChange={(event) => setEmail(event.target.value)}
             fullWidth
             sx={{
-              backgroundColor: "#fff",
-              borderRadius: 1,
-              "& .MuiInputLabel-outlined": {
-                color: "black",
-              },
-              "&:hover fieldset": {
-                borderColor: "lightgray",
-              },
-              "&.Mui-focused fieldset": {
-                borderColor: "lightgray",
-              },
               "& .MuiOutlinedInput-root": {
                 "& fieldset": {
                   borderColor: "#d4acc7",
                 },
-                "&.Mui-focused": {
-                  "& .MuiOutlinedInput-notchedOutline": {
-                    borderColor: "#d4acc7",
-                  },
+                "&:hover fieldset": {
+                  borderColor: "#dbbed1",
                 },
+                "&.Mui-focused fieldset": {
+                  borderColor: "#dbbed1",
+                },
+              },
+              "& .MuiInputLabel-outlined": {
+                color: "#666666",
+              },
+              "&.Mui-focused": {
+                color: "#666666",
               },
             }}
           />
@@ -182,43 +186,38 @@ export default function ContactForm() {
             onChange={(event) => setMessage(event.target.value)}
             fullWidth
             sx={{
-              backgroundColor: "#fff",
-              borderRadius: 1,
-              "& .MuiInputLabel-outlined": {
-                color: "black",
-              },
-              "&:hover fieldset": {
-                borderColor: "lightgray",
-              },
-              "&.Mui-focused fieldset": {
-                borderColor: "lightgray",
-              },
               "& .MuiOutlinedInput-root": {
                 "& fieldset": {
                   borderColor: "#d4acc7",
                 },
-                "&.Mui-focused": {
-                  "& .MuiOutlinedInput-notchedOutline": {
-                    borderColor: "#d4acc7",
-                  },
+                "&:hover fieldset": {
+                  borderColor: "#dbbed1",
                 },
+                "&.Mui-focused fieldset": {
+                  borderColor: "#dbbed1",
+                },
+              },
+              "& .MuiInputLabel-outlined": {
+                color: "#666666",
+              },
+              "&.Mui-focused": {
+                color: "#666666",
               },
             }}
           />
           <Button
             variant="contained"
-            color="primary"
             onClick={handleSubmit}
             sx={{
               alignSelf: "center",
               marginTop: 2,
-              backgroundColor: "#333",
+              backgroundColor: "#dbbed1",
               color: "#fff",
               paddingX: 4,
               paddingY: 1,
               borderRadius: 2,
               "&:hover": {
-                backgroundColor: "#555",
+                backgroundColor: "#bda2b3",
               },
             }}
           >
