@@ -12,6 +12,7 @@ import {
   useTheme,
 } from "@mui/material";
 import React, { useRef, useState } from "react";
+import { Link } from "react-router-dom";
 
 type LinkItem = {
   label: string;
@@ -93,7 +94,6 @@ const MenuLink = ({
                 onMouseLeave={handleSubMenuMouseLeave}
               >
                 <MenuList autoFocusItem={openMenu === link.label}>
-
                   {link?.menuItems?.map((item, index) => (
                     <MenuItem key={index} onClick={handleCloseMenu}>
                       <Link
@@ -102,7 +102,6 @@ const MenuLink = ({
                       >
                         {item.label}
                       </Link>
-
                     </MenuItem>
                   ))}
                 </MenuList>
@@ -169,7 +168,6 @@ export default function CustomHeader2(): JSX.Element {
   };
 
   const links: LinkItem[] = [
-
     { label: "Startsidan", href: "/" },
     { label: "Om oss", href: "/om-oss" },
     {
