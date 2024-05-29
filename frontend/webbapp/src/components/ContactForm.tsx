@@ -1,6 +1,4 @@
-import PhoneIcon from "@mui/icons-material/Phone";
-import EmailIcon from "@mui/icons-material/Email";
-import LocationOnIcon from "@mui/icons-material/LocationOn";
+import { useState } from "react";
 import {
   Box,
   Card,
@@ -9,7 +7,12 @@ import {
   Typography,
   Button,
 } from "@mui/material";
-import { useState } from "react";
+import PhoneIcon from "@mui/icons-material/Phone";
+import EmailIcon from "@mui/icons-material/Email";
+import LocationOnIcon from "@mui/icons-material/LocationOn";
+import emailjs from "emailjs-com";
+
+emailjs.init("C8CxNnxZg6mg-d2tq");
 
 export default function ContactForm() {
   const [name, setName] = useState("");
@@ -17,8 +20,25 @@ export default function ContactForm() {
   const [email, setEmail] = useState("");
   const [message, setMessage] = useState("");
 
-  const handleSubmit = () => {
-    console.log("Form submitted", { name, phone, email, message });
+  const handleSubmit = (e) => {
+    e.preventDefault();
+
+    const templateParams = {
+      to_name: "Städtjejerna",
+      from_name: name,
+      message: `Telefon: ${phone}\nEmail: ${email}\nMeddelande: ${message}`,
+    };
+
+    emailjs
+      .send("service_f1l2auv", "template_h691rd4", templateParams)
+      .then((response) => {
+        console.log("Email sent successfully:", response.status, response.text);
+        alert("E-post skickad framgångsrikt!");
+      })
+      .catch((err) => {
+        console.error("Error sending email:", err);
+        alert("Något gick fel när e-posten skickades.");
+      });
   };
 
   return (
@@ -34,6 +54,8 @@ export default function ContactForm() {
         padding: 3,
         gap: 4,
       }}
+      component="form"
+      onSubmit={handleSubmit}
     >
       <Box
         sx={{
@@ -72,10 +94,8 @@ export default function ContactForm() {
         </Box>
         <Box sx={{ display: "flex", alignItems: "center", marginBottom: 1 }}>
           <LocationOnIcon sx={{ color: "grey", marginRight: 1 }} />
-          <Typography sx={{ color: "grey", marginRight: 1 }}>
-            Tredje villagatan 17
-          </Typography>
-          <Typography sx={{ color: "grey" }}>504 53 Borås</Typography>
+          <Typography sx={{ color: "grey" }}>Tredje villagatan 17</Typography>
+          <Typography sx={{ color: "grey" }}>50453 Borås</Typography>
         </Box>
       </Box>
       <Card
@@ -114,12 +134,6 @@ export default function ContactForm() {
                   borderColor: "#dbbed1",
                 },
               },
-              "& .MuiInputLabel-outlined": {
-                color: "#666666",
-              },
-              "&.Mui-focused": {
-                color: "#666666",
-              },
             }}
           />
           <TextField
@@ -141,12 +155,6 @@ export default function ContactForm() {
                   borderColor: "#dbbed1",
                 },
               },
-              "& .MuiInputLabel-outlined": {
-                color: "#666666",
-              },
-              "&.Mui-focused": {
-                color: "#666666",
-              },
             }}
           />
           <TextField
@@ -167,12 +175,6 @@ export default function ContactForm() {
                 "&.Mui-focused fieldset": {
                   borderColor: "#dbbed1",
                 },
-              },
-              "& .MuiInputLabel-outlined": {
-                color: "#666666",
-              },
-              "&.Mui-focused": {
-                color: "#666666",
               },
             }}
           />
@@ -197,17 +199,11 @@ export default function ContactForm() {
                   borderColor: "#dbbed1",
                 },
               },
-              "& .MuiInputLabel-outlined": {
-                color: "#666666",
-              },
-              "&.Mui-focused": {
-                color: "#666666",
-              },
             }}
           />
           <Button
             variant="contained"
-            onClick={handleSubmit}
+            type="submit"
             sx={{
               alignSelf: "center",
               marginTop: 2,
