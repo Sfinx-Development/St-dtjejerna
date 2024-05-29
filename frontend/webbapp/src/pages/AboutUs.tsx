@@ -9,7 +9,7 @@ const AboutUs: FC = () => {
         flexDirection: "column",
         alignItems: "center",
         justifyContent: "center",
-        width: "100%", // Ensures the parent Box takes the full width
+        width: "100%", 
       }}
     >
       <Box
@@ -17,7 +17,7 @@ const AboutUs: FC = () => {
         src="https://i.imgur.com/VuRzYeq.jpeg"
         alt="Byggstäd"
         sx={{
-          width: "100vw", // Make the image full width of the viewport
+          width: "100vw", 
           maxHeight: "50vh",
           objectFit: "cover",
         }}
