@@ -60,38 +60,46 @@ const Foretagsstad: FC = () => {
           padding: "20px",
           width: "100%",
           textAlign: "left",
+          display: "flex",
+          flexDirection: "row",
+          justifyContent: "space-between",
+          flexWrap: "wrap",
         }}
       >
-        <Typography variant="h4" gutterBottom>
-          Kontor
-        </Typography>
-        <ul>
-          {/* <li>Kontor</li> */}
-          <li>
-            Dammsugning av alla golv och mattor samt våttorkning av golven..
-            Dammtorkning av alla fria ytor. Fläckar på speglar, lister och
-            dörrar torkas bort. Papperskorgarna töms.
-          </li>
-        </ul>
-        <Typography variant="h4" gutterBottom>
-          Toaletter
-        </Typography>
-        <ul>
-          <li>
-            Dammsugning och våttorkning av golven. Handfat och toaletter skuras
-            både in- och utvändigt.
-          </li>
-        </ul>
-        <Typography variant="h4" gutterBottom>
-          Kök/Pentry
-        </Typography>
-        <ul>
-          <li>
-            Dammsugning och våttorkning av golven. Arbetsbänk och diskbänk
-            rengörs grundligt.
-          </li>
-
-        </ul>
+        <Box style={{ width: "30%" }}>
+          <Typography variant="h4" gutterBottom>
+            Kontor
+          </Typography>
+          <ul>
+            <li>
+              Dammsugning av alla golv och mattor samt våttorkning av golven.
+              Dammtorkning av alla fria ytor. Fläckar på speglar, lister och
+              dörrar torkas bort. Papperskorgarna töms.
+            </li>
+          </ul>
+        </Box>
+        <Box style={{ width: "30%" }}>
+          <Typography variant="h4" gutterBottom>
+            Toaletter
+          </Typography>
+          <ul>
+            <li>
+              Dammsugning och våttorkning av golven. Handfat och toaletter
+              skuras både in- och utvändigt.
+            </li>
+          </ul>
+        </Box>
+        <Box style={{ width: "30%" }}>
+          <Typography variant="h4" gutterBottom>
+            Kök/Pentry
+          </Typography>
+          <ul>
+            <li>
+              Dammsugning och våttorkning av golven. Arbetsbänk och diskbänk
+              rengörs grundligt.
+            </li>
+          </ul>
+        </Box>
       </Box>
     </Box>
   );

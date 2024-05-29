@@ -49,71 +49,82 @@ const Hemstad: FC = () => {
         kontinuitet. Allt för att du ska kunna släppa tankarna på städningen och
         fokusera på annat under tiden.
       </Typography>
+      <Typography variant="h6">
+            Följande städmoment ingår som grund i abonnemanget:
+          </Typography>
       <Box
         style={{
           backgroundColor: "#f4f4f4",
           padding: "20px",
           width: "100%",
           textAlign: "left",
+          display: "flex",
+          flexDirection: "row",
+          justifyContent: "space-between",
         }}
       >
-        <Typography variant="h6">
-          Följande städmoment ingår som grund i abonnemanget:
-        </Typography>
-        <Typography variant="h4" gutterBottom>
-          Alla rum:
-        </Typography>
-        <ul>
-          <li>
-            Dammsugning av golv, lister, elkontakter, element, mattor och möbler
-            med stoppning som till exempel soffor och fåtöljer.
-          </li>
-          <li>Fuktmoppning av alla golv.</li>
-          <li>
-            Dammtorkning/våttorkning av alla öppna ytor som till exempel bord,
-            bänkar, fönsterbrädor, dörrar och hyllor samt golvlister, socklar
-            och lampor (som nås utan pall).
-          </li>
-          <li>Putsning av speglar.</li>
-          <li>
-            Lösa föremål plockas i ordning som till exempel leksaker, kläder,
-            tidningar.
-          </li>
-        </ul>
-        <Typography variant="h4" gutterBottom>
-          Badrum:
-        </Typography>
-        <ul>
-          <li>
-            Rengöring av badkar, dusch, handfat, kran och toalett samt kaklet
-            runt omkring.
-          </li>
-          <li>
-            Våttorkning av fläckar på badrumsskåp, väggar, tvättmaskin och
-            torktumlare.
-          </li>
-          <li>Putsning av speglar</li>
-        </ul>
-        <Typography variant="h4" gutterBottom>
-          Kök:
-        </Typography>
-        <ul>
-          <li>
-            Våttorkning av kaklet ovanför diskbänken, fläckar på köksluckor,
-            kaffebryggare, mikrovågsugn invändigt och utvändigt, brödrost, bord,
-            stolar och fläkt.
-          </li>
-          <li>Lägger in disken i diskmaskinen.</li>
-          <li>Rengöring av diskhon, kranar och spis.</li>
-          <li>Tömning av sopor och utrymmet under diskbänken.</li>
-        </ul>
-        <Typography variant="h2" gutterBottom style={{ textAlign: "center" }}>
-          Utöver städabonnemang erbjuder vi även storstädning eller hemstäd vid
-          enskilda tillfällen när behov finns.
-        </Typography>
+        <Box style={{ maxWidth: "30%" }}>
+          
+          <Typography variant="h4" gutterBottom>
+            Alla rum:
+          </Typography>
+          <ul>
+            <li>
+              Dammsugning av golv, lister, elkontakter, element, mattor och möbler
+              med stoppning som till exempel soffor och fåtöljer.
+            </li>
+            <li>Fuktmoppning av alla golv.</li>
+            <li>
+              Dammtorkning/våttorkning av alla öppna ytor som till exempel bord,
+              bänkar, fönsterbrädor, dörrar och hyllor samt golvlister, socklar
+              och lampor (som nås utan pall).
+            </li>
+            <li>Putsning av speglar.</li>
+            <li>
+              Lösa föremål plockas i ordning som till exempel leksaker, kläder,
+              tidningar.
+            </li>
+          </ul>
+        </Box>
+        <Box style={{ maxWidth: "30%" }}>
+          <Typography variant="h4" gutterBottom>
+            Badrum:
+          </Typography>
+          <ul>
+            <li>
+              Rengöring av badkar, dusch, handfat, kran och toalett samt kaklet
+              runt omkring.
+            </li>
+            <li>
+              Våttorkning av fläckar på badrumsskåp, väggar, tvättmaskin och
+              torktumlare.
+            </li>
+            <li>Putsning av speglar</li>
+          </ul>
+        </Box>
+        <Box style={{ maxWidth: "30%" }}>
+          <Typography variant="h4" gutterBottom>
+            Kök:
+          </Typography>
+          <ul>
+            <li>
+              Våttorkning av kaklet ovanför diskbänken, fläckar på köksluckor,
+              kaffebryggare, mikrovågsugn invändigt och utvändigt, brödrost, bord,
+              stolar och
+              </li>
+            <li>Lägger in disken i diskmaskinen.</li>
+            <li>Rengöring av diskhon, kranar och spis.</li>
+            <li>Tömning av sopor och utrymmet under diskbänken.</li>
+          </ul>
+        </Box>
       </Box>
+      <Typography variant="h2" gutterBottom style={{ textAlign: "center" }}>
+        Utöver städabonnemang erbjuder vi även storstädning eller hemstäd vid
+        enskilda tillfällen när behov finns.
+      </Typography>
     </Box>
   );
 };
 
 export default Hemstad;
+
