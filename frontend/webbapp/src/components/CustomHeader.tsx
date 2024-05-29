@@ -2,9 +2,9 @@ import KeyboardArrowDownIcon from "@mui/icons-material/KeyboardArrowDown";
 import {
   Box,
   Grow,
-  Link,
   MenuItem,
   MenuList,
+  Link as MuiLink,
   Paper,
   Popper,
   Typography,
@@ -16,7 +16,7 @@ import React, { useRef, useState } from "react";
 type LinkItem = {
   label: string;
   href: string;
-  menuItems?: string[];
+  menuItems?: { label: string; href: string }[];
 };
 
 const MenuLink = ({
@@ -46,18 +46,19 @@ const MenuLink = ({
     onMouseLeave={handleMouseLeave}
     style={{ display: "flex", alignItems: "center" }}
   >
-    <Link
-      href={link.href}
-      sx={{
-        textDecoration: "none",
-        marginY: 1,
-        color: "black",
-        "&:hover": {
-          color: "#d29bbf",
-        },
-      }}
-    >
-      <Typography variant="body1">{link.label}</Typography>
+    <Link to={link.href} style={{ textDecoration: "none" }}>
+      <Typography
+        variant="body1"
+        sx={{
+          marginY: 1,
+          color: "black",
+          "&:hover": {
+            color: "#d29bbf",
+          },
+        }}
+      >
+        {link.label}
+      </Typography>
     </Link>
     {link.menuItems && (
       <>
@@ -92,9 +93,16 @@ const MenuLink = ({
                 onMouseLeave={handleSubMenuMouseLeave}
               >
                 <MenuList autoFocusItem={openMenu === link.label}>
-                  {link.menuItems.map((item, index) => (
+
+                  {link?.menuItems?.map((item, index) => (
                     <MenuItem key={index} onClick={handleCloseMenu}>
-                      {item}
+                      <Link
+                        to={item.href}
+                        style={{ textDecoration: "none", color: "black" }}
+                      >
+                        {item.label}
+                      </Link>
+
                     </MenuItem>
                   ))}
                 </MenuList>
@@ -161,28 +169,35 @@ export default function CustomHeader2(): JSX.Element {
   };
 
   const links: LinkItem[] = [
-    { label: "Startsidan", href: "/about" },
-    { label: "Om oss", href: "/download" },
+
+    { label: "Startsidan", href: "/" },
+    { label: "Om oss", href: "/om-oss" },
     {
       label: "Tjänster",
-      href: "/download",
+      href: "/tjanster",
       menuItems: [
-        "Byggstäd",
-        "Hemstäd",
-        "Flyttstäd",
-        "Fönsterputs",
-        "Företagsstäd",
-        "Trappstäd",
-        "Trädgårdsfix",
+        { label: "Byggstäd", href: "/byggstad" },
+        { label: "Hemstäd", href: "/hemstad" },
+        { label: "Flyttstäd", href: "/flyttstad" },
+        { label: "Fönsterputs", href: "/fonsterputs" },
+        { label: "Företagsstäd", href: "/foretagsstad" },
+        { label: "Trappstäd", href: "/trappstad" },
+        { label: "Trädgårdsfix", href: "/tradgardsfix" },
       ],
     },
     {
       label: "Orter",
-      href: "/download",
-      menuItems: ["Borås", "Dalsjöfors", "Fristad", "Sandared", "Sjömarken"],
+      href: "/orter",
+      menuItems: [
+        { label: "Borås", href: "/boras" },
+        { label: "Dalsjöfors", href: "/dalsjofors" },
+        { label: "Fristad", href: "/fristad" },
+        { label: "Sandared", href: "/sandared" },
+        { label: "Sjömarken", href: "/sjomarken" },
+      ],
     },
-    { label: "Kontakt", href: "/download" },
-    { label: "Offert", href: "/download" },
+    { label: "Kontakt", href: "/kontakt" },
+    { label: "Offert", href: "/offert" },
   ];
 
   return (
@@ -221,7 +236,7 @@ export default function CustomHeader2(): JSX.Element {
           marginLeft: isMobile ? 0 : 5,
         }}
       >
-        <Link href="/" sx={{ marginY: 1 }}>
+        <Link to="/" style={{ marginBottom: 1, marginTop: 1 }}>
           <img
             src="https://i.imgur.com/pdj2vhA.png"
             alt="Logo saying dailyvibe"
@@ -273,12 +288,15 @@ export default function CustomHeader2(): JSX.Element {
               marginTop: 1,
             }}
           >
-            <Link href="/about" sx={{ textDecoration: "none", marginY: 1 }}>
+            <MuiLink href="/about" sx={{ textDecoration: "none", marginY: 1 }}>
               <Typography variant="h6">LÄS MER</Typography>
-            </Link>
-            <Link href="/download" sx={{ textDecoration: "none", marginY: 1 }}>
+            </MuiLink>
+            <MuiLink
+              href="/download"
+              sx={{ textDecoration: "none", marginY: 1 }}
+            >
               <Typography variant="h6">LADDA NED</Typography>
-            </Link>
+            </MuiLink>
           </Box>
         </>
       )}
