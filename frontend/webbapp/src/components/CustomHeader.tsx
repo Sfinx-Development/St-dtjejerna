@@ -20,6 +20,7 @@ type LinkItem = {
   menuItems?: { label: string; href: string }[];
 };
 
+
 const MenuLink = ({
   link,
   openMenu,
@@ -164,7 +165,7 @@ export default function CustomHeader2(): JSX.Element {
         { label: 'Fönsterputs', href: '/fonsterputs' },
         { label: 'Företagsstäd', href: '/foretagsstad' },
         { label: 'Trappstäd', href: '/trappstad' },
-        { label: 'Trädgårdsfix', href: '/tradgardsfix' }
+        // { label: 'Trädgårdsfix', href: '/tradgardsfix' }
       ]
     },
     {
