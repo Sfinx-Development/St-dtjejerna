@@ -4,6 +4,7 @@ import CustomerReviews from "../components/CustomerReviews";
 import PresentingImage from "../components/Presentation";
 import Security from "../components/Security";
 import Services from "../components/Services";
+import ContactForm from "../components/ContactForm";
 
 export default function Index() {
   return (
@@ -25,6 +26,8 @@ export default function Index() {
       <PresentingImage />
       <div style={{ height: 1, width: "100%", backgroundColor: "#e3c5da" }} />
       <Services />
+      <div style={{ height: 1, width: "100%", backgroundColor: "#e3c5da" }} />
+      <ContactForm />
       <div style={{ height: 1, width: "100%", backgroundColor: "#e3c5da" }} />
       <CustomerReviews />
       <div style={{ height: 1, width: "100%", backgroundColor: "#e3c5da" }} />
