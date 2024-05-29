@@ -92,7 +92,7 @@ const Byggstad: FC = () => {
         <Box
           sx={{
             width: "100%",
-            height: "3px",
+            height: "2px",
             backgroundColor: "#d29bbf",
             marginBottom: "20px",
           }}
