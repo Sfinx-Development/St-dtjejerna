@@ -97,8 +97,8 @@ const MenuLink = ({
                       onClick={handleCloseMenu}
                       sx={{
                         "&:hover": {
-                          backgroundColor: "#d29bbf", // Ändra bakgrundsfärgen till rosa på hover
-                          color: "#fff", // Ändra textfärgen till vit på hover
+                          backgroundColor: "#d29bbf", 
+                          color: "#fff", 
                         },
                       }}
                     >
@@ -106,7 +106,7 @@ const MenuLink = ({
                         to={item.href}
                         style={{
                           textDecoration: "none",
-                          color: "#000", // Set default color to black
+                          color: "#000", 
                         }}
                       >
                         {item.label}

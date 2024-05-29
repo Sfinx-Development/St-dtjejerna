@@ -21,7 +21,7 @@ const GoogleMap: FC = () => {
   useEffect(() => {
     
     const script = document.createElement("script");
-    script.src = `https://maps.googleapis.com/maps/api/js?key=VÅRAN API&callback=initMap`;
+    script.src = `https://maps.googleapis.com/maps/api/js?key=VÅR-KEY&callback=initMap`;
     script.async = true;
     document.body.appendChild(script);
 
