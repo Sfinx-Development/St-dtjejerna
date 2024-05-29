@@ -5,42 +5,42 @@ export const serviceDescriptions = {
     //   title: "Hemstäd",
     //   description: "Information om Hemstäd. Här kan du lägga till all information om tjänsten Hemstäd."
     // },
-    hemstad: {
-      image: "/images/hemstad.jpg",
-      title: "Hemstäd",
-      description: `
-        Har du svårt att få vardagspusslet att gå ihop? Vill du få mer tid över till sådant som du verkligen uppskattar? Starta då ett städabonnemang och låt Städtjejerna göra jobbet! Vi är vana vid att ta hand om olika typer av boenden och behov runt om i Borås med omnejd. Därför skräddarsys hemstädningen med ett upplägg som matchar just dina unika behov. Kanske önskas lakansbyte, strykning eller hjälp med tvätt?<br><br>
+    // hemstad: {
+    //   image: "/images/hemstad.jpg",
+    //   title: "Hemstäd",
+    //   description: `
+    //     Har du svårt att få vardagspusslet att gå ihop? Vill du få mer tid över till sådant som du verkligen uppskattar? Starta då ett städabonnemang och låt Städtjejerna göra jobbet! Vi är vana vid att ta hand om olika typer av boenden och behov runt om i Borås med omnejd. Därför skräddarsys hemstädningen med ett upplägg som matchar just dina unika behov. Kanske önskas lakansbyte, strykning eller hjälp med tvätt?<br><br>
     
-        Berätta vad du önskar få hjälp med så sammanställer vi allt tillsammans i en städbeskrivning där det också framgår vilka rum som ska ingå och hur du vill ha städningen utförd. Som kund hos oss bestämmer du själv intervallen på städningen. Det finns möjlighet att boka veckostäd, varannan vecka eller en gång i månaden.<br><br>
+    //     Berätta vad du önskar få hjälp med så sammanställer vi allt tillsammans i en städbeskrivning där det också framgår vilka rum som ska ingå och hur du vill ha städningen utförd. Som kund hos oss bestämmer du själv intervallen på städningen. Det finns möjlighet att boka veckostäd, varannan vecka eller en gång i månaden.<br><br>
     
-        Städtjejerna sätter kundens trygghet i första rummet när du anlitar våra tjänster och därför utförs städningen på samma veckodag och av samma person vid varje tillfälle. Det ger ett resultat med god kvalitet och kontinuitet. Allt för att du ska kunna släppa tankarna på städningen och fokusera på annat under tiden.<br><br>
+    //     Städtjejerna sätter kundens trygghet i första rummet när du anlitar våra tjänster och därför utförs städningen på samma veckodag och av samma person vid varje tillfälle. Det ger ett resultat med god kvalitet och kontinuitet. Allt för att du ska kunna släppa tankarna på städningen och fokusera på annat under tiden.<br><br>
     
-        Följande städmoment ingår som grund i abonnemanget:<br><br>
+    //     Följande städmoment ingår som grund i abonnemanget:<br><br>
     
-        <b>Alla rum:</b><br><br>
+    //     <b>Alla rum:</b><br><br>
     
-        - Dammsugning av golv, lister, elkontakter, element, mattor och möbler med stoppning som till exempel soffor och fåtöljer.<br>
-        - Fuktmoppning av alla golv.<br>
-        - Dammtorkning/våttorkning av alla öppna ytor som till exempel bord, bänkar, fönsterbrädor, dörrar och hyllor samt golvlister, socklar och lampor (som nås utan pall).<br>
-        - Putsning av speglar.<br>
-        - Lösa föremål plockas i ordning som till exempel leksaker, kläder, tidningar.<br><br>
+    //     - Dammsugning av golv, lister, elkontakter, element, mattor och möbler med stoppning som till exempel soffor och fåtöljer.<br>
+    //     - Fuktmoppning av alla golv.<br>
+    //     - Dammtorkning/våttorkning av alla öppna ytor som till exempel bord, bänkar, fönsterbrädor, dörrar och hyllor samt golvlister, socklar och lampor (som nås utan pall).<br>
+    //     - Putsning av speglar.<br>
+    //     - Lösa föremål plockas i ordning som till exempel leksaker, kläder, tidningar.<br><br>
     
-        <b>Badrum:</b><br><br>
+    //     <b>Badrum:</b><br><br>
     
-        - Rengöring av badkar, dusch, handfat, kran och toalett samt kaklet runt omkring.<br>
-        - Våttorkning av fläckar på badrumsskåp, väggar, tvättmaskin och torktumlare.<br>
-        - Putsning av speglar.<br><br>
+    //     - Rengöring av badkar, dusch, handfat, kran och toalett samt kaklet runt omkring.<br>
+    //     - Våttorkning av fläckar på badrumsskåp, väggar, tvättmaskin och torktumlare.<br>
+    //     - Putsning av speglar.<br><br>
     
-        <b>Kök:</b><br><br>
+    //     <b>Kök:</b><br><br>
     
-        - Våttorkning av kaklet ovanför diskbänken, fläckar på köksluckor, kaffebryggare, mikrovågsugn invändigt och utvändigt, brödrost, bord, stolar och fläkt.<br>
-        - Lägger in disken i diskmaskinen.<br>
-        - Rengöring av diskhon, kranar och spis.<br>
-        - Tömning av sopor och utrymmet under diskbänken.<br><br>
+    //     - Våttorkning av kaklet ovanför diskbänken, fläckar på köksluckor, kaffebryggare, mikrovågsugn invändigt och utvändigt, brödrost, bord, stolar och fläkt.<br>
+    //     - Lägger in disken i diskmaskinen.<br>
+    //     - Rengöring av diskhon, kranar och spis.<br>
+    //     - Tömning av sopor och utrymmet under diskbänken.<br><br>
     
-        Utöver städabonnemang erbjuder vi även storstädning eller hemstäd vid enskilda tillfällen när behov finns.
-      `
-    },
+    //     Utöver städabonnemang erbjuder vi även storstädning eller hemstäd vid enskilda tillfällen när behov finns.
+    //   `
+    // },
     
     byggstad: {
       image: "/images/byggstad.jpg",
