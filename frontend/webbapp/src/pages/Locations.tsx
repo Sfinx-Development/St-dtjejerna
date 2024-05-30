@@ -1,5 +1,6 @@
-import React, { FC, useEffect } from "react";
+import React, { FC,  } from "react";
 import { Box, Typography } from "@mui/material";
+import IframeComponent from "../components/IframeComponent";
 
 // Typdeklaration för initMap
 declare global {
@@ -17,40 +18,6 @@ declare global {
 }
 
 
-const GoogleMap: FC = () => {
-  useEffect(() => {
-    
-    const script = document.createElement("script");
-    script.src = `https://maps.googleapis.com/maps/api/js?key=VÅR-KEY&callback=initMap`;
-    script.async = true;
-    document.body.appendChild(script);
-
-   
-    window.initMap = () => {
-      const mapElement = document.getElementById("map");
-      if (mapElement) {
-        const map = new window.google.maps.Map(mapElement, {
-          center: { lat: 57.7156, lng: 12.9415 }, 
-          zoom: 15, 
-        });
-
-        
-        new window.google.maps.Marker({
-          position: { lat: 57.7156, lng: 12.9415 }, 
-          map,
-          title: "Tredje Villagatan 17, Borås",
-        });
-      }
-    };
-  }, []);
-
-  return (
-    <div
-      id="map"
-      style={{ width: "100%", height: "400px" }} 
-    />
-  );
-};
 
 
 const Locations: FC = () => {
@@ -86,8 +53,13 @@ const Locations: FC = () => {
      
       </Typography>
       
-     
-      <GoogleMap />
+      <IframeComponent
+        src="https://www.google.com/maps/embed?pb=!1m23!1m12!1m3!1d114720.2916822142!2d12.796977152010824!3d57.70526010148039!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!4m8!3e6!4m0!4m5!1s0x465aa11a4e01fc6f%3A0xa00f0b33e3233ba1!2sTredje%20Villagatan%2017%2C%20504%2053%20Bor%C3%A5s!3m2!1d57.7204785!2d12.951238!5e0!3m2!1sen!2sse!4v1717058610296!5m2!1sen!2sse"
+        width="600"
+        height="450"
+        style={{ border: 0 }}
+      />
+      {/* <GoogleMap /> */}
     </Box>
   );
 };
