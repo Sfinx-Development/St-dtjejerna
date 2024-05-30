@@ -1,14 +1,27 @@
+import React from "react";
 import { Box, Typography } from "@mui/material";
 
+import Fade from '@mui/material/Fade';
+
+
 const Flyttstad = () => {
+  
   return (
+    <Fade in timeout={500}>
     <Box
-      style={{
-        display: "flex",
-        flexDirection: "column",
-        alignItems: "center",
-        justifyContent: "center",
-      }}
+    sx={{
+      display: "flex",
+      flexDirection: "column",
+      alignItems: "center",
+      justifyContent: "center",
+      border: "1px solid #d29bbf",
+      borderRadius: "10px",
+      boxShadow: "0 4px 12px rgba(0, 0, 0, 0.1)",
+      backgroundColor: "#fff",
+      // padding: "20px",
+      // margin: "20px",
+      width: "100%",
+    }}
     >
       <img
         src="https://i.imgur.com/iMAEDV3_d.webp?maxwidth=520&shape=thumb&fidelity=high"
@@ -18,13 +31,42 @@ const Flyttstad = () => {
           maxWidth: "100vw",
           maxHeight: "50vh",
           objectFit: "cover",
+          borderRadius: "10px",
+          boxShadow: "0 4px 12px rgba(0, 0, 0, 0.1)",
+          marginBottom: "20px",
+          filter: "grayscale(20%)",
         }}
       />
-      <Typography variant="h2" gutterBottom style={{ textAlign: "center", color: "#d29bbf" }}>
-        Flyttstäd
-      </Typography>
+     <Typography variant="h2" gutterBottom sx={{ textAlign: "center", color: "#d29bbf", position: "relative" }}>
+          Flyttstäd
+          <Box
+            sx={{
+              position: "absolute",
+              bottom: "-10px",
+              left: "50%",
+              transform: "translateX(-50%)",
+              width: "80px",
+              height: "2px",
+              backgroundColor: "#d29bbf",
+              borderRadius: "5px",
+              opacity: 0.7,
+            }}
+          />
+        </Typography>
+        <Box
+        sx={{
+          backgroundColor: "#f4f4f4",
+          padding: "20px",
+          maxWidth: "800px",
+          textAlign: "left",
+          borderRadius: "10px",
+          boxShadow: "0 2px 10px rgba(0,0,0,0.1)",
+          filter: "contrast(120%)",
+          marginBottom: "20px",
+        }}
+      >
       <Typography variant="body1" paragraph>
-        <strong>Professionell flyttstäd i Borås</strong>
+        <strong>Professionellt flyttstäd i Borås</strong>
       </Typography>
       <Typography variant="body1" paragraph>
         Dags för nya äventyr på en ny adress? Letar du efter en professionell
@@ -45,7 +87,16 @@ const Flyttstad = () => {
         garantera att samtliga parter blir nöjda med resultatet i slutändan.
       </Typography>
       <Box
-        style={{
+          sx={{
+            width: "100%",
+            height: "2px",
+            backgroundColor: "#d29bbf",
+            marginBottom: "20px",
+          }}
+        />
+      </Box>
+      <Box
+        sx={{
           display: "flex",
           flexDirection: "row",
           justifyContent: "space-between",
@@ -54,20 +105,23 @@ const Flyttstad = () => {
           backgroundColor: "#f4f4f4",
         }}
       >
-        <Box style={{ maxWidth: "30%" }}>
-        <Typography variant="h4" gutterBottom style={{color: "#d29bbf"}}>
+        
+        <Box sx={{ maxWidth: "30%" }}>
+          <Typography variant="h4" gutterBottom sx={{ color: "#d29bbf" }}>
             Städoment som utförs i alla rum
           </Typography>
           <ul>
             <li>Fönsterputsning</li>
-            <li>Dammsugning och våtmoppning av, golv, lister, dörrar, dörrkarmar, fönsterbrädor, fria ytor, element garderobsdörrar och skåpdörrar</li>
+            <li>
+              Dammsugning och våtmoppning av, golv, lister, dörrar, dörrkarmar, fönsterbrädor, fria ytor, element garderobsdörrar och skåpdörrar
+            </li>
             <li>Torkning utvändligt och invändigt i garderober, skåp, och bokhyllor.</li>
             <li>Dammtorkarning av väggar, eluttag, ytterdörrar och lampor</li>
             <li>Spegelputsning</li>
           </ul>
         </Box>
-        <Box style={{ maxWidth: "30%" }}>
-        <Typography variant="h4" gutterBottom style={{color: "#d29bbf"}}>
+        <Box sx={{ maxWidth: "30%" }}>
+          <Typography variant="h4" gutterBottom sx={{ color: "#d29bbf" }}>
             Badrumsstädning
           </Typography>
           <ul>
@@ -80,8 +134,8 @@ const Flyttstad = () => {
             <li>Rengöring av kran, handfat och toalettstol samt utsidan av vitvaror och tvättmedelsbehållaren på tvättmaskinen.</li>
           </ul>
         </Box>
-        <Box style={{ maxWidth: "30%" }}>
-        <Typography variant="h4" gutterBottom style={{color: "#d29bbf"}}>
+        <Box sx={{ maxWidth: "30%" }}>
+          <Typography variant="h4" gutterBottom sx={{ color: "#d29bbf" }}>
             Köksstädning
           </Typography>
           <ul>
@@ -95,10 +149,11 @@ const Flyttstad = () => {
             <li>Tömning och torkning av sopkorg/återvinningsbehållare.</li>
             <li>Putsning av diskho, blandare, propp och sil.</li>
           </ul>
-       
-          </Box>
+          
+        </Box>
       </Box>
     </Box>
+    </Fade>
   );
 };
 
