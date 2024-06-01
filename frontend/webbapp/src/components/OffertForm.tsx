@@ -68,7 +68,7 @@ export default function OffertForm() {
             response.text
           );
           setSnackbarSeverity("success");
-          setSnackbarMessage("E-post skickad framgångsrikt!");
+          setSnackbarMessage("Förfrågan skickad!");
           setOpenSnackbar(true);
           setEmail("");
           setName("");
@@ -79,7 +79,9 @@ export default function OffertForm() {
         .catch((err) => {
           console.error("Error sending email:", err);
           setSnackbarSeverity("error");
-          setSnackbarMessage("Något gick fel när e-posten skickades.");
+          setSnackbarMessage(
+            "Något gick fel när förfrågan skickades. Försök igen."
+          );
           setOpenSnackbar(true);
         });
     } else {
@@ -101,24 +103,22 @@ export default function OffertForm() {
     <Box
       sx={{
         display: "flex",
-        flexDirection: { xs: "column", md: "row" },
+        flexDirection: "column",
         alignItems: "center",
-        justifyContent: "space-around",
-        height: { xs: "auto", md: 500 },
+        justifyContent: "center",
         width: "100%",
-        backgroundColor: "#f7f7f7",
         padding: 3,
         gap: 4,
+        boxSizing: "border-box",
       }}
       component="form"
       onSubmit={handleSubmit}
     >
       <Box
         sx={{
-          textAlign: { xs: "center", md: "left" },
-          maxWidth: 400,
-          display: "flex",
-          flex: 1,
+          textAlign: "center",
+          maxWidth: "100%",
+          width: "100%",
           padding: 2,
         }}
       >
@@ -128,6 +128,7 @@ export default function OffertForm() {
         >
           Vänligen fyll i din offertförfrågan
         </Typography>
+        <div style={{ height: 1, width: "100%", backgroundColor: "#e3c5da" }} />
       </Box>
       <Snackbar open={openSnackbar} autoHideDuration={6000}>
         <Alert
@@ -143,10 +144,11 @@ export default function OffertForm() {
           width: "100%",
           maxWidth: 500,
           backgroundColor: "#fff",
-          boxShadow: "0 4px 8px rgba(0,0,0,0.1)",
-          borderRadius: 2,
+          boxShadow: "0 4px 12px rgba(0,0,0,0.1)",
+          borderRadius: 4,
           padding: 2,
           display: "flex",
+          flexDirection: "column",
         }}
       >
         <CardContent
@@ -157,7 +159,7 @@ export default function OffertForm() {
           }}
         >
           {error && (
-            <Typography color="red">Vänligen fyll i alla fält</Typography>
+            <Typography color="error">Vänligen fyll i alla fält</Typography>
           )}
           <TextField
             label="Namn"

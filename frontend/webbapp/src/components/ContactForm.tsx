@@ -46,7 +46,7 @@ export default function ContactForm() {
             response.text
           );
           setSnackbarSeverity("success");
-          setSnackbarMessage("E-post skickad framgångsrikt!");
+          setSnackbarMessage("Meddelande skickat!");
           setOpenSnackbar(true);
           setEmail("");
           setName("");
@@ -56,7 +56,7 @@ export default function ContactForm() {
         .catch((err) => {
           console.error("Error sending email:", err);
           setSnackbarSeverity("error");
-          setSnackbarMessage("Något gick fel när e-posten skickades.");
+          setSnackbarMessage("Något gick fel när meddelanden skickades.");
           setOpenSnackbar(true);
           setEmail("");
           setName("");
