@@ -1,4 +1,5 @@
 import { Box } from "@mui/material";
+import OffertForm from "../components/OffertForm";
 
 export default function Offert() {
   return (
@@ -10,7 +11,7 @@ export default function Offert() {
         justifyContent: "center",
       }}
     >
-      hej
+      <OffertForm />
     </Box>
   );
 }

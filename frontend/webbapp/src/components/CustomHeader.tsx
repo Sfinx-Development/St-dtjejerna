@@ -204,7 +204,7 @@ export default function CustomHeader2(): JSX.Element {
         { label: "Sjömarken", href: "/orter" },
       ],
     },
-    { label: "Kontakt", href: "/kontakt" },
+    { label: "Kontakt", href: "/contact" },
     { label: "Offert", href: "/offert" },
   ];
 
@@ -246,7 +246,7 @@ export default function CustomHeader2(): JSX.Element {
               height: "200px",
               objectFit: "contain",
               position: "absolute",
-              top: "90%", // Justera denna värde beroende på hur mycket du vill att bilden ska sticka ut
+              top: "90%",
               transform: "translateY(-50%)",
               zIndex: 9999,
             }}
