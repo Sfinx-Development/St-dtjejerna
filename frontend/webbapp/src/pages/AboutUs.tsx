@@ -1,6 +1,7 @@
-import React, { FC } from "react";
 import { Box, Typography } from "@mui/material";
 import Fade from "@mui/material/Fade";
+import { FC } from "react";
+import ContactForm from "../components/ContactForm";
 
 const AboutUs: FC = () => {
   return (
@@ -16,7 +17,6 @@ const AboutUs: FC = () => {
           borderRadius: "10px",
           boxShadow: "0 4px 12px rgba(0, 0, 0, 0.1)",
           backgroundColor: "#fff",
-          
         }}
       >
         <Box
@@ -33,7 +33,11 @@ const AboutUs: FC = () => {
             filter: "grayscale(20%)",
           }}
         />
-        <Typography variant="h2" gutterBottom sx={{ textAlign: "center", color: "#d29bbf", position: "relative" }}>
+        <Typography
+          variant="h2"
+          gutterBottom
+          sx={{ textAlign: "center", color: "#d29bbf", position: "relative" }}
+        >
           Om oss
           <Box
             sx={{
@@ -83,13 +87,13 @@ const AboutUs: FC = () => {
             dammsugaren efter sig. Det går undan men rent och prydligt blir det.
           </Typography>
           <Box
-          sx={{
-            width: "100%",
-            height: "2px",
-            backgroundColor: "#d29bbf",
-            marginBottom: "20px",
-          }}
-        />
+            sx={{
+              width: "100%",
+              height: "2px",
+              backgroundColor: "#d29bbf",
+              marginBottom: "20px",
+            }}
+          />
         </Box>
         <Box
           sx={{
@@ -104,26 +108,27 @@ const AboutUs: FC = () => {
           }}
         >
           <Typography variant="body1" paragraph>
-            Vi skräddarsyr ett upplägg som matchar ditt unika boende eller företag.
-            Kanske önskas lakansbyte i hemmet eller hjälp med återvinningen på
-            företaget? Berätta vad du önskar få hjälp med så sammanställer vi allt
-            tillsammans i en städbeskrivning där det också framgår vilka rum som ska
-            ingå och hur du vill ha städningen utförd.
+            Vi skräddarsyr ett upplägg som matchar ditt unika boende eller
+            företag. Kanske önskas lakansbyte i hemmet eller hjälp med
+            återvinningen på företaget? Berätta vad du önskar få hjälp med så
+            sammanställer vi allt tillsammans i en städbeskrivning där det också
+            framgår vilka rum som ska ingå och hur du vill ha städningen utförd.
           </Typography>
           <Typography variant="body1" paragraph>
-            Det ger ett resultat med god kvalitet och kontinuitet. Allt för att du
-            ska kunna släppa tankarna på städningen och fokusera på annat under
-            tiden.
+            Det ger ett resultat med god kvalitet och kontinuitet. Allt för att
+            du ska kunna släppa tankarna på städningen och fokusera på annat
+            under tiden.
           </Typography>
           <Box
-          sx={{
-            width: "100%",
-            height: "2px",
-            backgroundColor: "#d29bbf",
-            marginBottom: "20px",
-          }}
-        />
+            sx={{
+              width: "100%",
+              height: "2px",
+              backgroundColor: "#d29bbf",
+              marginBottom: "20px",
+            }}
+          />
         </Box>
+        <ContactForm />
       </Box>
     </Fade>
   );

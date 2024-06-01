@@ -1,18 +1,18 @@
 import { Route, Routes } from "react-router-dom";
+import Error from "./pages/Error";
 import Index from "./pages/Index";
 import RootLayout from "./pages/RootLayout";
-import Error from "./pages/Error";
 
-import Hemstad from "./pages/Hemstad";
+import AboutUs from "./pages/AboutUs";
 import Byggstad from "./pages/Byggstad";
+import Flyttstad from "./pages/Flyttstad";
 import Fonsterputs from "./pages/Fonsterputs";
 import Foretagsstad from "./pages/Foretagsstad";
-import Trappstad from "./pages/Trappstad";
-import Flyttstad from "./pages/Flyttstad";
-import Tradgardsfix from "./pages/Tradgardsfix";
-import AboutUs from "./pages/AboutUs";
+import Hemstad from "./pages/Hemstad";
 import Locations from "./pages/Locations";
-
+import Offert from "./pages/Offert";
+import Tradgardsfix from "./pages/Tradgardsfix";
+import Trappstad from "./pages/Trappstad";
 
 const Navigation = () => {
   return (
@@ -29,7 +29,7 @@ const Navigation = () => {
         <Route path="/trappstad" element={<Trappstad />}></Route>
         <Route path="/tradgardsfix" element={<Tradgardsfix />}></Route>
         <Route path="/orter" element={<Locations />}></Route>
-       
+        <Route path="/offert" element={<Offert />}></Route>
       </Route>
     </Routes>
   );

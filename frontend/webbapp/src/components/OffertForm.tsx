@@ -1,6 +1,3 @@
-import EmailIcon from "@mui/icons-material/Email";
-import LocationOnIcon from "@mui/icons-material/LocationOn";
-import PhoneIcon from "@mui/icons-material/Phone";
 import {
   Alert,
   AlertColor,
@@ -11,34 +8,59 @@ import {
   Snackbar,
   TextField,
   Typography,
+  FormControlLabel,
+  Checkbox,
+  FormGroup,
 } from "@mui/material";
 import emailjs from "emailjs-com";
 import { useState } from "react";
 
 emailjs.init("C8CxNnxZg6mg-d2tq");
 
-export default function ContactForm() {
+export default function OffertForm() {
   const [name, setName] = useState("");
   const [phone, setPhone] = useState("");
   const [email, setEmail] = useState("");
   const [message, setMessage] = useState("");
+  const [services, setServices] = useState<string[]>([]);
+
   const [error, setError] = useState(false);
   const [openSnackbar, setOpenSnackbar] = useState(false);
   const [snackbarMessage, setSnackbarMessage] = useState("");
-  const [snackbarSeverity, setSnackbarSeverity] = useState("success");
+  const [snackbarSeverity, setSnackbarSeverity] =
+    useState<AlertColor>("success");
+
+  const serviceChoices: string[] = ["Fönsterputs", "Hemstäd", "Flyttstäd"];
+
+  const handleServiceChange = (event: React.ChangeEvent<HTMLInputElement>) => {
+    const selectedService = event.target.value;
+    setServices((prevServices) =>
+      prevServices.includes(selectedService)
+        ? prevServices.filter((service) => service !== selectedService)
+        : [...prevServices, selectedService]
+    );
+  };
 
   const handleSubmit = (e) => {
     e.preventDefault();
     setError(false);
-    if (name != "" && message != "" && email != "" && phone != "") {
+    if (
+      name !== "" &&
+      message !== "" &&
+      email !== "" &&
+      phone !== "" &&
+      services.length > 0
+    ) {
       const templateParams = {
         to_name: "Städtjejerna",
         from_name: name,
-        message: `Telefon: ${phone}\nEmail: ${email}\nMeddelande: ${message}`,
+        message: `Telefon: ${phone}\nEmail: ${email}\nTjänster: ${services.join(
+          ", "
+        )}\nMeddelande: ${message}`,
       };
 
       emailjs
-        .send("service_f1l2auv", "template_h691rd4", templateParams)
+        .send("service_f1l2auv", "template_itru98a", templateParams)
         .then((response) => {
           console.log(
             "Email sent successfully:",
@@ -46,27 +68,27 @@ export default function ContactForm() {
             response.text
           );
           setSnackbarSeverity("success");
-          setSnackbarMessage("Meddelande skickat!");
+          setSnackbarMessage("Förfrågan skickad!");
           setOpenSnackbar(true);
           setEmail("");
           setName("");
           setMessage("");
           setPhone("");
+          setServices([]);
         })
         .catch((err) => {
           console.error("Error sending email:", err);
           setSnackbarSeverity("error");
-          setSnackbarMessage("Något gick fel när meddelanden skickades.");
+          setSnackbarMessage(
+            "Något gick fel när förfrågan skickades. Försök igen."
+          );
           setOpenSnackbar(true);
-          setEmail("");
-          setName("");
-          setMessage("");
-          setPhone("");
         });
     } else {
       setError(true);
     }
   };
+
   const handleSnackbarClose = (
     event: React.SyntheticEvent,
     reason?: string
@@ -81,22 +103,22 @@ export default function ContactForm() {
     <Box
       sx={{
         display: "flex",
-        flexDirection: { xs: "column", md: "row" },
+        flexDirection: "column",
         alignItems: "center",
-        justifyContent: "space-around",
-        height: { xs: "auto", md: 500 },
+        justifyContent: "center",
         width: "100%",
-        backgroundColor: "#f7f7f7",
         padding: 3,
         gap: 4,
+        boxSizing: "border-box",
       }}
       component="form"
       onSubmit={handleSubmit}
     >
       <Box
         sx={{
-          textAlign: { xs: "center", md: "left" },
-          maxWidth: 400,
+          textAlign: "center",
+          maxWidth: "100%",
+          width: "100%",
           padding: 2,
         }}
       >
@@ -104,40 +126,14 @@ export default function ContactForm() {
           variant="h4"
           sx={{ marginBottom: 2, fontWeight: "bold", color: "#333" }}
         >
-          Kontakta oss
+          Vänligen fyll i din offertförfrågan
         </Typography>
-        <Box sx={{ display: "flex", alignItems: "center", marginBottom: 1 }}>
-          <PhoneIcon sx={{ color: "grey", marginRight: 1 }} />
-          <Typography sx={{ color: "grey" }}>
-            <a
-              href="tel:033-7269676"
-              style={{ color: "inherit", textDecoration: "none" }}
-            >
-              033-726 96 76
-            </a>
-          </Typography>
-        </Box>
-        <Box sx={{ display: "flex", alignItems: "center", marginBottom: 1 }}>
-          <EmailIcon sx={{ color: "grey", marginRight: 1 }} />
-          <Typography sx={{ color: "grey" }}>
-            <a
-              href="mailto:stadtjejerna@hotmail.com"
-              style={{ color: "inherit", textDecoration: "none" }}
-            >
-              stadtjejerna@hotmail.com
-            </a>
-          </Typography>
-        </Box>
-        <Box sx={{ display: "flex", alignItems: "center", marginBottom: 1 }}>
-          <LocationOnIcon sx={{ color: "grey", marginRight: 1 }} />
-          <Typography sx={{ color: "grey" }}>Tredje villagatan 17</Typography>
-          <Typography sx={{ color: "grey" }}>50453 Borås</Typography>
-        </Box>
+        <div style={{ height: 1, width: "100%", backgroundColor: "#e3c5da" }} />
       </Box>
       <Snackbar open={openSnackbar} autoHideDuration={6000}>
         <Alert
           onClose={handleSnackbarClose}
-          severity={snackbarSeverity as AlertColor}
+          severity={snackbarSeverity}
           sx={{ width: "100%" }}
         >
           {snackbarMessage}
@@ -148,9 +144,11 @@ export default function ContactForm() {
           width: "100%",
           maxWidth: 500,
           backgroundColor: "#fff",
-          boxShadow: "0 4px 8px rgba(0,0,0,0.1)",
-          borderRadius: 2,
+          boxShadow: "0 4px 12px rgba(0,0,0,0.1)",
+          borderRadius: 4,
           padding: 2,
+          display: "flex",
+          flexDirection: "column",
         }}
       >
         <CardContent
@@ -161,7 +159,7 @@ export default function ContactForm() {
           }}
         >
           {error && (
-            <Typography color="red">Vänligen fyll i alla fält</Typography>
+            <Typography color="error">Vänligen fyll i alla fält</Typography>
           )}
           <TextField
             label="Namn"
@@ -226,6 +224,30 @@ export default function ContactForm() {
               },
             }}
           />
+        </CardContent>
+        <CardContent>
+          <FormGroup>
+            <Typography variant="h6">Välj tjänster</Typography>
+            {serviceChoices.map((service, index) => (
+              <FormControlLabel
+                key={index}
+                control={
+                  <Checkbox
+                    checked={services.includes(service)}
+                    onChange={handleServiceChange}
+                    value={service}
+                    sx={{
+                      color: "#d4acc7",
+                      "&.Mui-checked": {
+                        color: "#dbbed1",
+                      },
+                    }}
+                  />
+                }
+                label={service}
+              />
+            ))}
+          </FormGroup>
           <TextField
             label="Meddelande"
             variant="outlined"
@@ -265,7 +287,7 @@ export default function ContactForm() {
               },
             }}
           >
-            Skicka
+            Skicka förfrågan
           </Button>
         </CardContent>
       </Card>
