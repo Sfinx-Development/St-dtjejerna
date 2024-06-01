@@ -107,29 +107,36 @@ export default function OffertForm() {
         alignItems: "center",
         justifyContent: "center",
         width: "100%",
-        padding: 3,
-        gap: 4,
         boxSizing: "border-box",
       }}
       component="form"
       onSubmit={handleSubmit}
     >
-      <Box
+      <Typography
+        variant="h2"
+        gutterBottom
         sx={{
           textAlign: "center",
-          maxWidth: "100%",
-          width: "100%",
-          padding: 2,
+          color: "#d29bbf",
+          position: "relative",
+          marginY: 2,
         }}
       >
-        <Typography
-          variant="h4"
-          sx={{ marginBottom: 2, fontWeight: "bold", color: "#333" }}
-        >
-          Vänligen fyll i din offertförfrågan
-        </Typography>
-        <div style={{ height: 1, width: "100%", backgroundColor: "#e3c5da" }} />
-      </Box>
+        Offertförfrågan
+        <Box
+          sx={{
+            position: "absolute",
+            bottom: "-10px",
+            left: "50%",
+            transform: "translateX(-50%)",
+            width: "80px",
+            height: "2px",
+            backgroundColor: "#d29bbf",
+            borderRadius: "5px",
+            opacity: 0.7,
+          }}
+        />
+      </Typography>
       <Snackbar open={openSnackbar} autoHideDuration={6000}>
         <Alert
           onClose={handleSnackbarClose}
@@ -149,6 +156,7 @@ export default function OffertForm() {
           padding: 2,
           display: "flex",
           flexDirection: "column",
+          marginY: 1,
         }}
       >
         <CardContent
