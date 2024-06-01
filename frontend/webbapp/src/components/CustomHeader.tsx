@@ -1,17 +1,17 @@
+import KeyboardArrowDownIcon from "@mui/icons-material/KeyboardArrowDown";
 import {
   Box,
+  Grow,
+  MenuItem,
+  MenuList,
   Link as MuiLink,
+  Paper,
+  Popper,
   Typography,
   useMediaQuery,
   useTheme,
-  Popper,
-  Grow,
-  Paper,
-  MenuItem,
-  MenuList,
 } from "@mui/material";
-import React, { useState, useRef } from "react";
-import KeyboardArrowDownIcon from "@mui/icons-material/KeyboardArrowDown";
+import React, { useRef, useState } from "react";
 import { Link } from "react-router-dom";
 
 type LinkItem = {
@@ -97,8 +97,8 @@ const MenuLink = ({
                       onClick={handleCloseMenu}
                       sx={{
                         "&:hover": {
-                          backgroundColor: "#d29bbf", 
-                          color: "#fff", 
+                          backgroundColor: "#d29bbf",
+                          color: "#fff",
                         },
                       }}
                     >
@@ -106,7 +106,7 @@ const MenuLink = ({
                         to={item.href}
                         style={{
                           textDecoration: "none",
-                          color: "#000", 
+                          color: "#000",
                         }}
                       >
                         {item.label}
@@ -218,6 +218,7 @@ export default function CustomHeader2(): JSX.Element {
         width: "100%",
         boxShadow: "0px 4px 10px rgba(0, 0, 0, 0.1)",
         flexDirection: isMobile ? "column" : "row",
+        position: "relative",
       }}
     >
       <Box
@@ -227,14 +228,28 @@ export default function CustomHeader2(): JSX.Element {
           alignItems: "center",
           gap: 2,
           marginLeft: isMobile ? 0 : 5,
+          height: "100px",
+          position: "relative",
         }}
       >
-        <Link to="/" style={{ marginY: 1 }}>
+        <Link
+          to="/"
+          style={{ marginBottom: 1, marginTop: 1, position: "relative" }}
+        >
           <img
-            src="https://i.imgur.com/pdj2vhA.png"
+            src="https://i.imgur.com/Zcgk1vf.png"
             alt="Logo saying dailyvibe"
-            height={70}
-            width={210}
+            style={{
+              width: "250px",
+
+              marginTop: 40,
+              height: "200px",
+              objectFit: "contain",
+              position: "absolute",
+              top: "90%", // Justera denna värde beroende på hur mycket du vill att bilden ska sticka ut
+              transform: "translateY(-50%)",
+              zIndex: 9999,
+            }}
           />
         </Link>
         {!isMobile && (
@@ -246,7 +261,7 @@ export default function CustomHeader2(): JSX.Element {
               justifyContent: "flex-end",
               marginRight: 1,
               flexGrow: 1,
-              marginLeft: 30,
+              marginLeft: 50,
             }}
           >
             {links.map((link) => (
