@@ -17,7 +17,11 @@ import { useState } from "react";
 
 emailjs.init("C8CxNnxZg6mg-d2tq");
 
-export default function ContactForm() {
+interface ContactFormProps {
+  backgroundColor?: string;
+}
+
+export default function ContactForm(props: ContactFormProps) {
   const [name, setName] = useState("");
   const [phone, setPhone] = useState("");
   const [email, setEmail] = useState("");
@@ -86,8 +90,9 @@ export default function ContactForm() {
         justifyContent: "space-around",
         height: { xs: "auto", md: 500 },
         width: "100%",
-        backgroundColor: "#f7f7f7",
-        padding: 3,
+        backgroundColor: props.backgroundColor
+          ? props.backgroundColor
+          : "#f7f7f7",
         gap: 4,
       }}
       component="form"
@@ -97,7 +102,6 @@ export default function ContactForm() {
         sx={{
           textAlign: { xs: "center", md: "left" },
           maxWidth: 400,
-          padding: 2,
         }}
       >
         <Typography

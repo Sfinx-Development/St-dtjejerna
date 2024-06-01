@@ -13,6 +13,7 @@ import Locations from "./pages/Locations";
 import Offert from "./pages/Offert";
 import Tradgardsfix from "./pages/Tradgardsfix";
 import Trappstad from "./pages/Trappstad";
+import Contact from "./pages/Contact";
 
 const Navigation = () => {
   return (
@@ -30,6 +31,7 @@ const Navigation = () => {
         <Route path="/tradgardsfix" element={<Tradgardsfix />}></Route>
         <Route path="/orter" element={<Locations />}></Route>
         <Route path="/offert" element={<Offert />}></Route>
+        <Route path="/contact" element={<Contact />}></Route>
       </Route>
     </Routes>
   );
