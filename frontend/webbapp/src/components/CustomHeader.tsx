@@ -4,7 +4,6 @@ import {
   Grow,
   MenuItem,
   MenuList,
-  Link as MuiLink,
   Paper,
   Popper,
   Typography,

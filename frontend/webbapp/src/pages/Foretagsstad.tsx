@@ -1,7 +1,9 @@
-import React, { FC } from "react";
-import { Box, Typography } from "@mui/material";
+import { Box, Typography, useMediaQuery, useTheme } from "@mui/material";
+import { FC } from "react";
 
 const Foretagsstad: FC = () => {
+  const theme = useTheme();
+  const isMobile = useMediaQuery(theme.breakpoints.down("sm"));
   return (
     <Box
       style={{
@@ -21,7 +23,17 @@ const Foretagsstad: FC = () => {
           objectFit: "cover",
         }}
       />
-      <Typography variant="h2" gutterBottom style={{ textAlign: "center", color: "#d29bbf" }}>
+      <Typography
+        variant={isMobile ? "h4" : "h2"}
+        gutterBottom
+        sx={{
+          textAlign: "center",
+          color: "#d29bbf",
+          position: "relative",
+          marginTop: isMobile ? "40px" : "20px",
+          marginBottom: "20px",
+        }}
+      >
         Företagsstäd
       </Typography>
       <Typography variant="body1" paragraph>
@@ -67,7 +79,7 @@ const Foretagsstad: FC = () => {
         }}
       >
         <Box style={{ width: "30%" }}>
-        <Typography variant="h4" gutterBottom style={{color: "#d29bbf"}}>
+          <Typography variant="h4" gutterBottom style={{ color: "#d29bbf" }}>
             Kontor
           </Typography>
           <ul>
@@ -79,7 +91,7 @@ const Foretagsstad: FC = () => {
           </ul>
         </Box>
         <Box style={{ width: "30%" }}>
-        <Typography variant="h4" gutterBottom style={{color: "#d29bbf"}}>
+          <Typography variant="h4" gutterBottom style={{ color: "#d29bbf" }}>
             Toaletter
           </Typography>
           <ul>
@@ -90,7 +102,7 @@ const Foretagsstad: FC = () => {
           </ul>
         </Box>
         <Box style={{ width: "30%" }}>
-        <Typography variant="h4" gutterBottom style={{color: "#d29bbf"}}>
+          <Typography variant="h4" gutterBottom style={{ color: "#d29bbf" }}>
             Kök/Pentry
           </Typography>
           <ul>

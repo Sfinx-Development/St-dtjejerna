@@ -1,7 +1,9 @@
-import React, { FC } from "react";
-import { Box, Typography } from "@mui/material";
+import { Box, Typography, useMediaQuery, useTheme } from "@mui/material";
+import { FC } from "react";
 
 const Fonsterputs: FC = () => {
+  const theme = useTheme();
+  const isMobile = useMediaQuery(theme.breakpoints.down("sm"));
   return (
     <Box
       style={{
@@ -21,7 +23,17 @@ const Fonsterputs: FC = () => {
           objectFit: "cover",
         }}
       />
-      <Typography variant="h2" gutterBottom style={{ textAlign: "center", color: "#d29bbf" }}>
+      <Typography
+        variant={isMobile ? "h4" : "h2"}
+        gutterBottom
+        sx={{
+          textAlign: "center",
+          color: "#d29bbf",
+          position: "relative",
+          marginTop: isMobile ? "40px" : "20px",
+          marginBottom: "20px",
+        }}
+      >
         Fönsterputs
       </Typography>
       <Typography variant="body1" paragraph>

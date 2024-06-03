@@ -20,7 +20,7 @@ export default function CustomerLogos() {
         width: "100%",
         // background:
         //   "linear-gradient(to right, white, #d1acc4 20%, #d1acc4 80%, white)",
-        backgroundColor: "#d1acc4",
+        backgroundColor: "#e3c5da",
         display: "flex",
         flexDirection: "column",
 
