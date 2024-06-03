@@ -1,8 +1,12 @@
+import { useMediaQuery, useTheme } from "@mui/material";
 import { Outlet } from "react-router-dom";
 import CustomHeader from "../components/CustomHeader";
 import Footer from "../components/Footer";
+import MobileHeader from "../components/MobileHeader";
 
 const RootLayout = () => {
+  const theme = useTheme();
+  const isMobile = useMediaQuery(theme.breakpoints.down("sm"));
   return (
     <div
       style={{
@@ -16,7 +20,7 @@ const RootLayout = () => {
         padding: 0,
       }}
     >
-      <CustomHeader />
+      {isMobile ? <MobileHeader /> : <CustomHeader />}
       <main
         style={{
           display: "flex",

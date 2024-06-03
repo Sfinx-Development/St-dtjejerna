@@ -63,7 +63,7 @@ export default function Services() {
               backgroundPosition: "center",
               flex: 1,
               height: 400,
-              margin: 2,
+              margin: { xs: 1, md: 2 },
               display: "flex",
               alignItems: "center",
               justifyContent: "center",

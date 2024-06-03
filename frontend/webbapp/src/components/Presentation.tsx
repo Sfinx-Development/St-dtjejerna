@@ -4,21 +4,32 @@ import InstagramIcon from "@mui/icons-material/Instagram";
 
 import MailOutlineIcon from "@mui/icons-material/MailOutline";
 
-import { Box, Button, IconButton, Typography } from "@mui/material";
+import {
+  Box,
+  Button,
+  IconButton,
+  Typography,
+  useMediaQuery,
+  useTheme,
+} from "@mui/material";
+import { useNavigate } from "react-router-dom";
 
 export default function PresentingImage() {
+  const theme = useTheme();
+  const isMobile = useMediaQuery(theme.breakpoints.down("sm"));
+  const navigate = useNavigate();
   return (
     <Box
       sx={{
         display: "flex",
 
-        flexDirection: { xs: "column", md: "row" },
+        flexDirection: "row",
 
         alignItems: "center",
 
         justifyContent: "center",
 
-        height: { xs: "auto", md: 500 },
+        height: { xs: "400px", md: 500 },
 
         width: "100%",
 
@@ -39,8 +50,7 @@ export default function PresentingImage() {
 
           alignItems: { xs: "center", md: "flex-start" },
 
-          padding: 4,
-
+          paddingY: 4,
           zIndex: 1,
 
           width: { xs: "90%", md: "40%" },
@@ -57,7 +67,7 @@ export default function PresentingImage() {
         }}
       >
         <Typography
-          variant="h2"
+          variant={isMobile ? "h4" : "h2"}
           sx={{
             marginBottom: 2,
 
@@ -109,6 +119,9 @@ export default function PresentingImage() {
 
               transition: "background-color 0.3s ease, color 0.3s ease",
             },
+          }}
+          onClick={() => {
+            navigate("/contact");
           }}
         >
           Kontakta oss
@@ -173,7 +186,7 @@ export default function PresentingImage() {
         sx={{
           width: { xs: "100%", md: "100%" },
 
-          height: { xs: 300, md: "100%" },
+          height: { xs: 400, md: "100%" },
 
           zIndex: 0,
         }}
