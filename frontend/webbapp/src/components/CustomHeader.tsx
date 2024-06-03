@@ -221,28 +221,22 @@ export default function CustomHeader2(): JSX.Element {
         position: "relative",
       }}
     >
-      <Box
-        sx={{
-          display: "flex",
-          flexDirection: "row",
-          alignItems: "center",
-          gap: 2,
-          marginLeft: isMobile ? 0 : 5,
-          height: "100px",
-          position: "relative",
-        }}
-      >
+      <Box>
         <Link
           to="/"
-          style={{ marginBottom: 1, marginTop: 1, position: "relative" }}
+          style={{
+            marginBottom: 1,
+            marginTop: 1,
+            position: "relative",
+          }}
         >
           <img
             src="https://i.imgur.com/Zcgk1vf.png"
             alt="Logo saying dailyvibe"
             style={{
               width: "250px",
-
               marginTop: 40,
+              marginLeft: 4,
               height: "200px",
               objectFit: "contain",
               position: "absolute",
@@ -252,62 +246,32 @@ export default function CustomHeader2(): JSX.Element {
             }}
           />
         </Link>
-        {!isMobile && (
-          <Box
-            sx={{
-              display: "flex",
-              alignItems: "center",
-              gap: 4,
-              justifyContent: "flex-end",
-              marginRight: 1,
-              flexGrow: 1,
-              marginLeft: 50,
-            }}
-          >
-            {links.map((link) => (
-              <React.Fragment key={link.label}>
-                <MenuLink
-                  link={link}
-                  openMenu={openMenu}
-                  anchorEl={anchorEl}
-                  handleMouseEnter={handleMouseEnter}
-                  handleMouseLeave={handleMouseLeave}
-                  handleSubMenuMouseEnter={handleSubMenuMouseEnter}
-                  handleSubMenuMouseLeave={handleSubMenuMouseLeave}
-                  handleCloseMenu={handleCloseMenu}
-                />
-                <div
-                  style={{ height: 20, width: 2, backgroundColor: "grey" }}
-                />
-              </React.Fragment>
-            ))}
-          </Box>
-        )}
       </Box>
 
-      {isMobile && (
-        <>
-          <Box
-            sx={{
-              display: "flex",
-              flexDirection: "column",
-              alignItems: "center",
-              gap: 1,
-              marginTop: 1,
-            }}
-          >
-            <MuiLink href="/about" sx={{ textDecoration: "none", marginY: 1 }}>
-              <Typography variant="h6">LÄS MER</Typography>
-            </MuiLink>
-            <MuiLink
-              href="/download"
-              sx={{ textDecoration: "none", marginY: 1 }}
-            >
-              <Typography variant="h6">LADDA NED</Typography>
-            </MuiLink>
-          </Box>
-        </>
-      )}
+      <Box
+        sx={{
+          display: "flex",
+          alignItems: "center",
+          gap: 4,
+          padding: 3.5,
+        }}
+      >
+        {links.map((link) => (
+          <React.Fragment key={link.label}>
+            <MenuLink
+              link={link}
+              openMenu={openMenu}
+              anchorEl={anchorEl}
+              handleMouseEnter={handleMouseEnter}
+              handleMouseLeave={handleMouseLeave}
+              handleSubMenuMouseEnter={handleSubMenuMouseEnter}
+              handleSubMenuMouseLeave={handleSubMenuMouseLeave}
+              handleCloseMenu={handleCloseMenu}
+            />
+            <div style={{ height: 20, width: 2, backgroundColor: "grey" }} />
+          </React.Fragment>
+        ))}
+      </Box>
     </Box>
   );
 }

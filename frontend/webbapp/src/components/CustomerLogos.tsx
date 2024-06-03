@@ -47,7 +47,7 @@ export default function CustomerLogos() {
                 maxHeight: 100,
                 maxWidth: 200,
                 objectFit: "contain",
-                padding: 1,
+                padding: { xs: 0, md: 1 },
                 borderRadius: 2,
                 transition: "transform 0.3s ease, box-shadow 0.3s ease",
                 "&:hover": {

@@ -5,6 +5,7 @@ import RootLayout from "./pages/RootLayout";
 
 import AboutUs from "./pages/AboutUs";
 import Byggstad from "./pages/Byggstad";
+import Contact from "./pages/Contact";
 import Flyttstad from "./pages/Flyttstad";
 import Fonsterputs from "./pages/Fonsterputs";
 import Foretagsstad from "./pages/Foretagsstad";
@@ -13,7 +14,6 @@ import Locations from "./pages/Locations";
 import Offert from "./pages/Offert";
 import Tradgardsfix from "./pages/Tradgardsfix";
 import Trappstad from "./pages/Trappstad";
-import Contact from "./pages/Contact";
 
 const Navigation = () => {
   return (
