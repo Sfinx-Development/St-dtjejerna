@@ -81,7 +81,7 @@ export default function CustomHeader2(): JSX.Element {
           alignItems: "center",
           gap: 2,
           marginLeft: isMobile ? 0 : 5,
-          height: "100px",
+          height: 75,
           position: "relative",
         }}
       >
@@ -93,14 +93,14 @@ export default function CustomHeader2(): JSX.Element {
             src="https://i.imgur.com/Zcgk1vf.png"
             alt="Logo saying dailyvibe"
             style={{
-              width: "250px",
-              marginTop: 25,
+              width: "270px",
+              marginTop: 27,
               height: "150px",
               objectFit: "contain",
               position: "absolute",
               top: "90%",
               transform: "translateY(-50%)",
-              zIndex: 9999,
+              zIndex: 999,
             }}
           />
         </Link>
@@ -204,7 +204,7 @@ export default function CustomHeader2(): JSX.Element {
                 alt="Logo saying dailyvibe"
                 style={{
                   width: "250px",
-                  height: "150px",
+                  height: "140px",
                   objectFit: "contain",
                 }}
               />

@@ -53,7 +53,7 @@ export default function PresentingImage() {
           paddingY: 4,
           zIndex: 1,
 
-          width: { xs: "90%", md: "40%" },
+          width: { xs: "100%", md: "40%" },
 
           textAlign: { xs: "center", md: "left" },
 
@@ -67,9 +67,10 @@ export default function PresentingImage() {
         }}
       >
         <Typography
-          variant={isMobile ? "h4" : "h2"}
+          variant={isMobile ? "h3" : "h2"}
           sx={{
             marginBottom: 2,
+            marginTop: 2,
 
             color: "white",
 

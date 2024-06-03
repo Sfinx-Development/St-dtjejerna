@@ -41,7 +41,7 @@ export default function OffertForm() {
     );
   };
 
-  const handleSubmit = (e) => {
+  const handleSubmit = (e : React.FormEvent<HTMLFormElement>) => {
     e.preventDefault();
     setError(false);
     if (
