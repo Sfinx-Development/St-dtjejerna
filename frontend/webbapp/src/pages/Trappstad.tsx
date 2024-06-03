@@ -24,11 +24,6 @@ const Trappstad: FC = () => {
         }}
       />
       <Typography
-<<<<<<< HEAD
-        variant="h2"
-        gutterBottom
-        style={{ textAlign: "center", color: "#d29bbf" }}
-=======
         variant={isMobile ? "h4" : "h2"}
         gutterBottom
         sx={{
@@ -38,7 +33,6 @@ const Trappstad: FC = () => {
           marginTop: isMobile ? "40px" : "20px",
           marginBottom: "20px",
         }}
->>>>>>> 630bd58672ead9d2b1e7c903118470323d9edca5
       >
         Trappstäd
       </Typography>

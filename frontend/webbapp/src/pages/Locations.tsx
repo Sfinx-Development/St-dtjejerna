@@ -1,8 +1,4 @@
-<<<<<<< HEAD
-import { Box, Typography } from "@mui/material";
-=======
 import { Box, Typography, useMediaQuery, useTheme } from "@mui/material";
->>>>>>> 630bd58672ead9d2b1e7c903118470323d9edca5
 import { FC } from "react";
 import IframeComponent from "../components/IframeComponent";
 
@@ -35,13 +31,6 @@ const Locations: FC = () => {
       }}
     >
       <Typography
-<<<<<<< HEAD
-        variant="h2"
-        gutterBottom
-        sx={{ textAlign: "center", color: "#d29bbf" }}
-      >
-        Vart vi finns idag...
-=======
         variant={isMobile ? "h4" : "h2"}
         gutterBottom
         sx={{
@@ -66,7 +55,6 @@ const Locations: FC = () => {
             opacity: 0.7,
           }}
         />
->>>>>>> 630bd58672ead9d2b1e7c903118470323d9edca5
       </Typography>
 
       <Typography
