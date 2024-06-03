@@ -31,7 +31,7 @@ export default function ContactForm(props: ContactFormProps) {
   const [snackbarMessage, setSnackbarMessage] = useState("");
   const [snackbarSeverity, setSnackbarSeverity] = useState("success");
 
-  const handleSubmit = (e) => {
+  const handleSubmit = (e: React.FormEvent<HTMLFormElement>) => {
     e.preventDefault();
     setError(false);
     if (name != "" && message != "" && email != "" && phone != "") {
