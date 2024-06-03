@@ -1,5 +1,5 @@
-import React, { FC } from "react";
 import { Box, Typography } from "@mui/material";
+import { FC } from "react";
 
 const Hemstad: FC = () => {
   return (
@@ -21,7 +21,11 @@ const Hemstad: FC = () => {
           objectFit: "cover",
         }}
       />
-      <Typography variant="h2" gutterBottom style={{ textAlign: "center", color: "#d29bbf" }}>
+      <Typography
+        variant="h2"
+        gutterBottom
+        style={{ textAlign: "center", color: "#d29bbf" }}
+      >
         Hemstäd
       </Typography>
       <Typography variant="body1" paragraph>
@@ -50,8 +54,8 @@ const Hemstad: FC = () => {
         fokusera på annat under tiden.
       </Typography>
       <Typography variant="h6">
-            Följande städmoment ingår som grund i abonnemanget:
-          </Typography>
+        Följande städmoment ingår som grund i abonnemanget:
+      </Typography>
       <Box
         style={{
           backgroundColor: "#f4f4f4",
@@ -64,14 +68,13 @@ const Hemstad: FC = () => {
         }}
       >
         <Box style={{ maxWidth: "30%" }}>
-          
-          <Typography variant="h4" gutterBottom style={{color: "#d29bbf"}}>
+          <Typography variant="h4" gutterBottom style={{ color: "#d29bbf" }}>
             Alla rum:
           </Typography>
           <ul>
             <li>
-              Dammsugning av golv, lister, elkontakter, element, mattor och möbler
-              med stoppning som till exempel soffor och fåtöljer.
+              Dammsugning av golv, lister, elkontakter, element, mattor och
+              möbler med stoppning som till exempel soffor och fåtöljer.
             </li>
             <li>Fuktmoppning av alla golv.</li>
             <li>
@@ -87,7 +90,7 @@ const Hemstad: FC = () => {
           </ul>
         </Box>
         <Box style={{ maxWidth: "30%" }}>
-        <Typography variant="h4" gutterBottom style={{color: "#d29bbf"}}>
+          <Typography variant="h4" gutterBottom style={{ color: "#d29bbf" }}>
             Badrum:
           </Typography>
           <ul>
@@ -103,15 +106,15 @@ const Hemstad: FC = () => {
           </ul>
         </Box>
         <Box style={{ maxWidth: "30%" }}>
-        <Typography variant="h4" gutterBottom style={{color: "#d29bbf"}}>
+          <Typography variant="h4" gutterBottom style={{ color: "#d29bbf" }}>
             Kök:
           </Typography>
           <ul>
             <li>
               Våttorkning av kaklet ovanför diskbänken, fläckar på köksluckor,
-              kaffebryggare, mikrovågsugn invändigt och utvändigt, brödrost, bord,
-              stolar och
-              </li>
+              kaffebryggare, mikrovågsugn invändigt och utvändigt, brödrost,
+              bord, stolar och
+            </li>
             <li>Lägger in disken i diskmaskinen.</li>
             <li>Rengöring av diskhon, kranar och spis.</li>
             <li>Tömning av sopor och utrymmet under diskbänken.</li>
@@ -127,4 +130,3 @@ const Hemstad: FC = () => {
 };
 
 export default Hemstad;
-

@@ -75,7 +75,7 @@ export default function ContactForm(props: ContactFormProps) {
     event: React.SyntheticEvent,
     reason?: string
   ) => {
-    if (reason === "clickaway") {
+    if (reason === "clickaway" && event) {
       return;
     }
     setOpenSnackbar(false);

@@ -1,5 +1,5 @@
-import React, { FC } from "react";
 import { Box, Typography } from "@mui/material";
+import { FC } from "react";
 
 const Fonsterputs: FC = () => {
   return (
@@ -21,7 +21,11 @@ const Fonsterputs: FC = () => {
           objectFit: "cover",
         }}
       />
-      <Typography variant="h2" gutterBottom style={{ textAlign: "center", color: "#d29bbf" }}>
+      <Typography
+        variant="h2"
+        gutterBottom
+        style={{ textAlign: "center", color: "#d29bbf" }}
+      >
         Fönsterputs
       </Typography>
       <Typography variant="body1" paragraph>

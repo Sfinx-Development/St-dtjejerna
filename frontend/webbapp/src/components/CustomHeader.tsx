@@ -4,7 +4,6 @@ import {
   Grow,
   MenuItem,
   MenuList,
-  Link as MuiLink,
   Paper,
   Popper,
   Typography,
@@ -128,7 +127,7 @@ export default function CustomHeader2(): JSX.Element {
   const isMobile = useMediaQuery(theme.breakpoints.down("sm"));
   const [openMenu, setOpenMenu] = useState<string | null>(null);
   const [anchorEl, setAnchorEl] = useState<null | HTMLElement>(null);
-  const timeoutRef = useRef<number | null>(null);
+  const timeoutRef = useRef<ReturnType<typeof setTimeout> | null>(null);
 
   const handleToggleMenu = (
     event: React.MouseEvent<HTMLElement>,

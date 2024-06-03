@@ -5,12 +5,12 @@ import {
   Button,
   Card,
   CardContent,
+  Checkbox,
+  FormControlLabel,
+  FormGroup,
   Snackbar,
   TextField,
   Typography,
-  FormControlLabel,
-  Checkbox,
-  FormGroup,
 } from "@mui/material";
 import emailjs from "emailjs-com";
 import { useState } from "react";
@@ -41,7 +41,7 @@ export default function OffertForm() {
     );
   };
 
-  const handleSubmit = (e : React.FormEvent<HTMLFormElement>) => {
+  const handleSubmit = (e: React.FormEvent<HTMLFormElement>) => {
     e.preventDefault();
     setError(false);
     if (
@@ -93,7 +93,7 @@ export default function OffertForm() {
     event: React.SyntheticEvent,
     reason?: string
   ) => {
-    if (reason === "clickaway") {
+    if (reason === "clickaway" && event) {
       return;
     }
     setOpenSnackbar(false);
