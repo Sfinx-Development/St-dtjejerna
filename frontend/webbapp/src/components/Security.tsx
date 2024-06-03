@@ -12,6 +12,24 @@ export default function Security() {
     });
   }, []);
 
+  const securityDescription = (
+    <>
+      För din <strong>trygghet och säkerhet</strong> genomför Städtjejerna
+      noggranna bakgrundskontroller på alla våra anställda, inklusive kontroll
+      av brottsregister. Vi ser till att våra medarbetare är pålitliga och på så
+      sätt kan du känna dig trygg med att släppa in oss i ditt hem.
+    </>
+  );
+
+  const confidentialityDescription = (
+    <>
+      Vi värnar om din <strong>integritet</strong>. Därför följer alla våra
+      medarbetare strikta sekretessregler under varje städuppdrag. Du kan lita
+      på att din information och ditt hem behandlas med största{" "}
+      <em>diskretion och respekt</em>.
+    </>
+  );
+
   return (
     <Box
       sx={{
@@ -38,12 +56,7 @@ export default function Security() {
           <SecurityIcon sx={{ marginRight: 1 }} />
           SÄKERHET
         </Typography>
-        <Typography>
-          För din trygghet och säkerhet genomför Städtjejerna noggranna
-          bakgrundskontroller på alla våra anställda, inklusive kontroll av
-          brottsregister. Vi ser till att våra medarbetare är pålitliga och på
-          så sätt kan du känna dig trygg med att släppa in oss i ditt hem.
-        </Typography>
+        <Typography variant="body1">{securityDescription}</Typography>
       </Box>
       <Box
         sx={{
@@ -66,12 +79,7 @@ export default function Security() {
           <LockIcon sx={{ marginRight: 1 }} />
           SEKRETESS
         </Typography>
-        <Typography>
-          Vi värnar om din integritet. Därför följer alla våra medarbetare
-          strikta sekretessregler under varje städuppdrag. Du kan lita på att
-          din information och ditt hem behandlas med största diskretion och
-          respekt.
-        </Typography>
+        <Typography variant="body1">{confidentialityDescription}</Typography>
       </Box>
     </Box>
   );

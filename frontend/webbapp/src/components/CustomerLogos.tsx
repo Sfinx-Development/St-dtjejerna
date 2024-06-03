@@ -2,14 +2,14 @@ import { Box, Grid, Typography } from "@mui/material";
 
 const logos = [
   "https://i.imgur.com/BppOfZg.png",
-  "https://i.imgur.com/q9jDpa6.png",
-  "https://i.imgur.com/dwjZsiQ.png",
   "https://i.imgur.com/SyKiY71.jpeg",
   "https://i.imgur.com/FX69JrS.png",
+  "https://i.imgur.com/dwjZsiQ.png",
   "https://i.imgur.com/hltJ8rW.jpeg",
   "https://i.imgur.com/71EgxKY.jpeg",
   "https://i.imgur.com/daJbP0E.jpeg",
   "https://i.imgur.com/r6ZIX9Q.jpeg",
+  "https://i.imgur.com/q9jDpa6.png",
   "https://i.imgur.com/z9imIe1.png",
 ];
 
@@ -18,25 +18,42 @@ export default function CustomerLogos() {
     <Box
       sx={{
         width: "100%",
-        backgroundColor: "#fbf9fa",
+        // background:
+        //   "linear-gradient(to right, white, #d1acc4 20%, #d1acc4 80%, white)",
+        backgroundColor: "#d1acc4",
+        display: "flex",
+        flexDirection: "column",
+
         paddingY: 4,
         textAlign: "center",
         overflow: "hidden",
+        boxShadow: "0px 4px 15px rgba(0, 0, 0, 0.1)",
       }}
     >
       <Typography
-        variant="h4"
         sx={{
-          marginBottom: 4,
-          fontWeight: "semibold",
-          color: "#333",
+          fontSize: { xs: 32, md: 40 },
+          fontWeight: "700",
+          color: "white",
+          letterSpacing: 1,
+          marginBottom: 6,
+          textTransform: "uppercase",
         }}
       >
         Nöjda kunder
       </Typography>
-      <Grid container spacing={4} justifyContent="center">
+      <Grid
+        container
+        spacing={{ xs: 2, md: 5 }}
+        sx={{
+          width: "100%",
+          paddingX: 2,
+        }}
+        justifyContent="center"
+        alignItems={"center"}
+      >
         {logos.map((logo, index) => (
-          <Grid item xs={6} sm={4} md={3} lg={2} key={index}>
+          <Grid item xs={6} sm={4} md={4} lg={2} key={index}>
             <Box
               component="img"
               src={logo}
@@ -44,15 +61,17 @@ export default function CustomerLogos() {
               sx={{
                 width: "100%",
                 height: "auto",
-                maxHeight: 100,
-                maxWidth: 200,
+                maxHeight: 120,
+                maxWidth: 140,
                 objectFit: "contain",
-                padding: { xs: 0, md: 1 },
+                padding: { xs: 1, md: 2 },
                 borderRadius: 2,
+                backgroundColor: "white",
+                boxShadow: "0px 4px 15px rgba(0, 0, 0, 0.1)",
                 transition: "transform 0.3s ease, box-shadow 0.3s ease",
                 "&:hover": {
-                  transform: "scale(1.1)",
-                  boxShadow: "0px 4px 15px rgba(0, 0, 0, 0.2)",
+                  transform: "scale(1.05)",
+                  boxShadow: "0px 6px 20px rgba(0, 0, 0, 0.2)",
                 },
               }}
             />
