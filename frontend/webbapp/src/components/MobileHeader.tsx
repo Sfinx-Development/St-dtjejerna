@@ -136,10 +136,11 @@ export default function CustomHeader2(): JSX.Element {
           >
             <List
               sx={{
-                marginLeft: 1,
+                paddingLeft: 1,
                 display: "flex",
                 zIndex: 99991,
                 flexDirection: "column",
+                backgroundColor: "#dbbed1",
               }}
             >
               {links.map((link) => (
@@ -166,7 +167,19 @@ export default function CustomHeader2(): JSX.Element {
                     }}
                     onClick={handleCloseMenu}
                   >
-                    <Typography sx={{ fontSize: 25 }}>{link.label}</Typography>
+                    <Typography
+                      sx={{
+                        fontSize: 24,
+
+                        fontWeight: "bold",
+
+                        color: "white",
+
+                        letterSpacing: 2,
+                      }}
+                    >
+                      {link.label}
+                    </Typography>
                   </Link>
                   {link.menuItems && (
                     <List sx={{ marginLeft: 5, paddingTop: "8px" }}>
@@ -183,13 +196,25 @@ export default function CustomHeader2(): JSX.Element {
                           }}
                         >
                           <Link
-                            to={item.href}
+                            to={
+                              item.label == "Tjänster" ? "/hemstad" : item.href
+                            }
                             style={{
                               textDecoration: "none",
                               color: "black",
                             }}
                           >
-                            <Typography sx={{ fontSize: 22 }}>
+                            <Typography
+                              sx={{
+                                fontSize: 22,
+
+                                fontWeight: "bold",
+
+                                color: "white",
+
+                                letterSpacing: 2,
+                              }}
+                            >
                               {item.label}
                             </Typography>
                           </Link>
@@ -199,15 +224,30 @@ export default function CustomHeader2(): JSX.Element {
                   )}
                 </ListItem>
               ))}
-              <img
-                src="https://i.imgur.com/Zcgk1vf.png"
-                alt="Logo saying dailyvibe"
-                style={{
-                  width: "250px",
-                  height: "140px",
-                  objectFit: "contain",
+              <Box
+                sx={{
+                  backgroundColor: "white",
+                  borderRadius: "50%",
+                  height: 140,
+                  width: 140,
+                  display: "flex",
+                  alignItems: "center",
+                  justifyContent: "center",
+                  position: "relative",
+                  marginLeft: 4,
                 }}
-              />
+              >
+                <img
+                  src="https://i.imgur.com/Zcgk1vf.png"
+                  alt="Logo saying dailyvibe"
+                  style={{
+                    width: "100%",
+                    height: "100%",
+                    objectFit: "contain",
+                    borderRadius: "50%",
+                  }}
+                />
+              </Box>
             </List>
           </Drawer>
         </Box>
