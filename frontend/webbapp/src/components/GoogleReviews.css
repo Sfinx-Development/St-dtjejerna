@@ -1,0 +1,55 @@
+.reviews-container {
+    padding: 20px 0; 
+    width: 100vw; 
+    background-color: #f9f9f9;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    overflow: hidden;
+    white-space: nowrap;
+}
+
+.reviews-container h1 {
+    text-align: center;
+    margin-bottom: 20px;
+}
+
+.reviews-marquee {
+    overflow: hidden;
+    position: relative;
+    width: 100%;
+}
+
+.reviews-track {
+    display: flex;
+    animation: marquee 40s linear infinite;
+    width: 100%;
+}
+
+.review {
+    padding: 10px;
+    border-right: 1px solid #ddd;
+    display: inline-block;
+    min-width: 200px;
+    white-space: normal;
+}
+
+.review h2 {
+    margin: 0;
+    font-size: 18px;
+}
+
+.review .rating {
+    margin: 5px 0;
+}
+
+.review p {
+    margin: 0;
+}
+
+@keyframes marquee {
+    0% {
+        transform: translateX(100vw);
+    }
+    100% {
+        transform: translateX(-100%);
+    }
+}
