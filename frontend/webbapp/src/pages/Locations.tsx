@@ -1,4 +1,8 @@
+<<<<<<< HEAD
 import { Box, Typography } from "@mui/material";
+=======
+import { Box, Typography, useMediaQuery, useTheme } from "@mui/material";
+>>>>>>> 630bd58672ead9d2b1e7c903118470323d9edca5
 import { FC } from "react";
 import IframeComponent from "../components/IframeComponent";
 
@@ -18,6 +22,8 @@ declare global {
 }
 
 const Locations: FC = () => {
+  const theme = useTheme();
+  const isMobile = useMediaQuery(theme.breakpoints.down("sm"));
   return (
     <Box
       sx={{
@@ -29,11 +35,38 @@ const Locations: FC = () => {
       }}
     >
       <Typography
+<<<<<<< HEAD
         variant="h2"
         gutterBottom
         sx={{ textAlign: "center", color: "#d29bbf" }}
       >
         Vart vi finns idag...
+=======
+        variant={isMobile ? "h4" : "h2"}
+        gutterBottom
+        sx={{
+          textAlign: "center",
+          color: "#d29bbf",
+          position: "relative",
+          marginTop: isMobile ? "40px" : "20px",
+          marginBottom: "20px",
+        }}
+      >
+        Här finns vi idag
+        <Box
+          sx={{
+            position: "absolute",
+            bottom: "-10px",
+            left: "50%",
+            transform: "translateX(-50%)",
+            width: "80px",
+            height: "2px",
+            backgroundColor: "#d29bbf",
+            borderRadius: "5px",
+            opacity: 0.7,
+          }}
+        />
+>>>>>>> 630bd58672ead9d2b1e7c903118470323d9edca5
       </Typography>
 
       <Typography

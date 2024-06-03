@@ -1,8 +1,10 @@
-import { Box, Typography } from "@mui/material";
+import { Box, Typography, useMediaQuery, useTheme } from "@mui/material";
 
 import Fade from "@mui/material/Fade";
 
 const Flyttstad = () => {
+  const theme = useTheme();
+  const isMobile = useMediaQuery(theme.breakpoints.down("sm"));
   return (
     <Fade in timeout={500}>
       <Box
@@ -35,9 +37,15 @@ const Flyttstad = () => {
           }}
         />
         <Typography
-          variant="h2"
+          variant={isMobile ? "h4" : "h2"}
           gutterBottom
-          sx={{ textAlign: "center", color: "#d29bbf", position: "relative" }}
+          sx={{
+            textAlign: "center",
+            color: "#d29bbf",
+            position: "relative",
+            marginTop: isMobile ? "40px" : "20px",
+            marginBottom: "20px",
+          }}
         >
           Flyttstäd
           <Box

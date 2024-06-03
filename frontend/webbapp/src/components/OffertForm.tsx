@@ -11,6 +11,8 @@ import {
   Snackbar,
   TextField,
   Typography,
+  useMediaQuery,
+  useTheme,
 } from "@mui/material";
 import emailjs from "emailjs-com";
 import { useState } from "react";
@@ -98,7 +100,8 @@ export default function OffertForm() {
     }
     setOpenSnackbar(false);
   };
-
+  const theme = useTheme();
+  const isMobile = useMediaQuery(theme.breakpoints.down("sm"));
   return (
     <Box
       sx={{
@@ -113,13 +116,14 @@ export default function OffertForm() {
       onSubmit={handleSubmit}
     >
       <Typography
-        variant="h2"
+        variant={isMobile ? "h4" : "h2"}
         gutterBottom
         sx={{
           textAlign: "center",
           color: "#d29bbf",
           position: "relative",
-          marginY: 2,
+          marginTop: isMobile ? "40px" : "20px",
+          marginBottom: "20px",
         }}
       >
         Offertförfrågan

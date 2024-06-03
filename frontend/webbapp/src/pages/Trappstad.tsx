@@ -1,7 +1,9 @@
-import { Box, Typography } from "@mui/material";
+import { Box, Typography, useMediaQuery, useTheme } from "@mui/material";
 import { FC } from "react";
 
 const Trappstad: FC = () => {
+  const theme = useTheme();
+  const isMobile = useMediaQuery(theme.breakpoints.down("sm"));
   return (
     <Box
       style={{
@@ -22,9 +24,21 @@ const Trappstad: FC = () => {
         }}
       />
       <Typography
+<<<<<<< HEAD
         variant="h2"
         gutterBottom
         style={{ textAlign: "center", color: "#d29bbf" }}
+=======
+        variant={isMobile ? "h4" : "h2"}
+        gutterBottom
+        sx={{
+          textAlign: "center",
+          color: "#d29bbf",
+          position: "relative",
+          marginTop: isMobile ? "40px" : "20px",
+          marginBottom: "20px",
+        }}
+>>>>>>> 630bd58672ead9d2b1e7c903118470323d9edca5
       >
         Trappstäd
       </Typography>

@@ -7,12 +7,22 @@ import {
   Grid,
   IconButton,
   Typography,
+  useMediaQuery,
+  useTheme,
 } from "@mui/material";
 import Fade from "@mui/material/Fade";
 import ContactForm from "../components/ContactForm";
 import EmbeddedMap from "../components/MapComponent";
 
 export default function Contact() {
+  const images = [
+    "https://i.imgur.com/ojwnvJ9.jpeg",
+    "https://i.imgur.com/o7ecxHq.jpeg",
+    "https://i.imgur.com/bznoNdQ.jpeg",
+    "https://i.imgur.com/BmGZV9K.jpeg",
+  ];
+  const theme = useTheme();
+  const isMobile = useMediaQuery(theme.breakpoints.down("sm"));
   return (
     <Fade in timeout={500}>
       <Box
@@ -28,13 +38,14 @@ export default function Contact() {
         }}
       >
         <Typography
-          variant="h2"
+          variant={isMobile ? "h4" : "h2"}
           gutterBottom
           sx={{
             textAlign: "center",
             color: "#d29bbf",
             position: "relative",
-            marginY: "20px",
+            marginTop: isMobile ? "40px" : "20px",
+            marginBottom: "20px",
           }}
         >
           Kontakt
@@ -59,7 +70,8 @@ export default function Contact() {
             display: "flex",
             flexDirection: { xs: "column", sm: "row" },
             alignItems: "center",
-            width: "100%",
+            marginLeft: { xs: 0, sm: 2 },
+            width: isMobile ? "95%" : "100%",
             gap: "20px",
           }}
         >
@@ -82,32 +94,31 @@ export default function Contact() {
                 <IconButton
                   aria-label="Instagram"
                   color="primary"
-                  sx={{ fontSize: "32px", color: "#833ab4" }}
+                  sx={{ color: "#833ab4" }}
                 >
-                  <InstagramIcon />
+                  <InstagramIcon sx={{ fontSize: 40 }} />
                 </IconButton>
               </Grid>
               <Grid item>
                 <IconButton
                   aria-label="Facebook"
                   color="primary"
-                  sx={{ fontSize: "32px", color: "#3b5998" }}
+                  sx={{ color: "#3b5998" }}
                 >
-                  <FacebookIcon />
+                  <FacebookIcon sx={{ fontSize: 40 }} />
                 </IconButton>
               </Grid>
             </Grid>
             <Typography
               variant="h6"
-              sx={{ textAlign: "center", marginTop: "20px" }}
+              sx={{
+                textAlign: isMobile ? "start" : "center",
+                marginTop: "20px",
+                marginBottom: "20px",
+              }}
             >
-              Följ oss på sociala medier för de senaste
-            </Typography>
-            <Typography
-              variant="h6"
-              sx={{ marginBottom: "20px", textAlign: "center" }}
-            >
-              uppdateringarna från Städtjejerna!
+              Följ oss på sociala medier för de senaste uppdateringarna från
+              Städtjejerna!
             </Typography>
           </Card>
           <EmbeddedMap width="100%" height="300px" />
@@ -119,45 +130,25 @@ export default function Contact() {
             justifyContent: "space-evenly",
             alignItems: "center",
             gap: "20px",
-            width: "100%",
+            width: "98%",
+            padding: 2,
+            flexWrap: "wrap",
           }}
         >
-          <img
-            alt="girl in mirror"
-            src="https://i.imgur.com/ojwnvJ9.jpeg"
-            style={{
-              width: "calc(25% - 10px)",
-              borderRadius: "8px",
-              transition: "transform 0.3s ease",
-            }}
-          />
-          <img
-            alt="cleaning shower"
-            src="https://i.imgur.com/o7ecxHq.jpeg"
-            style={{
-              width: "calc(25% - 10px)",
-              borderRadius: "8px",
-              transition: "transform 0.3s ease",
-            }}
-          />
-          <img
-            alt="selfie in mirror"
-            src="https://i.imgur.com/bznoNdQ.jpeg"
-            style={{
-              width: "calc(25% - 10px)",
-              borderRadius: "8px",
-              transition: "transform 0.3s ease",
-            }}
-          />
-          <img
-            alt="selfie in mirror"
-            src="https://i.imgur.com/BmGZV9K.jpeg"
-            style={{
-              width: "calc(25% - 10px)",
-              borderRadius: "8px",
-              transition: "transform 0.3s ease",
-            }}
-          />
+          {images.map((src, index) => (
+            <img
+              key={index}
+              alt={`Image ${index + 1}`}
+              src={src}
+              style={{
+                flex: "1 1 250px",
+                maxWidth: "100%",
+                borderRadius: "8px",
+                maxHeight: 350,
+                transition: "transform 0.3s ease",
+              }}
+            />
+          ))}
         </Box>
       </Box>
     </Fade>
