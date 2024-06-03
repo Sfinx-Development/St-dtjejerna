@@ -4,6 +4,7 @@ import {
   Grow,
   MenuItem,
   MenuList,
+  Link as MuiLink,
   Paper,
   Popper,
   Typography,
@@ -153,15 +154,13 @@ export default function CustomHeader2(): JSX.Element {
     event: React.MouseEvent<HTMLElement>,
     menuName: string
   ) => {
-    if (timeoutRef.current) {
-      clearTimeout(timeoutRef.current);
-      handleToggleMenu(event, menuName);
-    }
+    if (timeoutRef.current) clearTimeout(timeoutRef.current);
+    handleToggleMenu(event, menuName);
   };
 
   const handleMouseLeave = () => {
     if (timeoutRef.current) clearTimeout(timeoutRef.current);
-    setTimeout(() => {
+    timeoutRef.current = setTimeout(() => {
       handleCloseMenu();
     }, 0);
   };
@@ -171,12 +170,10 @@ export default function CustomHeader2(): JSX.Element {
   };
 
   const handleSubMenuMouseLeave = () => {
-    if (timeoutRef.current) {
-      clearTimeout(timeoutRef.current);
-      setTimeout(() => {
-        handleCloseMenu();
-      }, 0);
-    }
+    if (timeoutRef.current) clearTimeout(timeoutRef.current);
+    timeoutRef.current = setTimeout(() => {
+      handleCloseMenu();
+    }, 0);
   };
 
   const links: LinkItem[] = [
