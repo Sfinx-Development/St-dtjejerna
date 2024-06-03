@@ -196,7 +196,9 @@ export default function CustomHeader2(): JSX.Element {
                           }}
                         >
                           <Link
-                            to={item.href}
+                            to={
+                              item.label == "Tjänster" ? "/hemstad" : item.href
+                            }
                             style={{
                               textDecoration: "none",
                               color: "black",
