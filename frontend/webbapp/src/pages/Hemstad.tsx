@@ -80,9 +80,9 @@ const Hemstad: FC = () => {
             över till sådant som du verkligen uppskattar? Starta då ett
             städabonnemang och låt Städtjejerna göra jobbet! Vi är vana vid att
             ta hand om olika typer av boenden och behov runt om i Borås med
-            omnejd. Därför skräddarsys hemstädningen med ett upplägg som
-            matchar just dina unika behov. Kanske önskas lakansbyte, strykning
-            eller hjälp med tvätt?
+            omnejd. Därför skräddarsys hemstädningen med ett upplägg som matchar
+            just dina unika behov. Kanske önskas lakansbyte, strykning eller
+            hjälp med tvätt?
           </Typography>
           <Typography variant="body1" paragraph>
             Berätta vad du önskar få hjälp med så sammanställer vi allt
@@ -98,7 +98,7 @@ const Hemstad: FC = () => {
             kvalitè och kontinuitet. Allt för att du ska kunna släppa tankarna
             på städningen och fokusera på annat under tiden.
           </Typography>
-          
+
           <Box
             sx={{
               width: "100%",
@@ -109,14 +109,18 @@ const Hemstad: FC = () => {
           />
         </Box>
         <Typography
-                variant="h6"
-                gutterBottom
-                style={{ textAlign: "center", color: "#d29bbf" }}
-              >
-                Följande städmoment ingår som grund i abonnemanget
-              </Typography>
+          variant="h6"
+          gutterBottom
+          style={{ textAlign: "center", color: "#d29bbf" }}
+        >
+          Följande städmoment ingår som grund i abonnemanget
+        </Typography>
 
-        <Grid container spacing={2} sx={{ padding: "0 20px", marginBottom: "20px" }}>
+        <Grid
+          container
+          spacing={2}
+          sx={{ padding: "0 20px", marginBottom: "20px" }}
+        >
           <Grid item xs={12} md={4}>
             <Box
               sx={{
@@ -127,8 +131,11 @@ const Hemstad: FC = () => {
                 height: "100%",
               }}
             >
-            
-              <Typography variant="h4" gutterBottom style={{ color: "#d29bbf" }}>
+              <Typography
+                variant="h4"
+                gutterBottom
+                style={{ color: "#d29bbf" }}
+              >
                 Alla rum:
               </Typography>
               <ul>
@@ -171,7 +178,11 @@ const Hemstad: FC = () => {
                 height: "100%",
               }}
             >
-              <Typography variant="h4" gutterBottom style={{ color: "#d29bbf" }}>
+              <Typography
+                variant="h4"
+                gutterBottom
+                style={{ color: "#d29bbf" }}
+              >
                 Badrum:
               </Typography>
               <ul>
@@ -203,7 +214,11 @@ const Hemstad: FC = () => {
                 height: "100%",
               }}
             >
-              <Typography variant="h4" gutterBottom style={{ color: "#d29bbf" }}>
+              <Typography
+                variant="h4"
+                gutterBottom
+                style={{ color: "#d29bbf" }}
+              >
                 Kök:
               </Typography>
               <ul>
@@ -218,7 +233,9 @@ const Hemstad: FC = () => {
                   <Typography>Lägger in disken i diskmaskinen.</Typography>
                 </li>
                 <li>
-                  <Typography>Rengöring av diskhon, kranar och spis.</Typography>
+                  <Typography>
+                    Rengöring av diskhon, kranar och spis.
+                  </Typography>
                 </li>
                 <li>
                   <Typography>
@@ -226,21 +243,18 @@ const Hemstad: FC = () => {
                   </Typography>
                 </li>
               </ul>
-             
             </Box>
-            
           </Grid>
         </Grid>
         <Typography
-                variant="h6"
-                gutterBottom
-                style={{ textAlign: "center", color: "#d29bbf" }}
-              >
-                Utöver städabonnemang erbjuder vi även storstädning eller
-                hemstäd vid enskilda tillfällen när behov finns.
-              </Typography>
+          variant="h6"
+          gutterBottom
+          style={{ textAlign: "center", color: "#d29bbf" }}
+        >
+          Utöver städabonnemang erbjuder vi även storstädning eller hemstäd vid
+          enskilda tillfällen när behov finns.
+        </Typography>
       </Box>
-      
     </Fade>
   );
 };
