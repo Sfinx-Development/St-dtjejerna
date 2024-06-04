@@ -4,6 +4,7 @@ import IframeComponent from "../components/IframeComponent";
 
 declare global {
   interface Window {
+    //en kommentar
     google: {
       maps: {
         // eslint-disable-next-line @typescript-eslint/no-explicit-any
