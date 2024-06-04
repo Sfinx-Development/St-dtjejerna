@@ -119,18 +119,32 @@ const Flyttstad = () => {
               Städoment som utförs i alla rum
             </Typography>
             <ul>
-              <li>Fönsterputsning</li>
               <li>
-                Dammsugning och våtmoppning av, golv, lister, dörrar,
-                dörrkarmar, fönsterbrädor, fria ytor, element garderobsdörrar
-                och skåpdörrar
+                <Typography>Fönsterputsning</Typography>
               </li>
               <li>
-                Torkning utvändligt och invändigt i garderober, skåp, och
-                bokhyllor.
+                <Typography>
+                  Dammsugning och våtmoppning av, golv, lister, dörrar,
+                  dörrkarmar, fönsterbrädor, fria ytor, element garderobsdörrar
+                  och skåpdörrar
+                </Typography>
               </li>
-              <li>Dammtorkarning av väggar, eluttag, ytterdörrar och lampor</li>
-              <li>Spegelputsning</li>
+              <li>
+                <Typography>
+                  Torkning utvändligt och invändigt i garderober, skåp, och
+                  bokhyllor.
+                </Typography>
+              </li>
+              <li>
+                {" "}
+                <Typography>
+                  Dammtorkarning av väggar, eluttag, ytterdörrar och lampor{" "}
+                </Typography>
+              </li>
+              <li>
+                {" "}
+                <Typography>Spegelputsning </Typography>
+              </li>
             </ul>
           </Box>
           <Box sx={{ maxWidth: "100%", marginBottom: { xs: "20px", md: 0 } }}>
@@ -138,15 +152,37 @@ const Flyttstad = () => {
               Badrumsstädning
             </Typography>
             <ul>
-              <li>Rengöring av väggar och golv.</li>
-              <li>Putsning av blandare, synliga rör och duschmunstycke.</li>
-              <li>Avfettning och avkalkning av väggar och fogar.</li>
-              <li>Rengöring av golvbrunnen.</li>
-              <li>Rengöring av dusch/badkar, inklusive under badkaret.</li>
-              <li>Torkar badrumsskåp in- och utvändigt samt ovanpå.</li>
               <li>
-                Rengöring av kran, handfat och toalettstol samt utsidan av
-                vitvaror och tvättmedelsbehållaren på tvättmaskinen.
+                <Typography>Rengöring av väggar och golv.</Typography>
+              </li>
+              <li>
+                <Typography>
+                  Putsning av blandare, synliga rör och duschmunstycke.
+                </Typography>
+              </li>
+              <li>
+                <Typography>
+                  Avfettning och avkalkning av väggar och fogar.
+                </Typography>
+              </li>
+              <li>
+                <Typography>Rengöring av golvbrunnen.</Typography>
+              </li>
+              <li>
+                <Typography>
+                  Rengöring av dusch/badkar, inklusive under badkaret.
+                </Typography>
+              </li>
+              <li>
+                <Typography>
+                  Torkar badrumsskåp in- och utvändigt samt ovanpå.
+                </Typography>
+              </li>
+              <li>
+                <Typography>
+                  Rengöring av kran, handfat och toalettstol samt utsidan av
+                  vitvaror och tvättmedelsbehållaren på tvättmaskinen.
+                </Typography>
               </li>
             </ul>
           </Box>
@@ -155,23 +191,54 @@ const Flyttstad = () => {
               Köksstädning
             </Typography>
             <ul>
-              <li>Rengöring av kyl och frys ut- och invändigt.</li>
               <li>
-                Rengöring av spis och ugn ut- och invändigt, inklusive plåtar
-                och galler.
-              </li>
-              <li>Rengöring av fläkt och fläktfilter (ej kolfilter).</li>
-              <li>
-                Rengöring in- och utvändigt samt ovanpå skåp, hyllor och lådor.
+                <Typography>
+                  Rengöring av kyl och frys ut- och invändigt.
+                </Typography>
               </li>
               <li>
-                Rengöring av kakel/stänkskydd ovanför diskbänk samt under skåp,
-                i besticklådor och torkning av socklar.
+                <Typography>
+                  Rengöring av spis och ugn ut- och invändigt, inklusive plåtar
+                  och galler.
+                </Typography>
               </li>
-              <li>Rengöring av mikrovågsugn ut- och invändigt.</li>
-              <li>Torkning av diskmaskin in- och utvändigt.</li>
-              <li>Tömning och torkning av sopkorg/återvinningsbehållare.</li>
-              <li>Putsning av diskho, blandare, propp och sil.</li>
+              <li>
+                <Typography>
+                  Rengöring av fläkt och fläktfilter (ej kolfilter).
+                </Typography>
+              </li>
+              <li>
+                <Typography>
+                  Rengöring in- och utvändigt samt ovanpå skåp, hyllor och
+                  lådor.
+                </Typography>
+              </li>
+              <li>
+                <Typography>
+                  Rengöring av kakel/stänkskydd ovanför diskbänk samt under
+                  skåp, i besticklådor och torkning av socklar.
+                </Typography>
+              </li>
+              <li>
+                <Typography>
+                  Rengöring av mikrovågsugn ut- och invändigt.
+                </Typography>
+              </li>
+              <li>
+                <Typography>
+                  Torkning av diskmaskin in- och utvändigt.
+                </Typography>
+              </li>
+              <li>
+                <Typography>
+                  Tömning och torkning av sopkorg/återvinningsbehållare.
+                </Typography>
+              </li>
+              <li>
+                <Typography>
+                  Putsning av diskho, blandare, propp och sil.
+                </Typography>
+              </li>
             </ul>
           </Box>
         </Box>

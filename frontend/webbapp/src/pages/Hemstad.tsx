@@ -83,19 +83,29 @@ const Hemstad: FC = () => {
           </Typography>
           <ul>
             <li>
-              Dammsugning av golv, lister, elkontakter, element, mattor och
-              möbler med stoppning som till exempel soffor och fåtöljer.
+              <Typography>
+                Dammsugning av golv, lister, elkontakter, element, mattor och
+                möbler med stoppning som till exempel soffor och fåtöljer.
+              </Typography>
             </li>
-            <li>Fuktmoppning av alla golv.</li>
             <li>
-              Dammtorkning/våttorkning av alla öppna ytor som till exempel bord,
-              bänkar, fönsterbrädor, dörrar och hyllor samt golvlister, socklar
-              och lampor (som nås utan pall).
+              <Typography>Fuktmoppning av alla golv.</Typography>
             </li>
-            <li>Putsning av speglar.</li>
             <li>
-              Lösa föremål plockas i ordning som till exempel leksaker, kläder,
-              tidningar.
+              <Typography>
+                Dammtorkning/våttorkning av alla öppna ytor som till exempel
+                bord, bänkar, fönsterbrädor, dörrar och hyllor samt golvlister,
+                socklar och lampor (som nås utan pall).
+              </Typography>
+            </li>
+            <li>
+              <Typography>Putsning av speglar.</Typography>
+            </li>
+            <li>
+              <Typography>
+                Lösa föremål plockas i ordning som till exempel leksaker,
+                kläder, tidningar.
+              </Typography>
             </li>
           </ul>
         </Box>
@@ -105,14 +115,20 @@ const Hemstad: FC = () => {
           </Typography>
           <ul>
             <li>
-              Rengöring av badkar, dusch, handfat, kran och toalett samt kaklet
-              runt omkring.
+              <Typography>
+                Rengöring av badkar, dusch, handfat, kran och toalett samt
+                kaklet runt omkring.
+              </Typography>
             </li>
             <li>
-              Våttorkning av fläckar på badrumsskåp, väggar, tvättmaskin och
-              torktumlare.
+              <Typography>
+                Våttorkning av fläckar på badrumsskåp, väggar, tvättmaskin och
+                torktumlare.
+              </Typography>
             </li>
-            <li>Putsning av speglar</li>
+            <li>
+              <Typography>Putsning av speglar</Typography>
+            </li>
           </ul>
         </Box>
         <Box style={{ maxWidth: "100%", marginBottom: "20px" }}>
@@ -121,13 +137,23 @@ const Hemstad: FC = () => {
           </Typography>
           <ul>
             <li>
-              Våttorkning av kaklet ovanför diskbänken, fläckar på köksluckor,
-              kaffebryggare, mikrovågsugn invändigt och utvändigt, brödrost,
-              bord, stolar och
+              <Typography>
+                Våttorkning av kaklet ovanför diskbänken, fläckar på köksluckor,
+                kaffebryggare, mikrovågsugn invändigt och utvändigt, brödrost,
+                bord, stolar och
+              </Typography>
             </li>
-            <li>Lägger in disken i diskmaskinen.</li>
-            <li>Rengöring av diskhon, kranar och spis.</li>
-            <li>Tömning av sopor och utrymmet under diskbänken.</li>
+            <li>
+              <Typography>Lägger in disken i diskmaskinen.</Typography>
+            </li>
+            <li>
+              <Typography>Rengöring av diskhon, kranar och spis.</Typography>
+            </li>
+            <li>
+              <Typography>
+                Tömning av sopor och utrymmet under diskbänken.
+              </Typography>
+            </li>
           </ul>
         </Box>
       </Box>
