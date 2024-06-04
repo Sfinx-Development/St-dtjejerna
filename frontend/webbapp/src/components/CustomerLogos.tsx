@@ -1,5 +1,4 @@
 import { Box, Grid, Typography } from "@mui/material";
-
 const logos = [
   "https://i.imgur.com/BppOfZg.png",
   "https://i.imgur.com/SyKiY71.jpeg",
@@ -18,30 +17,48 @@ export default function CustomerLogos() {
     <Box
       sx={{
         width: "100%",
-        // background:
-        //   "linear-gradient(to right, white, #d1acc4 20%, #d1acc4 80%, white)",
-        backgroundColor: "#e3c5da",
+        fontFamily: "Roboto, sans-serif",
         display: "flex",
         flexDirection: "column",
-
         paddingY: 4,
         textAlign: "center",
         overflow: "hidden",
         boxShadow: "0px 4px 15px rgba(0, 0, 0, 0.1)",
       }}
     >
-      <Typography
+      <Box
         sx={{
-          fontSize: { xs: 32, md: 40 },
-          fontWeight: "700",
-          color: "white",
-          letterSpacing: 1,
-          marginBottom: 6,
-          textTransform: "uppercase",
+          display: "flex",
+          justifyContent: "center",
+          marginBottom: 4,
+          alignItems: "center",
         }}
       >
-        Nöjda kunder
-      </Typography>
+        <Typography
+          sx={{
+            fontSize: { xs: 32, md: 40 },
+            color: "#d29bbf",
+            letterSpacing: 1,
+            position: "relative",
+            marginBottom: "20px",
+          }}
+        >
+          Nöjda kunder
+          <Box
+            sx={{
+              position: "absolute",
+              bottom: "-10px",
+              left: "50%",
+              transform: "translateX(-50%)",
+              width: "80px",
+              height: "2px",
+              backgroundColor: "#d29bbf",
+              borderRadius: "5px",
+              opacity: 0.7,
+            }}
+          />
+        </Typography>
+      </Box>
       <Grid
         container
         spacing={{ xs: 2, md: 5 }}

@@ -30,10 +30,6 @@ export default function Services() {
           <br />
           Ett <em>grundligt städschema</em> utformas tillsammans med kunden och
           vi går igenom varje moment och specifika önskemål punkt för punkt.{" "}
-          <br />
-          <br />
-          Du som kund kan också känna dig trygg med att Städtjejerna ser till
-          att de som flyttar in i ditt gamla boende blir nöjda.
         </>
       ),
       image:
@@ -92,7 +88,7 @@ export default function Services() {
               height: 400,
               margin: { xs: 1, md: 2 },
               display: "flex",
-              alignItems: "center",
+              alignItems: "end",
               justifyContent: "center",
               color: "white",
               position: "relative",
@@ -107,15 +103,15 @@ export default function Services() {
           >
             <Box
               sx={{
-                // backgroundColor: "rgba(255, 255, 255, 0.4)",
+                backgroundColor: "rgba(255, 255, 255, 0.7)",
                 boxShadow: "0 4px 8px rgba(0, 0, 0, 0.2)",
                 borderRadius: 2,
                 padding: 2,
                 textAlign: "center",
                 flexGrow: 1,
                 width: "100%",
-
-                backgroundColor: "rgba(255,255,255,0.6)",
+                minHeight: 230,
+                // backgroundColor: "rgba(0,0,0,0.6)",
               }}
             >
               <Typography
@@ -123,14 +119,33 @@ export default function Services() {
                   fontSize: 24,
 
                   fontWeight: "bold",
-                  color: "#c47cac",
+                  color: "#d29bbf",
                   padding: 0,
                   letterSpacing: 2,
+                  position: "relative",
+                  marginBottom: "20px",
                 }}
               >
                 {service.title}
+                <Box
+                  sx={{
+                    position: "absolute",
+                    bottom: "-10px",
+                    left: "50%",
+                    transform: "translateX(-50%)",
+                    width: "80px",
+                    height: "2px",
+                    backgroundColor: "#d29bbf",
+                    borderRadius: "5px",
+                    opacity: 0.7,
+                  }}
+                />
               </Typography>
-              <Typography variant="body1" color="black">
+              <Typography
+                variant="body1"
+                color="black"
+                sx={{ position: "relative" }}
+              >
                 {service.description}
               </Typography>
             </Box>
