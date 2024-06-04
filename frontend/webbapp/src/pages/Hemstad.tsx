@@ -1,16 +1,22 @@
 import { Box, Typography, useMediaQuery, useTheme } from "@mui/material";
 import { FC } from "react";
+import Fade from "@mui/material/Fade";
 
 const Hemstad: FC = () => {
   const theme = useTheme();
   const isMobile = useMediaQuery(theme.breakpoints.down("sm"));
   return (
+    <Fade in timeout={500}>
     <Box
       style={{
         display: "flex",
         flexDirection: "column",
         alignItems: "center",
         justifyContent: "center",
+        border: "1px solid #d29bbf",
+        borderRadius: "10px",
+        boxShadow: "0 4px 12px rgba(0, 0, 0, 0.1)",
+        backgroundColor: "#fff",
         width: isMobile ? "90%" : "100%",
       }}
     >
@@ -22,6 +28,10 @@ const Hemstad: FC = () => {
           maxWidth: "100vw",
           maxHeight: "50vh",
           objectFit: "cover",
+          borderRadius: "10px",
+          boxShadow: "0 4px 12px rgba(0, 0, 0, 0.1)",
+          marginBottom: "20px",
+          filter: "grayscale(20%)",
         }}
       />
       <Typography
@@ -36,7 +46,32 @@ const Hemstad: FC = () => {
         }}
       >
         Hemstäd
+        <Box
+            sx={{
+              position: "absolute",
+              bottom: "-10px",
+              left: "50%",
+              transform: "translateX(-50%)",
+              width: "80px",
+              height: "2px",
+              backgroundColor: "#d29bbf",
+              borderRadius: "5px",
+              opacity: 0.7,
+            }}
+          />
       </Typography>
+      <Box
+          sx={{
+            backgroundColor: "#f4f4f4",
+            padding: "20px",
+            maxWidth: "800px",
+            textAlign: "left",
+            borderRadius: "10px",
+            boxShadow: "0 2px 10px rgba(0,0,0,0.1)",
+            filter: "contrast(120%)",
+            marginBottom: "20px",
+          }}
+        >
       <Typography variant="body1" paragraph>
         <strong>Skräddarsydd hemstädning i Borås</strong>
       </Typography>
@@ -77,6 +112,7 @@ const Hemstad: FC = () => {
           flexWrap: "wrap", // Lägger till wrap för att låta boxarna gå ner på nya rader vid behov
         }}
       >
+        </Box>
         <Box style={{ maxWidth: "100%", marginBottom: "20px" }}>
           <Typography variant="h4" gutterBottom style={{ color: "#d29bbf" }}>
             Alla rum:
@@ -137,6 +173,7 @@ const Hemstad: FC = () => {
         enskilda tillfällen när behov finns.
       </Typography>
     </Box>
+    </Fade>
   );
 };
 
