@@ -1,5 +1,4 @@
-import { Box, Typography, useMediaQuery, useTheme } from "@mui/material";
-
+import { Box, Typography, useMediaQuery, useTheme, Grid } from "@mui/material";
 import Fade from "@mui/material/Fade";
 
 const Flyttstad = () => {
@@ -64,7 +63,7 @@ const Flyttstad = () => {
           sx={{
             backgroundColor: "#f4f4f4",
             padding: "20px",
-            maxWidth: "800px",
+            maxWidth: "900px",
             textAlign: "left",
             borderRadius: "10px",
             boxShadow: "0 2px 10px rgba(0,0,0,0.1)",
@@ -103,146 +102,175 @@ const Flyttstad = () => {
             }}
           />
         </Box>
-        <Box
-          sx={{
-            display: "flex",
-            flexDirection: { xs: "column", md: "row" },
-            justifyContent: "space-between",
-            width: "100%",
-            padding: "20px",
-            backgroundColor: "#f4f4f4",
-            flexWrap: "wrap",
-          }}
+
+        <Grid container spacing={2} sx={{ padding: "0 20px", marginBottom: "20px" }}>
+          <Grid item xs={12} md={4}>
+            <Box
+              sx={{
+                backgroundColor: "#f4f4f4",
+                padding: "20px",
+                borderRadius: "10px",
+                boxShadow: "0 2px 10px rgba(0,0,0,0.1)",
+                height: "100%",
+              }}
+            >
+              <Typography variant="h4" gutterBottom sx={{ color: "#d29bbf" }}>
+                Städoment som utförs i alla rum
+              </Typography>
+              <ul>
+                <li>
+                  <Typography>Fönsterputsning</Typography>
+                </li>
+                <li>
+                  <Typography>
+                    Dammsugning och våtmoppning av, golv, lister, dörrar,
+                    dörrkarmar, fönsterbrädor, fria ytor, element garderobsdörrar
+                    och skåpdörrar
+                  </Typography>
+                </li>
+                <li>
+                  <Typography>
+                    Torkning utvändligt och invändigt i garderober, skåp, och
+                    bokhyllor.
+                  </Typography>
+                </li>
+                <li>
+                  <Typography>
+                    Dammtorkarning av väggar, eluttag, ytterdörrar och lampor
+                  </Typography>
+                </li>
+                <li>
+                  <Typography>Spegelputsning</Typography>
+                </li>
+              </ul>
+            </Box>
+          </Grid>
+          <Grid item xs={12} md={4}>
+            <Box
+              sx={{
+                backgroundColor: "#f4f4f4",
+                padding: "20px",
+                borderRadius: "10px",
+                boxShadow: "0 2px 10px rgba(0,0,0,0.1)",
+                height: "100%",
+              }}
+            >
+              <Typography variant="h4" gutterBottom sx={{ color: "#d29bbf" }}>
+                Badrumsstädning
+              </Typography>
+              <ul>
+                <li>
+                  <Typography>Rengöring av väggar och golv.</Typography>
+                </li>
+                <li>
+                  <Typography>
+                    Putsning av blandare, synliga rör och duschmunstycke.
+                  </Typography>
+                </li>
+                <li>
+                  <Typography>
+                    Avfettning och avkalkning av väggar och fogar.
+                  </Typography>
+                </li>
+                <li>
+                  <Typography>Rengöring av golvbrunnen.</Typography>
+                </li>
+                <li>
+                  <Typography>
+                    Rengöring av dusch/badkar, inklusive under badkaret.
+                  </Typography>
+                </li>
+                <li>
+                  <Typography>
+                    Torkar badrumsskåp in- och utvändigt samt ovanpå.
+                  </Typography>
+                </li>
+                <li>
+                  <Typography>
+                    Rengöring av kran, handfat och toalettstol samt utsidan av
+                    vitvaror och tvättmedelsbehållaren på tvättmaskinen.
+                  </Typography>
+                </li>
+              </ul>
+            </Box>
+          </Grid>
+          <Grid item xs={12} md={4}>
+            <Box
+              sx={{
+                backgroundColor: "#f4f4f4",
+                padding: "20px",
+                borderRadius: "10px",
+                boxShadow: "0 2px 10px rgba(0,0,0,0.1)",
+                height: "100%",
+              }}
+            >
+              <Typography variant="h4" gutterBottom sx={{ color: "#d29bbf" }}>
+                Köksstädning
+              </Typography>
+              <ul>
+                <li>
+                  <Typography>
+                    Rengöring av kyl och frys ut- och invändigt.
+                  </Typography>
+                </li>
+                <li>
+                  <Typography>
+                    Rengöring av spis och ugn ut- och invändigt, inklusive plåtar
+                    och galler.
+                  </Typography>
+                </li>
+                <li>
+                  <Typography>
+                    Rengöring av fläkt och fläktfilter (ej kolfilter).
+                  </Typography>
+                </li>
+                <li>
+                  <Typography>
+                    Rengöring in- och utvändigt samt ovanpå skåp, hyllor och
+                    lådor.
+                  </Typography>
+                </li>
+                <li>
+                  <Typography>
+                    Rengöring av kakel/stänkskydd ovanför diskbänk samt under
+                    skåp, i besticklådor och torkning av socklar.
+                  </Typography>
+                </li>
+                <li>
+                  <Typography>
+                    Rengöring av mikrovågsugn ut- och invändigt.
+                  </Typography>
+                </li>
+                <li>
+                  <Typography>
+                    Torkning av diskmaskin in- och utvändigt.
+                  </Typography>
+                </li>
+                <li>
+                  <Typography>
+                    Tömning och torkning av sopkorg/återvinningsbehållare.
+                  </Typography>
+                </li>
+                <li>
+                  <Typography>
+                    Putsning av diskho, blandare, propp och sil.
+                  </Typography>
+                </li>
+              </ul>
+            </Box>
+            
+          </Grid>
+          
+        </Grid>
+        <Typography
+          variant="h6"
+          gutterBottom
+          style={{ textAlign: "center", color: "#d29bbf" }}
         >
-          <Box sx={{ maxWidth: "100%", marginBottom: { xs: "20px", md: 0 } }}>
-            <Typography variant="h4" gutterBottom sx={{ color: "#d29bbf" }}>
-              Städoment som utförs i alla rum
-            </Typography>
-            <ul>
-              <li>
-                <Typography>Fönsterputsning</Typography>
-              </li>
-              <li>
-                <Typography>
-                  Dammsugning och våtmoppning av, golv, lister, dörrar,
-                  dörrkarmar, fönsterbrädor, fria ytor, element garderobsdörrar
-                  och skåpdörrar
-                </Typography>
-              </li>
-              <li>
-                <Typography>
-                  Torkning utvändligt och invändigt i garderober, skåp, och
-                  bokhyllor.
-                </Typography>
-              </li>
-              <li>
-                {" "}
-                <Typography>
-                  Dammtorkarning av väggar, eluttag, ytterdörrar och lampor{" "}
-                </Typography>
-              </li>
-              <li>
-                {" "}
-                <Typography>Spegelputsning </Typography>
-              </li>
-            </ul>
-          </Box>
-          <Box sx={{ maxWidth: "100%", marginBottom: { xs: "20px", md: 0 } }}>
-            <Typography variant="h4" gutterBottom sx={{ color: "#d29bbf" }}>
-              Badrumsstädning
-            </Typography>
-            <ul>
-              <li>
-                <Typography>Rengöring av väggar och golv.</Typography>
-              </li>
-              <li>
-                <Typography>
-                  Putsning av blandare, synliga rör och duschmunstycke.
-                </Typography>
-              </li>
-              <li>
-                <Typography>
-                  Avfettning och avkalkning av väggar och fogar.
-                </Typography>
-              </li>
-              <li>
-                <Typography>Rengöring av golvbrunnen.</Typography>
-              </li>
-              <li>
-                <Typography>
-                  Rengöring av dusch/badkar, inklusive under badkaret.
-                </Typography>
-              </li>
-              <li>
-                <Typography>
-                  Torkar badrumsskåp in- och utvändigt samt ovanpå.
-                </Typography>
-              </li>
-              <li>
-                <Typography>
-                  Rengöring av kran, handfat och toalettstol samt utsidan av
-                  vitvaror och tvättmedelsbehållaren på tvättmaskinen.
-                </Typography>
-              </li>
-            </ul>
-          </Box>
-          <Box sx={{ maxWidth: "100%", marginBottom: { xs: "20px", md: 0 } }}>
-            <Typography variant="h4" gutterBottom sx={{ color: "#d29bbf" }}>
-              Köksstädning
-            </Typography>
-            <ul>
-              <li>
-                <Typography>
-                  Rengöring av kyl och frys ut- och invändigt.
-                </Typography>
-              </li>
-              <li>
-                <Typography>
-                  Rengöring av spis och ugn ut- och invändigt, inklusive plåtar
-                  och galler.
-                </Typography>
-              </li>
-              <li>
-                <Typography>
-                  Rengöring av fläkt och fläktfilter (ej kolfilter).
-                </Typography>
-              </li>
-              <li>
-                <Typography>
-                  Rengöring in- och utvändigt samt ovanpå skåp, hyllor och
-                  lådor.
-                </Typography>
-              </li>
-              <li>
-                <Typography>
-                  Rengöring av kakel/stänkskydd ovanför diskbänk samt under
-                  skåp, i besticklådor och torkning av socklar.
-                </Typography>
-              </li>
-              <li>
-                <Typography>
-                  Rengöring av mikrovågsugn ut- och invändigt.
-                </Typography>
-              </li>
-              <li>
-                <Typography>
-                  Torkning av diskmaskin in- och utvändigt.
-                </Typography>
-              </li>
-              <li>
-                <Typography>
-                  Tömning och torkning av sopkorg/återvinningsbehållare.
-                </Typography>
-              </li>
-              <li>
-                <Typography>
-                  Putsning av diskho, blandare, propp och sil.
-                </Typography>
-              </li>
-            </ul>
-          </Box>
-        </Box>
+         Städtjejerna i 7Härad
+        </Typography>
       </Box>
+      
     </Fade>
   );
 };
