@@ -44,18 +44,31 @@ const reviews: Review[] = [
 const GoogleReviews: React.FC = () => {
   return (
     <div className="reviews-container">
-      <Typography
+      {/* <Typography
+        variant={"h4"}
+        gutterBottom
         sx={{
-          fontSize: 32,
-          fontWeight: "bold",
-          color: "white",
-          letterSpacing: 2,
           textAlign: "center",
-          marginBottom: 2,
+          color: "#d29bbf",
+          position: "relative",
+          marginBottom: "40px",
         }}
       >
         Recensioner
-      </Typography>
+        <Box
+          sx={{
+            position: "absolute",
+            bottom: "-10px",
+            left: "50%",
+            transform: "translateX(-50%)",
+            width: "80px",
+            height: "2px",
+            backgroundColor: "#c490ac",
+            borderRadius: "5px",
+            opacity: 0.7,
+          }}
+        />
+      </Typography> */}
       <div className="reviews-marquee">
         <div className="reviews-track">
           {reviews.map((review, index) => (

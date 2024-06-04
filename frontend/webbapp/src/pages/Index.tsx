@@ -22,10 +22,10 @@ export default function Index() {
         flexGrow: 1,
       }}
     >
-      <div style={{ height: 1, width: "100%", backgroundColor: "#e3c5da" }} />
+      <div style={{ height: 1.5, width: "100%", backgroundColor: "#e3c5da" }} />
       <PresentingImage />
-      <div style={{ height: 1, width: "100%", backgroundColor: "#e3c5da" }} />
-      <GoogleReviews />
+      <div style={{ height: 1.5, width: "100%", backgroundColor: "#e3c5da" }} />
+
       <Services />
 
       {/* <div style={{ height: 1, width: "100%", backgroundColor: "#e3c5da" }} />
@@ -33,12 +33,15 @@ export default function Index() {
       {/* <div style={{ height: 1, width: "100%", backgroundColor: "#e3c5da" }} />
       <CustomerReviews /> */}
 
-      <div style={{ height: 1, width: "100%", backgroundColor: "#e3c5da" }} />
+      <div style={{ height: 1.5, width: "100%", backgroundColor: "#e3c5da" }} />
       <Security />
-      <div style={{ height: 1, width: "100%", backgroundColor: "#e3c5da" }} />
+
+      <div style={{ height: 1.5, width: "100%", backgroundColor: "#e3c5da" }} />
+      <GoogleReviews />
+      <div style={{ height: 1.5, width: "100%", backgroundColor: "#e3c5da" }} />
       <CustomerLogos />
 
-      <div style={{ height: 1, width: "100%", backgroundColor: "#e3c5da" }} />
+      <div style={{ height: 1.5, width: "100%", backgroundColor: "#e3c5da" }} />
     </Box>
   );
 }

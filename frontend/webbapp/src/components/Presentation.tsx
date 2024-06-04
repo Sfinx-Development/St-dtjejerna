@@ -47,10 +47,12 @@ export default function PresentingImage() {
           flexDirection: "column",
 
           justifyContent: "center",
+          paddingLeft: isMobile ? 0 : 10,
 
           alignItems: { xs: "center", md: "flex-start" },
 
           paddingY: 4,
+
           zIndex: 1,
 
           width: { xs: "100%", md: "40%" },

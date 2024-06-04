@@ -1,9 +1,9 @@
 .reviews-container {
-  padding: 40px 0;
+  padding: 20px 0;
   width: 100%;
-  /* background-color: #f5e9f0; */
-  background-color: #e3c5da;
+  /* Genomskinligt svart */
   box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  background-color: rgba(209, 172, 196, 0.5);
   overflow: hidden;
 }
 
@@ -15,17 +15,18 @@
 
 .reviews-track {
   display: flex;
-  animation: marquee 20s linear infinite;
+  animation: marquee 10s linear infinite;
 }
 
 .review {
   padding: 20px;
-  border-right: 1px solid #ddd;
   min-width: 200px;
   white-space: normal;
+  /* background-color: rgba(0, 0, 0, 0.7);  */
+  /* background-color: rgba(172, 121, 148, 0.6); */
   background-color: white;
   border-radius: 8px;
-  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.3);
   margin: 0 10px;
   text-align: center;
 }
@@ -33,6 +34,7 @@
 .review h2 {
   margin: 0;
   font-size: 18px;
+  color: #fff; /* Vit textfärg */
 }
 
 .review .rating {
@@ -41,6 +43,8 @@
 
 .review p {
   margin: 0;
+  color: black;
+  /* color: white; */
 }
 
 @keyframes marquee {
