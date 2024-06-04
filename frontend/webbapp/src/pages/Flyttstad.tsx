@@ -106,17 +106,15 @@ const Flyttstad = () => {
         <Box
           sx={{
             display: "flex",
-            flexDirection: { xs: "column", md: "row" }, // Använder olika layout baserat på skärmstorlek
+            flexDirection: { xs: "column", md: "row" },
             justifyContent: "space-between",
             width: "100%",
             padding: "20px",
             backgroundColor: "#f4f4f4",
-            flexWrap: "wrap", // Lägger till wrap för att låta boxarna gå ner på nya rader vid behov
+            flexWrap: "wrap",
           }}
         >
           <Box sx={{ maxWidth: "100%", marginBottom: { xs: "20px", md: 0 } }}>
-            {" "}
-            {/* Använder olika margins baserat på skärmstorlek */}
             <Typography variant="h4" gutterBottom sx={{ color: "#d29bbf" }}>
               Städoment som utförs i alla rum
             </Typography>
