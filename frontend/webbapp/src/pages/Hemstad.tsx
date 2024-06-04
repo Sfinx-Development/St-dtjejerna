@@ -64,7 +64,7 @@ const Hemstad: FC = () => {
           sx={{
             backgroundColor: "#f4f4f4",
             padding: "20px",
-            maxWidth: "800px",
+            maxWidth: "900px",
             textAlign: "left",
             borderRadius: "10px",
             boxShadow: "0 2px 10px rgba(0,0,0,0.1)",
@@ -97,9 +97,19 @@ const Hemstad: FC = () => {
         kontinuitet. Allt för att du ska kunna släppa tankarna på städningen och
         fokusera på annat under tiden.
       </Typography>
+      <Box
+            sx={{
+              width: "100%",
+              height: "2px",
+              backgroundColor: "#d29bbf",
+              marginBottom: "20px",
+            }}
+          />
+      </Box>
       <Typography variant="h6">
         Följande städmoment ingår som grund i abonnemanget:
       </Typography>
+     
       <Box
         style={{
           backgroundColor: "#f4f4f4",
@@ -112,7 +122,7 @@ const Hemstad: FC = () => {
           flexWrap: "wrap", // Lägger till wrap för att låta boxarna gå ner på nya rader vid behov
         }}
       >
-        </Box>
+        
         <Box style={{ maxWidth: "100%", marginBottom: "20px" }}>
           <Typography variant="h4" gutterBottom style={{ color: "#d29bbf" }}>
             Alla rum:

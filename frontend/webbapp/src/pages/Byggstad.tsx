@@ -17,9 +17,7 @@ const Byggstad: FC = () => {
           borderRadius: "10px",
           boxShadow: "0 4px 12px rgba(0, 0, 0, 0.1)",
           backgroundColor: "#fff",
-          // padding: "20px",
-          // margin: "20px",
-          width: "100%",
+          width: isMobile ? "90%" : "100%",
         }}
       >
         <img
@@ -27,13 +25,13 @@ const Byggstad: FC = () => {
           alt="Byggstäd"
           style={{
             width: "100%",
-            maxWidth: "100vw",
-            maxHeight: "50vh",
-            objectFit: "cover",
-            borderRadius: "10px",
-            boxShadow: "0 4px 12px rgba(0, 0, 0, 0.1)",
-            marginBottom: "20px",
-            filter: "grayscale(20%)",
+          maxWidth: "100vw",
+          maxHeight: "50vh",
+          objectFit: "cover",
+          borderRadius: "10px",
+          boxShadow: "0 4px 12px rgba(0, 0, 0, 0.1)",
+          marginBottom: "20px",
+          filter: "grayscale(20%)",
           }}
         />
         <Typography
@@ -66,7 +64,7 @@ const Byggstad: FC = () => {
           sx={{
             backgroundColor: "#f4f4f4",
             padding: "20px",
-            width: isMobile ? "90%" : "100%",
+            maxWidth: "900px",
             textAlign: "left",
             borderRadius: "10px",
             boxShadow: "0 2px 10px rgba(0,0,0,0.1)",
