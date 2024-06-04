@@ -112,11 +112,9 @@ export default function PresentingImage() {
             backgroundColor: "#dbbed1",
 
             "&:hover": {
-              borderColor: "#e3c5da",
+              borderColor: "#c499b6",
 
-              backgroundColor: "#e3c5da",
-
-              color: "#333",
+              backgroundColor: "#c499b6",
 
               transition: "background-color 0.3s ease, color 0.3s ease",
             },
@@ -150,7 +148,7 @@ export default function PresentingImage() {
               },
             }}
           >
-            <InstagramIcon />
+            <InstagramIcon sx={{ fontSize: 32 }} />
           </IconButton>
 
           <IconButton
@@ -164,7 +162,7 @@ export default function PresentingImage() {
               },
             }}
           >
-            <FacebookIcon />
+            <FacebookIcon sx={{ fontSize: 32 }} />
           </IconButton>
 
           <IconButton
@@ -178,7 +176,7 @@ export default function PresentingImage() {
               },
             }}
           >
-            <MailOutlineIcon />
+            <MailOutlineIcon sx={{ fontSize: 32 }} />
           </IconButton>
         </Box>
       </Box>

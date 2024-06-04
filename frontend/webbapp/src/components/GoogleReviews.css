@@ -1,55 +1,53 @@
 .reviews-container {
-    padding: 20px 0; 
-    width: 100vw; 
-    background-color: #f9f9f9;
-    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
-    overflow: hidden;
-    white-space: nowrap;
-}
-
-.reviews-container h1 {
-    text-align: center;
-    margin-bottom: 20px;
+  padding: 40px 0;
+  width: 100%;
+  /* background-color: #f5e9f0; */
+  background-color: #e3c5da;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  overflow: hidden;
 }
 
 .reviews-marquee {
-    overflow: hidden;
-    position: relative;
-    width: 100%;
+  overflow: hidden;
+  position: relative;
+  width: 100%;
 }
 
 .reviews-track {
-    display: flex;
-    animation: marquee 40s linear infinite;
-    width: 100%;
+  display: flex;
+  animation: marquee 20s linear infinite;
 }
 
 .review {
-    padding: 10px;
-    border-right: 1px solid #ddd;
-    display: inline-block;
-    min-width: 200px;
-    white-space: normal;
+  padding: 20px;
+  border-right: 1px solid #ddd;
+  min-width: 200px;
+  white-space: normal;
+  background-color: white;
+  border-radius: 8px;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+  margin: 0 10px;
+  text-align: center;
 }
 
 .review h2 {
-    margin: 0;
-    font-size: 18px;
+  margin: 0;
+  font-size: 18px;
 }
 
 .review .rating {
-    margin: 5px 0;
+  margin: 10px 0;
 }
 
 .review p {
-    margin: 0;
+  margin: 0;
 }
 
 @keyframes marquee {
-    0% {
-        transform: translateX(100vw);
-    }
-    100% {
-        transform: translateX(-100%);
-    }
+  0% {
+    transform: translateX(0);
+  }
+  100% {
+    transform: translateX(-50%);
+  }
 }
