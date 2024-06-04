@@ -106,9 +106,7 @@ const Hemstad: FC = () => {
             }}
           />
       </Box>
-      <Typography variant="h6">
-        Följande städmoment ingår som grund i abonnemanget:
-      </Typography>
+     
      
       <Box
         style={{
@@ -124,6 +122,9 @@ const Hemstad: FC = () => {
       >
         
         <Box style={{ maxWidth: "100%", marginBottom: "20px" }}>
+        <Typography variant="h6" style={{ textAlign: "center"}}>
+        Följande städmoment ingår som grund i abonnemanget:
+      </Typography>
           <Typography variant="h4" gutterBottom style={{ color: "#d29bbf" }}>
             Alla rum:
           </Typography>
@@ -201,13 +202,14 @@ const Hemstad: FC = () => {
               </Typography>
             </li>
           </ul>
-        </Box>
-      </Box>
-
-      <Typography variant="h6" gutterBottom style={{ textAlign: "center" }}>
+          <Typography variant="h6" gutterBottom style={{ textAlign: "center" }}>
         Utöver städabonnemang erbjuder vi även storstädning eller hemstäd vid
         enskilda tillfällen när behov finns.
       </Typography>
+        </Box>
+      </Box>
+
+ 
     </Box>
     </Fade>
   );
