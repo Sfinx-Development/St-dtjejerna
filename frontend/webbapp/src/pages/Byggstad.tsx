@@ -66,7 +66,7 @@ const Byggstad: FC = () => {
           sx={{
             backgroundColor: "#f4f4f4",
             padding: "20px",
-            maxWidth: "800px",
+            width: isMobile ? "90%" : "100%",
             textAlign: "left",
             borderRadius: "10px",
             boxShadow: "0 2px 10px rgba(0,0,0,0.1)",

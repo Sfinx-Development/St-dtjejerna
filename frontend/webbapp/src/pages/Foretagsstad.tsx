@@ -10,6 +10,7 @@ const Foretagsstad: FC = () => {
         display: "flex",
         flexDirection: "column",
         alignItems: "center",
+        width: isMobile ? "90%" : "100%",
         justifyContent: "center",
       }}
     >

@@ -11,6 +11,7 @@ const Hemstad: FC = () => {
         flexDirection: "column",
         alignItems: "center",
         justifyContent: "center",
+        width: isMobile ? "90%" : "100%",
       }}
     >
       <img
@@ -73,9 +74,10 @@ const Hemstad: FC = () => {
           display: "flex",
           flexDirection: "row",
           justifyContent: "space-between",
+          flexWrap: "wrap", // Lägger till wrap för att låta boxarna gå ner på nya rader vid behov
         }}
       >
-        <Box style={{ maxWidth: "30%" }}>
+        <Box style={{ maxWidth: "100%", marginBottom: "20px" }}>
           <Typography variant="h4" gutterBottom style={{ color: "#d29bbf" }}>
             Alla rum:
           </Typography>
@@ -97,7 +99,7 @@ const Hemstad: FC = () => {
             </li>
           </ul>
         </Box>
-        <Box style={{ maxWidth: "30%" }}>
+        <Box style={{ maxWidth: "100%", marginBottom: "20px" }}>
           <Typography variant="h4" gutterBottom style={{ color: "#d29bbf" }}>
             Badrum:
           </Typography>
@@ -113,7 +115,7 @@ const Hemstad: FC = () => {
             <li>Putsning av speglar</li>
           </ul>
         </Box>
-        <Box style={{ maxWidth: "30%" }}>
+        <Box style={{ maxWidth: "100%", marginBottom: "20px" }}>
           <Typography variant="h4" gutterBottom style={{ color: "#d29bbf" }}>
             Kök:
           </Typography>
@@ -129,7 +131,8 @@ const Hemstad: FC = () => {
           </ul>
         </Box>
       </Box>
-      <Typography variant="h4" gutterBottom style={{ textAlign: "center" }}>
+
+      <Typography variant="h6" gutterBottom style={{ textAlign: "center" }}>
         Utöver städabonnemang erbjuder vi även storstädning eller hemstäd vid
         enskilda tillfällen när behov finns.
       </Typography>

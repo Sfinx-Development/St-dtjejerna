@@ -17,9 +17,7 @@ const Flyttstad = () => {
           borderRadius: "10px",
           boxShadow: "0 4px 12px rgba(0, 0, 0, 0.1)",
           backgroundColor: "#fff",
-          // padding: "20px",
-          // margin: "20px",
-          width: "100%",
+          width: isMobile ? "90%" : "100%",
         }}
       >
         <img
@@ -108,14 +106,17 @@ const Flyttstad = () => {
         <Box
           sx={{
             display: "flex",
-            flexDirection: "row",
+            flexDirection: { xs: "column", md: "row" }, // Använder olika layout baserat på skärmstorlek
             justifyContent: "space-between",
             width: "100%",
             padding: "20px",
             backgroundColor: "#f4f4f4",
+            flexWrap: "wrap", // Lägger till wrap för att låta boxarna gå ner på nya rader vid behov
           }}
         >
-          <Box sx={{ maxWidth: "30%" }}>
+          <Box sx={{ maxWidth: "100%", marginBottom: { xs: "20px", md: 0 } }}>
+            {" "}
+            {/* Använder olika margins baserat på skärmstorlek */}
             <Typography variant="h4" gutterBottom sx={{ color: "#d29bbf" }}>
               Städoment som utförs i alla rum
             </Typography>
@@ -134,7 +135,7 @@ const Flyttstad = () => {
               <li>Spegelputsning</li>
             </ul>
           </Box>
-          <Box sx={{ maxWidth: "30%" }}>
+          <Box sx={{ maxWidth: "100%", marginBottom: { xs: "20px", md: 0 } }}>
             <Typography variant="h4" gutterBottom sx={{ color: "#d29bbf" }}>
               Badrumsstädning
             </Typography>
@@ -151,7 +152,7 @@ const Flyttstad = () => {
               </li>
             </ul>
           </Box>
-          <Box sx={{ maxWidth: "30%" }}>
+          <Box sx={{ maxWidth: "100%", marginBottom: { xs: "20px", md: 0 } }}>
             <Typography variant="h4" gutterBottom sx={{ color: "#d29bbf" }}>
               Köksstädning
             </Typography>

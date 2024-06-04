@@ -27,7 +27,8 @@ const Locations: FC = () => {
         flexDirection: "column",
         alignItems: "center",
         justifyContent: "center",
-        width: "100%",
+        // width: "100%",
+        width: isMobile ? "90%" : "100%",
       }}
     >
       <Typography

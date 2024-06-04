@@ -106,7 +106,12 @@ export default function ContactForm(props: ContactFormProps) {
       >
         <Typography
           variant="h4"
-          sx={{ marginBottom: 2, fontWeight: "bold", color: "#333" }}
+          sx={{
+            marginBottom: 2,
+            fontWeight: "bold",
+            color: "#333",
+            marginTop: 2,
+          }}
         >
           Kontakta oss
         </Typography>

@@ -11,6 +11,7 @@ const Trappstad: FC = () => {
         flexDirection: "column",
         alignItems: "center",
         justifyContent: "center",
+        width: isMobile ? "90%" : "100%",
       }}
     >
       <img
