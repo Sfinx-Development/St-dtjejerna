@@ -17,7 +17,6 @@ const Byggstad: FC = () => {
           borderRadius: "10px",
           boxShadow: "0 4px 12px rgba(0, 0, 0, 0.1)",
           backgroundColor: "#fff",
-          width: isMobile ? "90%" : "100%",
         }}
       >
         <img
@@ -25,13 +24,13 @@ const Byggstad: FC = () => {
           alt="Byggstäd"
           style={{
             width: "100%",
-          maxWidth: "100vw",
-          maxHeight: "50vh",
-          objectFit: "cover",
-          borderRadius: "10px",
-          boxShadow: "0 4px 12px rgba(0, 0, 0, 0.1)",
-          marginBottom: "20px",
-          filter: "grayscale(20%)",
+            maxWidth: "100vw",
+            maxHeight: "50vh",
+            objectFit: "cover",
+            borderRadius: "10px",
+            boxShadow: "0 4px 12px rgba(0, 0, 0, 0.1)",
+            marginBottom: "20px",
+            filter: "grayscale(20%)",
           }}
         />
         <Typography
@@ -41,8 +40,8 @@ const Byggstad: FC = () => {
             textAlign: "center",
             color: "#d29bbf",
             position: "relative",
-            marginTop: isMobile ? "40px" : "20px",
-            marginBottom: "20px",
+            marginTop: "20px",
+            marginBottom: "40px",
           }}
         >
           Byggstäd

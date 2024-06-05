@@ -23,11 +23,11 @@ const AboutUs: FC = () => {
       >
         <Box
           component="img"
-          src="https://i.imgur.com/VuRzYeq.jpeg"
+          src="https://i.imgur.com/FhsHGOs.jpeg"
           alt="Byggstäd"
           sx={{
             width: "100%",
-            maxHeight: "50vh",
+            maxHeight: "500px",
             objectFit: "cover",
             borderRadius: "10px",
             boxShadow: "0 4px 12px rgba(0, 0, 0, 0.1)",
