@@ -4,6 +4,46 @@ import Fade from "@mui/material/Fade";
 const Flyttstad = () => {
   const theme = useTheme();
   const isMobile = useMediaQuery(theme.breakpoints.down("sm"));
+
+  const sections = [
+    {
+      title: "Städoment som utförs i alla rum",
+      items: [
+        "Fönsterputsning",
+        "Dammsugning och våtmoppning av golv, lister, dörrar, dörrkarmar, fönsterbrädor, fria ytor, element garderobsdörrar och skåpdörrar",
+        "Torkning utvändligt och invändigt i garderober, skåp, och bokhyllor",
+        "Dammtorkning av väggar, eluttag, ytterdörrar och lampor",
+        "Spegelputsning",
+      ],
+    },
+    {
+      title: "Badrumsstädning",
+      items: [
+        "Rengöring av väggar och golv",
+        "Putsning av blandare, synliga rör och duschmunstycke",
+        "Avfettning och avkalkning av väggar och fogar",
+        "Rengöring av golvbrunnen",
+        "Rengöring av dusch/badkar, inklusive under badkaret",
+        "Torkar badrumsskåp in- och utvändigt samt ovanpå",
+        "Rengöring av kran, handfat och toalettstol samt utsidan av vitvaror och tvättmedelsbehållaren på tvättmaskinen",
+      ],
+    },
+    {
+      title: "Köksstädning",
+      items: [
+        "Rengöring av kyl och frys ut- och invändigt",
+        "Rengöring av spis och ugn ut- och invändigt, inklusive plåtar och galler",
+        "Rengöring av fläkt och fläktfilter (ej kolfilter)",
+        "Rengöring in- och utvändigt samt ovanpå skåp, hyllor och lådor",
+        "Rengöring av kakel/stänkskydd ovanför diskbänk samt under skåp, i besticklådor och torkning av socklar",
+        "Rengöring av mikrovågsugn ut- och invändigt",
+        "Torkning av diskmaskin in- och utvändigt",
+        "Tömning och torkning av sopkorg/återvinningsbehållare",
+        "Putsning av diskho, blandare, propp och sil",
+      ],
+    },
+  ];
+
   return (
     <Fade in timeout={500}>
       <Box
@@ -16,23 +56,33 @@ const Flyttstad = () => {
           borderRadius: "10px",
           boxShadow: "0 4px 12px rgba(0, 0, 0, 0.1)",
           backgroundColor: "#fff",
-          width: isMobile ? "90%" : "100%",
         }}
       >
-        <img
-          src="https://i.imgur.com/iMAEDV3_d.webp?maxwidth=520&shape=thumb&fidelity=high"
-          alt="Flyttstäd"
-          style={{
+        <Box
+          sx={{
             width: "100%",
-            maxWidth: "100vw",
-            maxHeight: "50vh",
-            objectFit: "cover",
             borderRadius: "10px",
             boxShadow: "0 4px 12px rgba(0, 0, 0, 0.1)",
             marginBottom: "20px",
-            filter: "grayscale(20%)",
+            maxHeight: "600px",
+            overflow: "hidden",
           }}
-        />
+        >
+          <Box
+            sx={{
+              width: "100%",
+              height: "300px",
+              backgroundImage: 'url("https://i.imgur.com/CiITz1N.jpeg")',
+              backgroundSize: "cover",
+              backgroundPosition: "center",
+              filter: "grayscale(20%)",
+              transition: "transform 0.3s",
+              "&:hover": {
+                transform: "scale(1.05)",
+              },
+            }}
+          />
+        </Box>
         <Typography
           variant={isMobile ? "h4" : "h2"}
           gutterBottom
@@ -40,8 +90,8 @@ const Flyttstad = () => {
             textAlign: "center",
             color: "#d29bbf",
             position: "relative",
-            marginTop: isMobile ? "40px" : "20px",
-            marginBottom: "20px",
+            marginTop: "20px",
+            marginBottom: "40px",
           }}
         >
           Flyttstäd
@@ -102,175 +152,44 @@ const Flyttstad = () => {
             }}
           />
         </Box>
-
-        <Grid container spacing={2} sx={{ padding: "0 20px", marginBottom: "20px" }}>
-          <Grid item xs={12} md={4}>
-            <Box
-              sx={{
-                backgroundColor: "#f4f4f4",
-                padding: "20px",
-                borderRadius: "10px",
-                boxShadow: "0 2px 10px rgba(0,0,0,0.1)",
-                height: "100%",
-              }}
-            >
-              <Typography variant="h4" gutterBottom sx={{ color: "#d29bbf" }}>
-                Städoment som utförs i alla rum
-              </Typography>
-              <ul>
-                <li>
-                  <Typography>Fönsterputsning</Typography>
-                </li>
-                <li>
-                  <Typography>
-                    Dammsugning och våtmoppning av, golv, lister, dörrar,
-                    dörrkarmar, fönsterbrädor, fria ytor, element garderobsdörrar
-                    och skåpdörrar
-                  </Typography>
-                </li>
-                <li>
-                  <Typography>
-                    Torkning utvändligt och invändigt i garderober, skåp, och
-                    bokhyllor.
-                  </Typography>
-                </li>
-                <li>
-                  <Typography>
-                    Dammtorkarning av väggar, eluttag, ytterdörrar och lampor
-                  </Typography>
-                </li>
-                <li>
-                  <Typography>Spegelputsning</Typography>
-                </li>
-              </ul>
-            </Box>
-          </Grid>
-          <Grid item xs={12} md={4}>
-            <Box
-              sx={{
-                backgroundColor: "#f4f4f4",
-                padding: "20px",
-                borderRadius: "10px",
-                boxShadow: "0 2px 10px rgba(0,0,0,0.1)",
-                height: "100%",
-              }}
-            >
-              <Typography variant="h4" gutterBottom sx={{ color: "#d29bbf" }}>
-                Badrumsstädning
-              </Typography>
-              <ul>
-                <li>
-                  <Typography>Rengöring av väggar och golv.</Typography>
-                </li>
-                <li>
-                  <Typography>
-                    Putsning av blandare, synliga rör och duschmunstycke.
-                  </Typography>
-                </li>
-                <li>
-                  <Typography>
-                    Avfettning och avkalkning av väggar och fogar.
-                  </Typography>
-                </li>
-                <li>
-                  <Typography>Rengöring av golvbrunnen.</Typography>
-                </li>
-                <li>
-                  <Typography>
-                    Rengöring av dusch/badkar, inklusive under badkaret.
-                  </Typography>
-                </li>
-                <li>
-                  <Typography>
-                    Torkar badrumsskåp in- och utvändigt samt ovanpå.
-                  </Typography>
-                </li>
-                <li>
-                  <Typography>
-                    Rengöring av kran, handfat och toalettstol samt utsidan av
-                    vitvaror och tvättmedelsbehållaren på tvättmaskinen.
-                  </Typography>
-                </li>
-              </ul>
-            </Box>
-          </Grid>
-          <Grid item xs={12} md={4}>
-            <Box
-              sx={{
-                backgroundColor: "#f4f4f4",
-                padding: "20px",
-                borderRadius: "10px",
-                boxShadow: "0 2px 10px rgba(0,0,0,0.1)",
-                height: "100%",
-              }}
-            >
-              <Typography variant="h4" gutterBottom sx={{ color: "#d29bbf" }}>
-                Köksstädning
-              </Typography>
-              <ul>
-                <li>
-                  <Typography>
-                    Rengöring av kyl och frys ut- och invändigt.
-                  </Typography>
-                </li>
-                <li>
-                  <Typography>
-                    Rengöring av spis och ugn ut- och invändigt, inklusive plåtar
-                    och galler.
-                  </Typography>
-                </li>
-                <li>
-                  <Typography>
-                    Rengöring av fläkt och fläktfilter (ej kolfilter).
-                  </Typography>
-                </li>
-                <li>
-                  <Typography>
-                    Rengöring in- och utvändigt samt ovanpå skåp, hyllor och
-                    lådor.
-                  </Typography>
-                </li>
-                <li>
-                  <Typography>
-                    Rengöring av kakel/stänkskydd ovanför diskbänk samt under
-                    skåp, i besticklådor och torkning av socklar.
-                  </Typography>
-                </li>
-                <li>
-                  <Typography>
-                    Rengöring av mikrovågsugn ut- och invändigt.
-                  </Typography>
-                </li>
-                <li>
-                  <Typography>
-                    Torkning av diskmaskin in- och utvändigt.
-                  </Typography>
-                </li>
-                <li>
-                  <Typography>
-                    Tömning och torkning av sopkorg/återvinningsbehållare.
-                  </Typography>
-                </li>
-                <li>
-                  <Typography>
-                    Putsning av diskho, blandare, propp och sil.
-                  </Typography>
-                </li>
-              </ul>
-            </Box>
-            
-          </Grid>
-          
+        <Grid
+          container
+          spacing={2}
+          sx={{ padding: "0 20px", marginBottom: "20px", gap: 5 }}
+        >
+          {sections.map((section, index) => (
+            <Grid item xs={12} md={4} key={index}>
+              <Box
+                sx={{
+                  backgroundColor: "#f4f4f4",
+                  padding: "20px",
+                  borderRadius: "10px",
+                  boxShadow: "0 2px 10px rgba(0,0,0,0.1)",
+                  height: "100%",
+                }}
+              >
+                <Typography variant="h4" gutterBottom sx={{ color: "#d29bbf" }}>
+                  {section.title}
+                </Typography>
+                <ul>
+                  {section.items.map((item, idx) => (
+                    <li key={idx}>
+                      <Typography>{item}</Typography>
+                    </li>
+                  ))}
+                </ul>
+              </Box>
+            </Grid>
+          ))}
         </Grid>
         <Typography
           variant="h6"
           gutterBottom
-          style={{ textAlign: "center", color: "#d29bbf" }}
+          sx={{ textAlign: "center", color: "#d29bbf", marginY: "20px" }}
         >
-         Städtjejerna i 7Härad
+          Städtjejerna i 7Härad
         </Typography>
       </Box>
-      
     </Fade>
   );
 };
