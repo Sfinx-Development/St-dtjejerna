@@ -8,6 +8,7 @@ import {
   Typography,
   useMediaQuery,
   useTheme,
+  Slide,
 } from "@mui/material";
 import { useState } from "react";
 import { Link } from "react-router-dom";
@@ -44,17 +45,6 @@ export default function CustomHeader2(): JSX.Element {
         { label: "Fönsterputs", href: "/fonsterputs" },
         { label: "Företagsstäd", href: "/foretagsstad" },
         { label: "Trappstäd", href: "/trappstad" },
-      ],
-    },
-    {
-      label: "Orter",
-      href: "/orter",
-      menuItems: [
-        { label: "Borås", href: "/orter" },
-        { label: "Dalsjöfors", href: "/orter" },
-        { label: "Fristad", href: "/orter" },
-        { label: "Sandared", href: "/orter" },
-        { label: "Sjömarken", href: "/orter" },
       ],
     },
     { label: "Kontakt", href: "/contact" },
@@ -143,86 +133,92 @@ export default function CustomHeader2(): JSX.Element {
                 backgroundColor: "#dbbed1",
               }}
             >
-              {links.map((link) => (
-                <ListItem
+              {links.map((link, index) => (
+                <Slide
                   key={link.label}
-                  disablePadding
-                  sx={{
-                    display: "flex",
-                    zIndex: 99991,
-                    flexDirection: "column",
-                    alignItems: "flex-start",
-                    transition: "background-color 0.3s ease",
-                    "&:hover": {
-                      backgroundColor: "#f3f3f3",
-                    },
-                    marginBottom: 2,
-                  }}
+                  direction="right"
+                  in={openDrawer}
+                  style={{ transitionDelay: `${index * 100}ms` }}
                 >
-                  <Link
-                    to={link.href}
-                    style={{
-                      textDecoration: "none",
-                      color: "black",
+                  <ListItem
+                    disablePadding
+                    sx={{
+                      display: "flex",
+                      zIndex: 99991,
+                      flexDirection: "column",
+                      alignItems: "flex-start",
+                      transition: "background-color 0.3s ease",
+                      "&:hover": {
+                        backgroundColor: "#f3f3f3",
+                      },
+                      marginBottom: 2,
                     }}
-                    onClick={handleCloseMenu}
                   >
-                    <Typography
-                      sx={{
-                        fontSize: 24,
-
-                        fontWeight: "bold",
-
-                        color: "white",
-
-                        letterSpacing: 2,
+                    <Link
+                      to={link.href}
+                      style={{
+                        textDecoration: "none",
+                        color: "black",
                       }}
+                      onClick={handleCloseMenu}
                     >
-                      {link.label}
-                    </Typography>
-                  </Link>
-                  {link.menuItems && (
-                    <List sx={{ marginLeft: 5, paddingTop: "8px" }}>
-                      {link.menuItems.map((item, index) => (
-                        <ListItem
-                          key={index}
-                          disablePadding
-                          onClick={handleCloseMenu}
-                          sx={{
-                            transition: "background-color 0.3s ease",
-                            "&:hover": {
-                              backgroundColor: "#f3f3f3",
-                            },
-                          }}
-                        >
-                          <Link
-                            to={
-                              item.label == "Tjänster" ? "/hemstad" : item.href
-                            }
-                            style={{
-                              textDecoration: "none",
-                              color: "black",
-                            }}
+                      <Typography
+                        sx={{
+                          fontSize: 24,
+                          fontStyle: "italic",
+                          // fontFamily: "'Dancing Script', cursive",
+                          color: "white",
+                          letterSpacing: 2,
+                        }}
+                      >
+                        {link.label}
+                      </Typography>
+                    </Link>
+                    {link.menuItems && (
+                      <List sx={{ marginLeft: 5, paddingTop: "8px" }}>
+                        {link.menuItems.map((item, subIndex) => (
+                          <Slide
+                            key={item.label}
+                            direction="right"
+                            in={openDrawer}
+                            style={{ transitionDelay: `${(index + subIndex + 1) * 100}ms` }}
                           >
-                            <Typography
+                            <ListItem
+                              disablePadding
+                              onClick={handleCloseMenu}
                               sx={{
-                                fontSize: 22,
-
-                                fontWeight: "bold",
-
-                                color: "white",
-
-                                letterSpacing: 2,
+                                transition: "background-color 0.3s ease",
+                                "&:hover": {
+                                  backgroundColor: "#f3f3f3",
+                                },
                               }}
                             >
-                              {item.label}
-                            </Typography>
-                          </Link>
-                        </ListItem>
-                      ))}
-                    </List>
-                  )}
-                </ListItem>
+                              <Link
+                                to={item.href}
+                                style={{
+                                  textDecoration: "none",
+                                  color: "black",
+                                }}
+                              >
+                                <Typography
+                                  sx={{
+                                    fontSize: 22,
+                                    fontStyle: "italic",
+                                    // fontFamily: "'Dancing Script', cursive",
+                                    color: "white",
+                                    letterSpacing: 2,
+                                  }}
+                                >
+                                  {item.label}
+                                </Typography>
+                              </Link>
+                            </ListItem>
+                          </Slide>
+                        ))}
+                      </List>
+                    )}
+                  </ListItem>
+                </Slide>
               ))}
               <Box
                 sx={{

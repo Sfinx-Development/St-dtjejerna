@@ -192,17 +192,17 @@ export default function CustomHeader2(): JSX.Element {
         // { label: 'Trädgårdsfix', href: '/tradgardsfix' }
       ],
     },
-    {
-      label: "Orter",
-      href: "/orter",
-      menuItems: [
-        { label: "Borås", href: "/orter" },
-        { label: "Dalsjöfors", href: "/orter" },
-        { label: "Fristad", href: "/orter" },
-        { label: "Sandared", href: "/orter" },
-        { label: "Sjömarken", href: "/orter" },
-      ],
-    },
+    // {
+    //   label: "Orter",
+    //   href: "/orter",
+    //   menuItems: [
+    //     { label: "Borås", href: "/orter" },
+    //     { label: "Dalsjöfors", href: "/orter" },
+    //     { label: "Fristad", href: "/orter" },
+    //     { label: "Sandared", href: "/orter" },
+    //     { label: "Sjömarken", href: "/orter" },
+    //   ],
+    // },
     { label: "Kontakt", href: "/contact" },
     { label: "Offert", href: "/offert" },
   ];
