@@ -34,11 +34,11 @@ const Foretagsstad: FC = () => {
           <Box
             sx={{
               width: "100%",
-              height: "300px",
+              height: "350px",
               backgroundImage: 'url("https://i.imgur.com/aCLoUIE.jpeg")',
               backgroundSize: "cover",
               backgroundPosition: "center",
-              filter: "grayscale(20%)",
+              filter: "grayscale(30%)",
               transition: "transform 0.3s",
               "&:hover": {
                 transform: "scale(1.05)",
@@ -168,7 +168,12 @@ const Foretagsstad: FC = () => {
                   },
                 }}
               >
-                <Typography variant="h4" gutterBottom sx={{ color: "#d29bbf" }}>
+                <Typography
+                  variant="h4"
+                  marginLeft={4}
+                  gutterBottom
+                  sx={{ color: "#d29bbf" }}
+                >
                   {section.title}
                 </Typography>
                 <ul>

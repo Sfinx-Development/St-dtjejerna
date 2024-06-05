@@ -253,6 +253,7 @@ export default function CustomHeader2(): JSX.Element {
           alignItems: "center",
           gap: 4,
           padding: 3.5,
+          zIndex: 9999,
         }}
       >
         {links.map((link) => (

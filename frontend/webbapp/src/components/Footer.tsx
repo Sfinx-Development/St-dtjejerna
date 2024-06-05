@@ -11,7 +11,7 @@ export default function Footer() {
         paddingLeft: 2,
         paddingRight: 2,
         textAlign: "center",
-        backgroundColor: "rgba(0,0,0,0.3)",
+        backgroundColor: "rgba(0,0,0,0.5)",
       }}
     >
       <Box

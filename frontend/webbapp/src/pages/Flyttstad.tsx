@@ -60,6 +60,8 @@ const Flyttstad = () => {
       >
         <Box
           sx={{
+            display: "flex",
+            flexDirection: { xs: "column", md: "row" },
             width: "100%",
             borderRadius: "10px",
             boxShadow: "0 4px 12px rgba(0, 0, 0, 0.1)",
@@ -70,18 +72,35 @@ const Flyttstad = () => {
         >
           <Box
             sx={{
-              width: "100%",
-              height: "300px",
+              width: { xs: "100%", md: "50%" },
+              height: "350px",
               backgroundImage: 'url("https://i.imgur.com/CiITz1N.jpeg")',
               backgroundSize: "cover",
               backgroundPosition: "center",
-              filter: "grayscale(20%)",
+              filter: "grayscale(40%)",
               transition: "transform 0.3s",
               "&:hover": {
                 transform: "scale(1.05)",
               },
             }}
           />
+          {!isMobile && (
+            <Box
+              sx={{
+                width: { xs: "100%", md: "50%" },
+                height: "350px",
+                backgroundImage: 'url("https://i.imgur.com/KhVvozY.jpeg")',
+                backgroundSize: "cover",
+                backgroundPosition: "center 90%",
+                transition: "transform 0.3s",
+                // objectFit: "cover",
+                filter: "grayscale(60%)",
+                "&:hover": {
+                  transform: "scale(1.05)",
+                },
+              }}
+            />
+          )}
         </Box>
         <Typography
           variant={isMobile ? "h4" : "h2"}
@@ -155,10 +174,16 @@ const Flyttstad = () => {
         <Grid
           container
           spacing={2}
-          sx={{ padding: "0 20px", marginBottom: "20px", gap: 5 }}
+          sx={{
+            padding: "0 10px",
+            marginBottom: "20px",
+            gap: { xs: 5, md: 2 },
+            width: "100%",
+            justifyContent: "center",
+          }}
         >
           {sections.map((section, index) => (
-            <Grid item xs={12} md={4} key={index}>
+            <Grid item xs={12} md={3} key={index}>
               <Box
                 sx={{
                   backgroundColor: "#f4f4f4",
@@ -168,7 +193,12 @@ const Flyttstad = () => {
                   height: "100%",
                 }}
               >
-                <Typography variant="h4" gutterBottom sx={{ color: "#d29bbf" }}>
+                <Typography
+                  variant="h4"
+                  textAlign={"center"}
+                  gutterBottom
+                  sx={{ color: "#d29bbf" }}
+                >
                   {section.title}
                 </Typography>
                 <ul>

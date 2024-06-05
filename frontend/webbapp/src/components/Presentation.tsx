@@ -9,12 +9,18 @@ import {
   useMediaQuery,
   useTheme,
 } from "@mui/material";
+import { useEffect, useState } from "react";
 import { useNavigate } from "react-router-dom";
 
 export default function PresentingImage() {
   const theme = useTheme();
   const isMobile = useMediaQuery(theme.breakpoints.down("sm"));
   const navigate = useNavigate();
+  const [isLoaded, setIsLoaded] = useState(false);
+
+  useEffect(() => {
+    setIsLoaded(true);
+  }, []);
 
   return (
     <Box
@@ -23,7 +29,7 @@ export default function PresentingImage() {
         flexDirection: "row",
         alignItems: "center",
         justifyContent: "center",
-        height: { xs: "400px", md: 500 },
+        height: 550,
         width: "100%",
         position: "relative",
         fontFamily: "Roboto, sans-serif",
@@ -38,21 +44,26 @@ export default function PresentingImage() {
           paddingLeft: isMobile ? 0 : 10,
           alignItems: { xs: "center", md: "flex-start" },
           paddingY: 4,
-          zIndex: 1,
+          zIndex: 2,
           width: { xs: "100%", md: "40%" },
           textAlign: { xs: "center", md: "left" },
+          fontFamily: "Roboto, sans-serif",
           position: "absolute",
+          // bottom: isMobile ? "50px" : "auto",
           left: { xs: "0", md: "50px" },
+          opacity: isLoaded ? 1 : 0,
+          transition: "opacity 1s ease",
         }}
       >
         <Typography
           variant={isMobile ? "h3" : "h2"}
           sx={{
             marginBottom: 2,
-            marginTop: 2,
             color: "white",
             letterSpacing: 2,
-            fontWeight: "bold",
+            fontWeight: "600",
+            textShadow: "0px 0px 10px rgba(0,0,0,0.3)",
+            component: "h1",
           }}
         >
           Städtjejerna i 7Härad
@@ -60,10 +71,11 @@ export default function PresentingImage() {
 
         <Typography
           sx={{
-            fontSize: 24,
-            fontWeight: "bold",
+            fontSize: 26,
+            fontWeight: "600",
             color: "white",
             letterSpacing: 2,
+            textShadow: "0px 0px 10px rgba(0,0,0,0.3)",
           }}
         >
           Låt Städtjejerna göra jobbet
@@ -108,7 +120,7 @@ export default function PresentingImage() {
               },
             }}
           >
-            <InstagramIcon sx={{ fontSize: 32 }} />
+            <InstagramIcon sx={{ fontSize: 34 }} />
           </IconButton>
 
           <IconButton
@@ -120,7 +132,7 @@ export default function PresentingImage() {
               },
             }}
           >
-            <FacebookIcon sx={{ fontSize: 32 }} />
+            <FacebookIcon sx={{ fontSize: 34 }} />
           </IconButton>
 
           <IconButton
@@ -132,16 +144,16 @@ export default function PresentingImage() {
               },
             }}
           >
-            <MailOutlineIcon sx={{ fontSize: 32 }} />
+            <MailOutlineIcon sx={{ fontSize: 34 }} />
           </IconButton>
         </Box>
       </Box>
 
       <Box
         sx={{
-          width: { xs: "100%", md: "100%" },
-          height: { xs: 400, md: "100%" },
-          zIndex: 0,
+          width: "100%",
+          height: "100%",
+          zIndex: 1,
           position: "relative",
         }}
       >
@@ -153,6 +165,8 @@ export default function PresentingImage() {
             height: "100%",
             objectFit: "cover",
             position: "absolute",
+            filter: "brightness(80%)",
+            objectPosition: "center 32%",
           }}
         />
         <div
@@ -162,7 +176,7 @@ export default function PresentingImage() {
             left: 0,
             width: "100%",
             height: "100%",
-            backgroundColor: "rgba(255, 255, 255, 0.3)", // Semi-transparent black overlay
+            backgroundColor: "rgba(255, 255, 255, 0.3)",
           }}
         />
       </Box>

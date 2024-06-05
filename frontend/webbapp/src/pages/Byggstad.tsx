@@ -17,6 +17,7 @@ const Byggstad: FC = () => {
           borderRadius: "10px",
           boxShadow: "0 4px 12px rgba(0, 0, 0, 0.1)",
           backgroundColor: "#fff",
+          width: "100%",
         }}
       >
         <img

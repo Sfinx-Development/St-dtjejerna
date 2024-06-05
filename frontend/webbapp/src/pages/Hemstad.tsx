@@ -36,7 +36,7 @@ const Hemstad: FC = () => {
           <Box
             sx={{
               width: { xs: "100%", md: "50%" },
-              height: "300px",
+              height: "350px",
               backgroundImage: 'url("https://i.imgur.com/sKCfjdv.jpeg")',
               backgroundSize: "cover",
               backgroundPosition: "center",
@@ -47,19 +47,22 @@ const Hemstad: FC = () => {
               },
             }}
           />
-          <Box
-            sx={{
-              width: { xs: "100%", md: "50%" },
-              height: "300px",
-              backgroundImage: 'url("https://i.imgur.com/0Rlm1ay.jpeg")',
-              backgroundSize: "cover",
-              backgroundPosition: "center",
-              transition: "transform 0.3s",
-              "&:hover": {
-                transform: "scale(1.05)",
-              },
-            }}
-          />
+          {!isMobile && (
+            <Box
+              sx={{
+                width: { xs: "100%", md: "50%" },
+                height: "350px",
+                backgroundImage: 'url("https://i.imgur.com/0Rlm1ay.jpeg")',
+                backgroundSize: "cover",
+                backgroundPosition: "center 90%",
+                transition: "transform 0.3s",
+                // objectFit: "cover",
+                "&:hover": {
+                  transform: "scale(1.05)",
+                },
+              }}
+            />
+          )}
         </Box>
         <Typography
           variant={isMobile ? "h4" : "h2"}
