@@ -101,7 +101,7 @@ export default function CustomHeader2(): JSX.Element {
             alignItems: "center",
             justifyContent: "flex-end",
             marginRight: 5,
-            flexGrow: 1,
+
             marginLeft: 40,
             padding: 2,
           }}
@@ -131,6 +131,7 @@ export default function CustomHeader2(): JSX.Element {
                 zIndex: 99991,
                 flexDirection: "column",
                 backgroundColor: "#dbbed1",
+                height: "100%",
               }}
             >
               {links.map((link, index) => (
@@ -181,7 +182,11 @@ export default function CustomHeader2(): JSX.Element {
                             key={item.label}
                             direction="right"
                             in={openDrawer}
-                            style={{ transitionDelay: `${(index + subIndex + 1) * 100}ms` }}
+                            style={{
+                              transitionDelay: `${
+                                (index + subIndex + 1) * 100
+                              }ms`,
+                            }}
                           >
                             <ListItem
                               disablePadding

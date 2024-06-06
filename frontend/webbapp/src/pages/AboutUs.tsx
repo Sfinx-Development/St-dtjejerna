@@ -14,7 +14,7 @@ const AboutUs: FC = () => {
           flexDirection: "column",
           alignItems: "center",
           justifyContent: "center",
-          width: isMobile ? "90%" : "100%",
+          width: "100%",
           border: "1px solid #d29bbf",
           borderRadius: "10px",
           boxShadow: "0 4px 12px rgba(0, 0, 0, 0.1)",

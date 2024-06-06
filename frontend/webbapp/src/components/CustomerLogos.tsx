@@ -10,6 +10,8 @@ const logos = [
   "https://i.imgur.com/r6ZIX9Q.jpeg",
   "https://i.imgur.com/q9jDpa6.png",
   "https://i.imgur.com/z9imIe1.png",
+  "https://i.imgur.com/vFNMWwc.png",
+  "https://i.imgur.com/5Q9mOW2.png",
 ];
 
 export default function CustomerLogos() {

@@ -1,7 +1,7 @@
-import AppleIcon from "@mui/icons-material/Apple";
-import Facebook from "@mui/icons-material/Facebook";
+import FacebookIcon from "@mui/icons-material/Facebook";
 import InstagramIcon from "@mui/icons-material/Instagram";
-import { Box, Divider, Link, Typography } from "@mui/material";
+import MailOutlineIcon from "@mui/icons-material/MailOutline";
+import { Box, Divider, IconButton, Link, Typography } from "@mui/material";
 
 export default function Footer() {
   return (
@@ -18,13 +18,45 @@ export default function Footer() {
         sx={{
           display: "flex",
           justifyContent: "center",
-          marginBottom: 4,
-          color: "white",
+          width: "100%",
+          marginTop: 2,
         }}
       >
-        <Facebook sx={{ marginRight: 2 }} />
-        <AppleIcon sx={{ marginRight: 2 }} />
-        <InstagramIcon />
+        <IconButton
+          sx={{
+            color: "white",
+            "&:hover": {
+              color: "#dbbed1",
+              transition: "color 0.3s ease",
+            },
+          }}
+        >
+          <InstagramIcon sx={{ fontSize: 22 }} />
+        </IconButton>
+
+        <IconButton
+          sx={{
+            color: "white",
+            "&:hover": {
+              color: "#dbbed1",
+              transition: "color 0.3s ease",
+            },
+          }}
+        >
+          <FacebookIcon sx={{ fontSize: 22 }} />
+        </IconButton>
+
+        <IconButton
+          sx={{
+            color: "white",
+            "&:hover": {
+              color: "#dbbed1",
+              transition: "color 0.3s ease",
+            },
+          }}
+        >
+          <MailOutlineIcon sx={{ fontSize: 22 }} />
+        </IconButton>
       </Box>
       <Box sx={{ marginBottom: 4, color: "white" }}>
         <Typography fontWeight={600}>Kontakt</Typography>
@@ -39,7 +71,16 @@ export default function Footer() {
           <Typography sx={{ fontWeight: 600, paddingRight: 1, color: "white" }}>
             E-post:
           </Typography>
-          <Typography>stadtjejerna@hotmail.com</Typography>
+          <a
+            href="mailto:stadtjejerna@hotmail.com"
+            style={{ color: "inherit", textDecoration: "none" }}
+          >
+            <Typography
+              sx={{ fontWeight: 600, paddingRight: 1, color: "white" }}
+            >
+              stadtjejerna@hotmail.com
+            </Typography>
+          </a>
         </Box>
         <Box
           sx={{
