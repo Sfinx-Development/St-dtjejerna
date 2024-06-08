@@ -21,7 +21,7 @@ const Trappstad: FC = () => {
         }}
       >
         <img
-          src="https://i.imgur.com/VuRzYeq.jpeg"
+          src="https://i.imgur.com/gWL9NEP.jpeg"
           alt="Byggstäd"
           style={{
             width: "100%",

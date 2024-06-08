@@ -20,20 +20,50 @@ const Byggstad: FC = () => {
           width: "100%",
         }}
       >
-        <img
-          src="https://i.imgur.com/VuRzYeq.jpeg"
-          alt="Byggstäd"
-          style={{
+       <Box
+          sx={{
+            display: "flex",
+            flexDirection: { xs: "column", md: "row" },
             width: "100%",
-            maxWidth: "100vw",
-            maxHeight: "50vh",
-            objectFit: "cover",
             borderRadius: "10px",
             boxShadow: "0 4px 12px rgba(0, 0, 0, 0.1)",
             marginBottom: "20px",
-            filter: "grayscale(20%)",
+            maxHeight: "600px",
+            overflow: "hidden",
           }}
-        />
+        >
+           <Box
+            sx={{
+              width: { xs: "100%", md: "50%" },
+              height: "350px",
+              backgroundImage: 'url("https://i.imgur.com/COI9B1s.jpeg")',
+              backgroundSize: "cover",
+              backgroundPosition: "center",
+              filter: "grayscale(40%)",
+              transition: "transform 0.3s",
+              "&:hover": {
+                transform: "scale(1.05)",
+              },
+            }}
+          />
+          {!isMobile && (
+            <Box
+              sx={{
+                width: { xs: "100%", md: "50%" },
+                height: "350px",
+                backgroundImage: 'url("https://i.imgur.com/R73TJ3i.jpeg")',
+                backgroundSize: "cover",
+                backgroundPosition: "center 35%",
+                transition: "transform 0.3s",
+                // objectFit: "cover"
+                filter: "grayscale(60%)",
+                "&:hover": {
+                  transform: "scale(1.05)",
+                },
+              }}
+            />
+          )}
+          </Box>
         <Typography
           variant={isMobile ? "h4" : "h2"}
           gutterBottom
