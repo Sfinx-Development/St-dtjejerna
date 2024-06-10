@@ -195,7 +195,7 @@ const Flyttstad = () => {
               >
                 <Typography
                   variant="h4"
-                  textAlign={"center"}
+                  // textAlign={"center"}
                   gutterBottom
                   sx={{ color: "#d29bbf" }}
                 >
