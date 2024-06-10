@@ -124,10 +124,16 @@ export default function Services() {
             >
               <Typography
                 sx={{
+                  color: "#fff",
+                  borderColor: "#e3c5da",
+                  marginY: 4,
+                  paddingX: 3,
+                  paddingY: 1,
+                  backgroundColor: "#dbbed1",
                   fontSize: 24,
 
                   fontWeight: "bold",
-                  color: "#d29bbf",
+                  // color: "#d29bbf",
                   // color: "white",
                   padding: 0,
                   letterSpacing: 2,
