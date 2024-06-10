@@ -17,7 +17,7 @@ const Flyttstad = () => {
       ],
     },
     {
-      title: "Badrumsstädning",
+      title: "Badrum",
       items: [
         "Rengöring av väggar och golv",
         "Putsning av blandare, synliga rör och duschmunstycke",
@@ -29,7 +29,7 @@ const Flyttstad = () => {
       ],
     },
     {
-      title: "Köksstädning",
+      title: "Kök",
       items: [
         "Rengöring av kyl och frys ut- och invändigt",
         "Rengöring av spis och ugn ut- och invändigt, inklusive plåtar och galler",
@@ -116,6 +116,7 @@ const Flyttstad = () => {
           Flyttstäd
           <Box
             sx={{
+              
               position: "absolute",
               bottom: "-10px",
               left: "50%",

@@ -160,7 +160,7 @@ const Hemstad: FC = () => {
               tasks: [
                 "Dammsugning av golv, lister, elkontakter, element, mattor och möbler med stoppning som till exempel soffor och fåtöljer.",
                 "Fuktmoppning av alla golv.",
-                "Dammtorkning/våttorkning av alla öppna ytor som till exempel bord, bänkar, fönsterbrädor, dörrar och hyllor samt golvlister, socklar och lampor (som nås utan pall).",
+                "Dammtorkning och våttorkning av alla öppna ytor som till exempel bord, bänkar, fönsterbrädor, dörrar och hyllor samt golvlister, socklar och lampor (som nås utan pall).",
                 "Putsning av speglar.",
                 "Lösa föremål plockas i ordning som till exempel leksaker, kläder, tidningar.",
               ],
