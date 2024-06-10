@@ -1,15 +1,15 @@
+/* GoogleReviews.css */
+
 .reviews-container {
   padding: 40px 0;
   width: 100%;
-  
-  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
-  background-color: rgba(209, 172, 196, 0.5);
+  background-color: #f9f9f9; /* Light grey background */
   overflow: hidden;
 }
 
 .reviews-scroll {
   display: flex;
-  overflow-x: scroll;
+  overflow-x: auto; /* Scroll horizontally */
   scrollbar-width: thin;
   scrollbar-color: #c490ac rgba(0, 0, 0, 0.1);
 }
@@ -33,24 +33,13 @@
   white-space: normal;
   background-color: white;
   border-radius: 8px;
-  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.3);
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); /* Updated shadow effect */
   margin: 0 10px;
   text-align: center;
 }
 
-.review h2 {
-  margin: 0;
-  font-size: 18px;
-  color: #fff;
-}
-
-.review .rating {
+.rating {
   margin: 10px 0;
-}
-
-.review p {
-  margin: 0;
-  color: black;
 }
 
 @media (max-width: 600px) {

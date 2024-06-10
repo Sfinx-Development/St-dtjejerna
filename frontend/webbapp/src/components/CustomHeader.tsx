@@ -264,7 +264,6 @@ export default function CustomHeader2(): JSX.Element {
               zIndex: 9999,
               color: "white",
               transition: "transform 0.3s ease",
-            
             }}
           />
         </Link>
