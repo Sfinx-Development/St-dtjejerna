@@ -98,8 +98,8 @@ export default function Services() {
               justifyContent: "center",
               color: "white",
               position: "relative",
-              boxShadow: "0 4px 8px rgba(0, 0, 0, 0.2)",
-              borderRadius: 2,
+              // boxShadow: "0 4px 8px rgba(0, 0, 0, 0.2)",
+              // borderRadius: 2,
               transition: "transform 0.3s ease",
               "&:hover": {
                 transform: "scale(1.05)",
@@ -109,7 +109,9 @@ export default function Services() {
           >
             <Box
               sx={{
-                backgroundColor: "rgba(255, 255, 255, 0.8)",
+                // backgroundColor: "rgba(255, 255, 255, 0.8)",
+                backgroundColor: "rgba(128, 128, 128, 0.5)",
+
                 boxShadow: "0 4px 8px rgba(0, 0, 0, 0.2)",
                 borderRadius: 2,
                 padding: 2,
@@ -126,6 +128,7 @@ export default function Services() {
 
                   fontWeight: "bold",
                   color: "#d29bbf",
+                  // color: "white",
                   padding: 0,
                   letterSpacing: 2,
                   position: "relative",
@@ -149,7 +152,8 @@ export default function Services() {
               </Typography>
               <Typography
                 variant="body1"
-                color="black"
+                // color="black"
+                color="white"
                 sx={{ position: "relative" }}
               >
                 {service.description}
