@@ -52,8 +52,12 @@ const MenuLink = ({
         sx={{
           marginY: 1,
           color: "black",
+          // "&:hover": {
+          //   color: "#d29bbf",
+          // },
           "&:hover": {
             color: "#d29bbf",
+            transform: "scale(1.1)",
           },
         }}
       >
@@ -98,14 +102,30 @@ const MenuLink = ({
                         "&:hover": {
                           backgroundColor: "#d29bbf",
                           color: "#fff",
+                          transform: "scale(1.1)",
+                          transition: "transform 0.3s ease",
                         },
                       }}
+                      // sx={{
+                      //   "&:hover": {
+                      //     backgroundColor: "#d29bbf",
+                      //     color: "#fff",
+                      //   },
+                      // }}
                     >
                       <Link
                         to={item.href}
+                        // style={{
+                        //   textDecoration: "none",
+                        //   color: "#000",
+                        // }}
                         style={{
                           textDecoration: "none",
                           color: "#000",
+                          transition: "transform 0.3s ease",
+                          "&:hover": {
+                            transform: "scale(1.1)",
+                          },
                         }}
                       >
                         {item.label}
@@ -242,6 +262,9 @@ export default function CustomHeader2(): JSX.Element {
               top: "90%",
               transform: "translateY(-50%)",
               zIndex: 9999,
+              color: "white",
+              transition: "transform 0.3s ease",
+            
             }}
           />
         </Link>
