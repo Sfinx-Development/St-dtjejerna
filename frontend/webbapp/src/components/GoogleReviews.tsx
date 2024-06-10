@@ -9,21 +9,7 @@ interface Review {
 }
 
 const reviews: Review[] = [
-  {
-    user: "Alexander F",
-    rating: 5,
-    text: "",
-  },
-  {
-    user: "Viveka J",
-    rating: 5,
-    text: "",
-  },
-  {
-    user: "Lina Ö",
-    rating: 5,
-    text: "",
-  },
+ 
   {
     user: "Dzeki M",
     rating: 5,
@@ -35,9 +21,24 @@ const reviews: Review[] = [
     text: "Tycker att städtjejerna gör ett kanonjobb så nöjd",
   },
   {
+    user: "Alexander F",
+    rating: 5,
+    text: "",
+  },
+  {
     user: "Sandra Nilsson",
     rating: 5,
     text: "Supernöjd! Så trevliga tjejer! Hade ett skinande rent hem",
+  },
+  {
+    user: "Lina Ö",
+    rating: 5,
+    text: "",
+  },
+  {
+    user: "Viveka J",
+    rating: 5,
+    text: "",
   },
 ];
 
