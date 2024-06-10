@@ -103,7 +103,7 @@ const AboutUs: FC = () => {
             }}
           />
         </Box>
-        <Box
+        {/* <Box
           sx={{
             backgroundColor: "#f4f4f4",
             padding: "20px",
@@ -114,8 +114,8 @@ const AboutUs: FC = () => {
             boxShadow: "0 2px 10px rgba(0,0,0,0.1)",
             filter: "contrast(120%)",
           }}
-        >
-          <Typography variant="body1" paragraph>
+        > */}
+          {/* <Typography variant="body1" paragraph>
             Vi skräddarsyr ett upplägg som matchar ditt unika boende eller
             företag. Kanske önskas lakansbyte i hemmet eller hjälp med
             återvinningen på företaget? Berätta vad du önskar få hjälp med så
@@ -126,8 +126,8 @@ const AboutUs: FC = () => {
             Det ger ett resultat med god kvalitet och kontinuitet. Allt för att
             du ska kunna släppa tankarna på städningen och fokusera på annat
             under tiden.
-          </Typography>
-          <Box
+          </Typography> */}
+          {/* <Box
             sx={{
               width: "100%",
               height: "2px",
@@ -135,7 +135,7 @@ const AboutUs: FC = () => {
               marginBottom: "20px",
             }}
           />
-        </Box>
+        </Box> */}
         <ContactForm />
       </Box>
     </Fade>
