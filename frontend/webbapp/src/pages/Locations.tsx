@@ -1,6 +1,7 @@
-import { Box, Typography, useMediaQuery, useTheme, Grid } from "@mui/material";
+import { Box, Grid, Typography } from "@mui/material";
 import { FC } from "react";
 import IframeComponent from "../components/IframeComponent";
+import { useScreenSize } from "../screenSizeContext";
 
 declare global {
   interface Window {
@@ -18,8 +19,7 @@ declare global {
 }
 
 const Locations: FC = () => {
-  const theme = useTheme();
-  const isMobile = useMediaQuery(theme.breakpoints.down("sm"));
+  const { isMobile } = useScreenSize();
 
   return (
     <Box
@@ -83,28 +83,16 @@ const Locations: FC = () => {
             >
               Sandared ~ Dalsjöfors ~ Sjömarken ~ Fristad ~ Borås
             </Typography>
-            <Typography
-              variant="body1"
-              paragraph
-              sx={{ marginBottom: "20px" }}
-            >
+            <Typography variant="body1" paragraph sx={{ marginBottom: "20px" }}>
               <strong>Telefon:</strong> 033-726 96 76
             </Typography>
-            <Typography
-              variant="body1"
-              paragraph
-              sx={{ marginBottom: "20px" }}
-            >
+            <Typography variant="body1" paragraph sx={{ marginBottom: "20px" }}>
               <strong>E-post:</strong>{" "}
               <a href="mailto:stadtjejerna@hotmail.com">
                 stadtjejerna@hotmail.com
               </a>
             </Typography>
-            <Typography
-              variant="body1"
-              paragraph
-              sx={{ marginBottom: "20px" }}
-            >
+            <Typography variant="body1" paragraph sx={{ marginBottom: "20px" }}>
               <strong>Adress:</strong>
               <br />
               Tredje villagatan 17

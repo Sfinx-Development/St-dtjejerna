@@ -1,10 +1,10 @@
-import { Box, Typography, useMediaQuery, useTheme } from "@mui/material";
+import { Box, Typography } from "@mui/material";
 import Fade from "@mui/material/Fade";
 import { FC } from "react";
+import { useScreenSize } from "../screenSizeContext";
 
 const Byggstad: FC = () => {
-  const theme = useTheme();
-  const isMobile = useMediaQuery(theme.breakpoints.down("sm"));
+  const { isMobile } = useScreenSize();
   return (
     <Fade in timeout={500}>
       <Box
@@ -20,7 +20,7 @@ const Byggstad: FC = () => {
           width: "100%",
         }}
       >
-       <Box
+        <Box
           sx={{
             display: "flex",
             flexDirection: { xs: "column", md: "row" },
@@ -32,7 +32,7 @@ const Byggstad: FC = () => {
             overflow: "hidden",
           }}
         >
-           <Box
+          <Box
             sx={{
               width: { xs: "100%", md: "50%" },
               height: "350px",
@@ -63,7 +63,7 @@ const Byggstad: FC = () => {
               }}
             />
           )}
-          </Box>
+        </Box>
         <Typography
           variant={isMobile ? "h4" : "h2"}
           gutterBottom

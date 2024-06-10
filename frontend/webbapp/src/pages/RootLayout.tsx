@@ -1,12 +1,11 @@
-import { useMediaQuery, useTheme } from "@mui/material";
 import { Outlet } from "react-router-dom";
 import CustomHeader from "../components/CustomHeader";
 import Footer from "../components/Footer";
 import MobileHeader from "../components/MobileHeader";
+import { useScreenSize } from "../screenSizeContext";
 
 const RootLayout = () => {
-  const theme = useTheme();
-  const isMobile = useMediaQuery(theme.breakpoints.down("sm"));
+  const { isMobile } = useScreenSize();
   return (
     <div
       style={{

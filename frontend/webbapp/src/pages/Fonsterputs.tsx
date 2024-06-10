@@ -1,10 +1,10 @@
-import { Box, Typography, useMediaQuery, useTheme } from "@mui/material";
-import { FC } from "react";
+import { Box, Typography } from "@mui/material";
 import Fade from "@mui/material/Fade";
+import { FC } from "react";
+import { useScreenSize } from "../screenSizeContext";
 
 const Fonsterputs: FC = () => {
-  const theme = useTheme();
-  const isMobile = useMediaQuery(theme.breakpoints.down("sm"));
+  const { isMobile } = useScreenSize();
   return (
     <Fade in timeout={500}>
       <Box
@@ -20,7 +20,7 @@ const Fonsterputs: FC = () => {
           width: "100%",
         }}
       >
-         <Box
+        <Box
           sx={{
             display: "flex",
             flexDirection: { xs: "column", md: "row" },
@@ -32,7 +32,7 @@ const Fonsterputs: FC = () => {
             overflow: "hidden",
           }}
         >
-           <Box
+          <Box
             sx={{
               width: { xs: "100%", md: "50%" },
               height: "350px",
@@ -51,19 +51,19 @@ const Fonsterputs: FC = () => {
               sx={{
                 width: { xs: "100%", md: "50%" },
                 height: "350px",
-                backgroundImage: 'url("https://i.imgur.com/KhVvozY.jpeg")',
+                backgroundImage: 'url("https://i.imgur.com/H4CO2Hw.jpeg")',
                 backgroundSize: "cover",
                 backgroundPosition: "center 90%",
                 transition: "transform 0.3s",
                 // objectFit: "cover",
-                filter: "grayscale(60%)",
+                filter: "grayscale(80%)",
                 "&:hover": {
                   transform: "scale(1.05)",
                 },
               }}
             />
           )}
-          </Box>
+        </Box>
         <Typography
           variant={isMobile ? "h4" : "h2"}
           gutterBottom
@@ -149,7 +149,6 @@ const Fonsterputs: FC = () => {
           />
         </Box>
       </Box>
-      
     </Fade>
   );
 };

@@ -1,10 +1,9 @@
-import { Box, Typography, useMediaQuery, useTheme, Grid } from "@mui/material";
+import { Box, Grid, Typography } from "@mui/material";
 import Fade from "@mui/material/Fade";
+import { useScreenSize } from "../screenSizeContext";
 
 const Flyttstad = () => {
-  const theme = useTheme();
-  const isMobile = useMediaQuery(theme.breakpoints.down("sm"));
-
+  const { isMobile } = useScreenSize();
   const sections = [
     {
       title: "Städoment som utförs i alla rum",

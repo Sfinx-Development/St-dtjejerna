@@ -5,13 +5,13 @@ import {
   IconButton,
   List,
   ListItem,
-  Typography,
-  useMediaQuery,
-  useTheme,
   Slide,
+  Typography,
+  useTheme,
 } from "@mui/material";
 import { useState } from "react";
 import { Link } from "react-router-dom";
+import { useScreenSize } from "../screenSizeContext";
 
 type LinkItem = {
   label: string;
@@ -21,7 +21,7 @@ type LinkItem = {
 
 export default function CustomHeader2(): JSX.Element {
   const theme = useTheme();
-  const isMobile = useMediaQuery(theme.breakpoints.down("sm"));
+  const { isMobile } = useScreenSize();
   const [openDrawer, setOpenDrawer] = useState(false);
 
   const handleToggleMenu = () => {
@@ -60,7 +60,7 @@ export default function CustomHeader2(): JSX.Element {
         justifyContent: "space-between",
         width: "100%",
         boxShadow: "0px 4px 10px rgba(0, 0, 0, 0.1)",
-        flexDirection: isMobile ? "column" : "row",
+        flexDirection: isMobile ? "row" : "row",
         position: "relative",
       }}
     >
@@ -70,7 +70,7 @@ export default function CustomHeader2(): JSX.Element {
           flexDirection: "row",
           alignItems: "center",
           gap: 2,
-          marginLeft: isMobile ? 0 : 5,
+          marginLeft: 2,
           height: 75,
           position: "relative",
         }}
@@ -83,175 +83,166 @@ export default function CustomHeader2(): JSX.Element {
             src="https://i.imgur.com/Zcgk1vf.png"
             alt="Logo saying dailyvibe"
             style={{
-              width: "270px",
-              marginTop: 27,
-              height: "150px",
+              width: "180px",
               objectFit: "contain",
               position: "absolute",
-              top: "90%",
-              transform: "translateY(-50%)",
+              top: "35px",
+              left: 0,
               zIndex: 999,
+              transform: "translateY(-50%)",
             }}
           />
         </Link>
+      </Box>
+      <Box
+        sx={{
+          display: "flex",
+          alignItems: "center",
+          justifyContent: "flex-end",
+          marginRight: 2,
+          padding: 2,
+        }}
+      >
+        <IconButton onClick={handleToggleMenu}>
+          <MenuIcon sx={{ color: "black", fontSize: 40 }} />
+        </IconButton>
 
-        <Box
+        <Drawer
+          anchor="right"
+          open={openDrawer}
+          onClose={handleCloseMenu}
+          ModalProps={{
+            keepMounted: true,
+          }}
           sx={{
-            display: "flex",
-            alignItems: "center",
-            justifyContent: "flex-end",
-            marginRight: 5,
-
-            marginLeft: 40,
-            padding: 2,
+            "& .MuiDrawer-paper": {
+              width: 220,
+              backgroundColor: theme.palette.background.paper,
+            },
           }}
         >
-          <IconButton onClick={handleToggleMenu}>
-            <MenuIcon sx={{ color: "black", fontSize: 40 }} />
-          </IconButton>
-
-          <Drawer
-            anchor="right"
-            open={openDrawer}
-            onClose={handleCloseMenu}
-            ModalProps={{
-              keepMounted: true,
-            }}
+          <List
             sx={{
-              "& .MuiDrawer-paper": {
-                width: 220,
-                backgroundColor: theme.palette.background.paper,
-              },
+              paddingLeft: 1,
+              display: "flex",
+              flexDirection: "column",
+              backgroundColor: "#dbbed1",
+              height: "100%",
             }}
           >
-            <List
-              sx={{
-                paddingLeft: 1,
-                display: "flex",
-                zIndex: 99991,
-                flexDirection: "column",
-                backgroundColor: "#dbbed1",
-                height: "100%",
-              }}
-            >
-              {links.map((link, index) => (
-                <Slide
-                  key={link.label}
-                  direction="right"
-                  in={openDrawer}
-                  style={{ transitionDelay: `${index * 100}ms` }}
+            {links.map((link, index) => (
+              <Slide
+                key={link.label}
+                direction="right"
+                in={openDrawer}
+                style={{ transitionDelay: `${index * 100}ms` }}
+              >
+                <ListItem
+                  disablePadding
+                  sx={{
+                    display: "flex",
+                    flexDirection: "column",
+                    alignItems: "flex-start",
+                    transition: "background-color 0.3s ease",
+                    "&:hover": {
+                      backgroundColor: "#f3f3f3",
+                    },
+                    marginBottom: 2,
+                  }}
                 >
-                  <ListItem
-                    disablePadding
-                    sx={{
-                      display: "flex",
-                      zIndex: 99991,
-                      flexDirection: "column",
-                      alignItems: "flex-start",
-                      transition: "background-color 0.3s ease",
-                      "&:hover": {
-                        backgroundColor: "#f3f3f3",
-                      },
-                      marginBottom: 2,
+                  <Link
+                    to={link.href}
+                    style={{
+                      textDecoration: "none",
+                      color: "black",
                     }}
+                    onClick={handleCloseMenu}
                   >
-                    <Link
-                      to={link.href}
-                      style={{
-                        textDecoration: "none",
-                        color: "black",
+                    <Typography
+                      sx={{
+                        fontSize: 24,
+                        fontStyle: "italic",
+                        color: "white",
+                        letterSpacing: 2,
                       }}
-                      onClick={handleCloseMenu}
                     >
-                      <Typography
-                        sx={{
-                          fontSize: 24,
-                          fontStyle: "italic",
-                          // fontFamily: "'Dancing Script', cursive",
-                          color: "white",
-                          letterSpacing: 2,
-                        }}
-                      >
-                        {link.label}
-                      </Typography>
-                    </Link>
-                    {link.menuItems && (
-                      <List sx={{ marginLeft: 5, paddingTop: "8px" }}>
-                        {link.menuItems.map((item, subIndex) => (
-                          <Slide
-                            key={item.label}
-                            direction="right"
-                            in={openDrawer}
-                            style={{
-                              transitionDelay: `${
-                                (index + subIndex + 1) * 100
-                              }ms`,
+                      {link.label}
+                    </Typography>
+                  </Link>
+                  {link.menuItems && (
+                    <List sx={{ marginLeft: 5, paddingTop: "8px" }}>
+                      {link.menuItems.map((item, subIndex) => (
+                        <Slide
+                          key={item.label}
+                          direction="right"
+                          in={openDrawer}
+                          style={{
+                            transitionDelay: `${
+                              (index + subIndex + 1) * 100
+                            }ms`,
+                          }}
+                        >
+                          <ListItem
+                            disablePadding
+                            onClick={handleCloseMenu}
+                            sx={{
+                              transition: "background-color 0.3s ease",
+                              "&:hover": {
+                                backgroundColor: "#f3f3f3",
+                              },
                             }}
                           >
-                            <ListItem
-                              disablePadding
-                              onClick={handleCloseMenu}
-                              sx={{
-                                transition: "background-color 0.3s ease",
-                                "&:hover": {
-                                  backgroundColor: "#f3f3f3",
-                                },
+                            <Link
+                              to={item.href}
+                              style={{
+                                textDecoration: "none",
+                                color: "black",
                               }}
                             >
-                              <Link
-                                to={item.href}
-                                style={{
-                                  textDecoration: "none",
-                                  color: "black",
+                              <Typography
+                                sx={{
+                                  fontSize: 22,
+                                  color: "white",
+                                  letterSpacing: 2,
                                 }}
                               >
-                                <Typography
-                                  sx={{
-                                    fontSize: 22,
-                                    fontStyle: "italic",
-                                    // fontFamily: "'Dancing Script', cursive",
-                                    color: "white",
-                                    letterSpacing: 2,
-                                  }}
-                                >
-                                  {item.label}
-                                </Typography>
-                              </Link>
-                            </ListItem>
-                          </Slide>
-                        ))}
-                      </List>
-                    )}
-                  </ListItem>
-                </Slide>
-              ))}
-              <Box
-                sx={{
-                  backgroundColor: "white",
+                                {item.label}
+                              </Typography>
+                            </Link>
+                          </ListItem>
+                        </Slide>
+                      ))}
+                    </List>
+                  )}
+                </ListItem>
+              </Slide>
+            ))}
+            <Box
+              sx={{
+                backgroundColor: "white",
+                borderRadius: "50%",
+                height: 140,
+                width: 140,
+                display: "flex",
+                alignItems: "center",
+                justifyContent: "center",
+                position: "relative",
+                marginLeft: 4,
+              }}
+            >
+              <img
+                src="https://i.imgur.com/Zcgk1vf.png"
+                alt="Logo saying dailyvibe"
+                style={{
+                  width: "100%",
+                  height: "100%",
+                  objectFit: "contain",
                   borderRadius: "50%",
-                  height: 140,
-                  width: 140,
-                  display: "flex",
-                  alignItems: "center",
-                  justifyContent: "center",
-                  position: "relative",
-                  marginLeft: 4,
                 }}
-              >
-                <img
-                  src="https://i.imgur.com/Zcgk1vf.png"
-                  alt="Logo saying dailyvibe"
-                  style={{
-                    width: "100%",
-                    height: "100%",
-                    objectFit: "contain",
-                    borderRadius: "50%",
-                  }}
-                />
-              </Box>
-            </List>
-          </Drawer>
-        </Box>
+              />
+            </Box>
+          </List>
+        </Drawer>
       </Box>
     </Box>
   );

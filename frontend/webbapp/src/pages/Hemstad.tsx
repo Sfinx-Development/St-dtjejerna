@@ -1,10 +1,10 @@
-import { Box, Typography, useMediaQuery, useTheme, Grid } from "@mui/material";
-import { FC } from "react";
+import { Box, Grid, Typography } from "@mui/material";
 import Fade from "@mui/material/Fade";
+import { FC } from "react";
+import { useScreenSize } from "../screenSizeContext";
 
 const Hemstad: FC = () => {
-  const theme = useTheme();
-  const isMobile = useMediaQuery(theme.breakpoints.down("sm"));
+  const { isMobile } = useScreenSize();
 
   return (
     <Fade in timeout={500}>

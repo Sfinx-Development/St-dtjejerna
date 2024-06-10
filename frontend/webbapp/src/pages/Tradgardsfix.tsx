@@ -1,9 +1,9 @@
-import { Box, Typography, useMediaQuery, useTheme } from "@mui/material";
+import { Box, Typography } from "@mui/material";
 import React from "react";
+import { useScreenSize } from "../screenSizeContext";
 
 const Tradgardsfix: React.FC = () => {
-  const theme = useTheme();
-  const isMobile = useMediaQuery(theme.breakpoints.down("sm"));
+  const { isMobile } = useScreenSize();
   return (
     <Box>
       <Typography
