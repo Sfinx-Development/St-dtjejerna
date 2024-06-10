@@ -187,7 +187,9 @@ export default function CustomHeader2(): JSX.Element {
         { label: "Flyttstäd", href: "/flyttstad" },
         { label: "Fönsterputs", href: "/fonsterputs" },
         { label: "Företagsstäd", href: "/foretagsstad" },
-        { label: "Trappstäd", href: "/trappstad" },
+
+        
+        // { label: "Trappstäd", href: "/trappstad" },
 
         // { label: 'Trädgårdsfix', href: '/tradgardsfix' }
       ],
