@@ -1,6 +1,7 @@
 import { Box, Grid, Typography } from "@mui/material";
 import Fade from "@mui/material/Fade";
 import { FC } from "react";
+import Info from "../components/Info";
 import { useScreenSize } from "../screenSizeContext";
 
 const Hemstad: FC = () => {
@@ -224,6 +225,10 @@ const Hemstad: FC = () => {
           Utöver städabonnemang erbjuder vi även storstädning eller hemstäd vid
           enskilda tillfällen när behov finns.
         </Typography>
+        <div
+          style={{ height: 1.5, width: "100%", backgroundColor: "#e3c5da" }}
+        />
+        <Info />
       </Box>
     </Fade>
   );
