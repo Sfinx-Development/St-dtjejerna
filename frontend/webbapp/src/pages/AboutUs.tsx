@@ -1,11 +1,11 @@
-import { Box, Typography, useMediaQuery, useTheme } from "@mui/material";
+import { Box, Typography } from "@mui/material";
 import Fade from "@mui/material/Fade";
 import { FC } from "react";
 import ContactForm from "../components/ContactForm";
+import { useScreenSize } from "../screenSizeContext";
 
 const AboutUs: FC = () => {
-  const theme = useTheme();
-  const isMobile = useMediaQuery(theme.breakpoints.down("sm"));
+  const { isMobile } = useScreenSize();
   return (
     <Fade in timeout={500}>
       <Box

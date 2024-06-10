@@ -1,16 +1,10 @@
-import {
-  Box,
-  Button,
-  Typography,
-  useMediaQuery,
-  useTheme,
-} from "@mui/material";
+import { Box, Button, Typography } from "@mui/material";
 import Fade from "@mui/material/Fade";
 import { useNavigate } from "react-router-dom";
+import { useScreenSize } from "../screenSizeContext";
 
 export default function Tjanster() {
-  const theme = useTheme();
-  const isMobile = useMediaQuery(theme.breakpoints.down("sm"));
+  const { isMobile } = useScreenSize();
   const navigate = useNavigate();
 
   return (

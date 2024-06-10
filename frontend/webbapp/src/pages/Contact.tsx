@@ -7,12 +7,11 @@ import {
   Grid,
   IconButton,
   Typography,
-  useMediaQuery,
-  useTheme,
 } from "@mui/material";
 import Fade from "@mui/material/Fade";
 import ContactForm from "../components/ContactForm";
 import EmbeddedMap from "../components/MapComponent";
+import { useScreenSize } from "../screenSizeContext";
 
 export default function Contact() {
   const images = [
@@ -21,8 +20,7 @@ export default function Contact() {
     "https://i.imgur.com/bznoNdQ.jpeg",
     "https://i.imgur.com/BmGZV9K.jpeg",
   ];
-  const theme = useTheme();
-  const isMobile = useMediaQuery(theme.breakpoints.down("sm"));
+  const { isMobile } = useScreenSize();
   return (
     <Fade in timeout={500}>
       <Box

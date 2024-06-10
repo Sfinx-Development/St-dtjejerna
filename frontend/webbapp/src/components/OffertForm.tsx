@@ -11,11 +11,10 @@ import {
   Snackbar,
   TextField,
   Typography,
-  useMediaQuery,
-  useTheme,
 } from "@mui/material";
 import emailjs from "emailjs-com";
 import { useState } from "react";
+import { useScreenSize } from "../screenSizeContext";
 
 emailjs.init("C8CxNnxZg6mg-d2tq");
 
@@ -31,6 +30,8 @@ export default function OffertForm() {
   const [snackbarMessage, setSnackbarMessage] = useState("");
   const [snackbarSeverity, setSnackbarSeverity] =
     useState<AlertColor>("success");
+
+  const { isMobile } = useScreenSize();
 
   const serviceChoices: string[] = ["Fönsterputs", "Hemstäd", "Flyttstäd"];
 
@@ -100,8 +101,7 @@ export default function OffertForm() {
     }
     setOpenSnackbar(false);
   };
-  const theme = useTheme();
-  const isMobile = useMediaQuery(theme.breakpoints.down("sm"));
+
   return (
     <Box
       sx={{
