@@ -12,9 +12,8 @@ import Foretagsstad from "./pages/Foretagsstad";
 import Hemstad from "./pages/Hemstad";
 import Locations from "./pages/Locations";
 import Offert from "./pages/Offert";
-import Tradgardsfix from "./pages/Tradgardsfix";
-import Trappstad from "./pages/Trappstad";
 import Tjanster from "./pages/Tjanster";
+import Trappstad from "./pages/Trappstad";
 
 const Navigation = () => {
   return (
@@ -29,7 +28,6 @@ const Navigation = () => {
         <Route path="fonsterputs" element={<Fonsterputs />}></Route>
         <Route path="foretagsstad" element={<Foretagsstad />}></Route>
         <Route path="trappstad" element={<Trappstad />}></Route>
-        <Route path="tradgardsfix" element={<Tradgardsfix />}></Route>
         <Route path="orter" element={<Locations />}></Route>
         <Route path="offert" element={<Offert />}></Route>
         <Route path="contact" element={<Contact />}></Route>
