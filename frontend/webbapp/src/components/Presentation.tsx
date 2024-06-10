@@ -42,7 +42,6 @@ export default function PresentingImage() {
           textAlign: { xs: "center", md: "left" },
           fontFamily: "Roboto, sans-serif",
           position: "absolute",
-          // bottom: isMobile ? "50px" : "auto",
           left: { xs: "0", md: "50px" },
           opacity: isLoaded ? 1 : 0,
           transition: "opacity 1s ease",
@@ -83,10 +82,19 @@ export default function PresentingImage() {
             paddingX: 3,
             paddingY: 1,
             backgroundColor: "#dbbed1",
+            animation: "moveUpDown 2s ease-in-out infinite",
             "&:hover": {
               borderColor: "#c499b6",
               backgroundColor: "#c499b6",
               transition: "background-color 0.3s ease, color 0.3s ease",
+            },
+            "@keyframes moveUpDown": {
+              "0%, 100%": {
+                transform: "translateY(0)",
+              },
+              "50%": {
+                transform: "translateY(-10px)",
+              },
             },
           }}
           onClick={() => {
