@@ -1,29 +1,36 @@
 .reviews-container {
   padding: 40px 0;
   width: 100%;
-  /* Genomskinligt svart */
+  
   box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
   background-color: rgba(209, 172, 196, 0.5);
   overflow: hidden;
 }
 
-.reviews-marquee {
-  overflow: hidden;
-  position: relative;
-  width: 100%;
+.reviews-scroll {
+  display: flex;
+  overflow-x: scroll;
+  scrollbar-width: thin;
+  scrollbar-color: #c490ac rgba(0, 0, 0, 0.1);
 }
 
-.reviews-track {
-  display: flex;
-  animation: marquee 10s linear infinite;
+.reviews-scroll::-webkit-scrollbar {
+  height: 8px;
+}
+
+.reviews-scroll::-webkit-scrollbar-track {
+  background: rgba(0, 0, 0, 0.1);
+}
+
+.reviews-scroll::-webkit-scrollbar-thumb {
+  background-color: #c490ac;
+  border-radius: 10px;
 }
 
 .review {
   padding: 20px;
   min-width: 200px;
   white-space: normal;
-  /* background-color: rgba(0, 0, 0, 0.7);  */
-  /* background-color: rgba(172, 121, 148, 0.6); */
   background-color: white;
   border-radius: 8px;
   box-shadow: 0 2px 4px rgba(0, 0, 0, 0.3);
@@ -34,7 +41,7 @@
 .review h2 {
   margin: 0;
   font-size: 18px;
-  color: #fff; /* Vit textfärg */
+  color: #fff;
 }
 
 .review .rating {
@@ -44,14 +51,10 @@
 .review p {
   margin: 0;
   color: black;
-  /* color: white; */
 }
 
-@keyframes marquee {
-  0% {
-    transform: translateX(0);
-  }
-  100% {
-    transform: translateX(-50%);
+@media (max-width: 600px) {
+  .review {
+    min-width: 150px;
   }
 }

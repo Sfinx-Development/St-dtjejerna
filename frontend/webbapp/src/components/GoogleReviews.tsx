@@ -44,64 +44,22 @@ const reviews: Review[] = [
 const GoogleReviews: React.FC = () => {
   return (
     <div className="reviews-container">
-      {/* <Typography
-        variant={"h4"}
-        gutterBottom
-        sx={{
-          textAlign: "center",
-          color: "#d29bbf",
-          position: "relative",
-          marginBottom: "40px",
-        }}
-      >
-        Recensioner
-        <Box
-          sx={{
-            position: "absolute",
-            bottom: "-10px",
-            left: "50%",
-            transform: "translateX(-50%)",
-            width: "80px",
-            height: "2px",
-            backgroundColor: "#c490ac",
-            borderRadius: "5px",
-            opacity: 0.7,
-          }}
-        />
-      </Typography> */}
-      <div className="reviews-marquee">
-        <div className="reviews-track">
-          {reviews.map((review, index) => (
-            <div key={index} className="review">
-              <Typography variant="body1" sx={{ fontWeight: 600 }}>
-                {review.user}
-              </Typography>
-              <div className="rating">
-                {Array(review.rating)
-                  .fill(null)
-                  .map((_, i) => (
-                    <span key={i}>⭐</span>
-                  ))}
-              </div>
-              <Typography>{review.text || "Ingen text tillgänglig"}</Typography>
+      <div className="reviews-scroll">
+        {reviews.map((review, index) => (
+          <div key={index} className="review">
+            <Typography variant="body1" sx={{ fontWeight: 600 }}>
+              {review.user}
+            </Typography>
+            <div className="rating">
+              {Array(review.rating)
+                .fill(null)
+                .map((_, i) => (
+                  <span key={i}>⭐</span>
+                ))}
             </div>
-          ))}
-          {reviews.map((review, index) => (
-            <div key={index + reviews.length} className="review">
-              <Typography variant="body1" sx={{ fontWeight: 600 }}>
-                {review.user}
-              </Typography>
-              <div className="rating">
-                {Array(review.rating)
-                  .fill(null)
-                  .map((_, i) => (
-                    <span key={i}>⭐</span>
-                  ))}
-              </div>
-              <Typography>{review.text || "Ingen text tillgänglig"}</Typography>
-            </div>
-          ))}
-        </div>
+            <Typography>{review.text || ""}</Typography>
+          </div>
+        ))}
       </div>
     </div>
   );
