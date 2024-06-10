@@ -56,6 +56,10 @@ export default function PresentingImage() {
             fontWeight: "600",
             textShadow: "0px 0px 10px rgba(0,0,0,0.3)",
             component: "h1",
+            transition: "transform 0.3s ease",
+            "&:hover": {
+              transform: "scale(1.05)",
+            },
           }}
         >
           Städtjejerna i 7Härad
@@ -68,6 +72,10 @@ export default function PresentingImage() {
             color: "white",
             letterSpacing: 2,
             textShadow: "0px 0px 10px rgba(0,0,0,0.3)",
+            transition: "transform 0.3s ease",
+            "&:hover": {
+              transform: "scale(1.05)",
+            },
           }}
         >
           Låt Städtjejerna göra jobbet
@@ -115,9 +123,12 @@ export default function PresentingImage() {
           <IconButton
             sx={{
               color: "white",
+              transition: "transform 0.3s ease",
               "&:hover": {
                 color: "#dbbed1",
-                transition: "color 0.3s ease",
+                transform: "scale(1.1)",
+                transition: "color 0.3s ease, transform 0.3s ease",
+              
               },
             }}
           >
@@ -127,9 +138,11 @@ export default function PresentingImage() {
           <IconButton
             sx={{
               color: "white",
+              transition: "transform 0.3s ease",
               "&:hover": {
                 color: "#dbbed1",
-                transition: "color 0.3s ease",
+                transform: "scale(1.1)",
+                transition: "color 0.3s ease, transform 0.3s ease",
               },
             }}
           >
@@ -139,9 +152,11 @@ export default function PresentingImage() {
           <IconButton
             sx={{
               color: "white",
+              transition: "transform 0.3s ease",
               "&:hover": {
                 color: "#dbbed1",
-                transition: "color 0.3s ease",
+                transform: "scale(1.1)",
+                transition: "color 0.3s ease, transform 0.3s ease",
               },
             }}
           >
