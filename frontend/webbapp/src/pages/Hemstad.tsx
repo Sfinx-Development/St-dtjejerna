@@ -163,7 +163,6 @@ const Hemstad: FC = () => {
                 "Fuktmoppning av alla golv.",
                 "Dammtorkning och våttorkning av alla öppna ytor som till exempel bord, bänkar, fönsterbrädor, dörrar och hyllor samt golvlister, socklar och lampor (som nås utan pall).",
                 "Putsning av speglar.",
-                "Lösa föremål plockas i ordning som till exempel leksaker, kläder, tidningar.",
               ],
             },
             {

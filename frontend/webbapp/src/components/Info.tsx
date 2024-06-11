@@ -155,7 +155,7 @@ export default function Info() {
                 fontSize: 20,
               }}
             >
-              Uppsägan
+              Uppsägning
             </Typography>
             <Typography sx={{ color: "#333", letterSpacing: 2 }}>
               Två veckors uppsägning gäller vid kontinuerligt städ.
