@@ -208,7 +208,6 @@ export default function CustomHeader2(): JSX.Element {
         { label: "Fönsterputs", href: "/fonsterputs" },
         { label: "Företagsstäd", href: "/foretagsstad" },
 
-
         { label: "Trappstäd", href: "/trappstad" },
 
         // { label: 'Trädgårdsfix', href: '/tradgardsfix' }
@@ -231,6 +230,7 @@ export default function CustomHeader2(): JSX.Element {
 
   return (
     <Box
+    component={"header"}
       sx={{
         paddingY: 0.1,
         display: "flex",

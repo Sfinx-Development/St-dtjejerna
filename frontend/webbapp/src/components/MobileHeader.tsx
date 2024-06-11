@@ -63,6 +63,7 @@ export default function CustomHeader2(): JSX.Element {
         flexDirection: isMobile ? "row" : "row",
         position: "relative",
       }}
+      component={"header"}
     >
       <Box
         sx={{
