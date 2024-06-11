@@ -63,7 +63,7 @@ export default function OffertForm() {
       };
 
       emailjs
-        .send("service_f1l2auv", "template_itru98a", templateParams)
+        .send("service_52wg30w", "template_itru98a", templateParams)
         .then((response) => {
           console.log(
             "Email sent successfully:",

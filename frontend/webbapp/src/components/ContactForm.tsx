@@ -42,7 +42,7 @@ export default function ContactForm(props: ContactFormProps) {
       };
 
       emailjs
-        .send("service_f1l2auv", "template_h691rd4", templateParams)
+        .send("service_52wg30w", "template_h691rd4", templateParams)
         .then((response) => {
           console.log(
             "Email sent successfully:",
