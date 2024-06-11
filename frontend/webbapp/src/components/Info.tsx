@@ -88,7 +88,7 @@ export default function Info() {
               color: "#333",
               letterSpacing: 2,
               ml: 2,
-              textAlign: { xs: "center", md: "left" },
+              textAlign: { xs: "left", md: "left" },
               mt: { xs: 1, md: 0 },
               mb: { xs: 2, md: 0 },
             }}
