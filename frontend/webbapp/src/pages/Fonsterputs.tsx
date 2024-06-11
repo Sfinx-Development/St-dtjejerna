@@ -2,6 +2,7 @@ import { Box, Typography } from "@mui/material";
 import Fade from "@mui/material/Fade";
 import { FC } from "react";
 import { useScreenSize } from "../screenSizeContext";
+import Info from "../components/Info";
 
 const Fonsterputs: FC = () => {
   const { isMobile } = useScreenSize();
@@ -36,9 +37,9 @@ const Fonsterputs: FC = () => {
             sx={{
               width: { xs: "100%", md: "50%" },
               height: "350px",
-              backgroundImage: 'url("https://i.imgur.com/2ntsmw7.jpeg")',
+              backgroundImage: 'url("https://i.imgur.com/wsIP0eR.jpeg")',
               backgroundSize: "cover",
-              backgroundPosition: "center",
+              backgroundPosition: "center 25%",
               filter: "grayscale(40%)",
               transition: "transform 0.3s",
               "&:hover": {
@@ -148,6 +149,10 @@ const Fonsterputs: FC = () => {
             }}
           />
         </Box>
+        <div
+          style={{ height: 1.5, width: "100%", backgroundColor: "#e3c5da" }}
+        />
+        <Info />
       </Box>
     </Fade>
   );

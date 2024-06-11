@@ -2,7 +2,6 @@ import { Route, Routes } from "react-router-dom";
 import Error from "./pages/Error";
 import Index from "./pages/Index";
 import RootLayout from "./pages/RootLayout";
-
 import AboutUs from "./pages/AboutUs";
 import Byggstad from "./pages/Byggstad";
 import Contact from "./pages/Contact";
@@ -12,7 +11,6 @@ import Foretagsstad from "./pages/Foretagsstad";
 import Hemstad from "./pages/Hemstad";
 import Locations from "./pages/Locations";
 import Offert from "./pages/Offert";
-// import Tradgardsfix from "./pages/Tradgardsfix";
 import Trappstad from "./pages/Trappstad";
 import Tjanster from "./pages/Tjanster";
 

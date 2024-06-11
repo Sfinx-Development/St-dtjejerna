@@ -1,5 +1,6 @@
 import { Box, Grid, Typography } from "@mui/material";
 import Fade from "@mui/material/Fade";
+import Info from "../components/Info";
 import { useScreenSize } from "../screenSizeContext";
 
 const Flyttstad = () => {
@@ -115,7 +116,6 @@ const Flyttstad = () => {
           Flyttstäd
           <Box
             sx={{
-              
               position: "absolute",
               bottom: "-10px",
               left: "50%",
@@ -219,6 +219,10 @@ const Flyttstad = () => {
         >
           Städtjejerna i 7Härad
         </Typography>
+        <div
+          style={{ height: 1.5, width: "100%", backgroundColor: "#e3c5da" }}
+        />
+        <Info />
       </Box>
     </Fade>
   );

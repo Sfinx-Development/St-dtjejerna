@@ -42,7 +42,6 @@ export default function PresentingImage() {
           textAlign: { xs: "center", md: "left" },
           fontFamily: "Roboto, sans-serif",
           position: "absolute",
-          // bottom: isMobile ? "50px" : "auto",
           left: { xs: "0", md: "50px" },
           opacity: isLoaded ? 1 : 0,
           transition: "opacity 1s ease",
@@ -57,6 +56,10 @@ export default function PresentingImage() {
             fontWeight: "600",
             textShadow: "0px 0px 10px rgba(0,0,0,0.3)",
             component: "h1",
+            transition: "transform 0.3s ease",
+            "&:hover": {
+              transform: "scale(1.05)",
+            },
           }}
         >
           Städtjejerna i 7Härad
@@ -69,6 +72,10 @@ export default function PresentingImage() {
             color: "white",
             letterSpacing: 2,
             textShadow: "0px 0px 10px rgba(0,0,0,0.3)",
+            transition: "transform 0.3s ease",
+            "&:hover": {
+              transform: "scale(1.05)",
+            },
           }}
         >
           Låt Städtjejerna göra jobbet
@@ -83,10 +90,19 @@ export default function PresentingImage() {
             paddingX: 3,
             paddingY: 1,
             backgroundColor: "#dbbed1",
+            animation: "moveUpDown 2s ease-in-out infinite",
             "&:hover": {
               borderColor: "#c499b6",
               backgroundColor: "#c499b6",
               transition: "background-color 0.3s ease, color 0.3s ease",
+            },
+            "@keyframes moveUpDown": {
+              "0%, 100%": {
+                transform: "translateY(0)",
+              },
+              "50%": {
+                transform: "translateY(-10px)",
+              },
             },
           }}
           onClick={() => {
@@ -107,9 +123,12 @@ export default function PresentingImage() {
           <IconButton
             sx={{
               color: "white",
+              transition: "transform 0.3s ease",
               "&:hover": {
                 color: "#dbbed1",
-                transition: "color 0.3s ease",
+                transform: "scale(1.1)",
+                transition: "color 0.3s ease, transform 0.3s ease",
+              
               },
             }}
           >
@@ -119,9 +138,11 @@ export default function PresentingImage() {
           <IconButton
             sx={{
               color: "white",
+              transition: "transform 0.3s ease",
               "&:hover": {
                 color: "#dbbed1",
-                transition: "color 0.3s ease",
+                transform: "scale(1.1)",
+                transition: "color 0.3s ease, transform 0.3s ease",
               },
             }}
           >
@@ -131,9 +152,11 @@ export default function PresentingImage() {
           <IconButton
             sx={{
               color: "white",
+              transition: "transform 0.3s ease",
               "&:hover": {
                 color: "#dbbed1",
-                transition: "color 0.3s ease",
+                transform: "scale(1.1)",
+                transition: "color 0.3s ease, transform 0.3s ease",
               },
             }}
           >

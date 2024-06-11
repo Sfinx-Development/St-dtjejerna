@@ -1,6 +1,7 @@
 import { Box, Grid, Typography } from "@mui/material";
 import Fade from "@mui/material/Fade";
 import { FC } from "react";
+import Info from "../components/Info";
 import { useScreenSize } from "../screenSizeContext";
 
 const Foretagsstad: FC = () => {
@@ -198,6 +199,10 @@ const Foretagsstad: FC = () => {
         >
           Städtjejerna i 7Härad
         </Typography>
+        <div
+          style={{ height: 1.5, width: "100%", backgroundColor: "#e3c5da" }}
+        />
+        <Info />
       </Box>
     </Fade>
   );

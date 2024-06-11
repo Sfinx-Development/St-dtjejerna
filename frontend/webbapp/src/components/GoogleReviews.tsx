@@ -1,3 +1,5 @@
+// GoogleReviews.tsx
+
 import { Typography } from "@mui/material";
 import React from "react";
 import "./GoogleReviews.css";
@@ -9,7 +11,6 @@ interface Review {
 }
 
 const reviews: Review[] = [
- 
   {
     user: "Dzeki M",
     rating: 5,
@@ -48,7 +49,7 @@ const GoogleReviews: React.FC = () => {
       <div className="reviews-scroll">
         {reviews.map((review, index) => (
           <div key={index} className="review">
-            <Typography variant="body1" sx={{ fontWeight: 600 }}>
+            <Typography variant="h6" sx={{ fontWeight: 600 }}>
               {review.user}
             </Typography>
             <div className="rating">
@@ -58,7 +59,7 @@ const GoogleReviews: React.FC = () => {
                   <span key={i}>⭐</span>
                 ))}
             </div>
-            <Typography>{review.text || ""}</Typography>
+            <Typography variant="body1">{review.text || ""}</Typography>
           </div>
         ))}
       </div>

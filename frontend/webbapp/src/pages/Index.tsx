@@ -3,6 +3,7 @@ import CustomerLogos from "../components/CustomerLogos";
 // import CustomerReviews from "../components/CustomerReviews";
 import ContactForm from "../components/ContactForm";
 import GoogleReviews from "../components/GoogleReviews";
+import Info from "../components/Info";
 import PresentingImage from "../components/Presentation";
 import Security from "../components/Security";
 import Services from "../components/Services";
@@ -42,6 +43,8 @@ export default function Index() {
       <CustomerLogos />
       <div style={{ height: 1, width: "100%", backgroundColor: "#e3c5da" }} />
       <ContactForm />
+      <div style={{ height: 1.5, width: "100%", backgroundColor: "#e3c5da" }} />
+      <Info />
       <div style={{ height: 1.5, width: "100%", backgroundColor: "#e3c5da" }} />
     </Box>
   );

@@ -1,6 +1,7 @@
 import { Box, Typography } from "@mui/material";
 import Fade from "@mui/material/Fade";
 import { FC } from "react";
+import Info from "../components/Info";
 import { useScreenSize } from "../screenSizeContext";
 
 const Trappstad: FC = () => {
@@ -118,6 +119,10 @@ const Trappstad: FC = () => {
             }}
           />
         </Box>
+        <div
+          style={{ height: 1.5, width: "100%", backgroundColor: "#e3c5da" }}
+        />
+        <Info />
       </Box>
     </Fade>
   );

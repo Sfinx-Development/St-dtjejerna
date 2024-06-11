@@ -2,6 +2,7 @@ import { Box, Typography } from "@mui/material";
 import Fade from "@mui/material/Fade";
 import { FC } from "react";
 import { useScreenSize } from "../screenSizeContext";
+import Info from "../components/Info";
 
 const Byggstad: FC = () => {
   const { isMobile } = useScreenSize();
@@ -34,11 +35,11 @@ const Byggstad: FC = () => {
         >
           <Box
             sx={{
-              width: { xs: "100%", md: "50%" },
-              height: "350px",
-              backgroundImage: 'url("https://i.imgur.com/COI9B1s.jpeg")',
+              width: { xs: "100%", md: "100%" },
+              height: "400px",
+              backgroundImage: 'url("https://i.imgur.com/fL4AjiZ.jpeg")',
               backgroundSize: "cover",
-              backgroundPosition: "center",
+              backgroundPosition: "center 35%",
               filter: "grayscale(40%)",
               transition: "transform 0.3s",
               "&:hover": {
@@ -46,7 +47,7 @@ const Byggstad: FC = () => {
               },
             }}
           />
-          {!isMobile && (
+          {/* {!isMobile && (
             <Box
               sx={{
                 width: { xs: "100%", md: "50%" },
@@ -62,7 +63,7 @@ const Byggstad: FC = () => {
                 },
               }}
             />
-          )}
+          )} */}
         </Box>
         <Typography
           variant={isMobile ? "h4" : "h2"}
@@ -138,6 +139,10 @@ const Byggstad: FC = () => {
             }}
           />
         </Box>
+        <div
+          style={{ height: 1.5, width: "100%", backgroundColor: "#e3c5da" }}
+        />
+        <Info />
       </Box>
     </Fade>
   );
