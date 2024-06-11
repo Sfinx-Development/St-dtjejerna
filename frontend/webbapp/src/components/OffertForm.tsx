@@ -33,7 +33,14 @@ export default function OffertForm() {
 
   const { isMobile } = useScreenSize();
 
-  const serviceChoices: string[] = ["Fönsterputs", "Hemstäd", "Flyttstäd"];
+  const serviceChoices: string[] = [
+    "Byggstäd",
+    "Hemstäd",
+    "Flyttstäd",
+    "Fönsterputs",
+    "Företagsstäd",
+    "Trappstäd",
+  ];
 
   const handleServiceChange = (event: React.ChangeEvent<HTMLInputElement>) => {
     const selectedService = event.target.value;

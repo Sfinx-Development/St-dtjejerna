@@ -70,7 +70,7 @@ const AboutUs: FC = () => {
             städföretag i Borås. Helt olika men ändå så lika. Victoria med
             hennes lugna harmoniska personlighet och Josephine med hennes
             spralliga, energiska personlighet. Hur bra fungerar inte dessa två
-            personligheter ihop för att arbeta effektivt och noggrant och driva
+            personligheter ihop för att arbeta effektivt, noggrant och driva
             Städtjejerna i 7Härad tillsammans?
           </Typography>
 
