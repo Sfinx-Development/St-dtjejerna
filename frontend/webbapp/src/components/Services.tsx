@@ -44,7 +44,7 @@ export default function Services() {
       nav: "/foretagsstad",
       description: (
         <>
-          Städtjejerna tar med sig de <strong>rengöringsmedlen</strong> som
+          Städtjejerna tar med sig de <strong>rengöringsmedel</strong> som
           behövs och alla medel ingår i priset. <br />
           <br />
           Det finns möjlighet att beställa <em>förbrukningsmaterial</em> som

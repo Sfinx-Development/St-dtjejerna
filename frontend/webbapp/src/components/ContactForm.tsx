@@ -139,7 +139,9 @@ export default function ContactForm(props: ContactFormProps) {
         </Box>
         <Box sx={{ display: "flex", alignItems: "center", marginBottom: 1 }}>
           <LocationOnIcon sx={{ color: "grey", marginRight: 1 }} />
-          <Typography sx={{ color: "grey" }}>Tredje villagatan 17</Typography>
+          <Typography sx={{ color: "grey", marginRight: 0.5 }}>
+            Tredje villagatan 17
+          </Typography>
           <Typography sx={{ color: "grey" }}>50453 Borås</Typography>
         </Box>
       </Box>
