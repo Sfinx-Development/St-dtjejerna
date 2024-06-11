@@ -116,7 +116,7 @@ export default function Info() {
                 fontSize: 20,
               }}
             >
-              Undvikande öppettider
+              Avvikande öppettider
             </Typography>
             <Typography sx={{ color: "#333", letterSpacing: 2 }}>
               Vi har semesterstängt veckorna 28-31. Röda dagar uteblir städet.
