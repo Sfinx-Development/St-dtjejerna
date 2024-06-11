@@ -171,7 +171,7 @@ export default function Tjanster() {
           >
             Byggstäd
           </Button>
-          <Button
+          {/* <Button
             variant="outlined"
             sx={{
               color: "#fff",
@@ -192,7 +192,7 @@ export default function Tjanster() {
             }}
           >
             Trädgårdsfix
-          </Button>
+          </Button> */}
           <Button
             variant="outlined"
             sx={{
