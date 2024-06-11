@@ -1,25 +1,24 @@
 import { Route, Routes } from "react-router-dom";
-import Error from "./pages/Error";
-import Index from "./pages/Index";
-import RootLayout from "./pages/RootLayout";
 import AboutUs from "./pages/AboutUs";
 import Byggstad from "./pages/Byggstad";
 import Contact from "./pages/Contact";
+import Error from "./pages/Error";
 import Flyttstad from "./pages/Flyttstad";
 import Fonsterputs from "./pages/Fonsterputs";
 import Foretagsstad from "./pages/Foretagsstad";
 import Hemstad from "./pages/Hemstad";
+import Index from "./pages/Index";
 import Locations from "./pages/Locations";
 import Offert from "./pages/Offert";
-import Trappstad from "./pages/Trappstad";
+import RootLayout from "./pages/RootLayout";
 import Tjanster from "./pages/Tjanster";
+import Trappstad from "./pages/Trappstad";
 
 const Navigation = () => {
   return (
     <Routes>
       <Route element={<RootLayout />}>
         <Route index element={<Index />}></Route>
-        <Route path="*" element={<Error />}></Route>
         <Route path="om-oss" element={<AboutUs />}></Route>
         <Route path="hemstad" element={<Hemstad />}></Route>
         <Route path="byggstad" element={<Byggstad />}></Route>
@@ -32,6 +31,7 @@ const Navigation = () => {
         <Route path="offert" element={<Offert />}></Route>
         <Route path="contact" element={<Contact />}></Route>
         <Route path="tjanster" element={<Tjanster />}></Route>
+        <Route path="*" element={<Error />}></Route>
       </Route>
     </Routes>
   );

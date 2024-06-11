@@ -1,13 +1,7 @@
 import { Box, Grid, Typography } from "@mui/material";
 const logos = [
-  "https://i.imgur.com/BppOfZg.png",
   "https://i.imgur.com/SyKiY71.jpeg",
-  "https://i.imgur.com/FX69JrS.png",
   "https://i.imgur.com/dwjZsiQ.png",
-  "https://i.imgur.com/hltJ8rW.jpeg",
-  "https://i.imgur.com/71EgxKY.jpeg",
-  "https://i.imgur.com/daJbP0E.jpeg",
-  "https://i.imgur.com/r6ZIX9Q.jpeg",
   "https://i.imgur.com/q9jDpa6.png",
   "https://i.imgur.com/z9imIe1.png",
   "https://i.imgur.com/vFNMWwc.png",
@@ -22,7 +16,7 @@ export default function CustomerLogos() {
         fontFamily: "Roboto, sans-serif",
         display: "flex",
         flexDirection: "column",
-        paddingY: 4,
+        paddingY: 3,
         textAlign: "center",
         overflow: "hidden",
         boxShadow: "0px 4px 15px rgba(0, 0, 0, 0.1)",
@@ -42,7 +36,7 @@ export default function CustomerLogos() {
             color: "#d29bbf",
             letterSpacing: 1,
             position: "relative",
-            marginBottom: "20px",
+            marginBottom: "15px",
           }}
         >
           Nöjda kunder
