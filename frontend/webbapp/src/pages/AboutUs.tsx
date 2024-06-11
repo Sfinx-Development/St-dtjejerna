@@ -19,22 +19,10 @@ const AboutUs: FC = () => {
           borderRadius: "10px",
           boxShadow: "0 4px 12px rgba(0, 0, 0, 0.1)",
           backgroundColor: "#fff",
+          padding: isMobile ? "10px" : "20px",
+          marginBottom: "20px",
         }}
       >
-        <Box
-          component="img"
-          src="https://i.imgur.com/FhsHGOs.jpeg"
-          alt="Byggstäd"
-          sx={{
-            width: "100%",
-            maxHeight: "500px",
-            objectFit: "cover",
-            borderRadius: "10px",
-            boxShadow: "0 4px 12px rgba(0, 0, 0, 0.1)",
-            marginBottom: "20px",
-            filter: "grayscale(20%)",
-          }}
-        />
         <Typography
           variant={isMobile ? "h4" : "h2"}
           gutterBottom
@@ -85,15 +73,88 @@ const AboutUs: FC = () => {
             personligheter ihop för att arbeta effektivt och noggrant och driva
             Städtjejerna i 7Härad tillsammans?
           </Typography>
-          <Typography variant="body1" paragraph>
-            <strong>Viktoria</strong> har ett öga för detaljer. Fogborste, vikta
-            papper, handdukar och en uppolerad kran är något hon gör som en
-            klocka.
-          </Typography>
-          <Typography variant="body1" paragraph>
-            <strong>Josephine</strong> dansar gärna loss med dammtrasan och
-            dammsugaren efter sig. Det går undan men rent och prydligt blir det.
-          </Typography>
+
+          <Box
+            sx={{
+              display: "flex",
+              flexDirection: isMobile ? "column" : "row",
+              alignItems: "center",
+              marginBottom: "20px",
+              gap: "20px",
+            }}
+          >
+            <Box
+              component="img"
+              src="https://i.imgur.com/FhsHGOs.jpeg"
+              alt="Viktoria"
+              sx={{
+                width: isMobile ? "100%" : "auto",
+                maxHeight: "350px",
+                objectFit: "cover",
+                borderRadius: "10px",
+                boxShadow: "0 4px 12px rgba(0, 0, 0, 0.1)",
+                filter: "grayscale(20%)",
+              }}
+            />
+            <Box sx={{ flex: 1 }}>
+              <Typography
+                sx={{
+                  fontSize: 25,
+                  letterSpacing: 2,
+                  marginBottom: "10px",
+                }}
+              >
+                Viktoria
+              </Typography>
+              <Typography variant="body1">
+                <strong>Viktoria</strong> har ett öga för detaljer. Fogborste,
+                vikta papper, handdukar och en uppolerad kran är något hon gör
+                som en klocka.
+              </Typography>
+            </Box>
+          </Box>
+
+          <Box
+            sx={{
+              display: "flex",
+              flexDirection: isMobile ? "column" : "row",
+              alignItems: "center",
+              marginBottom: "20px",
+              gap: "20px",
+            }}
+          >
+            <Box
+              component="img"
+              src="https://i.imgur.com/yZSk2SB.jpeg"
+              alt="Josephine"
+              sx={{
+                width: isMobile ? "100%" : "auto",
+                maxHeight: "350px",
+                objectFit: "cover",
+                borderRadius: "10px",
+                boxShadow: "0 4px 12px rgba(0, 0, 0, 0.1)",
+                filter: "grayscale(20%)",
+                backgroundPosition: "top",
+              }}
+            />
+            <Box sx={{ flex: 1 }}>
+              <Typography
+                sx={{
+                  fontSize: 25,
+                  letterSpacing: 2,
+                  marginBottom: "10px",
+                }}
+              >
+                Josephine
+              </Typography>
+              <Typography variant="body1">
+                <strong>Josephine</strong> dansar gärna loss med dammtrasan och
+                dammsugaren efter sig. Det går undan men rent och prydligt blir
+                det.
+              </Typography>
+            </Box>
+          </Box>
+
           <Box
             sx={{
               width: "100%",
@@ -103,39 +164,6 @@ const AboutUs: FC = () => {
             }}
           />
         </Box>
-        {/* <Box
-          sx={{
-            backgroundColor: "#f4f4f4",
-            padding: "20px",
-            maxWidth: "800px",
-            margin: "0 auto",
-            textAlign: "left",
-            borderRadius: "10px",
-            boxShadow: "0 2px 10px rgba(0,0,0,0.1)",
-            filter: "contrast(120%)",
-          }}
-        > */}
-          {/* <Typography variant="body1" paragraph>
-            Vi skräddarsyr ett upplägg som matchar ditt unika boende eller
-            företag. Kanske önskas lakansbyte i hemmet eller hjälp med
-            återvinningen på företaget? Berätta vad du önskar få hjälp med så
-            sammanställer vi allt tillsammans i en städbeskrivning där det också
-            framgår vilka rum som ska ingå och hur du vill ha städningen utförd.
-          </Typography>
-          <Typography variant="body1" paragraph>
-            Det ger ett resultat med god kvalitet och kontinuitet. Allt för att
-            du ska kunna släppa tankarna på städningen och fokusera på annat
-            under tiden.
-          </Typography> */}
-          {/* <Box
-            sx={{
-              width: "100%",
-              height: "2px",
-              backgroundColor: "#d29bbf",
-              marginBottom: "20px",
-            }}
-          />
-        </Box> */}
         <ContactForm />
       </Box>
     </Fade>

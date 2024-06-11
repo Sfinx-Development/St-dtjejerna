@@ -10,9 +10,10 @@ export default function Services() {
       description: (
         <>
           Vi på <strong>Städtjejerna</strong> ser till att du kommer hem till
-          ett <em>rent, nystädat och ett väldoftande hem</em>. Allt för att du
-          ska kunna släppa tankarna på städningen och fokusera på annat under
-          tiden. <br />
+          ett
+          <em> rent, nystädat och ett väldoftande hem</em>. Allt för att du ska
+          kunna släppa tankarna på städningen och fokusera på annat under tiden.{" "}
+          <br />
           <br />
           Vår hemstädning gör din vardag lättare så att du har mer tid att lägga
           på din hobby eller familj.
@@ -78,6 +79,9 @@ export default function Services() {
           flexWrap: "wrap",
         }}
       >
+        {/* <IconButton>
+          <ArrowBackIosIcon />
+        </IconButton> */}
         {services.map((service, index) => (
           <Box
             key={index}
@@ -88,63 +92,74 @@ export default function Services() {
               backgroundPosition: "center",
               flex: 1,
               height: 420,
-              margin: { xs: 1, md: 0.5 },
+              margin: { xs: 1, md: 2 },
               display: "flex",
-              alignItems: "flex-end",
+              alignItems: "end",
               justifyContent: "center",
+              color: "white",
               position: "relative",
+              boxShadow: "0 4px 8px rgba(0, 0, 0, 0.2)",
+              borderRadius: 2,
               transition: "transform 0.3s ease",
               "&:hover": {
-                transform: "scale(1.015)",
+                transform: "scale(1.05)",
               },
             }}
             onClick={() => navigate(service.nav)}
           >
             <Box
               sx={{
-                position: "absolute",
-                top: 0,
-                left: 0,
-                width: "100%",
-                height: "100%",
-                backgroundColor: "rgba(128, 128, 128, 0.5)",
-              }}
-            />
-            <Box
-              sx={{
-                position: "relative",
-                zIndex: 1,
+                backgroundColor: "rgba(255, 255, 255, 0.8)",
+                boxShadow: "0 4px 8px rgba(0, 0, 0, 0.2)",
+                borderRadius: 2,
                 padding: 2,
                 textAlign: "center",
+                flexGrow: 1,
                 width: "100%",
-                color: "white",
-                minHeight: "60%",
-                textShadow: "1px 1px 2px rgba(0,0,0,0.3)",
+                minHeight: 230,
+                // backgroundColor: "rgba(0,0,0,0.6)",
               }}
             >
               <Typography
-                variant="h5"
                 sx={{
+                  fontSize: 24,
+
                   fontWeight: "bold",
-                  marginBottom: 2,
+                  color: "#d29bbf",
+                  padding: 0,
+                  letterSpacing: 2,
                   position: "relative",
-                  color: "white",
-                  backgroundColor: "rgba(219, 190, 209, 0.8)",
+                  marginBottom: "20px",
                 }}
               >
                 {service.title}
+                <Box
+                  sx={{
+                    position: "absolute",
+                    bottom: "-10px",
+                    left: "50%",
+                    transform: "translateX(-50%)",
+                    width: "80px",
+                    height: "2px",
+                    backgroundColor: "#d29bbf",
+                    borderRadius: "5px",
+                    opacity: 0.7,
+                  }}
+                />
               </Typography>
               <Typography
                 variant="body1"
-                sx={{
-                  paddingX: 2,
-                }}
+                color="black"
+                sx={{ position: "relative" }}
               >
                 {service.description}
               </Typography>
             </Box>
           </Box>
         ))}
+        {/* <IconButton>
+          <ArrowForwardIosIcon />
+        </IconButton> */}
       </Box>
     </Box>
   );
