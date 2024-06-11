@@ -3,7 +3,7 @@ import InstagramIcon from "@mui/icons-material/Instagram";
 import MailOutlineIcon from "@mui/icons-material/MailOutline";
 import { Box, Button, IconButton, Typography } from "@mui/material";
 import { useEffect, useState } from "react";
-import { useNavigate } from "react-router-dom";
+import { Link, useNavigate } from "react-router-dom";
 import { useScreenSize } from "../screenSizeContext";
 
 export default function PresentingImage() {
@@ -120,48 +120,61 @@ export default function PresentingImage() {
             marginTop: 2,
           }}
         >
-          <IconButton
-            sx={{
-              color: "white",
-              transition: "transform 0.3s ease",
-              "&:hover": {
-                color: "#dbbed1",
-                transform: "scale(1.1)",
-                transition: "color 0.3s ease, transform 0.3s ease",
-              
-              },
-            }}
+          <Link
+            to="https://www.instagram.com/stadtjejernai7harad/"
+            style={{ textDecoration: "none" }}
           >
-            <InstagramIcon sx={{ fontSize: 34 }} />
-          </IconButton>
+            <IconButton
+              sx={{
+                color: "white",
+                transition: "transform 0.3s ease",
+                "&:hover": {
+                  color: "#dbbed1",
+                  transform: "scale(1.1)",
+                  transition: "color 0.3s ease, transform 0.3s ease",
+                },
+              }}
+            >
+              <InstagramIcon sx={{ fontSize: 34 }} />
+            </IconButton>
+          </Link>
 
-          <IconButton
-            sx={{
-              color: "white",
-              transition: "transform 0.3s ease",
-              "&:hover": {
-                color: "#dbbed1",
-                transform: "scale(1.1)",
-                transition: "color 0.3s ease, transform 0.3s ease",
-              },
-            }}
+          <Link
+            to="https://www.facebook.com/p/St%C3%A4dtjejerna-i-7H%C3%A4rad-100063807300331/"
+            style={{ textDecoration: "none" }}
           >
-            <FacebookIcon sx={{ fontSize: 34 }} />
-          </IconButton>
-
-          <IconButton
-            sx={{
-              color: "white",
-              transition: "transform 0.3s ease",
-              "&:hover": {
-                color: "#dbbed1",
-                transform: "scale(1.1)",
-                transition: "color 0.3s ease, transform 0.3s ease",
-              },
-            }}
+            <IconButton
+              sx={{
+                color: "white",
+                transition: "transform 0.3s ease",
+                "&:hover": {
+                  color: "#dbbed1",
+                  transform: "scale(1.1)",
+                  transition: "color 0.3s ease, transform 0.3s ease",
+                },
+              }}
+            >
+              <FacebookIcon sx={{ fontSize: 34 }} />
+            </IconButton>
+          </Link>
+          <Link
+            to="mailto:stadtjejerna@hotmail.com"
+            style={{ textDecoration: "none" }}
           >
-            <MailOutlineIcon sx={{ fontSize: 34 }} />
-          </IconButton>
+            <IconButton
+              sx={{
+                color: "white",
+                transition: "transform 0.3s ease",
+                "&:hover": {
+                  color: "#dbbed1",
+                  transform: "scale(1.1)",
+                  transition: "color 0.3s ease, transform 0.3s ease",
+                },
+              }}
+            >
+              <MailOutlineIcon sx={{ fontSize: 34 }} />
+            </IconButton>
+          </Link>
         </Box>
       </Box>
 
