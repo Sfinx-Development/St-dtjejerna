@@ -67,7 +67,7 @@ const AboutUs: FC = () => {
           </Typography>
           <Typography variant="body1" paragraph>
             Det började en dag för snart 10 år sedan. Två flickor slöt an på ett
-            städföretag i Borås. Helt olika men ändå så lika. Viktoria med
+            städföretag i Borås. Helt olika men ändå så lika. Victoria med
             hennes lugna harmoniska personlighet och Josephine med hennes
             spralliga, energiska personlighet. Hur bra fungerar inte dessa två
             personligheter ihop för att arbeta effektivt och noggrant och driva
@@ -86,7 +86,7 @@ const AboutUs: FC = () => {
             <Box
               component="img"
               src="https://i.imgur.com/FhsHGOs.jpeg"
-              alt="Viktoria"
+              alt="Victoria"
               sx={{
                 width: isMobile ? "100%" : "auto",
                 maxHeight: "350px",
@@ -104,10 +104,10 @@ const AboutUs: FC = () => {
                   marginBottom: "10px",
                 }}
               >
-                Viktoria
+                Victoria
               </Typography>
               <Typography variant="body1">
-                <strong>Viktoria</strong> har ett öga för detaljer. Fogborste,
+                <strong>Victoria</strong> har ett öga för detaljer. Fogborste,
                 vikta papper, handdukar och en uppolerad kran är något hon gör
                 som en klocka.
               </Typography>
