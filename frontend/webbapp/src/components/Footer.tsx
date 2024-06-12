@@ -137,6 +137,15 @@ export default function Footer() {
         >
           HITTA
         </Link>
+        <Divider sx={{ backgroundColor: "white", color: "#c499b6" }} />
+      <Box sx={{ marginY: 4, color: "white" }}>
+        <Typography variant="body2" sx={{ color: "white", marginBottom: 1 }}>
+          © 2024 Städtjejerna i 7-härad. Alla rättigheter förbehållna.
+        </Typography>
+        <Typography variant="body2" sx={{ color: "white", marginBottom: 1 }}>
+          Designad och utvecklad av <Link href="https://zeroett.se" sx={{ color: "white", textDecoration: "none", "&:hover": { color: "#dbbed1" } }}>Zeroett AB</Link>
+        </Typography>
+      </Box>
       </Box>
     </Box>
   );
