@@ -37,6 +37,7 @@ export default function ContactForm(props: ContactFormProps) {
     if (name != "" && message != "" && email != "" && phone != "") {
       const templateParams = {
         to_name: "Städtjejerna",
+        reply_to: email,
         from_name: name,
         message: `Telefon: ${phone}\nEmail: ${email}\nMeddelande: ${message}`,
       };

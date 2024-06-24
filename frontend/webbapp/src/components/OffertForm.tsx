@@ -64,6 +64,7 @@ export default function OffertForm() {
       const templateParams = {
         to_name: "Städtjejerna",
         from_name: name,
+        reply_to: email,
         message: `Telefon: ${phone}\nEmail: ${email}\nTjänster: ${services.join(
           ", "
         )}\nMeddelande: ${message}`,

@@ -15,7 +15,6 @@ import { useScreenSize } from "../screenSizeContext";
 
 export default function Contact() {
   const images = [
-    
     "https://i.imgur.com/pbme5Ya.jpeg",
     "https://i.imgur.com/ojwnvJ9.jpeg",
     "https://i.imgur.com/yZSk2SB.jpeg",
@@ -38,6 +37,7 @@ export default function Contact() {
       >
         <Typography
           variant={isMobile ? "h4" : "h2"}
+          component="h2"
           gutterBottom
           sx={{
             textAlign: "center",
