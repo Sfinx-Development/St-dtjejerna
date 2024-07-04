@@ -8,16 +8,16 @@ const RootLayout = () => {
   const { isMobile } = useScreenSize();
   return (
     <div
-      style={{
-        display: "flex",
-        flexDirection: "column",
-        flex: 1,
-        height: "100vh",
-        alignItems: "center",
-        width: "100%",
-        margin: 0,
-        padding: 0,
-      }}
+      // style={{
+      //   display: "flex",
+      //   flexDirection: "column",
+      //   flex: 1,
+      //   height: "100vh",
+      //   alignItems: "center",
+      //   width: "100%",
+      //   margin: 0,
+      //   padding: 0,
+      // }}
     >
       {isMobile ? <MobileHeader /> : <CustomHeader />}
       <main
