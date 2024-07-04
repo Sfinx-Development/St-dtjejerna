@@ -35,14 +35,14 @@ export default function PresentingImage() {
           flexDirection: "column",
           justifyContent: "center",
           paddingLeft: isMobile ? 0 : 10,
-          alignItems: { xs: "center", md: "flex-start" },
+          alignItems: isMobile ? "center" : "flex-start",
           paddingY: 4,
           zIndex: 2,
-          width: { xs: "100%", md: "40%" },
+          width: "100%",
           textAlign: { xs: "center", md: "left" },
           fontFamily: "Roboto, sans-serif",
           position: "absolute",
-          left: { xs: "0", md: "50px" },
+          // left: { xs: "0", md: "50px" },
           opacity: isLoaded ? 1 : 0,
           transition: "opacity 1s ease",
         }}
@@ -115,9 +115,9 @@ export default function PresentingImage() {
         <Box
           sx={{
             display: "flex",
-            justifyContent: "center",
+            justifyContent: isMobile ? "center" : "flex-start",
+            // alignItems: "flex-start",
             width: "100%",
-            marginTop: 2,
           }}
         >
           <Link
@@ -135,7 +135,7 @@ export default function PresentingImage() {
                 },
               }}
             >
-              <InstagramIcon sx={{ fontSize: 34 }} />
+              <InstagramIcon sx={{ fontSize: 26 }} />
             </IconButton>
           </Link>
 
@@ -154,7 +154,7 @@ export default function PresentingImage() {
                 },
               }}
             >
-              <FacebookIcon sx={{ fontSize: 34 }} />
+              <FacebookIcon sx={{ fontSize: 26 }} />
             </IconButton>
           </Link>
           <Link
@@ -172,7 +172,7 @@ export default function PresentingImage() {
                 },
               }}
             >
-              <MailOutlineIcon sx={{ fontSize: 34 }} />
+              <MailOutlineIcon sx={{ fontSize: 26 }} />
             </IconButton>
           </Link>
         </Box>
@@ -194,7 +194,7 @@ export default function PresentingImage() {
             height: "100%",
             objectFit: "cover",
             position: "absolute",
-            filter: "brightness(80%)",
+            filter: "brightness(70%)",
             objectPosition: "center 32%",
           }}
         />

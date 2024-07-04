@@ -9,9 +9,9 @@ import {
   Typography,
   useMediaQuery,
   useTheme,
+  Link,
 } from "@mui/material";
 import React, { useRef, useState } from "react";
-import { Link } from "react-router-dom";
 
 type LinkItem = {
   label: string;
@@ -46,15 +46,13 @@ const MenuLink = ({
     onMouseLeave={handleMouseLeave}
     style={{ display: "flex", alignItems: "center" }}
   >
-    <Link to={link.href} style={{ textDecoration: "none" }}>
+    <Link href={link.href} sx={{ textDecoration: "none" }}>
       <Typography
         variant="body1"
         sx={{
           marginY: 1,
-          color: "black",
-          // "&:hover": {
-          //   color: "#d29bbf",
-          // },
+          color: "#555556",
+          fontSize: 16,
           "&:hover": {
             color: "#d29bbf",
             transform: "scale(1.1)",
@@ -66,7 +64,7 @@ const MenuLink = ({
     </Link>
     {link.menuItems && (
       <>
-        <KeyboardArrowDownIcon />
+        <KeyboardArrowDownIcon sx={{ color: "#555556" }} />
         <Popper
           open={openMenu === link.label}
           anchorEl={anchorEl}
@@ -106,25 +104,16 @@ const MenuLink = ({
                           transition: "transform 0.3s ease",
                         },
                       }}
-                      // sx={{
-                      //   "&:hover": {
-                      //     backgroundColor: "#d29bbf",
-                      //     color: "#fff",
-                      //   },
-                      // }}
                     >
                       <Link
-                        to={item.href}
-                        // style={{
-                        //   textDecoration: "none",
-                        //   color: "#000",
-                        // }}
-                        style={{
+                        href={item.href}
+                        sx={{
                           textDecoration: "none",
-                          color: "#000",
+                          color: "#555556",
                           transition: "transform 0.3s ease",
                           "&:hover": {
                             transform: "scale(1.1)",
+                            color: "#393939",
                           },
                         }}
                       >
@@ -209,61 +198,41 @@ export default function CustomHeader2(): JSX.Element {
         { label: "Företagsstäd", href: "/foretagsstad" },
 
         { label: "Trappstäd", href: "/trappstad" },
-
-        // { label: 'Trädgårdsfix', href: '/tradgardsfix' }
       ],
     },
-    // {
-    //   label: "Orter",
-    //   href: "/orter",
-    //   menuItems: [
-    //     { label: "Borås", href: "/orter" },
-    //     { label: "Dalsjöfors", href: "/orter" },
-    //     { label: "Fristad", href: "/orter" },
-    //     { label: "Sandared", href: "/orter" },
-    //     { label: "Sjömarken", href: "/orter" },
-    //   ],
-    // },
     { label: "Kontakt", href: "/contact" },
     { label: "Offert", href: "/offert" },
   ];
 
   return (
     <Box
-    component={"header"}
+      component={"header"}
       sx={{
-        paddingY: 0.1,
         display: "flex",
         alignItems: "center",
         justifyContent: "space-between",
         width: "100%",
         boxShadow: "0px 4px 10px rgba(0, 0, 0, 0.1)",
         flexDirection: isMobile ? "column" : "row",
-        position: "relative",
+        height: "90px",
       }}
     >
       <Box>
         <Link
-          to="/"
-          style={{
-            marginBottom: 1,
-            marginTop: 1,
+          href="/"
+          sx={{
             position: "relative",
+            margin: 0,
+            padding: 0,
           }}
         >
           <img
             src="https://i.imgur.com/Zcgk1vf.png"
             alt="Logo saying dailyvibe"
             style={{
-              width: "250px",
-              marginTop: 40,
-              marginLeft: 4,
-              height: "200px",
+              marginLeft: 10,
+              height: "90px",
               objectFit: "contain",
-              position: "absolute",
-              top: "90%",
-              transform: "translateY(-50%)",
-              zIndex: 9999,
               color: "white",
               transition: "transform 0.3s ease",
             }}
@@ -275,9 +244,9 @@ export default function CustomHeader2(): JSX.Element {
         sx={{
           display: "flex",
           alignItems: "center",
-          gap: 4,
-          padding: 3.5,
+          gap: 6,
           zIndex: 9999,
+          marginRight: 4,
         }}
       >
         {links.map((link) => (
@@ -292,7 +261,6 @@ export default function CustomHeader2(): JSX.Element {
               handleSubMenuMouseLeave={handleSubMenuMouseLeave}
               handleCloseMenu={handleCloseMenu}
             />
-            <div style={{ height: 20, width: 2, backgroundColor: "grey" }} />
           </React.Fragment>
         ))}
       </Box>

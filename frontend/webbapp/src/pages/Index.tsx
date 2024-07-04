@@ -24,7 +24,7 @@ export default function Index() {
         flexGrow: 1,
       }}
     >
-      <div style={{ height: 1.5, width: "100%", backgroundColor: "#e3c5da" }} />
+      {/* <div style={{ height: 1.5, width: "100%", backgroundColor: "#e3c5da" }} /> */}
       <PresentingImage />
       <div style={{ height: 1.5, width: "100%", backgroundColor: "#e3c5da" }} />
 
