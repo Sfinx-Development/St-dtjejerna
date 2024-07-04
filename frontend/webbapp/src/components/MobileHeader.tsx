@@ -1,12 +1,16 @@
+import ArrowForwardIosIcon from "@mui/icons-material/ArrowForwardIos";
 import MenuIcon from "@mui/icons-material/Menu";
 import {
   Box,
+  Collapse,
+  Divider,
   Drawer,
   IconButton,
   List,
   ListItem,
-  Slide,
-  Typography,
+  ListItemButton,
+  ListItemIcon,
+  ListItemText,
   useTheme,
 } from "@mui/material";
 import { useState } from "react";
@@ -23,6 +27,7 @@ export default function CustomHeader2(): JSX.Element {
   const theme = useTheme();
   const { isMobile } = useScreenSize();
   const [openDrawer, setOpenDrawer] = useState(false);
+  const [openSubmenu, setOpenSubmenu] = useState<string | null>(null);
 
   const handleToggleMenu = () => {
     setOpenDrawer(!openDrawer);
@@ -30,6 +35,10 @@ export default function CustomHeader2(): JSX.Element {
 
   const handleCloseMenu = () => {
     setOpenDrawer(false);
+  };
+
+  const handleToggleSubmenu = (menuName: string) => {
+    setOpenSubmenu(openSubmenu === menuName ? null : menuName);
   };
 
   const links: LinkItem[] = [
@@ -61,7 +70,10 @@ export default function CustomHeader2(): JSX.Element {
         width: "100%",
         boxShadow: "0px 4px 10px rgba(0, 0, 0, 0.1)",
         flexDirection: isMobile ? "row" : "row",
-        position: "relative",
+        position: "sticky",
+        top: 0,
+        zIndex: 999,
+        background: "white",
       }}
       component={"header"}
     >
@@ -76,21 +88,15 @@ export default function CustomHeader2(): JSX.Element {
           position: "relative",
         }}
       >
-        <Link
-          to="/"
-          style={{ marginBottom: 1, marginTop: 1, position: "relative" }}
-        >
+        <Link to="/" style={{ marginTop: 2 }}>
           <img
             src="https://i.imgur.com/Zcgk1vf.png"
             alt="Logo saying dailyvibe"
             style={{
-              width: "180px",
+              width: "100px",
               objectFit: "contain",
-              position: "absolute",
-              top: "35px",
               left: 0,
               zIndex: 999,
-              transform: "translateY(-50%)",
             }}
           />
         </Link>
@@ -117,131 +123,72 @@ export default function CustomHeader2(): JSX.Element {
           }}
           sx={{
             "& .MuiDrawer-paper": {
-              width: 220,
+              width: 280,
               backgroundColor: theme.palette.background.paper,
+              paddingTop: 2,
             },
           }}
         >
-          <List
-            sx={{
-              paddingLeft: 1,
-              display: "flex",
-              flexDirection: "column",
-              backgroundColor: "#dbbed1",
-              height: "100%",
-            }}
-          >
-            {links.map((link, index) => (
-              <Slide
-                key={link.label}
-                direction="right"
-                in={openDrawer}
-                style={{ transitionDelay: `${index * 100}ms` }}
-              >
+          <List sx={{ width: "100%" }}>
+            {links.map((link) => (
+              <Box key={link.label}>
                 <ListItem
                   disablePadding
                   sx={{
-                    display: "flex",
-                    flexDirection: "column",
-                    alignItems: "flex-start",
-                    transition: "background-color 0.3s ease",
                     "&:hover": {
-                      backgroundColor: "#f3f3f3",
+                      backgroundColor: theme.palette.action.hover,
                     },
-                    marginBottom: 2,
                   }}
                 >
-                  <Link
-                    to={link.href}
-                    style={{
-                      textDecoration: "none",
-                      color: "black",
-                    }}
-                    onClick={handleCloseMenu}
+                  <ListItemButton
+                    onClick={
+                      link.menuItems
+                        ? () => handleToggleSubmenu(link.label)
+                        : handleCloseMenu
+                    }
+                    component={link.menuItems ? "div" : Link}
+                    to={!link.menuItems ? link.href : undefined}
                   >
-                    <Typography
-                      sx={{
-                        fontSize: 24,
-                        fontStyle: "italic",
-                        color: "white",
-                        letterSpacing: 2,
-                      }}
-                    >
-                      {link.label}
-                    </Typography>
-                  </Link>
-                  {link.menuItems && (
-                    <List sx={{ marginLeft: 5, paddingTop: "8px" }}>
-                      {link.menuItems.map((item, subIndex) => (
-                        <Slide
-                          key={item.label}
-                          direction="right"
-                          in={openDrawer}
-                          style={{
-                            transitionDelay: `${
-                              (index + subIndex + 1) * 100
-                            }ms`,
+                    <ListItemText primary={link.label} />
+                    {link.menuItems && (
+                      <ListItemIcon>
+                        <ArrowForwardIosIcon
+                          sx={{
+                            transform:
+                              openSubmenu === link.label
+                                ? "rotate(90deg)"
+                                : "rotate(0deg)",
+                            transition: "transform 0.3s ease",
                           }}
+                        />
+                      </ListItemIcon>
+                    )}
+                  </ListItemButton>
+                </ListItem>
+                {link.menuItems && (
+                  <Collapse
+                    in={openSubmenu === link.label}
+                    timeout="auto"
+                    unmountOnExit
+                  >
+                    <List component="div" disablePadding>
+                      {link.menuItems.map((item) => (
+                        <ListItemButton
+                          key={item.label}
+                          sx={{ pl: 4 }}
+                          component={Link}
+                          to={item.href}
+                          onClick={handleCloseMenu}
                         >
-                          <ListItem
-                            disablePadding
-                            onClick={handleCloseMenu}
-                            sx={{
-                              transition: "background-color 0.3s ease",
-                              "&:hover": {
-                                backgroundColor: "#f3f3f3",
-                              },
-                            }}
-                          >
-                            <Link
-                              to={item.href}
-                              style={{
-                                textDecoration: "none",
-                                color: "black",
-                              }}
-                            >
-                              <Typography
-                                sx={{
-                                  fontSize: 22,
-                                  color: "white",
-                                  letterSpacing: 2,
-                                }}
-                              >
-                                {item.label}
-                              </Typography>
-                            </Link>
-                          </ListItem>
-                        </Slide>
+                          <ListItemText primary={item.label} />
+                        </ListItemButton>
                       ))}
                     </List>
-                  )}
-                </ListItem>
-              </Slide>
+                  </Collapse>
+                )}
+                <Divider />
+              </Box>
             ))}
-            <Box
-              sx={{
-                backgroundColor: "white",
-                borderRadius: "50%",
-                height: 140,
-                width: 140,
-                display: "flex",
-                alignItems: "center",
-                justifyContent: "center",
-                position: "relative",
-                marginLeft: 4,
-              }}
-            >
-              <img
-                src="https://i.imgur.com/Zcgk1vf.png"
-                alt="Logo saying dailyvibe"
-                style={{
-                  width: "100%",
-                  height: "100%",
-                  objectFit: "contain",
-                  borderRadius: "50%",
-                }}
-              />
-            </Box>
           </List>
         </Drawer>
       </Box>

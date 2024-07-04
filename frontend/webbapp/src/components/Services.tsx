@@ -1,4 +1,4 @@
-import { Box, Typography } from "@mui/material";
+import { Box, Button, Typography } from "@mui/material";
 import { useNavigate } from "react-router-dom";
 
 export default function Services() {
@@ -62,105 +62,92 @@ export default function Services() {
       sx={{
         width: "100%",
         fontFamily: "Roboto, sans-serif",
-        backgroundColor: "white",
-        position: "relative",
+        backgroundColor: "#f9f9f9",
         display: "flex",
-        justifyContent: "center",
-        alignItems: "center",
         flexDirection: "column",
+        alignItems: "center",
       }}
     >
-      <Box
-        sx={{
-          display: "flex",
-          flexDirection: { xs: "column", md: "row" },
-          justifyContent: "space-around",
-          width: "100%",
-          flexWrap: "wrap",
-        }}
-      >
-        {/* <IconButton>
-          <ArrowBackIosIcon />
-        </IconButton> */}
-        {services.map((service, index) => (
+      {services.map((service, index) => (
+        <Box
+          key={service.id}
+          sx={{
+            width: "100%",
+            display: "flex",
+            flexDirection: {
+              xs: "column",
+              md: index % 2 === 0 ? "row" : "row-reverse",
+            },
+            alignItems: "center",
+            justifyContent: "center",
+            padding: 4,
+            backgroundColor: index % 2 === 0 ? "#ffffff" : "#f0f0f0",
+          }}
+        >
           <Box
-            key={index}
             sx={{
-              cursor: "pointer",
-              backgroundImage: `url(${service.image})`,
-              backgroundSize: "cover",
-              backgroundPosition: "center",
               flex: 1,
-              height: 420,
-              margin: { xs: 1, md: 2 },
               display: "flex",
-              alignItems: "end",
+              alignItems: "center",
               justifyContent: "center",
-              color: "white",
-              position: "relative",
-              boxShadow: "0 4px 8px rgba(0, 0, 0, 0.2)",
-              borderRadius: 2,
-              transition: "transform 0.3s ease",
-              "&:hover": {
-                transform: "scale(1.05)",
-              },
             }}
-            onClick={() => navigate(service.nav)}
           >
-            <Box
-              sx={{
-                backgroundColor: "rgba(255, 255, 255, 0.8)",
-                boxShadow: "0 4px 8px rgba(0, 0, 0, 0.2)",
-                borderRadius: 2,
-                padding: 2,
-                textAlign: "center",
-                flexGrow: 1,
+            <img
+              src={service.image}
+              alt={service.title}
+              style={{
                 width: "100%",
-                minHeight: 230,
-                // backgroundColor: "rgba(0,0,0,0.6)",
+                maxWidth: "500px",
+                borderRadius: "8px",
+                boxShadow: "0 4px 12px rgba(0, 0, 0, 0.1)",
+              }}
+            />
+          </Box>
+          <Box
+            sx={{
+              flex: 1,
+              padding: { xs: 2, md: 4 },
+              textAlign: { xs: "center", md: "left" },
+            }}
+          >
+            <Typography
+              variant="h4"
+              sx={{
+                fontSize: { xs: 24, md: 32 },
+                fontWeight: "bold",
+                color: "#333",
+                marginBottom: 2,
               }}
             >
-              <Typography
-                sx={{
-                  fontSize: 24,
-
-                  fontWeight: "bold",
-                  color: "#d29bbf",
-                  padding: 0,
-                  letterSpacing: 2,
-                  position: "relative",
-                  marginBottom: "20px",
-                }}
-              >
-                {service.title}
-                <Box
-                  sx={{
-                    position: "absolute",
-                    bottom: "-10px",
-                    left: "50%",
-                    transform: "translateX(-50%)",
-                    width: "80px",
-                    height: "2px",
-                    backgroundColor: "#d29bbf",
-                    borderRadius: "5px",
-                    opacity: 0.7,
-                  }}
-                />
-              </Typography>
-              <Typography
-                variant="body1"
-                color="black"
-                sx={{ position: "relative" }}
-              >
-                {service.description}
-              </Typography>
-            </Box>
+              {service.title}
+            </Typography>
+            <Typography
+              variant="body1"
+              sx={{
+                fontSize: 16,
+                lineHeight: 1.5,
+                color: "#666",
+                marginBottom: 4,
+              }}
+            >
+              {service.description}
+            </Typography>
+            <Button
+              variant="contained"
+              sx={{
+                backgroundColor: "#dbbed1",
+                color: "#fff",
+                "&:hover": {
+                  backgroundColor: "#c499b6",
+                },
+              }}
+              onClick={() => navigate(service.nav)}
+            >
+              Till {service.title}
+            </Button>
           </Box>
-        ))}
-        {/* <IconButton>
-          <ArrowForwardIosIcon />
-        </IconButton> */}
-      </Box>
+        </Box>
+      ))}
     </Box>
   );
 }
