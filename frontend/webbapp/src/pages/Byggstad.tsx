@@ -1,109 +1,78 @@
-import { Box, Typography } from "@mui/material";
-import Fade from "@mui/material/Fade";
+import { Box, Button, Typography } from "@mui/material";
 import { FC } from "react";
-import { useScreenSize } from "../screenSizeContext";
 import Info from "../components/Info";
+import { useScreenSize } from "../screenSizeContext";
+import { useNavigate } from "react-router-dom";
 
 const Byggstad: FC = () => {
   const { isMobile } = useScreenSize();
+  const navigate = useNavigate();
+
   return (
-    <Fade in timeout={500}>
+    <>
+      <Box
+        sx={{
+          background:
+            'url("https://i.imgur.com/fL4AjiZ.jpeg") center/cover no-repeat',
+          minHeight: "800px",
+          backgroundAttachment: "fixed",
+          backgroundPosition: "center",
+          backgroundRepeat: "no-repeat",
+          backgroundSize: "cover",
+          display: "flex",
+          alignItems: "center",
+          justifyContent: "center",
+          color: "white",
+          fontSize: "1.5rem",
+          textAlign: "center",
+          width: "100%",
+          padding: 4,
+        }}
+      >
+        <Typography
+          variant={isMobile ? "h4" : "h2"}
+          sx={{
+            backgroundColor: "rgba(0, 0, 0, 0.5)",
+            padding: "20px 40px",
+            borderRadius: "10px",
+            zIndex: 1,
+            marginBottom: 20,
+            position: "relative",
+            maxWidth: "80%",
+          }}
+        >
+          Byggstäd
+        </Typography>
+      </Box>
+
       <Box
         sx={{
           display: "flex",
           flexDirection: "column",
           alignItems: "center",
-          justifyContent: "center",
-          border: "1px solid #d29bbf",
-          borderRadius: "10px",
-          boxShadow: "0 4px 12px rgba(0, 0, 0, 0.1)",
+          padding: { xs: 2, md: 4 },
+          gap: 4,
           backgroundColor: "#fff",
-          width: "100%",
+          position: "relative",
+          zIndex: 2,
+          marginTop: "-250px",
         }}
       >
         <Box
           sx={{
-            display: "flex",
-            flexDirection: { xs: "column", md: "row" },
-            width: "100%",
-            borderRadius: "10px",
-            boxShadow: "0 4px 12px rgba(0, 0, 0, 0.1)",
-            marginBottom: "20px",
-            maxHeight: "600px",
-            overflow: "hidden",
-          }}
-        >
-          <Box
-            sx={{
-              width: { xs: "100%", md: "100%" },
-              height: "400px",
-              backgroundImage: 'url("https://i.imgur.com/fL4AjiZ.jpeg")',
-              backgroundSize: "cover",
-              backgroundPosition: "center 35%",
-              filter: "grayscale(40%)",
-              transition: "transform 0.3s",
-              "&:hover": {
-                transform: "scale(1.05)",
-              },
-            }}
-          />
-          {/* {!isMobile && (
-            <Box
-              sx={{
-                width: { xs: "100%", md: "50%" },
-                height: "350px",
-                backgroundImage: 'url("https://i.imgur.com/R73TJ3i.jpeg")',
-                backgroundSize: "cover",
-                backgroundPosition: "center 35%",
-                transition: "transform 0.3s",
-                // objectFit: "cover"
-                filter: "grayscale(60%)",
-                "&:hover": {
-                  transform: "scale(1.05)",
-                },
-              }}
-            />
-          )} */}
-        </Box>
-        <Typography
-          variant={isMobile ? "h4" : "h2"}
-          gutterBottom
-          sx={{
-            textAlign: "center",
-            color: "#d29bbf",
-            position: "relative",
-            marginTop: "20px",
-            marginBottom: "40px",
-          }}
-        >
-          Byggstäd
-          <Box
-            sx={{
-              position: "absolute",
-              bottom: "-10px",
-              left: "50%",
-              transform: "translateX(-50%)",
-              width: "80px",
-              height: "2px",
-              backgroundColor: "#d29bbf",
-              borderRadius: "5px",
-              opacity: 0.7,
-            }}
-          />
-        </Typography>
-        <Box
-          sx={{
-            backgroundColor: "#f4f4f4",
-            padding: "20px",
             maxWidth: "900px",
-            textAlign: "left",
-            borderRadius: "10px",
-            boxShadow: "0 2px 10px rgba(0,0,0,0.1)",
+            width: "100%",
+            minHeight: "500px",
+            padding: { xs: 2, md: 4 },
+            backgroundColor: "#f4f4f4",
+            borderRadius: 2,
             filter: "contrast(120%)",
+            textAlign: "left",
+            marginX: isMobile ? 6 : 0,
             marginBottom: "20px",
           }}
         >
-          <Typography variant="body1" paragraph sx={{ color: "#555" }}>
+          <Typography variant="h6" paragraph sx={{ color: "#555" }}>
             <strong>Med känsla för ett dammfritt resultat</strong>
           </Typography>
           <Typography variant="body1" paragraph>
@@ -130,21 +99,41 @@ const Byggstad: FC = () => {
             Borås. Vår checklista täcker behovet av byggstädning och utöver den
             är kunden alltid välkommen att berätta om sina speciella önskemål.
           </Typography>
-          <Box
+          <Button
+            variant="outlined"
             sx={{
-              width: "100%",
-              height: "2px",
-              backgroundColor: "#d29bbf",
-              marginBottom: "20px",
+              color: "#fff",
+              borderColor: "#e3c5da",
+              marginY: 4,
+              paddingX: 3,
+              paddingY: 1,
+              backgroundColor: "#c499b6",
+              animation: "moveUpDown 2s ease-in-out infinite",
+              "&:hover": {
+                borderColor: "#c499b6",
+                backgroundColor: "#c499b6",
+                transition: "background-color 0.3s ease, color 0.3s ease",
+              },
             }}
-          />
+            onClick={() => {
+              navigate("/offert");
+            }}
+          >
+            Få ett kostnadsförslag
+          </Button>
         </Box>
-        <div
-          style={{ height: 1.5, width: "100%", backgroundColor: "#e3c5da" }}
+
+        <Box
+          sx={{
+            height: "2px",
+            backgroundColor: "#d29bbf",
+            marginBottom: "20px",
+          }}
         />
+
         <Info />
       </Box>
-    </Fade>
+    </>
   );
 };
 

@@ -1,13 +1,20 @@
-import { Box, Grid, Typography } from "@mui/material";
-import Fade from "@mui/material/Fade";
+import BathtubIcon from "@mui/icons-material/Bathtub";
+import KitchenIcon from "@mui/icons-material/Kitchen";
+import HomeIcon from '@mui/icons-material/Home';
+import { Box, Button, Typography } from "@mui/material";
+import { useNavigate } from "react-router-dom";
 import Info from "../components/Info";
 import { useScreenSize } from "../screenSizeContext";
 
 const Flyttstad = () => {
   const { isMobile } = useScreenSize();
+  const navigate = useNavigate();
   const sections = [
     {
       title: "Städoment som utförs i alla rum",
+      icon: (
+        <HomeIcon sx={{ fontSize: 30, color: "#d29bbf", marginRight: 1 }} />
+      ),
       items: [
         "Fönsterputsning",
         "Dammsugning och våtmoppning av golv, lister, dörrar, dörrkarmar, fönsterbrädor, fria ytor, element garderobsdörrar och skåpdörrar",
@@ -18,6 +25,9 @@ const Flyttstad = () => {
     },
     {
       title: "Badrum",
+      icon: (
+        <BathtubIcon sx={{ fontSize: 30, color: "#d29bbf", marginRight: 1 }} />
+      ),
       items: [
         "Rengöring av väggar och golv",
         "Putsning av blandare, synliga rör och duschmunstycke",
@@ -30,6 +40,9 @@ const Flyttstad = () => {
     },
     {
       title: "Kök",
+      icon: (
+        <KitchenIcon sx={{ fontSize: 30, color: "#d29bbf", marginRight: 1 }} />
+      ),
       items: [
         "Rengöring av kyl och frys ut- och invändigt",
         "Rengöring av spis och ugn ut- och invändigt, inklusive plåtar och galler",
@@ -45,186 +58,121 @@ const Flyttstad = () => {
   ];
 
   return (
-    <Fade in timeout={500}>
+    <>
       <Box
         sx={{
+          backgroundImage: 'url("https://i.imgur.com/KhVvozY.jpeg")',
+          minHeight: "800px",
+          backgroundAttachment: "fixed",
+          backgroundPosition: "center",
+          backgroundRepeat: "no-repeat",
+          backgroundSize: "cover",
           display: "flex",
-          flexDirection: "column",
           alignItems: "center",
+          width: "100%",
           justifyContent: "center",
-          border: "1px solid #d29bbf",
-          borderRadius: "10px",
-          boxShadow: "0 4px 12px rgba(0, 0, 0, 0.1)",
-          backgroundColor: "#fff",
+          color: "white",
+          fontSize: "1.5rem",
+          textAlign: "center",
+          padding: "4rem 2rem",
         }}
       >
-        <Box
-          sx={{
-            display: "flex",
-            flexDirection: { xs: "column", md: "row" },
-            width: "100%",
-            borderRadius: "10px",
-            boxShadow: "0 4px 12px rgba(0, 0, 0, 0.1)",
-            marginBottom: "20px",
-            maxHeight: "600px",
-            overflow: "hidden",
-          }}
-        >
-          <Box
-            sx={{
-              width: { xs: "100%", md: "50%" },
-              height: "350px",
-              backgroundImage: 'url("https://i.imgur.com/CiITz1N.jpeg")',
-              backgroundSize: "cover",
-              backgroundPosition: "center",
-              filter: "grayscale(40%)",
-              transition: "transform 0.3s",
-              "&:hover": {
-                transform: "scale(1.05)",
-              },
-            }}
-          />
-          {!isMobile && (
-            <Box
-              sx={{
-                width: { xs: "100%", md: "50%" },
-                height: "350px",
-                backgroundImage: 'url("https://i.imgur.com/KhVvozY.jpeg")',
-                backgroundSize: "cover",
-                backgroundPosition: "center 90%",
-                transition: "transform 0.3s",
-                // objectFit: "cover",
-                filter: "grayscale(60%)",
-                "&:hover": {
-                  transform: "scale(1.05)",
-                },
-              }}
-            />
-          )}
-        </Box>
         <Typography
           variant={isMobile ? "h4" : "h2"}
-          gutterBottom
           sx={{
-            textAlign: "center",
-            color: "#d29bbf",
-            position: "relative",
-            marginTop: "20px",
-            marginBottom: "40px",
-          }}
-        >
-          Flyttstäd
-          <Box
-            sx={{
-              position: "absolute",
-              bottom: "-10px",
-              left: "50%",
-              transform: "translateX(-50%)",
-              width: "80px",
-              height: "2px",
-              backgroundColor: "#d29bbf",
-              borderRadius: "5px",
-              opacity: 0.7,
-            }}
-          />
-        </Typography>
-        <Box
-          sx={{
-            backgroundColor: "#f4f4f4",
+            backgroundColor: "rgba(0, 0, 0, 0.6)",
             padding: "20px",
-            maxWidth: "900px",
-            textAlign: "left",
             borderRadius: "10px",
-            boxShadow: "0 2px 10px rgba(0,0,0,0.1)",
-            filter: "contrast(120%)",
-            marginBottom: "20px",
+            zIndex: 1,
+            maxWidth: "80%",
+            textAlign: "center",
+            marginBottom: 20,
           }}
         >
-          <Typography variant="body1" paragraph>
-            <strong>Professionellt flyttstäd i Borås</strong>
-          </Typography>
-          <Typography variant="body1" paragraph>
-            Dags för nya äventyr på en ny adress? Letar du efter en
-            professionell städfirma i Borås med omnejd? Välkommen att boka
-            flyttstäd hos Städtjejerna så tar vi hand om städningen medan du får
-            tid över att lägga energin på den nya bostaden! Städtjejernas ledord
-            är noggrannhet, professionalitet och omtanke.
-          </Typography>
-          <Typography variant="body1" paragraph>
-            Allt för att våra kunder ska känna sig nöjda och trygga med att
-            flyttstädningen blir ordentligt genomförd. Ett grundligt städschema
-            utformas tillsammans med kunden och vi går igenom varje moment och
-            specifika önskemål punkt för punkt. Du som kund kan också känna dig
-            trygg med att Städtjejerna ser till att de som flyttar in i ditt
-            gamla boende blir nöjda. De har sista ordet och kan kräva att vissa
-            punkter ska åtgärdas. Detta behöver du inte tänka på, eftersom det
-            ingår i vårt städuppdrag att följa upp eventuella anmärkningar och
-            vi kan därför garantera att samtliga parter blir nöjda med
-            resultatet i slutändan.
-          </Typography>
-          <Box
-            sx={{
-              width: "100%",
-              height: "2px",
-              backgroundColor: "#d29bbf",
-              marginBottom: "20px",
-            }}
-          />
-        </Box>
-        <Grid
-          container
-          spacing={2}
+          Flyttstäd i Borås
+        </Typography>
+      </Box>
+
+      <Box
+        sx={{
+          maxWidth: isMobile ? "100%" : "900px",
+          margin: "0 auto",
+          padding: { xs: 4, md: 8 },
+          backgroundColor: "#fff",
+          borderRadius: "8px",
+          // boxShadow: "0px 4px 10px rgba(0, 0, 0, 0.1)",
+          marginBottom: "2rem",
+        }}
+      >
+        <Typography variant="h6" paragraph sx={{ color: "#555" }}>
+          <strong>Professionellt flyttstäd i Borås</strong>
+        </Typography>
+
+        <Typography variant="body1" sx={{ lineHeight: 1.8, color: "#555" }}>
+          Dags för nya äventyr på en ny adress? Letar du efter en professionell
+          städfirma i Borås med omnejd? Välkommen att boka flyttstäd hos
+          Städtjejerna så tar vi hand om städningen medan du får tid över att
+          lägga energin på den nya bostaden! Städtjejernas ledord är
+          noggrannhet, professionalitet och omtanke.
+        </Typography>
+        <Button
+          variant="contained"
           sx={{
-            padding: "0 10px",
-            marginBottom: "20px",
-            gap: { xs: 5, md: 2 },
-            width: "100%",
-            justifyContent: "center",
+            backgroundColor: "#c499b6",
+            color: "#fff",
+            padding: "10px 20px",
+            marginTop: "1.5rem",
+            "&:hover": {
+              backgroundColor: "#a58199",
+            },
+          }}
+          onClick={() => {
+            navigate("/offert");
           }}
         >
-          {sections.map((section, index) => (
-            <Grid item xs={12} md={3} key={index}>
+          Få ett kostnadsförslag
+        </Button>
+      </Box>
+
+      <>
+        {sections.map((section, index) => (
+          <Box
+            key={index}
+            sx={{
+              maxWidth: isMobile ? "100%" : "900px",
+              margin: "0 auto",
+              padding: { xs: 4, md: 8 },
+              borderRadius: "8px",
+              marginLeft: isMobile ? 0 : 15,
+              // boxShadow: "0px 4px 10px rgba(0, 0, 0, 0.1)",
+              marginBottom: "2rem",
+            }}
+          >
+            <Typography
+              variant="h5"
+              sx={{ marginBottom: "0.5rem", color: "#555" }}
+            >
+              <strong>{section.title}</strong>
+            </Typography>
+            {section.items.map((item, idx) => (
               <Box
+                key={idx}
                 sx={{
-                  backgroundColor: "#f4f4f4",
-                  padding: "20px",
-                  borderRadius: "10px",
-                  boxShadow: "0 2px 10px rgba(0,0,0,0.1)",
-                  height: "100%",
+                  display: "flex",
+                  alignItems: "center",
+                  marginBottom: "0.3rem",
                 }}
               >
-                <Typography
-                  variant="h4"
-                  // textAlign={"center"}
-                  gutterBottom
-                  sx={{ color: "#d29bbf" }}
-                >
-                  {section.title}
-                </Typography>
-                <ul>
-                  {section.items.map((item, idx) => (
-                    <li key={idx}>
-                      <Typography>{item}</Typography>
-                    </li>
-                  ))}
-                </ul>
+                <Box sx={{ marginRight: "0.5rem" }}>{section.icon}</Box>
+                <Typography variant="body1">{item}</Typography>
               </Box>
-            </Grid>
-          ))}
-        </Grid>
-        <Typography
-          variant="h6"
-          gutterBottom
-          sx={{ textAlign: "center", color: "#d29bbf", marginY: "20px" }}
-        >
-          Städtjejerna i 7Härad
-        </Typography>
-        <div
-          style={{ height: 1.5, width: "100%", backgroundColor: "#e3c5da" }}
-        />
-        <Info />
-      </Box>
-    </Fade>
+            ))}
+          </Box>
+        ))}
+      </>
+
+      <Info />
+    </>
   );
 };
 

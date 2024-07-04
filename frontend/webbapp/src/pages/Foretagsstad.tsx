@@ -1,210 +1,193 @@
-import { Box, Grid, Typography } from "@mui/material";
-import Fade from "@mui/material/Fade";
+import BathtubIcon from "@mui/icons-material/Bathtub";
+import KitchenIcon from "@mui/icons-material/Kitchen";
+import MeetingRoomIcon from "@mui/icons-material/MeetingRoom";
+import { Box, Button, Typography } from "@mui/material";
 import { FC } from "react";
 import Info from "../components/Info";
 import { useScreenSize } from "../screenSizeContext";
+import { useNavigate } from "react-router-dom";
 
 const Foretagsstad: FC = () => {
   const { isMobile } = useScreenSize();
+  const navigate = useNavigate();
+
+  const sections = [
+    {
+      title: "Kontor",
+      icon: (
+        <MeetingRoomIcon
+          sx={{ fontSize: 30, color: "#d29bbf", marginRight: 1 }}
+        />
+      ),
+      items: [
+        "Dammsugning av alla golv och mattor samt våttorkning av golven. Dammtorkning av alla fria ytor. Fläckar på speglar, lister och dörrar torkas bort. Papperskorgarna töms.",
+      ],
+    },
+    {
+      title: "Toaletter",
+      icon: (
+        <BathtubIcon sx={{ fontSize: 30, color: "#d29bbf", marginRight: 1 }} />
+      ),
+      items: [
+        "Dammsugning och våttorkning av golven. Handfat och toaletter skuras både in- och utvändigt.",
+      ],
+    },
+    {
+      title: "Kök/Pentry",
+      icon: (
+        <KitchenIcon sx={{ fontSize: 30, color: "#d29bbf", marginRight: 1 }} />
+      ),
+      items: [
+        "Dammsugning och våttorkning av golven. Arbetsbänk och diskbänk rengörs grundligt.",
+      ],
+    },
+  ];
+
   return (
-    <Fade in timeout={500}>
+    <>
       <Box
         sx={{
+          backgroundImage: 'url("https://i.imgur.com/aCLoUIE.jpeg")',
+          minHeight: "800px",
+          backgroundAttachment: "fixed",
+          backgroundPosition: "center",
+          backgroundRepeat: "no-repeat",
+          backgroundSize: "cover",
           display: "flex",
-          flexDirection: "column",
           alignItems: "center",
-          justifyContent: "center",
-          border: "1px solid #d29bbf",
-          borderRadius: "10px",
-          boxShadow: "0 4px 12px rgba(0, 0, 0, 0.1)",
-          backgroundColor: "#fff",
           width: "100%",
+          justifyContent: "center",
+          color: "white",
+          fontSize: "1.5rem",
+          textAlign: "center",
+          padding: "4rem 2rem",
         }}
       >
-        <Box
-          sx={{
-            width: "100%",
-            borderRadius: "10px",
-            boxShadow: "0 4px 12px rgba(0, 0, 0, 0.1)",
-            marginBottom: "20px",
-            maxHeight: "600px",
-            overflow: "hidden",
-          }}
-        >
-          <Box
-            sx={{
-              width: "100%",
-              height: "350px",
-              backgroundImage: 'url("https://i.imgur.com/aCLoUIE.jpeg")',
-              backgroundSize: "cover",
-              backgroundPosition: "center",
-              filter: "grayscale(30%)",
-              transition: "transform 0.3s",
-              "&:hover": {
-                transform: "scale(1.05)",
-              },
-            }}
-          />
-        </Box>
         <Typography
           variant={isMobile ? "h4" : "h2"}
-          gutterBottom
           sx={{
+            backgroundColor: "rgba(0, 0, 0, 0.6)",
+            padding: "20px",
+            borderRadius: "10px",
+            zIndex: 1,
+            maxWidth: "80%",
             textAlign: "center",
-            color: "#d29bbf",
-            position: "relative",
-            marginTop: isMobile ? "20px" : "40px",
-            marginBottom: "40px",
+            marginBottom: 20,
           }}
         >
           Företagsstäd
-          <Box
-            sx={{
-              position: "absolute",
-              bottom: "-10px",
-              left: "50%",
-              transform: "translateX(-50%)",
-              width: "80px",
-              height: "2px",
-              backgroundColor: "#d29bbf",
-              borderRadius: "5px",
-              opacity: 0.7,
-            }}
-          />
         </Typography>
-        <Box
+      </Box>
+
+      <Box
+        sx={{
+          maxWidth: isMobile ? "100%" : "900px",
+          margin: "0 auto",
+          padding: { xs: 4, md: 8 },
+          backgroundColor: "#fff",
+          borderRadius: "8px",
+          // boxShadow: "0px 4px 10px rgba(0, 0, 0, 0.1)",
+          marginBottom: "2rem",
+        }}
+      >
+        <Typography variant="h6" paragraph sx={{ color: "#555" }}>
+          <strong>
+            Städning på företag och kontor som skapar en god arbetsmiljö för dig
+            och dina medarbetare.
+          </strong>
+        </Typography>
+        <Typography
+          variant="body1"
+          sx={{ lineHeight: 1.8, color: "#555", marginTop: 2 }}
+        >
+          Vi tillbringar många timmar i veckan på våra arbetsplatser och det är
+          viktigt att trivas och ha möjlighet att fokusera på sina
+          arbetsuppgifter. Städtjejerna riktar sig till en bred målgrupp och är
+          redo att erbjuda sina professionella städtjänster till företag med
+          stora kontorslandskap, industrilokaler eller mindre butiker och kontor
+          runtom i Borås. Oavsett vilket som passar in på ditt företag är den
+          gemensamma nämnaren att städningen skapar en god arbetsmiljö för dig
+          och dina medarbetare samt för de som besöker företaget.
+        </Typography>
+        <Typography
+          variant="body1"
+          sx={{ lineHeight: 1.8, color: "#555", marginTop: 2 }}
+        >
+          Ett rent och fräscht intryck gör att alla kan fokusera på sitt jobb
+          och slippa tänka på om papperskorgen blir tömd eller om dammråttorna i
+          hörnen kommer städas bort. Det stärker också företagets varumärke och
+          gör personalen friskare. Välkommen att kontakta Städtjejerna för att
+          gå igenom vårt standardutbud samt göra anpassade tillägg som ditt
+          företag önskar. Vi är flexibla och är lyhörda när det gäller varje
+          kunds speciella önskemål.
+        </Typography>
+
+        <Typography
+          variant="body1"
+          sx={{ lineHeight: 1.8, color: "#555", marginTop: 2 }}
+        >
+          Städtjejerna tar med sig de rengöringsmedlen som behövs och alla medel
+          ingår i priset. Det finns möjlighet att beställa förbrukningsmaterial
+          som exempelvis tvål, toalettpapper, och pappershanddukar via oss.
+        </Typography>
+        <Button
+          variant="contained"
           sx={{
-            // backgroundColor: "#f4f4f4",
-            padding: "20px",
-            maxWidth: "900px",
-            textAlign: "left",
-            borderRadius: "10px",
-            boxShadow: "0 2px 10px rgba(0,0,0,0.1)",
-            marginBottom: "20px",
+            backgroundColor: "#c499b6",
+            color: "#fff",
+            padding: "10px 20px",
+            marginTop: "1.5rem",
+            "&:hover": {
+              backgroundColor: "#a58199",
+            },
+          }}
+          onClick={() => {
+            navigate("/offert");
           }}
         >
-          <Typography variant="body1" paragraph>
-            <strong>
-              Städning på företag och kontor som skapar en god arbetsmiljö för
-              dig och dina medarbetare.
-            </strong>
-          </Typography>
-          <Typography variant="body1" paragraph>
-            Vi tillbringar många timmar i veckan på våra arbetsplatser och det
-            är viktigt att trivas och ha möjlighet att fokusera på sina
-            arbetsuppgifter. Städtjejerna riktar sig till en bred målgrupp och
-            är redo att erbjuda sina professionella städtjänster till företag
-            med stora kontorslandskap, industrilokaler eller mindre butiker och
-            kontor runtom i Borås. Oavsett vilket som passar in på ditt företag
-            är den gemensamma nämnaren att städningen skapar en god arbetsmiljö
-            för dig och dina medarbetare samt för de som besöker företaget.
-          </Typography>
-          <Typography variant="body1" paragraph>
-            Ett rent och fräscht intryck gör att alla kan fokusera på sitt jobb
-            och slippa tänka på om papperskorgen blir tömd eller om dammråttorna
-            i hörnen kommer städas bort. Det stärker också företagets varumärke
-            och gör personalen friskare. Välkommen att kontakta Städtjejerna för
-            att gå igenom vårt standardutbud samt göra anpassade tillägg som
-            ditt företag önskar. Vi är flexibla och är lyhörda när det gäller
-            varje kunds speciella önskemål.
-          </Typography>
-          <Typography variant="body1" paragraph>
-            Städtjejerna tar med sig de rengöringsmedlen som behövs och alla
-            medel ingår i priset. Det finns möjlighet att beställa
-            förbrukningsmaterial som exempelvis tvål, toalettpapper, och
-            pappershanddukar via oss.
-          </Typography>
+          Få ett kostnadsförslag
+        </Button>
+      </Box>
+
+      <>
+        {sections.map((section, index) => (
           <Box
+            key={index}
             sx={{
-              width: "100%",
-              height: "2px",
-              backgroundColor: "#d29bbf",
-              margin: "20px 0",
+              maxWidth: isMobile ? "100%" : "900px",
+              margin: "0 auto",
+              padding: { xs: 4, md: 8 },
+              borderRadius: "8px",
+              // boxShadow: "0px 4px 10px rgba(0, 0, 0, 0.1)",
+              marginLeft: isMobile ? 0 : 15,
+              marginBottom: "2rem",
             }}
-          />
-        </Box>
-        <Grid
-          container
-          spacing={2}
-          sx={{
-            padding: "0 20px",
-            marginBottom: "25px",
-            gap: 5,
-            display: "flex",
-            justifyContent: "center",
-          }}
-        >
-          {[
-            {
-              title: "Kontor",
-              tasks: [
-                "Dammsugning av alla golv och mattor samt våttorkning av golven. Dammtorkning av alla fria ytor. Fläckar på speglar, lister och dörrar torkas bort. Papperskorgarna töms.",
-              ],
-            },
-            {
-              title: "Toaletter",
-              tasks: [
-                "Dammsugning och våttorkning av golven. Handfat och toaletter skuras både in- och utvändigt.",
-              ],
-            },
-            {
-              title: "Kök/Pentry",
-              tasks: [
-                "Dammsugning och våttorkning av golven. Arbetsbänk och diskbänk rengörs grundligt.",
-              ],
-            },
-          ].map((section, index) => (
-            <Grid item xs={12} md={3} key={index}>
+          >
+            <Typography
+              variant="h5"
+              sx={{ marginBottom: "0.5rem", color: "#555" }}
+            >
+              <strong>{section.title}</strong>
+            </Typography>
+            {section.items.map((item, idx) => (
               <Box
+                key={idx}
                 sx={{
-                  backgroundColor: "#f4f4f4",
-                  padding: "20px",
-                  borderRadius: "10px",
-                  boxShadow: "0 2px 10px rgba(0,0,0,0.1)",
-                  height: "100%",
-                  transition: "transform 0.3s",
-                  "&:hover": {
-                    transform: "scale(1.05)",
-                  },
+                  display: "flex",
+                  alignItems: "center",
+                  marginBottom: "0.3rem",
                 }}
               >
-                <Typography
-                  variant="h4"
-                  marginLeft={4}
-                  gutterBottom
-                  sx={{ color: "#d29bbf" }}
-                >
-                  {section.title}
-                </Typography>
-                <ul>
-                  {section.tasks.map((task, idx) => (
-                    <li key={idx}>
-                      <Typography>{task}</Typography>
-                    </li>
-                  ))}
-                </ul>
+                <Box sx={{ marginRight: "0.5rem" }}>{section.icon}</Box>
+                <Typography variant="body1">{item}</Typography>
               </Box>
-            </Grid>
-          ))}
-        </Grid>
-        <Typography
-          variant="h6"
-          gutterBottom
-          sx={{
-            textAlign: "center",
-            color: "#d29bbf",
-            marginY: 4,
-            width: "98%",
-          }}
-        >
-          Städtjejerna i 7Härad
-        </Typography>
-        <div
-          style={{ height: 1.5, width: "100%", backgroundColor: "#e3c5da" }}
-        />
-        <Info />
-      </Box>
-    </Fade>
+            ))}
+          </Box>
+        ))}
+      </>
+
+      <Info />
+    </>
   );
 };
 

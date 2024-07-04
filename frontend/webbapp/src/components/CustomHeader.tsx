@@ -230,14 +230,13 @@ export default function CustomHeader2(): JSX.Element {
         justifyContent: "space-between",
         width: "100%",
         // boxShadow: "0px 4px 10px rgba(0, 0, 0, 0.1)",
-        boxShadow: hasScrolled
-        ? "0px 4px 10px rgba(0, 0, 0, 0.1)" : "none",
+        boxShadow: hasScrolled ? "0px 4px 10px rgba(0, 0, 0, 0.1)" : "none",
         flexDirection: isMobile ? "column" : "row",
         height: "90px",
         zIndex: 9999,
-        position: "sticky",
+        // position: "sticky",
         background: "white",
-        top: 0
+        top: 0,
       }}
     >
       <Box>
