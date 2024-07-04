@@ -70,6 +70,10 @@ export default function CustomHeader2(): JSX.Element {
         width: "100%",
         boxShadow: "0px 4px 10px rgba(0, 0, 0, 0.1)",
         flexDirection: isMobile ? "row" : "row",
+        position: "sticky",
+        top: 0,
+        zIndex: 999,
+        background: "white",
       }}
       component={"header"}
     >

@@ -11,7 +11,7 @@ import {
   useTheme,
   Link,
 } from "@mui/material";
-import React, { useRef, useState } from "react";
+import React, { useEffect, useRef, useState } from "react";
 
 type LinkItem = {
   label: string;
@@ -137,6 +137,7 @@ export default function CustomHeader2(): JSX.Element {
   const [openMenu, setOpenMenu] = useState<string | null>(null);
   const [anchorEl, setAnchorEl] = useState<null | HTMLElement>(null);
   const timeoutRef = useRef<ReturnType<typeof setTimeout> | null>(null);
+  const [hasScrolled, setHasScrolled] = useState(false);
 
   const handleToggleMenu = (
     event: React.MouseEvent<HTMLElement>,
@@ -184,6 +185,22 @@ export default function CustomHeader2(): JSX.Element {
     }, 0);
   };
 
+  useEffect(() => {
+    const handleScroll = () => {
+      console.log("Scroll position:", window.scrollY);
+      if (window.scrollY > 0) {
+        setHasScrolled(true);
+      } else {
+        setHasScrolled(false);
+      }
+    };
+
+    window.addEventListener("scroll", handleScroll);
+    return () => {
+      window.removeEventListener("scroll", handleScroll);
+    };
+  }, []);
+
   const links: LinkItem[] = [
     { label: "Startsidan", href: "/" },
     { label: "Om oss", href: "/om-oss" },
@@ -212,9 +229,15 @@ export default function CustomHeader2(): JSX.Element {
         alignItems: "center",
         justifyContent: "space-between",
         width: "100%",
-        boxShadow: "0px 4px 10px rgba(0, 0, 0, 0.1)",
+        // boxShadow: "0px 4px 10px rgba(0, 0, 0, 0.1)",
+        boxShadow: hasScrolled
+        ? "0px 4px 10px rgba(0, 0, 0, 0.1)" : "none",
         flexDirection: isMobile ? "column" : "row",
         height: "90px",
+        zIndex: 9999,
+        position: "sticky",
+        background: "white",
+        top: 0
       }}
     >
       <Box>
