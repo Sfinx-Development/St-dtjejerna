@@ -234,7 +234,7 @@ export default function CustomHeader2(): JSX.Element {
         flexDirection: isMobile ? "column" : "row",
         height: "90px",
         zIndex: 9999,
-        // position: "sticky",
+        position: "sticky",
         background: "white",
         top: 0,
       }}
