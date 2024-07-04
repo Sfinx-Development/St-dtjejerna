@@ -10,7 +10,7 @@ import {
   useMediaQuery,
   useTheme,
 } from "@mui/material";
-import React, { useRef, useState } from "react";
+import React, { useRef, useState, useEffect } from "react";
 import { Link } from "react-router-dom";
 
 type LinkItem = {
@@ -148,6 +148,7 @@ export default function CustomHeader2(): JSX.Element {
   const [openMenu, setOpenMenu] = useState<string | null>(null);
   const [anchorEl, setAnchorEl] = useState<null | HTMLElement>(null);
   const timeoutRef = useRef<ReturnType<typeof setTimeout> | null>(null);
+  const [hasScrolled, setHasScrolled] = useState(false);
 
   const handleToggleMenu = (
     event: React.MouseEvent<HTMLElement>,
@@ -195,6 +196,22 @@ export default function CustomHeader2(): JSX.Element {
     }, 0);
   };
 
+  useEffect(() => {
+    const handleScroll = () => {
+      console.log("Scroll position:", window.scrollY);
+      if (window.scrollY > 0) {
+        setHasScrolled(true);
+      } else {
+        setHasScrolled(false);
+      }
+    };
+
+    window.addEventListener("scroll", handleScroll);
+    return () => {
+      window.removeEventListener("scroll", handleScroll);
+    };
+  }, []);
+
   const links: LinkItem[] = [
     { label: "Startsidan", href: "/" },
     { label: "Om oss", href: "/om-oss" },
@@ -237,17 +254,28 @@ export default function CustomHeader2(): JSX.Element {
         alignItems: "center",
         justifyContent: "space-between",
         width: "100%",
-        boxShadow: "0px 4px 10px rgba(0, 0, 0, 0.1)",
+        // boxShadow: "0px 4px 10px rgba(0, 0, 0, 0.1)",
+        boxShadow: hasScrolled
+        ? "0px 4px 10px rgba(0, 0, 0, 0.1)" : "none",
         flexDirection: isMobile ? "column" : "row",
-        position: "relative",
+        zIndex: 9999,
+        position: "sticky",
+        top: 0,
+        backgroundColor: "white",
+        transition: "box-shadow 0.3s ease-in-out",
+
+      
+      
+        
+        
       }}
     >
       <Box>
         <Link
           to="/"
           style={{
-            marginBottom: 1,
-            marginTop: 1,
+            // marginBottom: 1,
+            // marginTop: 1,
             position: "relative",
           }}
         >
@@ -255,15 +283,11 @@ export default function CustomHeader2(): JSX.Element {
             src="https://i.imgur.com/Zcgk1vf.png"
             alt="Logo saying dailyvibe"
             style={{
-              width: "250px",
-              marginTop: 40,
-              marginLeft: 4,
-              height: "200px",
-              objectFit: "contain",
-              position: "absolute",
-              top: "90%",
-              transform: "translateY(-50%)",
-              zIndex: 9999,
+              width: "100px",
+              marginTop: 4,
+              marginLeft: 10,
+              height: "100px",
+            
               color: "white",
               transition: "transform 0.3s ease",
             }}
@@ -292,7 +316,7 @@ export default function CustomHeader2(): JSX.Element {
               handleSubMenuMouseLeave={handleSubMenuMouseLeave}
               handleCloseMenu={handleCloseMenu}
             />
-            <div style={{ height: 20, width: 2, backgroundColor: "grey" }} />
+            {/* <div style={{ height: 10, width: 1, backgroundColor: "grey" }} /> */}
           </React.Fragment>
         ))}
       </Box>
