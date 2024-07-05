@@ -70,6 +70,7 @@ const AboutUs: FC = () => {
             marginTop: isMobile ? "20px" : "20px",
             marginBottom: "50px",
             maxWidth: "1000px",
+            // color: "#666",
           }}>
             Det började en dag för snart 10 år sedan. Två flickor slöt an på ett
             städföretag i Borås. Helt olika men ändå så lika. Victoria med
@@ -111,12 +112,16 @@ const AboutUs: FC = () => {
                   fontWeight: "bold",
                   color: "#333",
                   marginBottom: 2,
+                  maxWidth: "600px",
+                   marginLeft: isMobile ? "0px": "50px"
                 }}
               >
                 Victoria
               </Typography>
              
-              <Typography variant="body1">
+              <Typography variant="body1"sx={{ maxWidth: "600px",
+                   marginLeft: isMobile ? "0px": "50px",    color: "#666",
+                   }}>
                 <strong>Victoria</strong> har ett öga för detaljer. Fogborste,
                 vikta papper, handdukar och en uppolerad kran är något hon gör
                 som en klocka.
@@ -157,11 +162,13 @@ const AboutUs: FC = () => {
                   fontWeight: "bold",
                   color: "#333",
                   marginBottom: 2,
+                  maxWidth: "600px",
+                  // marginLeft: "50px"
                 }}
               >
                 Josephine
               </Typography>
-              <Typography variant="body1">
+              <Typography variant="body1" sx={{ maxWidth: "600px",    color: "#666",}}>
                 <strong>Josephine</strong> dansar gärna loss med dammtrasan och
                 dammsugaren efter sig. Det går undan men rent och prydligt blir
                 det.
