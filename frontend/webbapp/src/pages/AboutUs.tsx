@@ -62,10 +62,15 @@ const AboutUs: FC = () => {
             filter: "contrast(120%)",
           }}
         >
-          <Typography variant="body1" paragraph sx={{ color: "#555" }}>
-            <strong>Med känsla för ett dammfritt resultat</strong>
-          </Typography>
-          <Typography variant="body1" paragraph>
+          <Typography  variant="body1" paragraph sx={{
+            justifyContent: "center",
+            // textAlign: "center",
+            // color: "#d29bbf",
+            position: "relative",
+            marginTop: isMobile ? "20px" : "20px",
+            marginBottom: "50px",
+            maxWidth: "1000px",
+          }}>
             Det började en dag för snart 10 år sedan. Två flickor slöt an på ett
             städföretag i Borås. Helt olika men ändå så lika. Victoria med
             hennes lugna harmoniska personlighet och Josephine med hennes
@@ -97,15 +102,20 @@ const AboutUs: FC = () => {
               }}
             />
             <Box sx={{ flex: 1 }}>
-              <Typography
+              <Typography variant="h4"
                 sx={{
-                  fontSize: 25,
-                  letterSpacing: 2,
-                  marginBottom: "10px",
+                  // fontSize: 25,
+                  // letterSpacing: 2,
+                  // marginBottom: "10px",
+                  fontSize: { xs: 24, md: 32 },
+                  fontWeight: "bold",
+                  color: "#333",
+                  marginBottom: 2,
                 }}
               >
                 Victoria
               </Typography>
+             
               <Typography variant="body1">
                 <strong>Victoria</strong> har ett öga för detaljer. Fogborste,
                 vikta papper, handdukar och en uppolerad kran är något hon gör
@@ -138,11 +148,15 @@ const AboutUs: FC = () => {
               }}
             />
             <Box sx={{ flex: 1 }}>
-              <Typography
+            <Typography variant="h4"
                 sx={{
-                  fontSize: 25,
-                  letterSpacing: 2,
-                  marginBottom: "10px",
+                  // fontSize: 25,
+                  // letterSpacing: 2,
+                  // marginBottom: "10px",
+                  fontSize: { xs: 24, md: 32 },
+                  fontWeight: "bold",
+                  color: "#333",
+                  marginBottom: 2,
                 }}
               >
                 Josephine
