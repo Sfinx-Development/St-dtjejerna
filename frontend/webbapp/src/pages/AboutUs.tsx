@@ -15,7 +15,7 @@ const AboutUs: FC = () => {
           alignItems: "center",
           justifyContent: "center",
           width: "100%",
-          border: "1px solid #d29bbf",
+          // border: "1px solid #d29bbf",
           borderRadius: "10px",
           boxShadow: "0 4px 12px rgba(0, 0, 0, 0.1)",
           backgroundColor: "#fff",
@@ -41,23 +41,23 @@ const AboutUs: FC = () => {
               bottom: "-10px",
               left: "50%",
               transform: "translateX(-50%)",
-              width: "80px",
-              height: "2px",
-              backgroundColor: "#d29bbf",
-              borderRadius: "5px",
+              // width: "80px",
+              // height: "2px",
+              // backgroundColor: "#d29bbf",
+              // borderRadius: "5px",
               opacity: 0.7,
             }}
           />
         </Typography>
         <Box
           sx={{
-            backgroundColor: "#f4f4f4",
+            // backgroundColor: "#f4f4f4",
             padding: "20px",
-            maxWidth: "800px",
+            maxWidth: "1100px",
             margin: "0 auto",
             textAlign: "left",
-            borderRadius: "10px",
-            boxShadow: "0 2px 10px rgba(0,0,0,0.1)",
+            // borderRadius: "10px",
+            // boxShadow: "0 2px 10px rgba(0,0,0,0.1)",
             marginBottom: "20px",
             filter: "contrast(120%)",
           }}
@@ -117,7 +117,7 @@ const AboutUs: FC = () => {
           <Box
             sx={{
               display: "flex",
-              flexDirection: isMobile ? "column" : "row",
+              flexDirection: isMobile ? "column" : "row-reverse",
               alignItems: "center",
               marginBottom: "20px",
               gap: "20px",
@@ -155,14 +155,14 @@ const AboutUs: FC = () => {
             </Box>
           </Box>
 
-          <Box
+          {/* <Box
             sx={{
               width: "100%",
               height: "2px",
               backgroundColor: "#d29bbf",
               marginBottom: "20px",
             }}
-          />
+          /> */}
         </Box>
         <ContactForm />
       </Box>
