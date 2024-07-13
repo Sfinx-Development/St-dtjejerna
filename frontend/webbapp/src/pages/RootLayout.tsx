@@ -3,21 +3,22 @@ import CustomHeader from "../components/CustomHeader";
 import Footer from "../components/Footer";
 import MobileHeader from "../components/MobileHeader";
 import { useScreenSize } from "../screenSizeContext";
+import ScrollToTop from "../components/ScrollToTop";
 
 const RootLayout = () => {
   const { isMobile } = useScreenSize();
   return (
     <div
-      // style={{
-      //   display: "flex",
-      //   flexDirection: "column",
-      //   flex: 1,
-      //   height: "100vh",
-      //   alignItems: "center",
-      //   width: "100%",
-      //   margin: 0,
-      //   padding: 0,
-      // }}
+    // style={{
+    //   display: "flex",
+    //   flexDirection: "column",
+    //   flex: 1,
+    //   height: "100vh",
+    //   alignItems: "center",
+    //   width: "100%",
+    //   margin: 0,
+    //   padding: 0,
+    // }}
     >
       {isMobile ? <MobileHeader /> : <CustomHeader />}
       <main
@@ -29,6 +30,7 @@ const RootLayout = () => {
           alignItems: "center",
         }}
       >
+        <ScrollToTop />
         <Outlet />
       </main>
 
