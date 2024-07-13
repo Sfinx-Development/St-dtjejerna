@@ -53,31 +53,35 @@ export default function Info() {
         </Typography>
         <Box
           sx={{
-            display: "flex",
             alignItems: "center",
             justifyContent: { xs: "center", md: "flex-end" },
             width: { xs: "100%", md: "auto" },
-            gap: isMobile ? 0 : 2,
-            marginTop: { xs: 2, md: 0 },
-            marginLeft: isMobile ? 2 : 0,
+            gap: isMobile ? 2 : 2,
+            marginLeft: isMobile ? 1 : 0,
+            paddingX: 2,
+            display: "flex",
+            maxWidth: { xs: "80%", md: "100%" },
+            gridTemplateColumns: { xs: "1fr", md: "1fr 1fr" },
           }}
         >
           <IconButton
             sx={{
               color: "#333",
               transition: "transform 0.3s ease",
+              padding: 0,
               "&:hover": {
                 color: "#555",
                 transform: "scale(1.1)",
               },
             }}
           >
-            <MailOutlineIcon sx={{ fontSize: isMobile ? 22 : 28 }} />
+            <MailOutlineIcon sx={{ fontSize: isMobile ? 20 : 28 }} />
           </IconButton>
           <IconButton
             sx={{
               color: "#333",
               transition: "transform 0.3s ease",
+              padding: 0,
               "&:hover": {
                 color: "#555",
                 transform: "scale(1.1)",
@@ -88,7 +92,7 @@ export default function Info() {
               href="tel:033-7269676"
               style={{ color: "inherit", textDecoration: "none" }}
             >
-              <PhoneIcon sx={{ fontSize: isMobile ? 22 : 28 }} />
+              <PhoneIcon sx={{ fontSize: isMobile ? 20 : 28 }} />
             </a>
           </IconButton>
           <Typography
