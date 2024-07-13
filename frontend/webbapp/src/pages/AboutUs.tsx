@@ -15,7 +15,7 @@ const AboutUs: FC = () => {
           alignItems: "center",
           justifyContent: "center",
           width: "100%",
-          border: "1px solid #d29bbf",
+          // border: "1px solid #d29bbf",
           borderRadius: "10px",
           boxShadow: "0 4px 12px rgba(0, 0, 0, 0.1)",
           backgroundColor: "#fff",
@@ -41,31 +41,37 @@ const AboutUs: FC = () => {
               bottom: "-10px",
               left: "50%",
               transform: "translateX(-50%)",
-              width: "80px",
-              height: "2px",
-              backgroundColor: "#d29bbf",
-              borderRadius: "5px",
+              // width: "80px",
+              // height: "2px",
+              // backgroundColor: "#d29bbf",
+              // borderRadius: "5px",
               opacity: 0.7,
             }}
           />
         </Typography>
         <Box
           sx={{
-            backgroundColor: "#f4f4f4",
+            // backgroundColor: "#f4f4f4",
             padding: "20px",
-            maxWidth: "800px",
+            maxWidth: "1100px",
             margin: "0 auto",
             textAlign: "left",
-            borderRadius: "10px",
-            boxShadow: "0 2px 10px rgba(0,0,0,0.1)",
+            // borderRadius: "10px",
+            // boxShadow: "0 2px 10px rgba(0,0,0,0.1)",
             marginBottom: "20px",
             filter: "contrast(120%)",
           }}
         >
-          <Typography variant="body1" paragraph sx={{ color: "#555" }}>
-            <strong>Med känsla för ett dammfritt resultat</strong>
-          </Typography>
-          <Typography variant="body1" paragraph>
+          <Typography  variant="body1" paragraph sx={{
+            justifyContent: "center",
+            // textAlign: "center",
+            // color: "#d29bbf",
+            position: "relative",
+            marginTop: isMobile ? "20px" : "20px",
+            marginBottom: "50px",
+            maxWidth: "1000px",
+            // color: "#666",
+          }}>
             Det började en dag för snart 10 år sedan. Två flickor slöt an på ett
             städföretag i Borås. Helt olika men ändå så lika. Victoria med
             hennes lugna harmoniska personlighet och Josephine med hennes
@@ -97,16 +103,25 @@ const AboutUs: FC = () => {
               }}
             />
             <Box sx={{ flex: 1 }}>
-              <Typography
+              <Typography variant="h4"
                 sx={{
-                  fontSize: 25,
-                  letterSpacing: 2,
-                  marginBottom: "10px",
+                  // fontSize: 25,
+                  // letterSpacing: 2,
+                  // marginBottom: "10px",
+                  fontSize: { xs: 24, md: 32 },
+                  fontWeight: "bold",
+                  color: "#333",
+                  marginBottom: 2,
+                  maxWidth: "600px",
+                   marginLeft: isMobile ? "0px": "50px"
                 }}
               >
                 Victoria
               </Typography>
-              <Typography variant="body1">
+             
+              <Typography variant="body1"sx={{ maxWidth: "600px",
+                   marginLeft: isMobile ? "0px": "50px",    color: "#666",
+                   }}>
                 <strong>Victoria</strong> har ett öga för detaljer. Fogborste,
                 vikta papper, handdukar och en uppolerad kran är något hon gör
                 som en klocka.
@@ -117,7 +132,7 @@ const AboutUs: FC = () => {
           <Box
             sx={{
               display: "flex",
-              flexDirection: isMobile ? "column" : "row",
+              flexDirection: isMobile ? "column" : "row-reverse",
               alignItems: "center",
               marginBottom: "20px",
               gap: "20px",
@@ -138,16 +153,22 @@ const AboutUs: FC = () => {
               }}
             />
             <Box sx={{ flex: 1 }}>
-              <Typography
+            <Typography variant="h4"
                 sx={{
-                  fontSize: 25,
-                  letterSpacing: 2,
-                  marginBottom: "10px",
+                  // fontSize: 25,
+                  // letterSpacing: 2,
+                  // marginBottom: "10px",
+                  fontSize: { xs: 24, md: 32 },
+                  fontWeight: "bold",
+                  color: "#333",
+                  marginBottom: 2,
+                  maxWidth: "600px",
+                  // marginLeft: "50px"
                 }}
               >
                 Josephine
               </Typography>
-              <Typography variant="body1">
+              <Typography variant="body1" sx={{ maxWidth: "600px",    color: "#666",}}>
                 <strong>Josephine</strong> dansar gärna loss med dammtrasan och
                 dammsugaren efter sig. Det går undan men rent och prydligt blir
                 det.
@@ -155,14 +176,14 @@ const AboutUs: FC = () => {
             </Box>
           </Box>
 
-          <Box
+          {/* <Box
             sx={{
               width: "100%",
               height: "2px",
               backgroundColor: "#d29bbf",
               marginBottom: "20px",
             }}
-          />
+          /> */}
         </Box>
         <ContactForm />
       </Box>
