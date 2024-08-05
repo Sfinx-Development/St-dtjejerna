@@ -35,8 +35,7 @@ export default function Services() {
           vi går igenom varje moment och specifika önskemål punkt för punkt.{" "}
         </>
       ),
-      image:
-        "https://vitalhome.se/wp-content/uploads/2018/11/Flyttst%C3%A4d-1-1024x670.jpg",
+      image: "https://i.imgur.com/liZhO4v.jpeg",
     },
     {
       id: 3,
@@ -97,7 +96,7 @@ export default function Services() {
               alt={service.title}
               style={{
                 width: "100%",
-                maxWidth: "500px",
+                maxWidth: "400px",
                 borderRadius: "8px",
                 boxShadow: "0 4px 12px rgba(0, 0, 0, 0.1)",
               }}

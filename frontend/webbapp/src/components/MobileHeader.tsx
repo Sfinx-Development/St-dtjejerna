@@ -13,7 +13,7 @@ import {
   ListItemText,
   useTheme,
 } from "@mui/material";
-import { useState } from "react";
+import { useState, useEffect } from "react";
 import { Link } from "react-router-dom";
 import { useScreenSize } from "../screenSizeContext";
 
@@ -28,6 +28,17 @@ export default function CustomHeader2(): JSX.Element {
   const { isMobile } = useScreenSize();
   const [openDrawer, setOpenDrawer] = useState(false);
   const [openSubmenu, setOpenSubmenu] = useState<string | null>(null);
+
+  useEffect(() => {
+    if (openDrawer) {
+      document.body.style.overflow = "hidden";
+    } else {
+      document.body.style.overflow = "auto";
+    }
+    return () => {
+      document.body.style.overflow = "auto";
+    };
+  }, [openDrawer]);
 
   const handleToggleMenu = () => {
     setOpenDrawer(!openDrawer);

@@ -2,6 +2,7 @@ import KeyboardArrowDownIcon from "@mui/icons-material/KeyboardArrowDown";
 import {
   Box,
   Grow,
+  Link,
   MenuItem,
   MenuList,
   Paper,
@@ -9,7 +10,6 @@ import {
   Typography,
   useMediaQuery,
   useTheme,
-  Link,
 } from "@mui/material";
 import React, { useEffect, useRef, useState } from "react";
 
@@ -187,18 +187,13 @@ export default function CustomHeader2(): JSX.Element {
 
   useEffect(() => {
     const handleScroll = () => {
-      console.log("Scroll position:", window.scrollY);
-      if (window.scrollY > 0) {
-        setHasScrolled(true);
-      } else {
-        setHasScrolled(false);
-      }
+      setHasScrolled(window.scrollY > 0);
     };
 
     window.addEventListener("scroll", handleScroll);
-    return () => {
-      window.removeEventListener("scroll", handleScroll);
-    };
+    handleScroll();
+
+    return () => window.removeEventListener("scroll", handleScroll);
   }, []);
 
   const links: LinkItem[] = [
@@ -229,8 +224,7 @@ export default function CustomHeader2(): JSX.Element {
         alignItems: "center",
         justifyContent: "space-between",
         width: "100%",
-        // boxShadow: "0px 4px 10px rgba(0, 0, 0, 0.1)",
-        boxShadow: hasScrolled ? "0px 4px 10px rgba(0, 0, 0, 0.1)" : "none",
+        boxShadow: hasScrolled ? "0px 4px 10px rgba(0, 0, 0, 0.3)" : "none",
         flexDirection: isMobile ? "column" : "row",
         height: "90px",
         zIndex: 9999,
