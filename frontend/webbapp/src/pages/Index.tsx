@@ -7,6 +7,7 @@ import Info from "../components/Info";
 import PresentingImage from "../components/Presentation";
 import Security from "../components/Security";
 import Services from "../components/Services";
+import CookieBanner from "../components/Cookies";
 
 export default function Index() {
   return (
@@ -26,6 +27,7 @@ export default function Index() {
     >
       {/* <div style={{ height: 1.5, width: "100%", backgroundColor: "#e3c5da" }} /> */}
       <PresentingImage />
+      <CookieBanner />
       <div style={{ height: 1.5, width: "100%", backgroundColor: "#e3c5da" }} />
 
       <Services />
