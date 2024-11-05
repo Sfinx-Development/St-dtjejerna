@@ -15,10 +15,10 @@ import { useScreenSize } from "../screenSizeContext";
 
 export default function Contact() {
   const images = [
-    "https://i.imgur.com/pbme5Ya.jpeg",
-    "https://i.imgur.com/ojwnvJ9.jpeg",
+    // "https://i.imgur.com/pbme5Ya.jpeg",
+    "https://i.imgur.com/rbhnXJd.jpeg",
     "https://i.imgur.com/yZSk2SB.jpeg",
-    // "https://i.imgur.com/BmGZV9K.jpeg",
+    "https://i.imgur.com/eYby9bC.jpeg",
   ];
   const { isMobile } = useScreenSize();
   return (
