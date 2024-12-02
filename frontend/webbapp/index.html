@@ -6,14 +6,25 @@
       src="https://www.googletagmanager.com/gtag/js?id=G-SKB18BTS09"
     ></script>
     <script>
-      window.dataLayer = window.dataLayer || [];
-      function gtag() {
-        dataLayer.push(arguments);
+      const hasConsent = localStorage.getItem("cookieConsent");
+    
+      if (hasConsent === "true") {
+        const script = document.createElement("script");
+        script.src = "https://www.googletagmanager.com/gtag/js?id=G-SKB18BTS09";
+        script.async = true;
+        document.head.appendChild(script);
+    
+        script.onload = () => {
+          window.dataLayer = window.dataLayer || [];
+          function gtag() {
+            dataLayer.push(arguments);
+          }
+          gtag("js", new Date());
+          gtag("config", "G-SKB18BTS09");
+        };
       }
-      gtag("js", new Date());
-
-      gtag("config", "G-SKB18BTS09");
     </script>
+    
     <meta charset="UTF-8" />
     <link
       rel="icon"
