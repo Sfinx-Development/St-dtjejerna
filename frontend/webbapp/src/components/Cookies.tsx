@@ -1,17 +1,28 @@
+import React, { useState, useEffect } from "react";
 import { Box, Button, Link, Typography } from "@mui/material";
-import { useState } from "react";
 
 const CookieBanner = () => {
-  const [accepted, setAccepted] = useState(false);
+  const [showBanner, setShowBanner] = useState(false);
+
+  useEffect(() => {
+    const consent = localStorage.getItem("cookieConsent");
+    if (!consent) {
+      setShowBanner(true);
+    }
+  }, []);
 
   const handleAccept = () => {
-    document.cookie = "cookieConsent=true; max-age=" + 60 * 60 * 24 * 365; // 1 year
-    setAccepted(true);
+    localStorage.setItem("cookieConsent", "true");
+    setShowBanner(false);
+    window.location.reload(); // Ladda om sidan för att aktivera Google Analytics
   };
 
-  if (accepted || document.cookie.includes("cookieConsent=true")) {
-    return null;
-  }
+  const handleDecline = () => {
+    localStorage.setItem("cookieConsent", "false");
+    setShowBanner(false);
+  };
+
+  if (!showBanner) return null;
 
   return (
     <Box
@@ -33,6 +44,7 @@ const CookieBanner = () => {
         inkluderar att analysera trafik till vår sida via Google Analytics. När
         du klickar på "Acceptera", ger du oss tillåtelse att använda Cookies.
       </Typography>
+
       <Box sx={{ display: "flex", marginX: 2 }}>
         <Button
           variant="contained"
@@ -46,6 +58,21 @@ const CookieBanner = () => {
           onClick={handleAccept}
         >
           Acceptera
+        </Button>
+        <Button
+          onClick={handleDecline}
+          variant="outlined"
+          sx={{
+            marginLeft: "8px",
+            color: "#c499b6",
+            borderColor: "#c499b6",
+            "&:hover": {
+              borderColor: "#c499b6",
+              transition: "background-color 0.3s ease, color 0.3s ease",
+            },
+          }}
+        >
+          Avvisa
         </Button>
         <Button
           variant="outlined"
