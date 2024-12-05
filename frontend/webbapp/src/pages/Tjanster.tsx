@@ -64,7 +64,7 @@ export default function Tjanster() {
           <Button
             variant="outlined"
             sx={{
-              color: "#fff",
+              color: "#333",
               borderColor: "#e3c5da",
               margin: isMobile ? "10px" : "10px 20px",
               paddingX: 3,
@@ -86,7 +86,7 @@ export default function Tjanster() {
           <Button
             variant="outlined"
             sx={{
-              color: "#fff",
+              color: "#333",
               borderColor: "#e3c5da",
               margin: isMobile ? "10px" : "10px 20px",
               paddingX: 3,
@@ -108,7 +108,7 @@ export default function Tjanster() {
           <Button
             variant="outlined"
             sx={{
-              color: "#fff",
+              color: "#333",
               borderColor: "#e3c5da",
               margin: isMobile ? "10px" : "10px 20px",
               paddingX: 3,
@@ -130,7 +130,7 @@ export default function Tjanster() {
           <Button
             variant="outlined"
             sx={{
-              color: "#fff",
+              color: "#333",
               borderColor: "#e3c5da",
               margin: isMobile ? "10px" : "10px 20px",
               paddingX: 3,
@@ -152,7 +152,7 @@ export default function Tjanster() {
           <Button
             variant="outlined"
             sx={{
-              color: "#fff",
+              color: "#333",
               borderColor: "#e3c5da",
               margin: isMobile ? "10px" : "10px 20px",
               paddingX: 3,
@@ -196,7 +196,7 @@ export default function Tjanster() {
           <Button
             variant="outlined"
             sx={{
-              color: "#fff",
+              color: "#333",
               borderColor: "#e3c5da",
               margin: isMobile ? "10px" : "10px 20px",
               paddingX: 3,

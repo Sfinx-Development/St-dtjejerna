@@ -135,7 +135,7 @@ export default function Services() {
               variant="contained"
               sx={{
                 backgroundColor: "#dbbed1",
-                color: "#fff",
+                color: "#333",
                 "&:hover": {
                   backgroundColor: "#c499b6",
                 },

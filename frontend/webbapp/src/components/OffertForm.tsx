@@ -285,7 +285,7 @@ export default function OffertForm() {
               alignSelf: "center",
               marginTop: 2,
               backgroundColor: "#dbbed1",
-              color: "#fff",
+              color: "#333",
               paddingX: 4,
               paddingY: 1,
               borderRadius: 2,
