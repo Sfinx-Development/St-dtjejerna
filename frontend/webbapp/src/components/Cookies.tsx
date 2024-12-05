@@ -87,6 +87,7 @@ const CookieBanner = () => {
         <Button
           variant="contained"
           sx={{
+            color: "#333",
             backgroundColor: "#c499b6",
             "&:hover": {
               backgroundColor: "#c499b6",
