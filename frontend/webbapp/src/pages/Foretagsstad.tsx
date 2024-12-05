@@ -134,7 +134,7 @@ const Foretagsstad: FC = () => {
           variant="contained"
           sx={{
             backgroundColor: "#c499b6",
-            color: "#fff",
+            color: "#333",
             padding: "10px 20px",
             marginTop: "1.5rem",
             "&:hover": {

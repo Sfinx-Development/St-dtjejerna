@@ -112,7 +112,7 @@ const Fonsterputs: FC = () => {
           <Button
             variant="outlined"
             sx={{
-              color: "#fff",
+              color: "#333",
               borderColor: "#e3c5da",
               marginY: 4,
               paddingX: 3,
