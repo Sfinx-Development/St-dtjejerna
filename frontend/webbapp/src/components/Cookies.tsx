@@ -29,20 +29,58 @@ const CookieBanner = () => {
       sx={{
         position: "fixed",
         bottom: 0,
+        left: 0,
         width: "100%",
-        backgroundColor: "#2d2d2d",
-        color: "#ffffff",
-        boxShadow: "0 -2px 10px rgba(0, 0, 0, 0.3)",
-        zIndex: 1000,
+        backgroundColor: "#222",
+        color: "#fff",
+        zIndex: 9999,
+        textAlign: "left",
+        padding: { xs: "1rem", md: "1.5rem" },
+        boxShadow: "0px -2px 10px rgba(0, 0, 0, 0.2)",
         display: "flex",
-        paddingY: 2,
-        flexDirection: "column",
+        flexDirection: { xs: "column", md: "row" },
+        alignItems: { xs: "flex-start", md: "center" },
+        gap: { xs: "1rem", md: "2rem" },
       }}
     >
-      <Typography variant="body1" sx={{ marginBottom: "8px", marginX: 2 }}>
-        Vi använder Cookies för att förbättra din upplevelse på vår hemsida, det
-        inkluderar att analysera trafik till vår sida via Google Analytics. När
-        du klickar på "Acceptera", ger du oss tillåtelse att använda Cookies.
+         <Typography
+        variant="body2"
+        sx={{
+          fontSize: { xs: "0.85rem", md: "1rem" },
+          lineHeight: "1.6",
+          maxWidth: { xs: "95%", md: "70%" },
+          marginBottom: { xs: "0.5rem", md: "0" },
+        }}
+      >
+        Vi använder cookies för att förbättra din upplevelse på vår hemsida.
+        Detta inkluderar analys av trafik via Google Analytics. Genom att klicka
+        på
+        <Typography
+          component="span"
+          sx={{
+            fontWeight: "bold",
+            color: "#c499b6",
+            marginLeft: "4px",
+          }}
+        >
+          "Acceptera"
+        </Typography>
+        , ger du oss tillåtelse att använda cookies.{" "}
+        <Link
+          href="https://cookieinformation.com/sv/vad-ar-en-cookie/"
+          target="_blank"
+          rel="noopener noreferrer"
+          sx={{
+            color: "#c499b6",
+            textDecoration: "underline",
+            "&:hover": {
+              textDecoration: "none",
+            },
+          }}
+        >
+          Läs mer här
+        </Link>
+        .
       </Typography>
 
       <Box sx={{ display: "flex", marginX: 2 }}>
@@ -73,22 +111,6 @@ const CookieBanner = () => {
           }}
         >
           Avvisa
-        </Button>
-        <Button
-          variant="outlined"
-          component={Link}
-          href="https://cookieinformation.com/sv/vad-ar-en-cookie/"
-          sx={{
-            marginLeft: "8px",
-            color: "#c499b6",
-            borderColor: "#c499b6",
-            "&:hover": {
-              borderColor: "#c499b6",
-              transition: "background-color 0.3s ease, color 0.3s ease",
-            },
-          }}
-        >
-          Läs mer
         </Button>
       </Box>
     </Box>
