@@ -30,6 +30,7 @@ export default function OffertForm() {
   const [snackbarMessage, setSnackbarMessage] = useState("");
   const [snackbarSeverity, setSnackbarSeverity] =
     useState<AlertColor>("success");
+    const [privacyPolicyChecked, setPrivacyPolicyChecked] = useState(false);
 
   const { isMobile } = useScreenSize();
 
@@ -41,6 +42,10 @@ export default function OffertForm() {
     "Företagsstäd",
     "Trappstäd",
   ];
+
+  const handleCheckboxChange = (event: React.ChangeEvent<HTMLInputElement>) => {
+    setPrivacyPolicyChecked(event.target.checked);
+  };
 
   const handleServiceChange = (event: React.ChangeEvent<HTMLInputElement>) => {
     const selectedService = event.target.value;
@@ -255,6 +260,7 @@ export default function OffertForm() {
               />
             ))}
           </FormGroup>
+       
           <TextField
             label="Meddelande"
             variant="outlined"
@@ -278,6 +284,43 @@ export default function OffertForm() {
               },
             }}
           />
+             <FormControlLabel
+          sx={{
+                  display: "flex",
+                  flexDirection: "row",
+                  justifyContent: "center",
+                  width: "110%",
+                  gap: 1,
+                }}
+                control={
+                  <Checkbox
+                    required
+                    sx={{
+                      color: "#333",
+                      "&.Mui-checked": {
+                        color: "#333",
+                      },
+                    }}
+                    checked={privacyPolicyChecked}
+                    onChange={handleCheckboxChange}
+                  />
+                }
+                label={
+                  <Typography sx={{ color: "#333" }}>
+                    Jag samtycker till att Städtjejerna i 7-härad behandlar mina
+                    personuppgifter i enlighet med vår{" "}
+                    <a
+                      href="/privacy-policy"
+                      target="_blank"
+                      rel="noopener noreferrer"
+                      style={{ color: "#333" }}
+                    >
+                      integritetspolicy
+                    </a>
+                    .
+                  </Typography>
+                }
+              />
           <Button
             variant="contained"
             type="submit"

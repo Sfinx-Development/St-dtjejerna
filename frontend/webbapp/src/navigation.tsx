@@ -13,6 +13,7 @@ import Offert from "./pages/Offert";
 import RootLayout from "./pages/RootLayout";
 import Tjanster from "./pages/Tjanster";
 import Trappstad from "./pages/Trappstad";
+import PrivacyPolicy from "./pages/PrivacyPolicy";
 
 const Navigation = () => {
   return (
@@ -31,6 +32,7 @@ const Navigation = () => {
         <Route path="offert" element={<Offert />}></Route>
         <Route path="contact" element={<Contact />}></Route>
         <Route path="tjanster" element={<Tjanster />}></Route>
+        <Route path="privacy-policy" element={<PrivacyPolicy />}></Route>
         <Route path="*" element={<Error />}></Route>
       </Route>
     </Routes>
