@@ -1,5 +1,5 @@
-import React, { useState, useEffect } from "react";
 import { Box, Button, Link, Typography } from "@mui/material";
+import { useEffect, useState } from "react";
 
 const CookieBanner = () => {
   const [showBanner, setShowBanner] = useState(false);
@@ -43,7 +43,7 @@ const CookieBanner = () => {
         gap: { xs: "1rem", md: "2rem" },
       }}
     >
-         <Typography
+      <Typography
         variant="body2"
         sx={{
           fontSize: { xs: "0.85rem", md: "1rem" },
