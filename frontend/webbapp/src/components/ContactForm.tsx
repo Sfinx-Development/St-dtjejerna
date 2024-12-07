@@ -272,7 +272,7 @@ export default function ContactForm(props: ContactFormProps) {
                   display: "flex",
                   flexDirection: "row",
                   justifyContent: "center",
-                  width: "110%",
+                  width: "100%",
                   gap: 1,
                   
                 }}
