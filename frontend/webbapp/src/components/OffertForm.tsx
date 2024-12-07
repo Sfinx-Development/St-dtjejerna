@@ -324,6 +324,7 @@ export default function OffertForm() {
           <Button
             variant="contained"
             type="submit"
+            disabled={!privacyPolicyChecked}
             sx={{
               alignSelf: "center",
               marginTop: 2,

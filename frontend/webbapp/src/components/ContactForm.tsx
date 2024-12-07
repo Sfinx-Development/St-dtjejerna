@@ -8,6 +8,8 @@ import {
   Button,
   Card,
   CardContent,
+  Checkbox,
+  FormControlLabel,
   Snackbar,
   TextField,
   Typography,
@@ -30,6 +32,11 @@ export default function ContactForm(props: ContactFormProps) {
   const [openSnackbar, setOpenSnackbar] = useState(false);
   const [snackbarMessage, setSnackbarMessage] = useState("");
   const [snackbarSeverity, setSnackbarSeverity] = useState("success");
+  const [privacyPolicyChecked, setPrivacyPolicyChecked] = useState(false);
+
+  const handleCheckboxChange = (event: React.ChangeEvent<HTMLInputElement>) => {
+    setPrivacyPolicyChecked(event.target.checked);
+  };
 
   const handleSubmit = (e: React.FormEvent<HTMLFormElement>) => {
     e.preventDefault();
@@ -89,7 +96,7 @@ export default function ContactForm(props: ContactFormProps) {
         flexDirection: { xs: "column", md: "row" },
         alignItems: "center",
         justifyContent: "space-around",
-        height: { xs: "auto", md: 500 },
+        height: { xs: "auto", md: 550 },
         width: "100%",
         backgroundColor: props.backgroundColor
           ? props.backgroundColor
@@ -260,9 +267,48 @@ export default function ContactForm(props: ContactFormProps) {
               },
             }}
           />
+           <FormControlLabel
+          sx={{
+                  display: "flex",
+                  flexDirection: "row",
+                  justifyContent: "center",
+                  width: "110%",
+                  gap: 1,
+                  
+                }}
+                control={
+                  <Checkbox
+                    required
+                    sx={{
+                      color: "#333",
+                      "&.Mui-checked": {
+                        color: "#333",
+                      },
+                    }}
+                    checked={privacyPolicyChecked}
+                    onChange={handleCheckboxChange}
+                  />
+                }
+                label={
+                  <Typography sx={{ color: "#333" }}>
+                    Jag samtycker till att Städtjejerna i 7-härad behandlar mina
+                    personuppgifter i enlighet med vår{" "}
+                    <a
+                      href="/privacy-policy"
+                      target="_blank"
+                      rel="noopener noreferrer"
+                      style={{ color: "#333" }}
+                    >
+                      integritetspolicy
+                    </a>
+                    .
+                  </Typography>
+                }
+              />
           <Button
             variant="contained"
             type="submit"
+            disabled={!privacyPolicyChecked}
             sx={{
               alignSelf: "center",
               marginTop: 2,
