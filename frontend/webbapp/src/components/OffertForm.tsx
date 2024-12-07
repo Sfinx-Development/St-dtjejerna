@@ -289,7 +289,7 @@ export default function OffertForm() {
                   display: "flex",
                   flexDirection: "row",
                   justifyContent: "center",
-                  width: "110%",
+                  width: "100%",
                   gap: 1,
                 }}
                 control={
