@@ -249,8 +249,8 @@ export default function CustomHeader2(): JSX.Element {
                 position: "relative",
                 backgroundColor: "white",
                 borderRadius: "50%",
-                height: 150,
-                width: 150,
+                height: 120,
+                width: 120,
               }}
             >
               <img
