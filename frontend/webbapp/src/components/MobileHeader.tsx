@@ -11,11 +11,12 @@ import {
   ListItemButton,
   ListItemIcon,
   ListItemText,
+  Slide,
+  Typography,
   useTheme,
 } from "@mui/material";
-import { useState, useEffect } from "react";
+import { useEffect, useState } from "react";
 import { Link } from "react-router-dom";
-import { useScreenSize } from "../screenSizeContext";
 
 type LinkItem = {
   label: string;
@@ -25,7 +26,6 @@ type LinkItem = {
 
 export default function CustomHeader2(): JSX.Element {
   const theme = useTheme();
-  const { isMobile } = useScreenSize();
   const [openDrawer, setOpenDrawer] = useState(false);
   const [openSubmenu, setOpenSubmenu] = useState<string | null>(null);
 
@@ -74,13 +74,11 @@ export default function CustomHeader2(): JSX.Element {
   return (
     <Box
       sx={{
-        paddingY: 0.1,
         display: "flex",
         alignItems: "center",
         justifyContent: "space-between",
         width: "100%",
         boxShadow: "0px 4px 10px rgba(0, 0, 0, 0.1)",
-        flexDirection: isMobile ? "row" : "row",
         position: "sticky",
         top: 0,
         zIndex: 999,
@@ -88,43 +86,43 @@ export default function CustomHeader2(): JSX.Element {
       }}
       component={"header"}
     >
+      {/* Logo Section */}
       <Box
         sx={{
           display: "flex",
           flexDirection: "row",
           alignItems: "center",
           gap: 2,
+          justifyContent: "center",
           marginLeft: 2,
           height: 75,
-          position: "relative",
         }}
       >
         <Link to="/" style={{ marginTop: 2 }}>
           <img
             src="https://i.imgur.com/Zcgk1vf.png"
-            alt="Logo saying dailyvibe"
+            alt="Logo"
             style={{
-              width: "100px",
+              width: "80px",
               objectFit: "contain",
-              left: 0,
-              zIndex: 999,
             }}
           />
         </Link>
       </Box>
+
       <Box
         sx={{
           display: "flex",
           alignItems: "center",
           justifyContent: "flex-end",
           marginRight: 2,
-          padding: 2,
         }}
       >
         <IconButton onClick={handleToggleMenu}>
           <MenuIcon sx={{ color: "black", fontSize: 40 }} />
         </IconButton>
 
+        {/* Drawer Section */}
         <Drawer
           anchor="right"
           open={openDrawer}
@@ -135,72 +133,137 @@ export default function CustomHeader2(): JSX.Element {
           sx={{
             "& .MuiDrawer-paper": {
               width: 280,
-              backgroundColor: theme.palette.background.paper,
-              paddingTop: 2,
+              backgroundColor: "#dbbed1",
+              paddingY: 2,
             },
           }}
         >
-          <List sx={{ width: "100%" }}>
-            {links.map((link) => (
-              <Box key={link.label}>
-                <ListItem
-                  disablePadding
-                  sx={{
-                    "&:hover": {
-                      backgroundColor: theme.palette.action.hover,
-                    },
-                  }}
-                >
-                  <ListItemButton
-                    onClick={
-                      link.menuItems
-                        ? () => handleToggleSubmenu(link.label)
-                        : handleCloseMenu
-                    }
-                    component={link.menuItems ? "div" : Link}
-                    to={!link.menuItems ? link.href : undefined}
+          <List>
+            {links.map((link, index) => (
+              <Slide
+                key={link.label}
+                direction="right"
+                in={openDrawer}
+                style={{ transitionDelay: `${index * 100}ms` }}
+              >
+                <Box>
+                  <ListItem
+                    disablePadding
+                    sx={{
+                      "&:hover": {
+                        backgroundColor: theme.palette.action.hover,
+                      },
+                    }}
                   >
-                    <ListItemText primary={link.label} />
-                    {link.menuItems && (
-                      <ListItemIcon>
-                        <ArrowForwardIosIcon
-                          sx={{
-                            transform:
-                              openSubmenu === link.label
-                                ? "rotate(90deg)"
-                                : "rotate(0deg)",
-                            transition: "transform 0.3s ease",
-                          }}
-                        />
-                      </ListItemIcon>
-                    )}
-                  </ListItemButton>
-                </ListItem>
-                {link.menuItems && (
-                  <Collapse
-                    in={openSubmenu === link.label}
-                    timeout="auto"
-                    unmountOnExit
-                  >
-                    <List component="div" disablePadding>
-                      {link.menuItems.map((item) => (
-                        <ListItemButton
-                          key={item.label}
-                          sx={{ pl: 4 }}
-                          component={Link}
-                          to={item.href}
-                          onClick={handleCloseMenu}
-                        >
-                          <ListItemText primary={item.label} />
-                        </ListItemButton>
-                      ))}
-                    </List>
-                  </Collapse>
-                )}
-                <Divider />
-              </Box>
+                    <ListItemButton
+                      onClick={
+                        link.menuItems
+                          ? () => handleToggleSubmenu(link.label)
+                          : handleCloseMenu
+                      }
+                      component={link.menuItems ? "div" : Link}
+                      to={!link.menuItems ? link.href : undefined}
+                    >
+                      <ListItemText
+                        primary={
+                          <Typography
+                            sx={{
+                              fontFamily: "'Roboto', sans-serif",
+                              fontSize: "18px",
+                              // fontWeight: "500",
+                              color: "#333",
+                              letterSpacing: "0.5px",
+                            }}
+                          >
+                            {link.label}
+                          </Typography>
+                        }
+                      />
+
+                      {link.menuItems && (
+                        <ListItemIcon>
+                          <ArrowForwardIosIcon
+                            sx={{
+                              transform:
+                                openSubmenu === link.label
+                                  ? "rotate(90deg)"
+                                  : "rotate(0deg)",
+                              transition: "transform 0.3s ease",
+                            }}
+                          />
+                        </ListItemIcon>
+                      )}
+                    </ListItemButton>
+                  </ListItem>
+
+                  {/* Submenu */}
+                  {link.menuItems && (
+                    <Collapse
+                      in={openSubmenu === link.label}
+                      timeout="auto"
+                      unmountOnExit
+                    >
+                      <List component="div" disablePadding>
+                        {link.menuItems.map((item, subIndex) => (
+                          <Slide
+                            key={item.label}
+                            direction="right"
+                            in={openDrawer}
+                            style={{
+                              transitionDelay: `${
+                                (index + subIndex + 1) * 100
+                              }ms`,
+                            }}
+                          >
+                            <ListItemButton
+                              sx={{ pl: 4 }}
+                              component={Link}
+                              to={item.href}
+                              onClick={handleCloseMenu}
+                            >
+                              <ListItemText primary={item.label} />
+                            </ListItemButton>
+                          </Slide>
+                        ))}
+                      </List>
+                    </Collapse>
+                  )}
+                  <Divider />
+                </Box>
+              </Slide>
             ))}
           </List>
+          <Box
+            sx={{
+              display: "flex",
+              flexDirection: "row",
+              alignItems: "end",
+              justifyContent: "center",
+              height: "100%",
+              marginBottom: 2,
+            }}
+          >
+            <Link
+              to="/"
+              style={{
+                position: "relative",
+                backgroundColor: "white",
+                borderRadius: "50%",
+                height: 150,
+                width: 150,
+              }}
+            >
+              <img
+                src="https://i.imgur.com/Zcgk1vf.png"
+                alt="Logo"
+                style={{
+                  width: "100%",
+                  height: "100%",
+                  objectFit: "contain",
+                }}
+              />
+            </Link>
+          </Box>
         </Drawer>
       </Box>
     </Box>
