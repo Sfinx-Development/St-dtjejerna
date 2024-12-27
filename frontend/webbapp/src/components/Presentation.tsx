@@ -22,7 +22,7 @@ export default function PresentingImage() {
         flexDirection: "row",
         alignItems: "center",
         justifyContent: "center",
-        height: 550,
+        height: { xs: 800, md: 550 },
         width: "100%",
         position: "relative",
         fontFamily: "Roboto, sans-serif",

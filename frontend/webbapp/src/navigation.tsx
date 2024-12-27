@@ -10,10 +10,10 @@ import Hemstad from "./pages/Hemstad";
 import Index from "./pages/Index";
 import Locations from "./pages/Locations";
 import Offert from "./pages/Offert";
+import PrivacyPolicy from "./pages/PrivacyPolicy";
 import RootLayout from "./pages/RootLayout";
 import Tjanster from "./pages/Tjanster";
 import Trappstad from "./pages/Trappstad";
-import PrivacyPolicy from "./pages/PrivacyPolicy";
 
 const Navigation = () => {
   return (
