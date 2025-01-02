@@ -31,7 +31,9 @@ const AboutUs: FC = () => {
             color: "#d29bbf",
             position: "relative",
             marginTop: isMobile ? "40px" : "20px",
-            marginBottom: "20px",
+            marginBottom: "10px",
+            textTransform: "uppercase",
+            letterSpacing: "2px",
           }}
         >
           Om oss
@@ -62,16 +64,20 @@ const AboutUs: FC = () => {
             filter: "contrast(120%)",
           }}
         >
-          <Typography  variant="body1" paragraph sx={{
-            justifyContent: "center",
-            // textAlign: "center",
-            // color: "#d29bbf",
-            position: "relative",
-            marginTop: isMobile ? "20px" : "20px",
-            marginBottom: "50px",
-            maxWidth: "1000px",
-            // color: "#666",
-          }}>
+          <Typography
+            variant="body1"
+            paragraph
+            sx={{
+              justifyContent: "center",
+              // textAlign: "center",
+              // color: "#d29bbf",
+              position: "relative",
+              marginTop: isMobile ? "20px" : "20px",
+              marginBottom: "50px",
+              maxWidth: "1000px",
+              // color: "#666",
+            }}
+          >
             Det började en dag för snart 10 år sedan. Två flickor slöt an på ett
             städföretag i Borås. Helt olika men ändå så lika. Victoria med
             hennes lugna harmoniska personlighet och Josephine med hennes
@@ -103,7 +109,8 @@ const AboutUs: FC = () => {
               }}
             />
             <Box sx={{ flex: 1 }}>
-              <Typography variant="h4"
+              <Typography
+                variant="h4"
                 sx={{
                   // fontSize: 25,
                   // letterSpacing: 2,
@@ -113,15 +120,20 @@ const AboutUs: FC = () => {
                   color: "#333",
                   marginBottom: 2,
                   maxWidth: "600px",
-                   marginLeft: isMobile ? "0px": "50px"
+                  marginLeft: isMobile ? "0px" : "50px",
                 }}
               >
                 Victoria
               </Typography>
-             
-              <Typography variant="body1"sx={{ maxWidth: "600px",
-                   marginLeft: isMobile ? "0px": "50px",    color: "#666",
-                   }}>
+
+              <Typography
+                variant="body1"
+                sx={{
+                  maxWidth: "600px",
+                  marginLeft: isMobile ? "0px" : "50px",
+                  color: "#666",
+                }}
+              >
                 <strong>Victoria</strong> har ett öga för detaljer. Fogborste,
                 vikta papper, handdukar och en uppolerad kran är något hon gör
                 som en klocka.
@@ -153,7 +165,8 @@ const AboutUs: FC = () => {
               }}
             />
             <Box sx={{ flex: 1 }}>
-            <Typography variant="h4"
+              <Typography
+                variant="h4"
                 sx={{
                   // fontSize: 25,
                   // letterSpacing: 2,
@@ -168,7 +181,10 @@ const AboutUs: FC = () => {
               >
                 Josephine
               </Typography>
-              <Typography variant="body1" sx={{ maxWidth: "600px",    color: "#666",}}>
+              <Typography
+                variant="body1"
+                sx={{ maxWidth: "600px", color: "#666" }}
+              >
                 <strong>Josephine</strong> dansar gärna loss med dammtrasan och
                 dammsugaren efter sig. Det går undan men rent och prydligt blir
                 det.

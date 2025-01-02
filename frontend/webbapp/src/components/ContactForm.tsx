@@ -16,6 +16,7 @@ import {
 } from "@mui/material";
 import emailjs from "emailjs-com";
 import { useState } from "react";
+import { useScreenSize } from "../screenSizeContext";
 
 emailjs.init("C8CxNnxZg6mg-d2tq");
 
@@ -25,6 +26,7 @@ interface ContactFormProps {
 
 export default function ContactForm(props: ContactFormProps) {
   const [name, setName] = useState("");
+  const { isMobile } = useScreenSize();
   const [phone, setPhone] = useState("");
   const [email, setEmail] = useState("");
   const [message, setMessage] = useState("");
@@ -113,12 +115,16 @@ export default function ContactForm(props: ContactFormProps) {
         }}
       >
         <Typography
-          variant="h4"
+          variant={isMobile ? "h4" : "h3"}
+          // gutterBottom
           sx={{
-            marginBottom: 2,
-            fontWeight: "bold",
-            color: "#333",
-            marginTop: 2,
+            textAlign: "center",
+            color: "#d29bbf",
+            position: "relative",
+            marginTop: { xs: "40px", md: "20px" },
+            marginBottom: "20px",
+            textTransform: "uppercase",
+            letterSpacing: "2px",
           }}
         >
           Kontakta oss
@@ -267,44 +273,43 @@ export default function ContactForm(props: ContactFormProps) {
               },
             }}
           />
-           <FormControlLabel
-          sx={{
-                  display: "flex",
-                  flexDirection: "row",
-                  justifyContent: "center",
-                  width: "100%",
-                  gap: 1,
-                  
+          <FormControlLabel
+            sx={{
+              display: "flex",
+              flexDirection: "row",
+              justifyContent: "center",
+              width: "100%",
+              gap: 1,
+            }}
+            control={
+              <Checkbox
+                required
+                sx={{
+                  color: "#333",
+                  "&.Mui-checked": {
+                    color: "#333",
+                  },
                 }}
-                control={
-                  <Checkbox
-                    required
-                    sx={{
-                      color: "#333",
-                      "&.Mui-checked": {
-                        color: "#333",
-                      },
-                    }}
-                    checked={privacyPolicyChecked}
-                    onChange={handleCheckboxChange}
-                  />
-                }
-                label={
-                  <Typography sx={{ color: "#333" }}>
-                    Jag samtycker till att Städtjejerna i 7-härad behandlar mina
-                    personuppgifter i enlighet med vår{" "}
-                    <a
-                      href="/privacy-policy"
-                      target="_blank"
-                      rel="noopener noreferrer"
-                      style={{ color: "#333" }}
-                    >
-                      integritetspolicy
-                    </a>
-                    .
-                  </Typography>
-                }
+                checked={privacyPolicyChecked}
+                onChange={handleCheckboxChange}
               />
+            }
+            label={
+              <Typography sx={{ color: "#333" }}>
+                Jag samtycker till att Städtjejerna i 7-härad behandlar mina
+                personuppgifter i enlighet med vår{" "}
+                <a
+                  href="/privacy-policy"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  style={{ color: "#333" }}
+                >
+                  integritetspolicy
+                </a>
+                .
+              </Typography>
+            }
+          />
           <Button
             variant="contained"
             type="submit"

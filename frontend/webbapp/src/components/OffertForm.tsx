@@ -30,7 +30,7 @@ export default function OffertForm() {
   const [snackbarMessage, setSnackbarMessage] = useState("");
   const [snackbarSeverity, setSnackbarSeverity] =
     useState<AlertColor>("success");
-    const [privacyPolicyChecked, setPrivacyPolicyChecked] = useState(false);
+  const [privacyPolicyChecked, setPrivacyPolicyChecked] = useState(false);
 
   const { isMobile } = useScreenSize();
 
@@ -128,6 +128,34 @@ export default function OffertForm() {
       component="form"
       onSubmit={handleSubmit}
     >
+      {/* <Typography
+        variant={isMobile ? "h4" : "h2"}
+        gutterBottom
+        sx={{
+          textAlign: "center",
+          color: "#d29bbf",
+          // fontFamily: "'Playfair Display', serif",
+          fontWeight: 700,
+          position: "relative",
+          marginTop: isMobile ? "40px" : "20px",
+          marginBottom: "20px",
+          textTransform: "uppercase",
+          letterSpacing: "2px",
+          "&:after": {
+            content: '""',
+            position: "absolute",
+            width: "40px",
+            height: "4px",
+            backgroundColor: "#d29bbf",
+            bottom: "-10px",
+            left: "50%",
+            transform: "translateX(-50%)",
+            borderRadius: "2px",
+          },
+        }}
+      >
+        Offertförfrågan
+      </Typography> */}
       <Typography
         variant={isMobile ? "h4" : "h2"}
         gutterBottom
@@ -137,6 +165,8 @@ export default function OffertForm() {
           position: "relative",
           marginTop: isMobile ? "40px" : "20px",
           marginBottom: "20px",
+          textTransform: "uppercase",
+          letterSpacing: "2px",
         }}
       >
         Offertförfrågan
@@ -260,7 +290,7 @@ export default function OffertForm() {
               />
             ))}
           </FormGroup>
-       
+
           <TextField
             label="Meddelande"
             variant="outlined"
@@ -284,43 +314,43 @@ export default function OffertForm() {
               },
             }}
           />
-             <FormControlLabel
-          sx={{
-                  display: "flex",
-                  flexDirection: "row",
-                  justifyContent: "center",
-                  width: "100%",
-                  gap: 1,
+          <FormControlLabel
+            sx={{
+              display: "flex",
+              flexDirection: "row",
+              justifyContent: "center",
+              width: "100%",
+              gap: 1,
+            }}
+            control={
+              <Checkbox
+                required
+                sx={{
+                  color: "#333",
+                  "&.Mui-checked": {
+                    color: "#333",
+                  },
                 }}
-                control={
-                  <Checkbox
-                    required
-                    sx={{
-                      color: "#333",
-                      "&.Mui-checked": {
-                        color: "#333",
-                      },
-                    }}
-                    checked={privacyPolicyChecked}
-                    onChange={handleCheckboxChange}
-                  />
-                }
-                label={
-                  <Typography sx={{ color: "#333" }}>
-                    Jag samtycker till att Städtjejerna i 7-härad behandlar mina
-                    personuppgifter i enlighet med vår{" "}
-                    <a
-                      href="/privacy-policy"
-                      target="_blank"
-                      rel="noopener noreferrer"
-                      style={{ color: "#333" }}
-                    >
-                      integritetspolicy
-                    </a>
-                    .
-                  </Typography>
-                }
+                checked={privacyPolicyChecked}
+                onChange={handleCheckboxChange}
               />
+            }
+            label={
+              <Typography sx={{ color: "#333" }}>
+                Jag samtycker till att Städtjejerna i 7-härad behandlar mina
+                personuppgifter i enlighet med vår{" "}
+                <a
+                  href="/privacy-policy"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  style={{ color: "#333" }}
+                >
+                  integritetspolicy
+                </a>
+                .
+              </Typography>
+            }
+          />
           <Button
             variant="contained"
             type="submit"

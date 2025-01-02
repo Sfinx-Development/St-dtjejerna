@@ -1,4 +1,5 @@
-import { Box, Grid, Typography } from "@mui/material";
+import { Box, Typography, useMediaQuery, useTheme } from "@mui/material";
+
 const logos = [
   "https://i.imgur.com/SyKiY71.jpeg",
   "https://i.imgur.com/dwjZsiQ.png",
@@ -9,74 +10,73 @@ const logos = [
 ];
 
 export default function CustomerLogos() {
+  const theme = useTheme();
+  const isMobile = useMediaQuery(theme.breakpoints.down("sm"));
+
   return (
     <Box
       sx={{
         width: "100%",
-        fontFamily: "Roboto, sans-serif",
         display: "flex",
         flexDirection: "column",
-        paddingY: 3,
+        alignItems: "center",
+        paddingY: 4,
+        backgroundColor: "#e4dcdc",
         textAlign: "center",
-        overflow: "hidden",
         boxShadow: "0px 4px 15px rgba(0, 0, 0, 0.1)",
       }}
     >
+      {/* Rubrik */}
+      <Typography
+        variant={isMobile ? "h4" : "h2"}
+        gutterBottom
+        sx={{
+          color: "#333",
+          fontFamily: "'Playfair Display', serif",
+          textTransform: "uppercase",
+          letterSpacing: "3px",
+          position: "relative",
+        }}
+      >
+        Nöjda Kunder
+      </Typography>
+
+      {/* Logobilder */}
       <Box
         sx={{
           display: "flex",
+          flexWrap: "wrap",
           justifyContent: "center",
-          marginBottom: 4,
-          alignItems: "center",
+          gap: { xs: 2, md: 4 },
+          marginTop: 3,
+          paddingX: { xs: 2, md: 6 },
         }}
-      >
-        <Typography
-          sx={{
-            fontWeight: "bold",
-            color: "#d29bbf",
-            letterSpacing: 2,
-            fontSize: { xs: 28, md: 36 },
-          }}
-        >
-          Nöjda kunder
-        </Typography>
-      </Box>
-      <Grid
-        container
-        spacing={{ xs: 2, md: 5 }}
-        sx={{
-          width: "100%",
-          paddingX: 2,
-        }}
-        justifyContent="center"
-        alignItems={"center"}
       >
         {logos.map((logo, index) => (
-          <Grid item xs={6} sm={4} md={4} lg={2} key={index}>
-            <Box
-              component="img"
-              src={logo}
-              alt={`Logo ${index + 1}`}
-              sx={{
-                width: "100%",
-                height: "auto",
-                maxHeight: 120,
-                maxWidth: 140,
-                objectFit: "contain",
-                padding: { xs: 1, md: 2 },
-                borderRadius: 2,
-                backgroundColor: "white",
-                boxShadow: "0px 4px 15px rgba(0, 0, 0, 0.1)",
-                transition: "transform 0.3s ease, box-shadow 0.3s ease",
-                "&:hover": {
-                  transform: "scale(1.05)",
-                  boxShadow: "0px 6px 20px rgba(0, 0, 0, 0.2)",
-                },
-              }}
-            />
-          </Grid>
+          <Box
+            key={index}
+            component="img"
+            src={logo}
+            alt={`Logo ${index + 1}`}
+            sx={{
+              width: "auto",
+              height: "auto",
+              maxHeight: 100,
+              maxWidth: 120,
+              objectFit: "contain",
+              padding: { xs: 1, md: 2 },
+              borderRadius: 3,
+              backgroundColor: "white",
+              boxShadow: "0px 4px 10px rgba(0, 0, 0, 0.1)",
+              transition: "transform 0.3s ease, box-shadow 0.3s ease",
+              "&:hover": {
+                transform: "scale(1.05)",
+                boxShadow: "0px 6px 20px rgba(0, 0, 0, 0.2)",
+              },
+            }}
+          />
         ))}
-      </Grid>
+      </Box>
     </Box>
   );
 }

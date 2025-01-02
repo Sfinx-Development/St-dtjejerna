@@ -35,7 +35,7 @@ export default function Contact() {
           gap: "20px",
         }}
       >
-        <Typography
+        {/* <Typography
           variant={isMobile ? "h4" : "h2"}
           component="h2"
           gutterBottom
@@ -48,7 +48,7 @@ export default function Contact() {
           }}
         >
           Kontakt
-        </Typography>
+        </Typography> */}
         <ContactForm />
         <Divider sx={{ width: "100%" }} />
         <Box
