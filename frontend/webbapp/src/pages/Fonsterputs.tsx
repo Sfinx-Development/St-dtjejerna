@@ -1,8 +1,8 @@
 import { Box, Button, Typography } from "@mui/material";
 import { FC } from "react";
+import { useNavigate } from "react-router-dom";
 import Info from "../components/Info";
 import { useScreenSize } from "../screenSizeContext";
-import { useNavigate } from "react-router-dom";
 
 const Fonsterputs: FC = () => {
   const { isMobile } = useScreenSize();
@@ -110,6 +110,7 @@ const Fonsterputs: FC = () => {
             kontakta oss för mer information och en offert!
           </Typography>
           <Button
+            aria-label="Till offertsidan"
             variant="outlined"
             sx={{
               color: "#333",

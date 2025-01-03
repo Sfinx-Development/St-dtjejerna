@@ -82,6 +82,7 @@ export default function PresentingImage() {
         </Typography>
 
         <Button
+          aria-label="Till kontaktsidan"
           variant="outlined"
           sx={{
             color: "#333",
@@ -125,6 +126,7 @@ export default function PresentingImage() {
             style={{ textDecoration: "none" }}
           >
             <IconButton
+              aria-label="Instagram ikon"
               sx={{
                 color: "white",
                 transition: "transform 0.3s ease",
@@ -144,6 +146,7 @@ export default function PresentingImage() {
             style={{ textDecoration: "none" }}
           >
             <IconButton
+              aria-label="Facebook Ikon"
               sx={{
                 color: "white",
                 transition: "transform 0.3s ease",
@@ -158,10 +161,12 @@ export default function PresentingImage() {
             </IconButton>
           </Link>
           <Link
+            aria-label="Öppna mail"
             to="mailto:stadtjejerna@hotmail.com"
             style={{ textDecoration: "none" }}
           >
             <IconButton
+              aria-label="Mail Ikon"
               sx={{
                 color: "white",
                 transition: "transform 0.3s ease",

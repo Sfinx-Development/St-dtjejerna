@@ -1,6 +1,6 @@
 import BathtubIcon from "@mui/icons-material/Bathtub";
+import HomeIcon from "@mui/icons-material/Home";
 import KitchenIcon from "@mui/icons-material/Kitchen";
-import HomeIcon from '@mui/icons-material/Home';
 import { Box, Button, Typography } from "@mui/material";
 import { useNavigate } from "react-router-dom";
 import Info from "../components/Info";
@@ -116,6 +116,7 @@ const Flyttstad = () => {
           noggrannhet, professionalitet och omtanke.
         </Typography>
         <Button
+          aria-label="Till offertsidan"
           variant="contained"
           sx={{
             backgroundColor: "#c499b6",

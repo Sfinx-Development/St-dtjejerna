@@ -115,6 +115,7 @@ const Hemstad: FC = () => {
           städningen och fokusera på annat under tiden.
         </Typography>
         <Button
+          aria-label="Till offertsidan"
           variant="contained"
           sx={{
             backgroundColor: "#c499b6",

@@ -65,6 +65,7 @@ export default function Info() {
           }}
         >
           <IconButton
+            aria-label="Mail Icon"
             sx={{
               color: "#333",
               transition: "transform 0.3s ease",
@@ -78,6 +79,7 @@ export default function Info() {
             <MailOutlineIcon sx={{ fontSize: isMobile ? 20 : 28 }} />
           </IconButton>
           <IconButton
+            aria-label="Phone number"
             sx={{
               color: "#333",
               transition: "transform 0.3s ease",

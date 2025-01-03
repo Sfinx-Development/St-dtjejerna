@@ -97,7 +97,7 @@ export default function Oldie(): JSX.Element {
           marginRight: 5,
         }}
       >
-        <IconButton onClick={handleToggleMenu}>
+        <IconButton aria-label="Toggle menu" onClick={handleToggleMenu}>
           <MenuIcon sx={{ color: "black", fontSize: 40 }} />
         </IconButton>
       </Box>

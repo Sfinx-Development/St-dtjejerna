@@ -85,6 +85,7 @@ const CookieBanner = () => {
 
       <Box sx={{ display: "flex", marginX: 2 }}>
         <Button
+          aria-label="Acceptera Cookies"
           variant="contained"
           sx={{
             color: "#333",
@@ -99,6 +100,7 @@ const CookieBanner = () => {
           Acceptera
         </Button>
         <Button
+          aria-label="Avvisa Cookies"
           onClick={handleDecline}
           variant="outlined"
           sx={{

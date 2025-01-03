@@ -49,6 +49,7 @@ export default function Error() {
           Ojdå, här var det tomt.
         </Typography>
         <Button
+          aria-label="Till startsidan"
           variant="outlined"
           sx={{
             color: "#fff",

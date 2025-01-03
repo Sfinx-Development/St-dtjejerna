@@ -131,6 +131,7 @@ const Foretagsstad: FC = () => {
           som exempelvis tvål, toalettpapper, och pappershanddukar via oss.
         </Typography>
         <Button
+            aria-label="Till offertsidan"
           variant="contained"
           sx={{
             backgroundColor: "#c499b6",

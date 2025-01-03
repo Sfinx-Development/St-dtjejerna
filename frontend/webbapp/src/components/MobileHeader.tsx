@@ -118,7 +118,10 @@ export default function CustomHeader2(): JSX.Element {
           marginRight: 2,
         }}
       >
-        <IconButton onClick={handleToggleMenu}>
+        <IconButton
+          aria-label="Toggle hamburgermenu"
+          onClick={handleToggleMenu}
+        >
           <MenuIcon sx={{ color: "black", fontSize: 40 }} />
         </IconButton>
 
@@ -156,6 +159,7 @@ export default function CustomHeader2(): JSX.Element {
                     }}
                   >
                     <ListItemButton
+                      aria-label="Toggle submenu"
                       onClick={
                         link.menuItems
                           ? () => handleToggleSubmenu(link.label)
@@ -216,6 +220,7 @@ export default function CustomHeader2(): JSX.Element {
                             }}
                           >
                             <ListItemButton
+                              aria-label="Close menu"
                               sx={{ pl: 4 }}
                               component={Link}
                               to={item.href}
