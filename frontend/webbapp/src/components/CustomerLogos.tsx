@@ -21,18 +21,18 @@ export default function CustomerLogos() {
         flexDirection: "column",
         alignItems: "center",
         paddingY: 4,
-        backgroundColor: "#e4dcdc",
+        // backgroundColor: "#e4dcdc",
         textAlign: "center",
         boxShadow: "0px 4px 15px rgba(0, 0, 0, 0.1)",
       }}
     >
       {/* Rubrik */}
       <Typography
-        variant={isMobile ? "h4" : "h2"}
+        variant={isMobile ? "h4" : "h3"}
         gutterBottom
         sx={{
           color: "#333",
-          fontFamily: "'Playfair Display', serif",
+          // fontFamily: "'Playfair Display', serif",
           textTransform: "uppercase",
           letterSpacing: "3px",
           position: "relative",
