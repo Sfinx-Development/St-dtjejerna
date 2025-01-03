@@ -191,18 +191,22 @@ export default function PresentingImage() {
           position: "relative",
         }}
       >
-        <img
-          src="https://i.imgur.com/T0MT49r.jpeg"
-          alt="girl cleaning"
-          style={{
-            width: "100%",
-            height: "100%",
-            objectFit: "cover",
-            position: "absolute",
-            filter: "brightness(70%)",
-            objectPosition: "center 32%",
-          }}
-        />
+        <picture>
+          <source srcSet="stad1.webp" type="image/webp" />
+          <img
+            src="https://i.imgur.com/T0MT49r.jpeg"
+            alt="girl cleaning"
+            style={{
+              width: "100%",
+              height: "100%",
+              objectFit: "cover",
+              position: "absolute",
+              filter: "brightness(70%)",
+              objectPosition: "center 32%",
+            }}
+          />
+        </picture>
+
         <div
           style={{
             position: "absolute",
