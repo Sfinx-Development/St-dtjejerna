@@ -352,6 +352,7 @@ export default function OffertForm() {
             }
           />
           <Button
+            aria-label="Skicka offertförfrågan"
             variant="contained"
             type="submit"
             disabled={!privacyPolicyChecked}

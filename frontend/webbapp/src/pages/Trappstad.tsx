@@ -103,6 +103,7 @@ const Trappstad: FC = () => {
             tjänster hos oss såsom hemstäd, företagsstäd och fönsterputsning.
           </Typography>
           <Button
+            aria-label="Till offertsidan"
             variant="outlined"
             sx={{
               color: "#333",

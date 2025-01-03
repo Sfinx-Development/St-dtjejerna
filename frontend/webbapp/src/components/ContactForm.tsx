@@ -311,6 +311,7 @@ export default function ContactForm(props: ContactFormProps) {
             }
           />
           <Button
+            aria-label="Skicka formulär"
             variant="contained"
             type="submit"
             disabled={!privacyPolicyChecked}

@@ -62,6 +62,7 @@ export default function Tjanster() {
           }}
         >
           <Button
+            aria-label="Till hemstäd-sidan"
             variant="outlined"
             sx={{
               color: "#333",
@@ -84,6 +85,7 @@ export default function Tjanster() {
             Hemstäd
           </Button>
           <Button
+            aria-label="Till företagssidan"
             variant="outlined"
             sx={{
               color: "#333",
@@ -106,6 +108,7 @@ export default function Tjanster() {
             Företagsstäd
           </Button>
           <Button
+            aria-label="Till fönsterputs-sidan"
             variant="outlined"
             sx={{
               color: "#333",
@@ -128,6 +131,7 @@ export default function Tjanster() {
             Fönsterputs
           </Button>
           <Button
+            aria-label="Till flyttstäd-sidan"
             variant="outlined"
             sx={{
               color: "#333",
@@ -150,6 +154,7 @@ export default function Tjanster() {
             Flyttstäd
           </Button>
           <Button
+            aria-label="Till byggstäd-sidan"
             variant="outlined"
             sx={{
               color: "#333",
@@ -194,6 +199,7 @@ export default function Tjanster() {
             Trädgårdsfix
           </Button> */}
           <Button
+            aria-label="Till trappstäd-sidan"
             variant="outlined"
             sx={{
               color: "#333",
