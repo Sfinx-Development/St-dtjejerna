@@ -1,9 +1,10 @@
 import BathtubIcon from "@mui/icons-material/Bathtub";
 import HomeIcon from "@mui/icons-material/Home";
 import KitchenIcon from "@mui/icons-material/Kitchen";
-import { Box, Button, Typography } from "@mui/material";
+import { Box, Typography } from "@mui/material";
 import { FC } from "react";
 import { useNavigate } from "react-router-dom";
+import CustomButton from "../components/CustomButton";
 import Info from "../components/Info";
 import { useScreenSize } from "../screenSizeContext";
 
@@ -114,24 +115,13 @@ const Hemstad: FC = () => {
           och kontinuitet. Allt för att du ska kunna släppa tankarna på
           städningen och fokusera på annat under tiden.
         </Typography>
-        <Button
-          aria-label="Till offertsidan"
-          variant="contained"
-          sx={{
-            backgroundColor: "#c499b6",
-            color: "#333",
-            padding: "10px 20px",
-            marginTop: "1.5rem",
-            "&:hover": {
-              backgroundColor: "#a58199",
-            },
-          }}
-          onClick={() => {
-            navigate("/offert");
-          }}
-        >
-          Få ett kostnadsförslag
-        </Button>
+        <CustomButton
+          title="Få ett kostnadsförslag"
+          ariaLabel="Till offertsidan"
+          disabled={false}
+          animation={false}
+          handleOnClik={() => navigate("/offert")}
+        />
       </Box>
 
       <>

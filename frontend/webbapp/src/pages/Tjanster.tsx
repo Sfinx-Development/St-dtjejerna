@@ -1,6 +1,7 @@
 import { Box, Button, Typography } from "@mui/material";
 import Fade from "@mui/material/Fade";
 import { useNavigate } from "react-router-dom";
+import CustomButton from "../components/CustomButton";
 import { useScreenSize } from "../screenSizeContext";
 
 export default function Tjanster() {
@@ -61,29 +62,14 @@ export default function Tjanster() {
             paddingY: isMobile ? 0 : 8,
           }}
         >
-          <Button
-            aria-label="Till hemstäd-sidan"
-            variant="outlined"
-            sx={{
-              color: "#333",
-              borderColor: "#e3c5da",
-              margin: isMobile ? "10px" : "10px 20px",
-              paddingX: 3,
-              paddingY: 1,
-              backgroundColor: "#dbbed1",
-              "&:hover": {
-                borderColor: "#c499b6",
-                backgroundColor: "#c499b6",
-                transition: "background-color 0.3s ease, color 0.3s ease",
-              },
-              minWidth: isMobile ? "100%" : "auto",
-            }}
-            onClick={() => {
-              navigate("/hemstad");
-            }}
-          >
-            Hemstäd
-          </Button>
+          <CustomButton
+            ariaLabel="Till Hemstädsidan"
+            handleOnClik={() => navigate("/hemstad")}
+            title="Hemstäd"
+            animation={false}
+            disabled={false}
+          />
+
           <Button
             aria-label="Till företagssidan"
             variant="outlined"

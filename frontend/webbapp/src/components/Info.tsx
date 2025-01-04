@@ -16,6 +16,7 @@ type InfoItemProps = {
 
 export default function Info() {
   const { isMobile } = useScreenSize();
+
   return (
     <Box
       sx={{
@@ -24,68 +25,56 @@ export default function Info() {
         alignItems: "center",
         width: "100%",
         fontFamily: "Roboto, sans-serif",
-        backgroundColor: "#f9f9f9",
         padding: { xs: 2, md: 4 },
         gap: 4,
       }}
     >
       <Box
         sx={{
-          display: "flex",
-          flexDirection: { xs: "column", md: "row" },
-          justifyContent: "space-between",
-          alignItems: { xs: "flex-start", md: "center" },
           width: "100%",
           maxWidth: 1200,
-          paddingBottom: 3,
+          paddingBottom: 1,
+          textAlign: "center",
         }}
       >
         <Typography
+          variant={isMobile ? "h4" : "h3"}
           sx={{
+            color: "#333",
             fontWeight: "bold",
-            marginLeft: isMobile ? 2 : 0,
-            color: "#d29bbf",
-            letterSpacing: 2,
-            fontSize: { xs: 28, md: 36 },
+            textTransform: "uppercase",
+            letterSpacing: "2px",
+            marginBottom: 2,
           }}
         >
           Villkor
         </Typography>
         <Box
           sx={{
-            alignItems: "center",
-            justifyContent: { xs: "center", md: "flex-end" },
-            width: { xs: "100%", md: "auto" },
-            gap: isMobile ? 2 : 2,
-            marginLeft: isMobile ? 1 : 0,
-            paddingX: 2,
             display: "flex",
-            maxWidth: { xs: "80%", md: "100%" },
-            gridTemplateColumns: { xs: "1fr", md: "1fr 1fr" },
+            justifyContent: "center",
+            alignItems: "center",
+            gap: 2,
           }}
         >
           <IconButton
             aria-label="Mail Icon"
             sx={{
-              color: "#333",
+              color: "#555",
               transition: "transform 0.3s ease",
-              padding: 0,
               "&:hover": {
-                color: "#555",
                 transform: "scale(1.1)",
               },
             }}
           >
-            <MailOutlineIcon sx={{ fontSize: isMobile ? 20 : 28 }} />
+            <MailOutlineIcon sx={{ fontSize: isMobile ? 24 : 28 }} />
           </IconButton>
           <IconButton
             aria-label="Phone number"
             sx={{
-              color: "#333",
+              color: "#555",
               transition: "transform 0.3s ease",
-              padding: 0,
               "&:hover": {
-                color: "#555",
                 transform: "scale(1.1)",
               },
             }}
@@ -94,16 +83,15 @@ export default function Info() {
               href="tel:033-7269676"
               style={{ color: "inherit", textDecoration: "none" }}
             >
-              <PhoneIcon sx={{ fontSize: isMobile ? 20 : 28 }} />
+              <PhoneIcon sx={{ fontSize: isMobile ? 24 : 28 }} />
             </a>
           </IconButton>
           <Typography
             sx={{
-              color: "#333",
-              letterSpacing: 1.5,
-              marginLeft: isMobile ? 0 : 1,
-              textAlign: { xs: "center", md: "left" },
+              color: "#666",
               fontSize: 14,
+              letterSpacing: 1.2,
+              textAlign: "center",
             }}
           >
             Vid frågor är du välkommen att kontakta oss
@@ -121,27 +109,27 @@ export default function Info() {
         }}
       >
         <InfoItem
-          icon={<AccessTimeIcon sx={{ color: "#dbbed1", fontSize: 48 }} />}
+          icon={<AccessTimeIcon sx={{ color: "#e48bb1", fontSize: 48 }} />}
           title="Öppettider"
           description="Måndag till fredag: 8:00 - 16:00"
         />
         <InfoItem
-          icon={<CalendarTodayIcon sx={{ color: "#dbbed1", fontSize: 48 }} />}
+          icon={<CalendarTodayIcon sx={{ color: "#e48bb1", fontSize: 48 }} />}
           title="Avvikande öppettider"
           description="Vi har semesterstängt veckorna 28-31. Röda dagar uteblir städet. Vid mån av tid tar vi det vid annat tillfälle."
         />
         <InfoItem
-          icon={<CoronavirusIcon sx={{ color: "#dbbed1", fontSize: 48 }} />}
+          icon={<CoronavirusIcon sx={{ color: "#e48bb1", fontSize: 48 }} />}
           title="Vid sjukdom"
           description="Vi behöver bli informerade vid smittsamma sjukdomar."
         />
         <InfoItem
-          icon={<LooksTwoIcon sx={{ color: "#dbbed1", fontSize: 48 }} />}
+          icon={<LooksTwoIcon sx={{ color: "#e48bb1", fontSize: 48 }} />}
           title="Uppsägning"
           description="Två veckors uppsägning gäller vid kontinuerligt städ."
         />
         <InfoItem
-          icon={<AttachMoneyIcon sx={{ color: "#dbbed1", fontSize: 48 }} />}
+          icon={<AttachMoneyIcon sx={{ color: "#e48bb1", fontSize: 48 }} />}
           title="RUT-avdrag"
           description="RUT-avdrag som nekas av Skatteverket debiteras släpande av oss."
         />
@@ -155,12 +143,14 @@ const InfoItem: React.FC<InfoItemProps> = ({ icon, title, description }) => (
     sx={{
       display: "flex",
       alignItems: "center",
-      backgroundColor: "#fff",
-      borderRadius: 2,
+      // backgroundColor: "#f9f9f9",
+      borderRadius: 4,
       padding: 3,
-      transition: "transform 0.3s ease",
+      // boxShadow: "0 2px 8px rgba(0, 0, 0, 0.1)",
+      transition: "transform 0.3s ease, box-shadow 0.3s ease",
       "&:hover": {
-        transform: "scale(1.02)",
+        transform: "scale(1.03)",
+        boxShadow: "0 4px 16px rgba(0, 0, 0, 0.15)",
       },
     }}
   >
@@ -169,15 +159,15 @@ const InfoItem: React.FC<InfoItemProps> = ({ icon, title, description }) => (
       <Typography
         sx={{
           color: "#333",
-          letterSpacing: 1.5,
-          fontWeight: 500,
+          fontWeight: "bold",
           fontSize: 18,
           marginBottom: 0.5,
+          letterSpacing: 1.5,
         }}
       >
         {title}
       </Typography>
-      <Typography sx={{ color: "#333", letterSpacing: 1.2, fontSize: 14 }}>
+      <Typography sx={{ color: "#666", fontSize: 14, letterSpacing: 1.2 }}>
         {description}
       </Typography>
     </Box>

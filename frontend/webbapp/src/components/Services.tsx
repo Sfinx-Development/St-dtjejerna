@@ -1,5 +1,6 @@
-import { Box, Button, Typography } from "@mui/material";
+import { Box, Typography } from "@mui/material";
 import { useNavigate } from "react-router-dom";
+import CustomButton from "./CustomButton";
 
 export default function Services() {
   const services = [
@@ -97,6 +98,7 @@ export default function Services() {
               style={{
                 width: "100%",
                 maxWidth: "400px",
+                maxHeight: "500px",
                 borderRadius: "8px",
                 boxShadow: "0 4px 12px rgba(0, 0, 0, 0.1)",
               }}
@@ -131,20 +133,13 @@ export default function Services() {
             >
               {service.description}
             </Typography>
-            <Button
-              aria-label={`Till ${service.title}-sidan`}
-              variant="contained"
-              sx={{
-                backgroundColor: "#dbbed1",
-                color: "#333",
-                "&:hover": {
-                  backgroundColor: "#c499b6",
-                },
-              }}
-              onClick={() => navigate(service.nav)}
-            >
-              Till {service.title}
-            </Button>
+            <CustomButton
+              ariaLabel={`Till ${service.title}-sidan`}
+              handleOnClik={() => navigate(service.nav)}
+              title={`Till ${service.title}`}
+              animation={false}
+              disabled={false}
+            />
           </Box>
         </Box>
       ))}

@@ -2,7 +2,6 @@ import {
   Alert,
   AlertColor,
   Box,
-  Button,
   Card,
   CardContent,
   Checkbox,
@@ -15,6 +14,7 @@ import {
 import emailjs from "emailjs-com";
 import { useState } from "react";
 import { useScreenSize } from "../screenSizeContext";
+import CustomButton from "./CustomButton";
 
 emailjs.init("C8CxNnxZg6mg-d2tq");
 
@@ -56,8 +56,8 @@ export default function OffertForm() {
     );
   };
 
-  const handleSubmit = (e: React.FormEvent<HTMLFormElement>) => {
-    e.preventDefault();
+  const handleSubmit = () => {
+    // e.preventDefault();
     setError(false);
     if (
       name !== "" &&
@@ -157,16 +157,14 @@ export default function OffertForm() {
         Offertförfrågan
       </Typography> */}
       <Typography
-        variant={isMobile ? "h4" : "h2"}
-        gutterBottom
+        variant={isMobile ? "h4" : "h3"}
         sx={{
-          textAlign: "center",
-          color: "#d29bbf",
-          position: "relative",
-          marginTop: isMobile ? "40px" : "20px",
-          marginBottom: "20px",
+          color: "#333",
+          fontWeight: "bold",
           textTransform: "uppercase",
           letterSpacing: "2px",
+          marginBottom: 2,
+          marginTop: 4,
         }}
       >
         Offertförfrågan
@@ -318,17 +316,18 @@ export default function OffertForm() {
             sx={{
               display: "flex",
               flexDirection: "row",
-              justifyContent: "center",
+              justifyContent: "start",
+              alignItems: "start",
               width: "100%",
-              gap: 1,
+              // gap: 1,
+              // backgroundColor: "red",
             }}
             control={
               <Checkbox
-                required
                 sx={{
                   color: "#333",
                   "&.Mui-checked": {
-                    color: "#333",
+                    textAlign: "start",
                   },
                 }}
                 checked={privacyPolicyChecked}
@@ -336,7 +335,9 @@ export default function OffertForm() {
               />
             }
             label={
-              <Typography sx={{ color: "#333" }}>
+              <Typography
+                sx={{ color: "#333", fontSize: 13, textAlign: "start" }}
+              >
                 Jag samtycker till att Städtjejerna i 7-härad behandlar mina
                 personuppgifter i enlighet med vår{" "}
                 <a
@@ -351,26 +352,13 @@ export default function OffertForm() {
               </Typography>
             }
           />
-          <Button
-            aria-label="Skicka offertförfrågan"
-            variant="contained"
-            type="submit"
+          <CustomButton
+            title="Skicka förfrågan"
+            ariaLabel="Skicka formulär"
             disabled={!privacyPolicyChecked}
-            sx={{
-              alignSelf: "center",
-              marginTop: 2,
-              backgroundColor: "#dbbed1",
-              color: "#333",
-              paddingX: 4,
-              paddingY: 1,
-              borderRadius: 2,
-              "&:hover": {
-                backgroundColor: "#bda2b3",
-              },
-            }}
-          >
-            Skicka förfrågan
-          </Button>
+            animation={false}
+            handleOnClik={handleSubmit}
+          />
         </CardContent>
       </Card>
     </Box>

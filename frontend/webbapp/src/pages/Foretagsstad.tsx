@@ -1,11 +1,12 @@
 import BathtubIcon from "@mui/icons-material/Bathtub";
 import KitchenIcon from "@mui/icons-material/Kitchen";
 import MeetingRoomIcon from "@mui/icons-material/MeetingRoom";
-import { Box, Button, Typography } from "@mui/material";
+import { Box, Typography } from "@mui/material";
 import { FC } from "react";
+import { useNavigate } from "react-router-dom";
+import CustomButton from "../components/CustomButton";
 import Info from "../components/Info";
 import { useScreenSize } from "../screenSizeContext";
-import { useNavigate } from "react-router-dom";
 
 const Foretagsstad: FC = () => {
   const { isMobile } = useScreenSize();
@@ -130,24 +131,13 @@ const Foretagsstad: FC = () => {
           ingår i priset. Det finns möjlighet att beställa förbrukningsmaterial
           som exempelvis tvål, toalettpapper, och pappershanddukar via oss.
         </Typography>
-        <Button
-            aria-label="Till offertsidan"
-          variant="contained"
-          sx={{
-            backgroundColor: "#c499b6",
-            color: "#333",
-            padding: "10px 20px",
-            marginTop: "1.5rem",
-            "&:hover": {
-              backgroundColor: "#a58199",
-            },
-          }}
-          onClick={() => {
-            navigate("/offert");
-          }}
-        >
-          Få ett kostnadsförslag
-        </Button>
+        <CustomButton
+          title="Få ett kostnadsförslag"
+          ariaLabel="Till offertsidan"
+          disabled={false}
+          animation={false}
+          handleOnClik={() => navigate("/offert")}
+        />
       </Box>
 
       <>

@@ -1,10 +1,11 @@
 import FacebookIcon from "@mui/icons-material/Facebook";
 import InstagramIcon from "@mui/icons-material/Instagram";
 import MailOutlineIcon from "@mui/icons-material/MailOutline";
-import { Box, Button, IconButton, Typography } from "@mui/material";
+import { Box, IconButton, Typography } from "@mui/material";
 import { useEffect, useState } from "react";
 import { Link, useNavigate } from "react-router-dom";
 import { useScreenSize } from "../screenSizeContext";
+import CustomButton from "./CustomButton";
 
 export default function PresentingImage() {
   const { isMobile } = useScreenSize();
@@ -81,38 +82,13 @@ export default function PresentingImage() {
           Låt Städtjejerna göra jobbet
         </Typography>
 
-        <Button
-          aria-label="Till kontaktsidan"
-          variant="outlined"
-          sx={{
-            color: "#333",
-            borderColor: "#e3c5da",
-            marginY: 4,
-            paddingX: 3,
-            paddingY: 1,
-            backgroundColor: "#dbbed1",
-            animation: "moveUpDown 2s ease-in-out infinite",
-            "&:hover": {
-              borderColor: "#c499b6",
-              backgroundColor: "#c499b6",
-              transition: "background-color 0.3s ease, color 0.3s ease",
-            },
-            "@keyframes moveUpDown": {
-              "0%, 100%": {
-                transform: "translateY(0)",
-              },
-              "50%": {
-                transform: "translateY(-10px)",
-              },
-            },
-          }}
-          onClick={() => {
-            navigate("/contact");
-          }}
-        >
-          Kontakta oss
-        </Button>
-
+        <CustomButton
+          ariaLabel="Till Startsidan"
+          handleOnClik={() => navigate("/contact")}
+          title="Kontakta oss"
+          animation={true}
+          disabled={false}
+        />
         <Box
           sx={{
             display: "flex",
