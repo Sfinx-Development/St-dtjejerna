@@ -12,7 +12,7 @@ export default function Footer() {
         paddingX: 2,
         textAlign: "center",
         background:
-          "linear-gradient(to bottom, rgba(0, 0, 0, 0.9), rgba(0, 0, 0, 0.7))",
+          "rgba(0, 0, 0, 0.7)",
         color: "white",
       }}
     >

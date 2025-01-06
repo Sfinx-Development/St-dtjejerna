@@ -54,7 +54,7 @@ const MenuLink = ({
           color: "#555556",
           fontSize: 16,
           "&:hover": {
-            color: "#d29bbf",
+            color: "#e48bb1",
             transform: "scale(1.1)",
           },
         }}

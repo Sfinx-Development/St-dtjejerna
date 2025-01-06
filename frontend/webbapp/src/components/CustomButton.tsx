@@ -15,12 +15,12 @@ export default function CustomButton(props: CustomButtonProps) {
       variant="outlined"
       disabled={props.disabled}
       sx={{
-        color: "#333333", // Mörkare text för högre kontrast
-        borderColor: "#e3c5da",
+        color: "#555556", // Mörkare text för högre kontrast
+        borderColor: "#f8d7e5",
         marginY: 4,
         paddingX: 3,
         paddingY: 1,
-        background: "#f9d8e7", // Förbättrad gradient
+        background: "#f8d7e5", // Förbättrad gradient
         ...(props.animation && {
           animation: "moveUpDown 2s ease-in-out infinite", // Lägg till animation om props.animation är true
         }),
@@ -45,7 +45,7 @@ export default function CustomButton(props: CustomButtonProps) {
       <Typography
         sx={{
           textAlign: "center",
-          color: "#333333", // Text med högre kontrast mot bakgrunden
+          color: "#555556", // Text med högre kontrast mot bakgrunden
           position: "relative",
           fontWeight: 600, // Fet text för att säkerställa läsbarhet
           textTransform: "uppercase",

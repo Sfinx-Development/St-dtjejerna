@@ -74,12 +74,12 @@ export default function Tjanster() {
             aria-label="Till företagssidan"
             variant="outlined"
             sx={{
-              color: "#333",
+              color: "#555556",
               borderColor: "#e3c5da",
               margin: isMobile ? "10px" : "10px 20px",
               paddingX: 3,
               paddingY: 1,
-              backgroundColor: "#dbbed1",
+              backgroundColor: "#f8d7e5",
               "&:hover": {
                 borderColor: "#c499b6",
                 backgroundColor: "#c499b6",
