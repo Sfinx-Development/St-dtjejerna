@@ -119,7 +119,6 @@ export default function Contact() {
             </Typography>
           </Box>
 
-          {/* Map Section */}
           <Box
             sx={{
               flex: 1,

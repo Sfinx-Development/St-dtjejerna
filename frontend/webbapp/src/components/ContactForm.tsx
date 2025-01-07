@@ -119,8 +119,8 @@ export default function ContactForm(props: ContactFormProps) {
           height: "100%",
           display: "flex",
           flexDirection: "column",
-          alignItems: "start",
-          marginBottom: { xs: 10, md: 25 },
+          // alignItems: { xs: "center", md: "start" },
+          marginBottom: { xs: 0, md: 25 },
           justifyContent: "center",
           // backgroundColor: "red",
         }}
@@ -146,7 +146,9 @@ export default function ContactForm(props: ContactFormProps) {
             marginBottom: 1,
           }}
         >
-          <PhoneIcon sx={{ color: "rgba(0,0,0,0.8)", fontSize: 22 }} />
+          <PhoneIcon
+            sx={{ color: "rgba(0,0,0,0.8)", fontSize: 22, marginRight: 1 }}
+          />
           <Typography sx={{ color: "rgba(0,0,0,0.8)", fontSize: 22 }}>
             <a
               href="tel:033-7269676"

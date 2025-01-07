@@ -5,6 +5,7 @@ import {
   Card,
   Checkbox,
   FormControlLabel,
+  FormGroup,
   Snackbar,
   TextField,
   Typography,
@@ -114,7 +115,7 @@ export default function OffertForm() {
         alignItems: "center",
         width: "100%",
         padding: { xs: 2, md: 4 },
-        background: "url(pexels-shvetsa-5218015.webp) no-repeat center/cover",
+        backgroundColor: "rgba(241,191,219,255)",
         minHeight: "100vh",
         justifyContent: "center",
         position: "relative",
@@ -124,8 +125,8 @@ export default function OffertForm() {
         sx={{
           zIndex: 1,
           width: "100%",
-          maxWidth: { xs: 320, md: "600px" },
-          backgroundColor: "rgba(255, 255, 255, 0.95)",
+          maxWidth: "700px",
+          backgroundColor: "rgba(255, 255, 255, 0.9)",
           borderRadius: 3,
           boxShadow: "0 4px 10px rgba(0, 0, 0, 0.2)",
           padding: 4,
@@ -182,52 +183,25 @@ export default function OffertForm() {
           onChange={(e) => setEmail(e.target.value)}
           fullWidth
         />
-        <Box sx={{ display: "flex", flexWrap: "wrap", gap: 2 }}>
-          <Typography variant="h6" sx={{ width: "100%", marginBottom: 0 }}>
+        <FormGroup>
+          <Typography variant="h6" sx={{ marginBottom: 2 }}>
             Välj tjänster
           </Typography>
-          <Box
-            sx={{ display: "flex", flex: 1, flexDirection: "column", gap: 1 }}
-          >
-            {serviceChoices
-              .slice(0, Math.ceil(serviceChoices.length / 2))
-              .map((service) => (
-                <FormControlLabel
-                  key={service}
-                  control={
-                    <Checkbox
-                      checked={services.includes(service)}
-                      onChange={handleServiceChange}
-                      value={service}
-                      sx={{ color: "#333" }}
-                    />
-                  }
-                  label={service}
+          {serviceChoices.map((service) => (
+            <FormControlLabel
+              key={service}
+              control={
+                <Checkbox
+                  checked={services.includes(service)}
+                  onChange={handleServiceChange}
+                  value={service}
+                  sx={{ color: "#333" }}
                 />
-              ))}
-          </Box>
-          <Box
-            sx={{ display: "flex", flex: 1, flexDirection: "column", gap: 1 }}
-          >
-            {serviceChoices
-              .slice(Math.ceil(serviceChoices.length / 2))
-              .map((service) => (
-                <FormControlLabel
-                  key={service}
-                  control={
-                    <Checkbox
-                      checked={services.includes(service)}
-                      onChange={handleServiceChange}
-                      value={service}
-                      sx={{ color: "#333" }}
-                    />
-                  }
-                  label={service}
-                />
-              ))}
-          </Box>
-        </Box>
-
+              }
+              label={service}
+            />
+          ))}
+        </FormGroup>
         <TextField
           label="Meddelande"
           value={message}
