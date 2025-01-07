@@ -98,7 +98,7 @@ const MenuLink = ({
                       onClick={handleCloseMenu}
                       sx={{
                         "&:hover": {
-                          backgroundColor: "#d29bbf",
+                          background: "#f8d7e5",
                           color: "#fff",
                           transform: "scale(1.1)",
                           transition: "transform 0.3s ease",

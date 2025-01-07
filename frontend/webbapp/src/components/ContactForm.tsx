@@ -120,7 +120,7 @@ export default function ContactForm(props: ContactFormProps) {
           display: "flex",
           flexDirection: "column",
           alignItems: "start",
-          marginBottom: 25,
+          marginBottom: { xs: 10, md: 25 },
           justifyContent: "center",
           // backgroundColor: "red",
         }}

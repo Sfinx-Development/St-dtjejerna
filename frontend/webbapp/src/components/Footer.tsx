@@ -11,8 +11,7 @@ export default function Footer() {
         paddingY: 6,
         paddingX: 2,
         textAlign: "center",
-        background:
-          "rgba(0, 0, 0, 0.7)",
+        background: "rgba(0,0,0,0.75)",
         color: "white",
       }}
     >
@@ -95,7 +94,7 @@ export default function Footer() {
         </Box>
       </Box>
 
-      <Divider sx={{ backgroundColor: "#dbbed1", marginY: 4 }} />
+      <Divider sx={{ backgroundColor: "#ffff", marginY: 4 }} />
 
       {/* Company Information */}
       <Box>

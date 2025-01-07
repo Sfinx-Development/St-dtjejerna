@@ -1,4 +1,4 @@
-import { Box, Button, Typography } from "@mui/material";
+import { Box, Typography } from "@mui/material";
 import Fade from "@mui/material/Fade";
 import { useNavigate } from "react-router-dom";
 import CustomButton from "../components/CustomButton";
@@ -69,144 +69,41 @@ export default function Tjanster() {
             animation={false}
             disabled={false}
           />
-
-          <Button
-            aria-label="Till företagssidan"
-            variant="outlined"
-            sx={{
-              color: "#555556",
-              borderColor: "#e3c5da",
-              margin: isMobile ? "10px" : "10px 20px",
-              paddingX: 3,
-              paddingY: 1,
-              backgroundColor: "#f8d7e5",
-              "&:hover": {
-                borderColor: "#c499b6",
-                backgroundColor: "#c499b6",
-                transition: "background-color 0.3s ease, color 0.3s ease",
-              },
-              minWidth: isMobile ? "100%" : "auto",
-            }}
-            onClick={() => {
-              navigate("/foretagsstad");
-            }}
-          >
-            Företagsstäd
-          </Button>
-          <Button
-            aria-label="Till fönsterputs-sidan"
-            variant="outlined"
-            sx={{
-              color: "#333",
-              borderColor: "#e3c5da",
-              margin: isMobile ? "10px" : "10px 20px",
-              paddingX: 3,
-              paddingY: 1,
-              backgroundColor: "#dbbed1",
-              "&:hover": {
-                borderColor: "#c499b6",
-                backgroundColor: "#c499b6",
-                transition: "background-color 0.3s ease, color 0.3s ease",
-              },
-              minWidth: isMobile ? "100%" : "auto",
-            }}
-            onClick={() => {
-              navigate("/fonsterputs");
-            }}
-          >
-            Fönsterputs
-          </Button>
-          <Button
-            aria-label="Till flyttstäd-sidan"
-            variant="outlined"
-            sx={{
-              color: "#333",
-              borderColor: "#e3c5da",
-              margin: isMobile ? "10px" : "10px 20px",
-              paddingX: 3,
-              paddingY: 1,
-              backgroundColor: "#dbbed1",
-              "&:hover": {
-                borderColor: "#c499b6",
-                backgroundColor: "#c499b6",
-                transition: "background-color 0.3s ease, color 0.3s ease",
-              },
-              minWidth: isMobile ? "100%" : "auto",
-            }}
-            onClick={() => {
-              navigate("/flyttstad");
-            }}
-          >
-            Flyttstäd
-          </Button>
-          <Button
-            aria-label="Till byggstäd-sidan"
-            variant="outlined"
-            sx={{
-              color: "#333",
-              borderColor: "#e3c5da",
-              margin: isMobile ? "10px" : "10px 20px",
-              paddingX: 3,
-              paddingY: 1,
-              backgroundColor: "#dbbed1",
-              "&:hover": {
-                borderColor: "#c499b6",
-                backgroundColor: "#c499b6",
-                transition: "background-color 0.3s ease, color 0.3s ease",
-              },
-              minWidth: isMobile ? "100%" : "auto",
-            }}
-            onClick={() => {
-              navigate("/byggstad");
-            }}
-          >
-            Byggstäd
-          </Button>
-          {/* <Button
-            variant="outlined"
-            sx={{
-              color: "#fff",
-              borderColor: "#e3c5da",
-              margin: isMobile ? "10px" : "10px 20px",
-              paddingX: 3,
-              paddingY: 1,
-              backgroundColor: "#dbbed1",
-              "&:hover": {
-                borderColor: "#c499b6",
-                backgroundColor: "#c499b6",
-                transition: "background-color 0.3s ease, color 0.3s ease",
-              },
-              minWidth: isMobile ? "100%" : "auto",
-            }}
-            onClick={() => {
-              navigate("/tradgardsfix");
-            }}
-          >
-            Trädgårdsfix
-          </Button> */}
-          <Button
-            aria-label="Till trappstäd-sidan"
-            variant="outlined"
-            sx={{
-              color: "#333",
-              borderColor: "#e3c5da",
-              margin: isMobile ? "10px" : "10px 20px",
-              paddingX: 3,
-              paddingY: 1,
-              backgroundColor: "#dbbed1",
-              "&:hover": {
-                borderColor: "#c499b6",
-                backgroundColor: "#c499b6",
-                transition: "background-color 0.3s ease, color 0.3s ease",
-              },
-              minWidth: isMobile ? "100%" : "auto",
-            }}
-            onClick={() => {
-              navigate("/trappstad");
-            }}
-          >
-            Trappstäd
-          </Button>
+          <CustomButton
+            ariaLabel="Till Företagssidan"
+            handleOnClik={() => navigate("/foretagsstad")}
+            title="Företagsstäd"
+            animation={false}
+            disabled={false}
+          />
+          <CustomButton
+            ariaLabel="Till Fönsterputssidan"
+            handleOnClik={() => navigate("/fonsterputs")}
+            title="Fönsterputs"
+            animation={false}
+            disabled={false}
+          />
+          <CustomButton
+            ariaLabel="Till Flyttstädsidan"
+            handleOnClik={() => navigate("/flyttstad")}
+            title="Flyttstäd"
+            animation={false}
+            disabled={false}
+          />
+          <CustomButton
+            ariaLabel="Till Byggstädsidan"
+            handleOnClik={() => navigate("/byggstad")}
+            title="Byggstäd"
+            animation={false}
+            disabled={false}
+          />
+          <CustomButton
+            ariaLabel="Till Trappstädsidan"
+            handleOnClik={() => navigate("/trappstad")}
+            title="Trappstäd"
+            animation={false}
+            disabled={false}
+          />
         </Box>
       </Box>
     </Fade>

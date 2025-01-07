@@ -1,13 +1,6 @@
 import FacebookIcon from "@mui/icons-material/Facebook";
 import InstagramIcon from "@mui/icons-material/Instagram";
-import {
-  Box,
-  Card,
-  Divider,
-  Grid,
-  IconButton,
-  Typography,
-} from "@mui/material";
+import { Box, IconButton, Typography } from "@mui/material";
 import Fade from "@mui/material/Fade";
 import ContactForm from "../components/ContactForm";
 import EmbeddedMap from "../components/MapComponent";
@@ -50,7 +43,7 @@ export default function Contact() {
           Kontakt
         </Typography> */}
         <ContactForm />
-        <Divider sx={{ width: "100%" }} />
+        {/* <Divider sx={{ width: "100%" }} /> */}
         <Box
           sx={{
             display: "flex",
@@ -61,55 +54,84 @@ export default function Contact() {
             gap: "20px",
           }}
         >
-          <Card
+          <Box
             sx={{
-              padding: "20px",
-              backgroundColor: "rgba(255,255,255,0.5)",
-              borderRadius: "10px",
-              flexGrow: 1,
+              flex: 1,
+              padding: 3,
+              backgroundColor: "rgba(255, 255, 255, 0.9)",
+              borderRadius: "16px",
+              boxShadow: "0 2px 8px rgba(0, 0, 0, 0.1)",
+              textAlign: "center",
             }}
           >
             <Typography
               variant="h4"
-              sx={{ marginBottom: "20px", textAlign: "center" }}
+              sx={{
+                marginBottom: 2,
+                fontWeight: 600,
+                textTransform: "uppercase",
+                color: "#333",
+              }}
             >
               Följ oss
             </Typography>
-            <Grid container spacing={2} justifyContent="center">
-              <Grid item>
-                <IconButton
-                  aria-label="Instagram"
-                  color="primary"
-                  sx={{ color: "#833ab4" }}
-                >
-                  <InstagramIcon sx={{ fontSize: 40 }} />
-                </IconButton>
-              </Grid>
-              <Grid item>
-                <IconButton
-                  aria-label="Facebook"
-                  color="primary"
-                  sx={{ color: "#3b5998" }}
-                >
-                  <FacebookIcon sx={{ fontSize: 40 }} />
-                </IconButton>
-              </Grid>
-            </Grid>
+            <Box sx={{ display: "flex", justifyContent: "center", gap: 2 }}>
+              <IconButton
+                aria-label="Instagram"
+                sx={{
+                  backgroundColor: "#833ab4",
+                  color: "#fff",
+                  transition: "transform 0.3s ease",
+                  "&:hover": {
+                    transform: "scale(1.1)",
+                    backgroundColor: "#8e44ad",
+                  },
+                }}
+              >
+                <InstagramIcon sx={{ fontSize: 36 }} />
+              </IconButton>
+              <IconButton
+                aria-label="Facebook"
+                sx={{
+                  backgroundColor: "#3b5998",
+                  color: "#fff",
+                  transition: "transform 0.3s ease",
+                  "&:hover": {
+                    transform: "scale(1.1)",
+                    backgroundColor: "#344e86",
+                  },
+                }}
+              >
+                <FacebookIcon sx={{ fontSize: 36 }} />
+              </IconButton>
+            </Box>
             <Typography
               variant="h6"
               sx={{
-                textAlign: isMobile ? "start" : "center",
-                marginTop: "20px",
-                marginBottom: "20px",
+                marginTop: 3,
+                color: "#555",
+                fontSize: "1rem",
+                lineHeight: 1.5,
               }}
             >
               Följ oss på sociala medier för de senaste uppdateringarna från
               Städtjejerna!
             </Typography>
-          </Card>
-          <EmbeddedMap width="100%" height="300px" />
+          </Box>
+
+          {/* Map Section */}
+          <Box
+            sx={{
+              flex: 1,
+              borderRadius: "16px",
+              overflow: "hidden",
+              boxShadow: "0 2px 8px rgba(0, 0, 0, 0.1)",
+            }}
+          >
+            <EmbeddedMap width="100%" height="220px" />
+          </Box>
         </Box>
-        <Divider sx={{ width: "100%" }} />
+        {/* <Divider sx={{ width: "100%" }} /> */}
         <Box
           sx={{
             display: "flex",
