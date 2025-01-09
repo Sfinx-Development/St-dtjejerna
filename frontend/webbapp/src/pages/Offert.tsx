@@ -9,6 +9,7 @@ export default function Offert() {
         flexDirection: "column",
         alignItems: "center",
         justifyContent: "center",
+        width: "100%",
       }}
     >
       <OffertForm />

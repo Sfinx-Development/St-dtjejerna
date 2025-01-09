@@ -1,6 +1,7 @@
-import { Box, Button, Typography } from "@mui/material";
+import { Box, Typography } from "@mui/material";
 import { FC } from "react";
 import { useNavigate } from "react-router-dom";
+import CustomButton from "../components/CustomButton";
 import Info from "../components/Info";
 import { useScreenSize } from "../screenSizeContext";
 
@@ -109,29 +110,13 @@ const Fonsterputs: FC = () => {
             hemstäd, företagsstäd och trappstäd finns också. Välkomna att
             kontakta oss för mer information och en offert!
           </Typography>
-          <Button
-            aria-label="Till offertsidan"
-            variant="outlined"
-            sx={{
-              color: "#333",
-              borderColor: "#e3c5da",
-              marginY: 4,
-              paddingX: 3,
-              paddingY: 1,
-              backgroundColor: "#c499b6",
-              animation: "moveUpDown 2s ease-in-out infinite",
-              "&:hover": {
-                borderColor: "#c499b6",
-                backgroundColor: "#c499b6",
-                transition: "background-color 0.3s ease, color 0.3s ease",
-              },
-            }}
-            onClick={() => {
-              navigate("/offert");
-            }}
-          >
-            Få ett kostnadsförslag
-          </Button>
+          <CustomButton
+            title="Få ett kostnadsförslag"
+            ariaLabel="Till offertsidan"
+            disabled={false}
+            animation={false}
+            handleOnClik={() => navigate("/offert")}
+          />
         </Box>
 
         <Box

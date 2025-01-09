@@ -21,21 +21,21 @@ export default function CustomerLogos() {
         flexDirection: "column",
         alignItems: "center",
         paddingY: 4,
-        // backgroundColor: "#e4dcdc",
+        // background: "linear-gradient(to bottom, white, rgba(244,195,216,255))",
         textAlign: "center",
         boxShadow: "0px 4px 15px rgba(0, 0, 0, 0.1)",
       }}
     >
       {/* Rubrik */}
       <Typography
-        variant={isMobile ? "h4" : "h3"}
-        gutterBottom
+        variant={isMobile ? "h4" : "h4"}
         sx={{
           color: "#333",
-          // fontFamily: "'Playfair Display', serif",
+          fontWeight: "bold",
           textTransform: "uppercase",
-          letterSpacing: "3px",
-          position: "relative",
+          letterSpacing: "2px",
+          marginBottom: 2,
+          marginTop: 4,
         }}
       >
         Nöjda Kunder

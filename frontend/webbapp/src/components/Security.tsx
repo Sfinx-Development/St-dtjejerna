@@ -1,10 +1,9 @@
-import { Box, Typography } from "@mui/material";
-import { motion, useAnimation } from "framer-motion";
-import { useInView } from "react-intersection-observer";
-
 import LockIcon from "@mui/icons-material/Lock";
 import SecurityIcon from "@mui/icons-material/Security";
+import { Box, Typography } from "@mui/material";
+import { motion, useAnimation } from "framer-motion";
 import { useEffect } from "react";
+import { useInView } from "react-intersection-observer";
 
 const securityDescription = (
   <>
@@ -31,12 +30,8 @@ export default function Security() {
   const [ref2, inView2] = useInView({ triggerOnce: true });
 
   useEffect(() => {
-    if (inView1) {
-      controls1.start({ opacity: 1, y: 0 });
-    }
-    if (inView2) {
-      controls2.start({ opacity: 1, y: 0 });
-    }
+    if (inView1) controls1.start({ opacity: 1, y: 0 });
+    if (inView2) controls2.start({ opacity: 1, y: 0 });
   }, [controls1, controls2, inView1, inView2]);
 
   return (
@@ -44,14 +39,14 @@ export default function Security() {
       sx={{
         display: "flex",
         flexDirection: { xs: "column", md: "row" },
-        alignItems: "center",
+        alignItems: "start",
         justifyContent: "space-around",
-        height: { xs: "auto", md: 250 },
         width: "100%",
-        fontFamily: "Roboto, sans-serif",
-        backgroundColor: "white",
+        paddingY: 4,
+        background: "linear-gradient(to bottom, white, #f9f7fb)", // Subtil gradient
       }}
     >
+      {/* Säkerhet */}
       <motion.div
         ref={ref1}
         initial={{ opacity: 0, y: 60 }}
@@ -61,31 +56,53 @@ export default function Security() {
         <Box
           sx={{
             textAlign: { xs: "center", md: "left" },
-            padding: 2,
+            padding: 3,
             marginBottom: 2,
             maxWidth: 400,
+            // backgroundColor: "rgba(244, 199, 219, 0.2)", // Ljus bakgrund för kontrast
+            borderRadius: 4,
+            // boxShadow: "0 4px 12px rgba(0, 0, 0, 0.1)",
           }}
         >
           <Typography
-            variant="h6"
-            sx={{ display: "flex", alignItems: "center" }}
+            variant="h5"
+            sx={{
+              display: "flex",
+              letterSpacing: 1.5,
+              marginBottom: 1,
+              alignItems: "center",
+              fontWeight: "bold",
+              color: "#444",
+            }}
           >
-            <SecurityIcon sx={{ marginRight: 1 }} />
+            <SecurityIcon sx={{ marginRight: 1, color: "#444" }} />
             SÄKERHET
           </Typography>
-          <Typography variant="body1">{securityDescription}</Typography>
+
+          <Typography
+            variant="body1"
+            sx={{
+              color: "#555",
+              lineHeight: 1.75,
+              fontSize: 16,
+            }}
+          >
+            {securityDescription}
+          </Typography>
         </Box>
       </motion.div>
 
+      {/* Separator */}
       <Box
         sx={{
-          height: { xs: "auto", md: "60%" },
-          width: { xs: "90%", md: 1.5 },
+          height: { xs: 1, md: "auto" },
+          width: { xs: "80%", md: 2 },
           backgroundColor: "#e3c5da",
-          marginY: { xs: 0, md: 0 },
+          marginY: { xs: 3, md: 0 },
         }}
       />
 
+      {/* Sekretess */}
       <motion.div
         ref={ref2}
         initial={{ opacity: 0, y: 60 }}
@@ -95,19 +112,38 @@ export default function Security() {
         <Box
           sx={{
             textAlign: { xs: "center", md: "left" },
-            padding: 2,
+            padding: 3,
             marginBottom: 2,
             maxWidth: 400,
+            // backgroundColor: "rgba(244, 199, 219, 0.2)", // Ljus bakgrund för kontrast
+            borderRadius: 4,
+            // boxShadow: "0 4px 12px rgba(0, 0, 0, 0.1)",
           }}
         >
           <Typography
-            variant="h6"
-            sx={{ display: "flex", alignItems: "center" }}
+            variant="h5"
+            sx={{
+              display: "flex",
+              letterSpacing: 1.5,
+              marginBottom: 1,
+              alignItems: "center",
+              fontWeight: "bold",
+              color: "#444",
+            }}
           >
-            <LockIcon sx={{ marginRight: 1 }} />
+            <LockIcon sx={{ marginRight: 1, color: "#444" }} />
             SEKRETESS
           </Typography>
-          <Typography variant="body1">{confidentialityDescription}</Typography>
+          <Typography
+            variant="body1"
+            sx={{
+              color: "#555",
+              lineHeight: 1.75,
+              fontSize: 16,
+            }}
+          >
+            {confidentialityDescription}
+          </Typography>
         </Box>
       </motion.div>
     </Box>

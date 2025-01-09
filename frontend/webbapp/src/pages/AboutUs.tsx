@@ -19,21 +19,20 @@ const AboutUs: FC = () => {
           borderRadius: "10px",
           boxShadow: "0 4px 12px rgba(0, 0, 0, 0.1)",
           backgroundColor: "#fff",
-          padding: isMobile ? "10px" : "20px",
-          marginBottom: "20px",
+          // padding: isMobile ? "10px" : "20px",
+          // marginBottom: "20px",
         }}
       >
         <Typography
           variant={isMobile ? "h4" : "h2"}
           gutterBottom
           sx={{
-            textAlign: "center",
-            color: "#d29bbf",
-            position: "relative",
-            marginTop: isMobile ? "40px" : "20px",
-            marginBottom: "10px",
+            color: "#333",
+            fontWeight: "bold",
             textTransform: "uppercase",
             letterSpacing: "2px",
+            marginBottom: 0,
+            marginTop: 4,
           }}
         >
           Om oss

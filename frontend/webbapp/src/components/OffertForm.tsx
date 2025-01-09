@@ -2,12 +2,8 @@ import {
   Alert,
   AlertColor,
   Box,
-  Button,
-  Card,
-  CardContent,
   Checkbox,
   FormControlLabel,
-  FormGroup,
   Snackbar,
   TextField,
   Typography,
@@ -15,6 +11,7 @@ import {
 import emailjs from "emailjs-com";
 import { useState } from "react";
 import { useScreenSize } from "../screenSizeContext";
+import CustomButton from "./CustomButton";
 
 emailjs.init("C8CxNnxZg6mg-d2tq");
 
@@ -24,7 +21,6 @@ export default function OffertForm() {
   const [email, setEmail] = useState("");
   const [message, setMessage] = useState("");
   const [services, setServices] = useState<string[]>([]);
-
   const [error, setError] = useState(false);
   const [openSnackbar, setOpenSnackbar] = useState(false);
   const [snackbarMessage, setSnackbarMessage] = useState("");
@@ -56,8 +52,7 @@ export default function OffertForm() {
     );
   };
 
-  const handleSubmit = (e: React.FormEvent<HTMLFormElement>) => {
-    e.preventDefault();
+  const handleSubmit = () => {
     setError(false);
     if (
       name !== "" &&
@@ -77,12 +72,7 @@ export default function OffertForm() {
 
       emailjs
         .send("service_52wg30w", "template_itru98a", templateParams)
-        .then((response) => {
-          console.log(
-            "Email sent successfully:",
-            response.status,
-            response.text
-          );
+        .then(() => {
           setSnackbarSeverity("success");
           setSnackbarMessage("Förfrågan skickad!");
           setOpenSnackbar(true);
@@ -92,8 +82,7 @@ export default function OffertForm() {
           setPhone("");
           setServices([]);
         })
-        .catch((err) => {
-          console.error("Error sending email:", err);
+        .catch(() => {
           setSnackbarSeverity("error");
           setSnackbarMessage(
             "Något gick fel när förfrågan skickades. Försök igen."
@@ -109,7 +98,7 @@ export default function OffertForm() {
     event: React.SyntheticEvent,
     reason?: string
   ) => {
-    if (reason === "clickaway" && event) {
+    if (reason === "clickaway") {
       return;
     }
     setOpenSnackbar(false);
@@ -123,256 +112,230 @@ export default function OffertForm() {
         alignItems: "center",
         justifyContent: "center",
         width: "100%",
-        boxSizing: "border-box",
+        minHeight: "100vh",
+        backgroundImage: "url(pexels-shvetsa-5217915.webp)",
+        backgroundSize: "cover",
+        backgroundPosition: "center",
+        padding: { xs: 2, md: 4 },
       }}
-      component="form"
-      onSubmit={handleSubmit}
     >
-      {/* <Typography
-        variant={isMobile ? "h4" : "h2"}
-        gutterBottom
+      <Box
         sx={{
-          textAlign: "center",
-          color: "#d29bbf",
-          // fontFamily: "'Playfair Display', serif",
-          fontWeight: 700,
-          position: "relative",
-          marginTop: isMobile ? "40px" : "20px",
-          marginBottom: "20px",
-          textTransform: "uppercase",
-          letterSpacing: "2px",
-          "&:after": {
-            content: '""',
-            position: "absolute",
-            width: "40px",
-            height: "4px",
-            backgroundColor: "#d29bbf",
-            bottom: "-10px",
-            left: "50%",
-            transform: "translateX(-50%)",
-            borderRadius: "2px",
-          },
-        }}
-      >
-        Offertförfrågan
-      </Typography> */}
-      <Typography
-        variant={isMobile ? "h4" : "h2"}
-        gutterBottom
-        sx={{
-          textAlign: "center",
-          color: "#d29bbf",
-          position: "relative",
-          marginTop: isMobile ? "40px" : "20px",
-          marginBottom: "20px",
-          textTransform: "uppercase",
-          letterSpacing: "2px",
-        }}
-      >
-        Offertförfrågan
-      </Typography>
-      <Snackbar open={openSnackbar} autoHideDuration={6000}>
-        <Alert
-          onClose={handleSnackbarClose}
-          severity={snackbarSeverity}
-          sx={{ width: "100%" }}
-        >
-          {snackbarMessage}
-        </Alert>
-      </Snackbar>
-      <Card
-        sx={{
+          zIndex: 1,
           width: "100%",
-          maxWidth: 500,
-          backgroundColor: "#fff",
-          boxShadow: "0 4px 12px rgba(0,0,0,0.1)",
-          borderRadius: 4,
-          padding: 2,
+          maxWidth: { xs: "90%", md: "600px" },
+          padding: 4,
           display: "flex",
           flexDirection: "column",
-          marginY: 1,
+          gap: 3,
+          backdropFilter: "blur(5px)", // Subtil suddning för att ge kontrast
         }}
       >
-        <CardContent
+        <Typography
+          variant={isMobile ? "h4" : "h3"}
           sx={{
-            display: "flex",
-            flexDirection: "column",
-            gap: 2,
+            color: "#333",
+            fontWeight: "bold",
+            textTransform: "uppercase",
+            letterSpacing: "2px",
+            marginBottom: 2,
+            marginTop: 4,
           }}
         >
-          {error && (
-            <Typography color="error">Vänligen fyll i alla fält</Typography>
-          )}
-          <TextField
-            label="Namn"
-            variant="outlined"
-            type="text"
-            value={name}
-            onChange={(event) => setName(event.target.value)}
-            fullWidth
-            sx={{
-              "& .MuiOutlinedInput-root": {
-                "& fieldset": {
-                  borderColor: "#d4acc7",
-                },
-                "&:hover fieldset": {
-                  borderColor: "#dbbed1",
-                },
-                "&.Mui-focused fieldset": {
-                  borderColor: "#dbbed1",
-                },
-              },
-            }}
-          />
-          <TextField
-            label="Telefon"
-            variant="outlined"
-            type="text"
-            value={phone}
-            onChange={(event) => setPhone(event.target.value)}
-            fullWidth
-            sx={{
-              "& .MuiOutlinedInput-root": {
-                "& fieldset": {
-                  borderColor: "#d4acc7",
-                },
-                "&:hover fieldset": {
-                  borderColor: "#dbbed1",
-                },
-                "&.Mui-focused fieldset": {
-                  borderColor: "#dbbed1",
-                },
-              },
-            }}
-          />
-          <TextField
-            label="Email"
-            variant="outlined"
-            type="email"
-            value={email}
-            onChange={(event) => setEmail(event.target.value)}
-            fullWidth
-            sx={{
-              "& .MuiOutlinedInput-root": {
-                "& fieldset": {
-                  borderColor: "#d4acc7",
-                },
-                "&:hover fieldset": {
-                  borderColor: "#dbbed1",
-                },
-                "&.Mui-focused fieldset": {
-                  borderColor: "#dbbed1",
-                },
-              },
-            }}
-          />
-        </CardContent>
-        <CardContent>
-          <FormGroup>
-            <Typography variant="h6">Välj tjänster</Typography>
-            {serviceChoices.map((service, index) => (
-              <FormControlLabel
-                key={index}
-                control={
-                  <Checkbox
-                    checked={services.includes(service)}
-                    onChange={handleServiceChange}
-                    value={service}
-                    sx={{
-                      color: "#d4acc7",
-                      "&.Mui-checked": {
-                        color: "#dbbed1",
-                      },
-                    }}
-                  />
-                }
-                label={service}
-              />
-            ))}
-          </FormGroup>
+          Offertförfrågan
+        </Typography>
 
-          <TextField
-            label="Meddelande"
-            variant="outlined"
-            type="text"
-            multiline
-            rows={4}
-            value={message}
-            onChange={(event) => setMessage(event.target.value)}
-            fullWidth
+        {error && (
+          <Typography
+            color="error"
             sx={{
-              "& .MuiOutlinedInput-root": {
-                "& fieldset": {
-                  borderColor: "#d4acc7",
-                },
-                "&:hover fieldset": {
-                  borderColor: "#dbbed1",
-                },
-                "&.Mui-focused fieldset": {
-                  borderColor: "#dbbed1",
-                },
-              },
-            }}
-          />
-          <FormControlLabel
-            sx={{
-              display: "flex",
-              flexDirection: "row",
-              justifyContent: "center",
-              width: "100%",
-              gap: 1,
-            }}
-            control={
-              <Checkbox
-                required
-                sx={{
-                  color: "#333",
-                  "&.Mui-checked": {
-                    color: "#333",
-                  },
-                }}
-                checked={privacyPolicyChecked}
-                onChange={handleCheckboxChange}
-              />
-            }
-            label={
-              <Typography sx={{ color: "#333" }}>
-                Jag samtycker till att Städtjejerna i 7-härad behandlar mina
-                personuppgifter i enlighet med vår{" "}
-                <a
-                  href="/privacy-policy"
-                  target="_blank"
-                  rel="noopener noreferrer"
-                  style={{ color: "#333" }}
-                >
-                  integritetspolicy
-                </a>
-                .
-              </Typography>
-            }
-          />
-          <Button
-            aria-label="Skicka offertförfrågan"
-            variant="contained"
-            type="submit"
-            disabled={!privacyPolicyChecked}
-            sx={{
-              alignSelf: "center",
-              marginTop: 2,
-              backgroundColor: "#dbbed1",
-              color: "#333",
-              paddingX: 4,
-              paddingY: 1,
-              borderRadius: 2,
-              "&:hover": {
-                backgroundColor: "#bda2b3",
-              },
+              textAlign: "center",
+              fontSize: "0.9rem",
+              backgroundColor: "rgba(255, 0, 0, 0.2)",
+              padding: "8px",
+              borderRadius: "4px",
             }}
           >
-            Skicka förfrågan
-          </Button>
-        </CardContent>
-      </Card>
+            Vänligen fyll i alla obligatoriska fält
+          </Typography>
+        )}
+
+        <Snackbar open={openSnackbar} autoHideDuration={6000}>
+          <Alert
+            onClose={handleSnackbarClose}
+            severity={snackbarSeverity}
+            sx={{ width: "100%" }}
+          >
+            {snackbarMessage}
+          </Alert>
+        </Snackbar>
+
+        <TextField
+          label="Namn"
+          value={name}
+          onChange={(e) => setName(e.target.value)}
+          fullWidth
+          sx={{
+            "& .MuiOutlinedInput-root": {
+              "& fieldset": {
+                borderColor: "rgba(0, 0, 0, 0.6)",
+              },
+              "&:hover fieldset": {
+                borderColor: "rgba(0, 0, 0, 0.8)",
+              },
+              "&.Mui-focused fieldset": {
+                borderColor: "rgba(0, 0, 0, 0.8)",
+              },
+              backgroundColor: "rgba(255, 255, 255, 0.4)",
+              color: "rgba(0, 0, 0, 0.8)",
+            },
+            input: {
+              color: "rgba(0, 0, 0, 0.8)",
+            },
+            label: {
+              color: "rgba(0, 0, 0, 0.6)",
+            },
+          }}
+        />
+        <TextField
+          label="Telefon"
+          value={phone}
+          onChange={(e) => setPhone(e.target.value)}
+          fullWidth
+          sx={{
+            "& .MuiOutlinedInput-root": {
+              "& fieldset": {
+                borderColor: "rgba(0, 0, 0, 0.6)",
+              },
+              "&:hover fieldset": {
+                borderColor: "rgba(0, 0, 0, 0.8)",
+              },
+              "&.Mui-focused fieldset": {
+                borderColor: "rgba(0, 0, 0, 0.8)",
+              },
+              backgroundColor: "rgba(255, 255, 255, 0.4)",
+              color: "rgba(0, 0, 0, 0.8)",
+            },
+            input: {
+              color: "rgba(0, 0, 0, 0.8)",
+            },
+            label: {
+              color: "rgba(0, 0, 0, 0.6)",
+            },
+          }}
+        />
+        <TextField
+          label="E-post"
+          value={email}
+          onChange={(e) => setEmail(e.target.value)}
+          fullWidth
+          sx={{
+            "& .MuiOutlinedInput-root": {
+              "& fieldset": {
+                borderColor: "rgba(0, 0, 0, 0.6)",
+              },
+              "&:hover fieldset": {
+                borderColor: "rgba(0, 0, 0, 0.8)",
+              },
+              "&.Mui-focused fieldset": {
+                borderColor: "rgba(0, 0, 0, 0.8)",
+              },
+              backgroundColor: "rgba(255, 255, 255, 0.4)",
+              color: "rgba(0, 0, 0, 0.8)",
+            },
+            input: {
+              color: "rgba(0, 0, 0, 0.8)",
+            },
+            label: {
+              color: "rgba(0, 0, 0, 0.6)",
+            },
+          }}
+        />
+
+        <Box sx={{ display: "flex", gap: 2, flexWrap: "wrap" }}>
+          {serviceChoices.map((service, index) => (
+            <FormControlLabel
+              key={index}
+              control={
+                <Checkbox
+                  checked={services.includes(service)}
+                  onChange={handleServiceChange}
+                  value={service}
+                  sx={{
+                    color: "rgba(0, 0, 0, 0.6)",
+                    "&.Mui-checked": {
+                      color: "rgba(0, 0, 0, 0.6)",
+                    },
+                  }}
+                />
+              }
+              label={service}
+              sx={{ flex: "1 1 45%", color: "rgba(0, 0, 0, 0.8)" }}
+            />
+          ))}
+        </Box>
+
+        <TextField
+          label="Meddelande"
+          value={message}
+          onChange={(e) => setMessage(e.target.value)}
+          fullWidth
+          multiline
+          rows={4}
+          sx={{
+            "& .MuiOutlinedInput-root": {
+              "& fieldset": {
+                borderColor: "rgba(0, 0, 0, 0.6)",
+              },
+              "&:hover fieldset": {
+                borderColor: "rgba(0, 0, 0, 0.6)",
+              },
+              "&.Mui-focused fieldset": {
+                borderColor: "rgba(0, 0, 0, 0.6)",
+              },
+              backgroundColor: "rgba(255, 255, 255, 0.4)",
+              color: "rgba(0, 0, 0, 0.6)",
+            },
+            textarea: {
+              color: "rgba(0, 0, 0, 0.8)",
+            },
+            label: {
+              color: "rgba(0, 0, 0, 0.6)",
+            },
+          }}
+        />
+        <FormControlLabel
+          control={
+            <Checkbox
+              checked={privacyPolicyChecked}
+              onChange={handleCheckboxChange}
+              sx={{
+                color: "rgba(0, 0, 0, 0.6)",
+                "&.Mui-checked": {
+                  color: "rgba(0, 0, 0, 0.6)",
+                },
+              }}
+            />
+          }
+          label={
+            <Typography sx={{ fontSize: 13, color: "rgba(0,0,0,0.8)" }}>
+              Jag samtycker till att Städtjejerna i 7-härad behandlar mina
+              personuppgifter i enlighet med vår{" "}
+              <a href="/privacy-policy" style={{ color: "rgba(0,0,0,0.8)" }}>
+                integritetspolicy
+              </a>
+              .
+            </Typography>
+          }
+        />
+        <CustomButton
+          title="Skicka förfrågan"
+          ariaLabel="Skicka formulär"
+          disabled={!privacyPolicyChecked}
+          handleOnClik={handleSubmit}
+          animation={false}
+        />
+      </Box>
     </Box>
   );
 }

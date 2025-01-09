@@ -1,8 +1,9 @@
 import BathtubIcon from "@mui/icons-material/Bathtub";
 import HomeIcon from "@mui/icons-material/Home";
 import KitchenIcon from "@mui/icons-material/Kitchen";
-import { Box, Button, Typography } from "@mui/material";
+import { Box, Typography } from "@mui/material";
 import { useNavigate } from "react-router-dom";
+import CustomButton from "../components/CustomButton";
 import Info from "../components/Info";
 import { useScreenSize } from "../screenSizeContext";
 
@@ -13,7 +14,7 @@ const Flyttstad = () => {
     {
       title: "Städoment som utförs i alla rum",
       icon: (
-        <HomeIcon sx={{ fontSize: 30, color: "#d29bbf", marginRight: 1 }} />
+        <HomeIcon sx={{ fontSize: 30, color: "#e48bb1", marginRight: 1 }} />
       ),
       items: [
         "Fönsterputsning",
@@ -26,7 +27,7 @@ const Flyttstad = () => {
     {
       title: "Badrum",
       icon: (
-        <BathtubIcon sx={{ fontSize: 30, color: "#d29bbf", marginRight: 1 }} />
+        <BathtubIcon sx={{ fontSize: 30, color: "#e48bb1", marginRight: 1 }} />
       ),
       items: [
         "Rengöring av väggar och golv",
@@ -41,7 +42,7 @@ const Flyttstad = () => {
     {
       title: "Kök",
       icon: (
-        <KitchenIcon sx={{ fontSize: 30, color: "#d29bbf", marginRight: 1 }} />
+        <KitchenIcon sx={{ fontSize: 30, color: "#e48bb1", marginRight: 1 }} />
       ),
       items: [
         "Rengöring av kyl och frys ut- och invändigt",
@@ -115,24 +116,13 @@ const Flyttstad = () => {
           lägga energin på den nya bostaden! Städtjejernas ledord är
           noggrannhet, professionalitet och omtanke.
         </Typography>
-        <Button
-          aria-label="Till offertsidan"
-          variant="contained"
-          sx={{
-            backgroundColor: "#c499b6",
-            color: "#333",
-            padding: "10px 20px",
-            marginTop: "1.5rem",
-            "&:hover": {
-              backgroundColor: "#a58199",
-            },
-          }}
-          onClick={() => {
-            navigate("/offert");
-          }}
-        >
-          Få ett kostnadsförslag
-        </Button>
+        <CustomButton
+          title="Få ett kostnadsförslag"
+          ariaLabel="Till offertsidan"
+          disabled={false}
+          animation={false}
+          handleOnClik={() => navigate("/offert")}
+        />
       </Box>
 
       <>

@@ -5,7 +5,6 @@ import {
   Alert,
   AlertColor,
   Box,
-  Button,
   Card,
   CardContent,
   Checkbox,
@@ -17,6 +16,7 @@ import {
 import emailjs from "emailjs-com";
 import { useState } from "react";
 import { useScreenSize } from "../screenSizeContext";
+import CustomButton from "./CustomButton";
 
 emailjs.init("C8CxNnxZg6mg-d2tq");
 
@@ -40,8 +40,8 @@ export default function ContactForm(props: ContactFormProps) {
     setPrivacyPolicyChecked(event.target.checked);
   };
 
-  const handleSubmit = (e: React.FormEvent<HTMLFormElement>) => {
-    e.preventDefault();
+  const handleSubmit = () => {
+    // e.preventDefault();
     setError(false);
     if (name != "" && message != "" && email != "" && phone != "") {
       const templateParams = {
@@ -100,6 +100,10 @@ export default function ContactForm(props: ContactFormProps) {
         justifyContent: "space-around",
         height: { xs: "auto", md: 550 },
         width: "100%",
+        backgroundImage: "url('../pexels-shvetsa-5217918.jpg')", // Korrekt format
+        backgroundSize: "cover", // För att bilden ska täcka hela ytan
+        backgroundPosition: "center", // För att centrera bilden
+        backgroundRepeat: "no-repeat", // För att undvika upprepningar
         backgroundColor: props.backgroundColor
           ? props.backgroundColor
           : "#f7f7f7",
@@ -112,37 +116,57 @@ export default function ContactForm(props: ContactFormProps) {
         sx={{
           textAlign: { xs: "center", md: "left" },
           maxWidth: 400,
+          height: "100%",
+          display: "flex",
+          flexDirection: "column",
+          // alignItems: { xs: "center", md: "start" },
+          marginBottom: { xs: 0, md: 25 },
+          justifyContent: "center",
+          // backgroundColor: "red",
         }}
       >
         <Typography
           variant={isMobile ? "h4" : "h3"}
-          // gutterBottom
           sx={{
-            textAlign: "center",
-            color: "#d29bbf",
-            position: "relative",
-            marginTop: { xs: "40px", md: "20px" },
-            marginBottom: "20px",
+            color: "#333",
+            fontWeight: "bold",
             textTransform: "uppercase",
             letterSpacing: "2px",
+            marginBottom: 2,
+            marginTop: 4,
           }}
         >
           Kontakta oss
         </Typography>
-        <Box sx={{ display: "flex", alignItems: "center", marginBottom: 1 }}>
-          <PhoneIcon sx={{ color: "grey", marginRight: 1 }} />
-          <Typography sx={{ color: "grey" }}>
+
+        <Box
+          sx={{
+            display: "flex",
+            alignItems: "center",
+            marginBottom: 1,
+          }}
+        >
+          <PhoneIcon
+            sx={{ color: "rgba(0,0,0,0.8)", fontSize: 22, marginRight: 1 }}
+          />
+          <Typography sx={{ color: "rgba(0,0,0,0.8)", fontSize: 22 }}>
             <a
               href="tel:033-7269676"
-              style={{ color: "inherit", textDecoration: "none" }}
+              style={{
+                color: "inherit",
+                textDecoration: "none",
+                fontSize: 22,
+              }}
             >
               033-726 96 76
             </a>
           </Typography>
         </Box>
         <Box sx={{ display: "flex", alignItems: "center", marginBottom: 1 }}>
-          <EmailIcon sx={{ color: "grey", marginRight: 1 }} />
-          <Typography sx={{ color: "grey" }}>
+          <EmailIcon
+            sx={{ color: "rgba(0,0,0,0.8)", fontSize: 22, marginRight: 1 }}
+          />
+          <Typography sx={{ color: "rgba(0,0,0,0.8)", fontSize: 22 }}>
             <a
               href="mailto:stadtjejerna@hotmail.com"
               style={{ color: "inherit", textDecoration: "none" }}
@@ -152,11 +176,17 @@ export default function ContactForm(props: ContactFormProps) {
           </Typography>
         </Box>
         <Box sx={{ display: "flex", alignItems: "center", marginBottom: 1 }}>
-          <LocationOnIcon sx={{ color: "grey", marginRight: 1 }} />
-          <Typography sx={{ color: "grey", marginRight: 0.5 }}>
+          <LocationOnIcon
+            sx={{ color: "rgba(0,0,0,0.8)", fontSize: 22, marginRight: 1 }}
+          />
+          <Typography
+            sx={{ color: "rgba(0,0,0,0.8)", fontSize: 22, marginRight: 0.5 }}
+          >
             Tredje villagatan 17
           </Typography>
-          <Typography sx={{ color: "grey" }}>50453 Borås</Typography>
+          <Typography sx={{ color: "rgba(0,0,0,0.8)", fontSize: 22 }}>
+            50453 Borås
+          </Typography>
         </Box>
       </Box>
       <Snackbar open={openSnackbar} autoHideDuration={6000}>
@@ -181,7 +211,7 @@ export default function ContactForm(props: ContactFormProps) {
           sx={{
             display: "flex",
             flexDirection: "column",
-            gap: 2,
+            gap: 1,
           }}
         >
           {error && (
@@ -277,17 +307,18 @@ export default function ContactForm(props: ContactFormProps) {
             sx={{
               display: "flex",
               flexDirection: "row",
-              justifyContent: "center",
+              justifyContent: "start",
+              alignItems: "start",
               width: "100%",
-              gap: 1,
+              // gap: 1,
+              // backgroundColor: "red",
             }}
             control={
               <Checkbox
-                required
                 sx={{
                   color: "#333",
                   "&.Mui-checked": {
-                    color: "#333",
+                    textAlign: "start",
                   },
                 }}
                 checked={privacyPolicyChecked}
@@ -295,7 +326,9 @@ export default function ContactForm(props: ContactFormProps) {
               />
             }
             label={
-              <Typography sx={{ color: "#333" }}>
+              <Typography
+                sx={{ color: "#333", fontSize: 13, textAlign: "start" }}
+              >
                 Jag samtycker till att Städtjejerna i 7-härad behandlar mina
                 personuppgifter i enlighet med vår{" "}
                 <a
@@ -310,26 +343,13 @@ export default function ContactForm(props: ContactFormProps) {
               </Typography>
             }
           />
-          <Button
-            aria-label="Skicka formulär"
-            variant="contained"
-            type="submit"
+          <CustomButton
+            title="Skicka"
+            handleOnClik={handleSubmit}
             disabled={!privacyPolicyChecked}
-            sx={{
-              alignSelf: "center",
-              marginTop: 2,
-              backgroundColor: "#dbbed1",
-              color: "#333",
-              paddingX: 4,
-              paddingY: 1,
-              borderRadius: 2,
-              "&:hover": {
-                backgroundColor: "#bda2b3",
-              },
-            }}
-          >
-            Skicka
-          </Button>
+            ariaLabel="Skicka formulära"
+            animation={false}
+          />
         </CardContent>
       </Card>
     </Box>

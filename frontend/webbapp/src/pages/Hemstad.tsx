@@ -1,9 +1,10 @@
 import BathtubIcon from "@mui/icons-material/Bathtub";
 import HomeIcon from "@mui/icons-material/Home";
 import KitchenIcon from "@mui/icons-material/Kitchen";
-import { Box, Button, Typography } from "@mui/material";
+import { Box, Typography } from "@mui/material";
 import { FC } from "react";
 import { useNavigate } from "react-router-dom";
+import CustomButton from "../components/CustomButton";
 import Info from "../components/Info";
 import { useScreenSize } from "../screenSizeContext";
 
@@ -15,7 +16,7 @@ const Hemstad: FC = () => {
     {
       title: "Städoment som utförs i alla rum",
       icon: (
-        <HomeIcon sx={{ fontSize: 30, color: "#d29bbf", marginRight: 1 }} />
+        <HomeIcon sx={{ fontSize: 30, color: "#e48bb1", marginRight: 1 }} />
       ),
       items: [
         "Dammsugning av golv, lister, elkontakter, element, mattor och möbler med stoppning som till exempel soffor och fåtöljer.",
@@ -27,7 +28,7 @@ const Hemstad: FC = () => {
     {
       title: "Badrum",
       icon: (
-        <BathtubIcon sx={{ fontSize: 30, color: "#d29bbf", marginRight: 1 }} />
+        <BathtubIcon sx={{ fontSize: 30, color: "#e48bb1", marginRight: 1 }} />
       ),
       items: [
         "Rengöring av badkar, dusch, handfat, kran och toalett samt kaklet runt omkring.",
@@ -38,7 +39,7 @@ const Hemstad: FC = () => {
     {
       title: "Kök",
       icon: (
-        <KitchenIcon sx={{ fontSize: 30, color: "#d29bbf", marginRight: 1 }} />
+        <KitchenIcon sx={{ fontSize: 30, color: "#e48bb1", marginRight: 1 }} />
       ),
       items: [
         "Våttorkning av kaklet ovanför diskbänken, fläckar på köksluckor, kaffebryggare, mikrovågsugn invändigt och utvändigt, brödrost, bord, stolar och",
@@ -114,24 +115,13 @@ const Hemstad: FC = () => {
           och kontinuitet. Allt för att du ska kunna släppa tankarna på
           städningen och fokusera på annat under tiden.
         </Typography>
-        <Button
-          aria-label="Till offertsidan"
-          variant="contained"
-          sx={{
-            backgroundColor: "#c499b6",
-            color: "#333",
-            padding: "10px 20px",
-            marginTop: "1.5rem",
-            "&:hover": {
-              backgroundColor: "#a58199",
-            },
-          }}
-          onClick={() => {
-            navigate("/offert");
-          }}
-        >
-          Få ett kostnadsförslag
-        </Button>
+        <CustomButton
+          title="Få ett kostnadsförslag"
+          ariaLabel="Till offertsidan"
+          disabled={false}
+          animation={false}
+          handleOnClik={() => navigate("/offert")}
+        />
       </Box>
 
       <>

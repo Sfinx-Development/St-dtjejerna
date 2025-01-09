@@ -2,8 +2,8 @@ import { Outlet } from "react-router-dom";
 import CustomHeader from "../components/CustomHeader";
 import Footer from "../components/Footer";
 import MobileHeader from "../components/MobileHeader";
-import { useScreenSize } from "../screenSizeContext";
 import ScrollToTop from "../components/ScrollToTop";
+import { useScreenSize } from "../screenSizeContext";
 
 const RootLayout = () => {
   const { isMobile } = useScreenSize();

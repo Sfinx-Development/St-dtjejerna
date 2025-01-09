@@ -136,7 +136,7 @@ export default function CustomHeader2(): JSX.Element {
           sx={{
             "& .MuiDrawer-paper": {
               width: 280,
-              backgroundColor: "#dbbed1",
+              background: "#f8d7e5",
               paddingY: 2,
             },
           }}

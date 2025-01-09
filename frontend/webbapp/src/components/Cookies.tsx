@@ -99,6 +99,7 @@ const CookieBanner = () => {
         >
           Acceptera
         </Button>
+
         <Button
           aria-label="Avvisa Cookies"
           onClick={handleDecline}
