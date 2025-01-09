@@ -95,7 +95,7 @@ export default function OffertForm() {
   };
 
   const handleSnackbarClose = (
-    event: React.SyntheticEvent,
+    _event: React.SyntheticEvent,
     reason?: string
   ) => {
     if (reason === "clickaway") {
