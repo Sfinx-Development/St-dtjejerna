@@ -14,7 +14,7 @@ const Flyttstad = () => {
     {
       title: "Städoment som utförs i alla rum",
       icon: (
-        <HomeIcon sx={{ fontSize: 30, color: "#d29bbf", marginRight: 1 }} />
+        <HomeIcon sx={{ fontSize: 30, color: "#e48bb1", marginRight: 1 }} />
       ),
       items: [
         "Fönsterputsning",
@@ -27,7 +27,7 @@ const Flyttstad = () => {
     {
       title: "Badrum",
       icon: (
-        <BathtubIcon sx={{ fontSize: 30, color: "#d29bbf", marginRight: 1 }} />
+        <BathtubIcon sx={{ fontSize: 30, color: "#e48bb1", marginRight: 1 }} />
       ),
       items: [
         "Rengöring av väggar och golv",
@@ -42,7 +42,7 @@ const Flyttstad = () => {
     {
       title: "Kök",
       icon: (
-        <KitchenIcon sx={{ fontSize: 30, color: "#d29bbf", marginRight: 1 }} />
+        <KitchenIcon sx={{ fontSize: 30, color: "#e48bb1", marginRight: 1 }} />
       ),
       items: [
         "Rengöring av kyl och frys ut- och invändigt",

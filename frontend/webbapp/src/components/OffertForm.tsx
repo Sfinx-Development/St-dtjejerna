@@ -2,10 +2,8 @@ import {
   Alert,
   AlertColor,
   Box,
-  Card,
   Checkbox,
   FormControlLabel,
-  FormGroup,
   Snackbar,
   TextField,
   Typography,
@@ -23,7 +21,6 @@ export default function OffertForm() {
   const [email, setEmail] = useState("");
   const [message, setMessage] = useState("");
   const [services, setServices] = useState<string[]>([]);
-
   const [error, setError] = useState(false);
   const [openSnackbar, setOpenSnackbar] = useState(false);
   const [snackbarMessage, setSnackbarMessage] = useState("");
@@ -113,44 +110,52 @@ export default function OffertForm() {
         display: "flex",
         flexDirection: "column",
         alignItems: "center",
-        width: "100%",
-        padding: { xs: 2, md: 4 },
-        backgroundColor: "rgba(241,191,219,255)",
-        minHeight: "100vh",
         justifyContent: "center",
-        position: "relative",
+        width: "100%",
+        minHeight: "100vh",
+        backgroundImage: "url(pexels-shvetsa-5217915.webp)",
+        backgroundSize: "cover",
+        backgroundPosition: "center",
+        padding: { xs: 2, md: 4 },
       }}
     >
-      <Card
+      <Box
         sx={{
           zIndex: 1,
           width: "100%",
-          maxWidth: "700px",
-          backgroundColor: "rgba(255, 255, 255, 0.9)",
-          borderRadius: 3,
-          boxShadow: "0 4px 10px rgba(0, 0, 0, 0.2)",
+          maxWidth: { xs: "90%", md: "600px" },
           padding: 4,
           display: "flex",
           flexDirection: "column",
           gap: 3,
+          backdropFilter: "blur(5px)", // Subtil suddning för att ge kontrast
         }}
       >
         <Typography
-          variant={isMobile ? "h5" : "h4"}
+          variant={isMobile ? "h4" : "h3"}
           sx={{
             color: "#333",
             fontWeight: "bold",
             textTransform: "uppercase",
-            letterSpacing: "1.5px",
-            textAlign: "center",
-            marginBottom: 3,
+            letterSpacing: "2px",
+            marginBottom: 2,
+            marginTop: 4,
           }}
         >
           Offertförfrågan
         </Typography>
 
         {error && (
-          <Typography color="error" sx={{ textAlign: "center" }}>
+          <Typography
+            color="error"
+            sx={{
+              textAlign: "center",
+              fontSize: "0.9rem",
+              backgroundColor: "rgba(255, 0, 0, 0.2)",
+              padding: "8px",
+              borderRadius: "4px",
+            }}
+          >
             Vänligen fyll i alla obligatoriska fält
           </Typography>
         )}
@@ -170,38 +175,106 @@ export default function OffertForm() {
           value={name}
           onChange={(e) => setName(e.target.value)}
           fullWidth
+          sx={{
+            "& .MuiOutlinedInput-root": {
+              "& fieldset": {
+                borderColor: "rgba(0, 0, 0, 0.6)",
+              },
+              "&:hover fieldset": {
+                borderColor: "rgba(0, 0, 0, 0.8)",
+              },
+              "&.Mui-focused fieldset": {
+                borderColor: "rgba(0, 0, 0, 0.8)",
+              },
+              backgroundColor: "rgba(255, 255, 255, 0.4)",
+              color: "rgba(0, 0, 0, 0.8)",
+            },
+            input: {
+              color: "rgba(0, 0, 0, 0.8)",
+            },
+            label: {
+              color: "rgba(0, 0, 0, 0.6)",
+            },
+          }}
         />
         <TextField
           label="Telefon"
           value={phone}
           onChange={(e) => setPhone(e.target.value)}
           fullWidth
+          sx={{
+            "& .MuiOutlinedInput-root": {
+              "& fieldset": {
+                borderColor: "rgba(0, 0, 0, 0.6)",
+              },
+              "&:hover fieldset": {
+                borderColor: "rgba(0, 0, 0, 0.8)",
+              },
+              "&.Mui-focused fieldset": {
+                borderColor: "rgba(0, 0, 0, 0.8)",
+              },
+              backgroundColor: "rgba(255, 255, 255, 0.4)",
+              color: "rgba(0, 0, 0, 0.8)",
+            },
+            input: {
+              color: "rgba(0, 0, 0, 0.8)",
+            },
+            label: {
+              color: "rgba(0, 0, 0, 0.6)",
+            },
+          }}
         />
         <TextField
           label="E-post"
           value={email}
           onChange={(e) => setEmail(e.target.value)}
           fullWidth
+          sx={{
+            "& .MuiOutlinedInput-root": {
+              "& fieldset": {
+                borderColor: "rgba(0, 0, 0, 0.6)",
+              },
+              "&:hover fieldset": {
+                borderColor: "rgba(0, 0, 0, 0.8)",
+              },
+              "&.Mui-focused fieldset": {
+                borderColor: "rgba(0, 0, 0, 0.8)",
+              },
+              backgroundColor: "rgba(255, 255, 255, 0.4)",
+              color: "rgba(0, 0, 0, 0.8)",
+            },
+            input: {
+              color: "rgba(0, 0, 0, 0.8)",
+            },
+            label: {
+              color: "rgba(0, 0, 0, 0.6)",
+            },
+          }}
         />
-        <FormGroup>
-          <Typography variant="h6" sx={{ marginBottom: 2 }}>
-            Välj tjänster
-          </Typography>
-          {serviceChoices.map((service) => (
+
+        <Box sx={{ display: "flex", gap: 2, flexWrap: "wrap" }}>
+          {serviceChoices.map((service, index) => (
             <FormControlLabel
-              key={service}
+              key={index}
               control={
                 <Checkbox
                   checked={services.includes(service)}
                   onChange={handleServiceChange}
                   value={service}
-                  sx={{ color: "#333" }}
+                  sx={{
+                    color: "rgba(0, 0, 0, 0.6)",
+                    "&.Mui-checked": {
+                      color: "rgba(0, 0, 0, 0.6)",
+                    },
+                  }}
                 />
               }
               label={service}
+              sx={{ flex: "1 1 45%", color: "rgba(0, 0, 0, 0.8)" }}
             />
           ))}
-        </FormGroup>
+        </Box>
+
         <TextField
           label="Meddelande"
           value={message}
@@ -209,19 +282,46 @@ export default function OffertForm() {
           fullWidth
           multiline
           rows={4}
+          sx={{
+            "& .MuiOutlinedInput-root": {
+              "& fieldset": {
+                borderColor: "rgba(0, 0, 0, 0.6)",
+              },
+              "&:hover fieldset": {
+                borderColor: "rgba(0, 0, 0, 0.6)",
+              },
+              "&.Mui-focused fieldset": {
+                borderColor: "rgba(0, 0, 0, 0.6)",
+              },
+              backgroundColor: "rgba(255, 255, 255, 0.4)",
+              color: "rgba(0, 0, 0, 0.6)",
+            },
+            textarea: {
+              color: "rgba(0, 0, 0, 0.8)",
+            },
+            label: {
+              color: "rgba(0, 0, 0, 0.6)",
+            },
+          }}
         />
         <FormControlLabel
           control={
             <Checkbox
               checked={privacyPolicyChecked}
               onChange={handleCheckboxChange}
+              sx={{
+                color: "rgba(0, 0, 0, 0.6)",
+                "&.Mui-checked": {
+                  color: "rgba(0, 0, 0, 0.6)",
+                },
+              }}
             />
           }
           label={
-            <Typography sx={{ fontSize: 12 }}>
+            <Typography sx={{ fontSize: 13, color: "rgba(0,0,0,0.8)" }}>
               Jag samtycker till att Städtjejerna i 7-härad behandlar mina
               personuppgifter i enlighet med vår{" "}
-              <a href="/privacy-policy" style={{ color: "#333" }}>
+              <a href="/privacy-policy" style={{ color: "rgba(0,0,0,0.8)" }}>
                 integritetspolicy
               </a>
               .
@@ -235,7 +335,7 @@ export default function OffertForm() {
           handleOnClik={handleSubmit}
           animation={false}
         />
-      </Card>
+      </Box>
     </Box>
   );
 }

@@ -16,7 +16,7 @@ const Hemstad: FC = () => {
     {
       title: "Städoment som utförs i alla rum",
       icon: (
-        <HomeIcon sx={{ fontSize: 30, color: "#d29bbf", marginRight: 1 }} />
+        <HomeIcon sx={{ fontSize: 30, color: "#e48bb1", marginRight: 1 }} />
       ),
       items: [
         "Dammsugning av golv, lister, elkontakter, element, mattor och möbler med stoppning som till exempel soffor och fåtöljer.",
@@ -28,7 +28,7 @@ const Hemstad: FC = () => {
     {
       title: "Badrum",
       icon: (
-        <BathtubIcon sx={{ fontSize: 30, color: "#d29bbf", marginRight: 1 }} />
+        <BathtubIcon sx={{ fontSize: 30, color: "#e48bb1", marginRight: 1 }} />
       ),
       items: [
         "Rengöring av badkar, dusch, handfat, kran och toalett samt kaklet runt omkring.",
@@ -39,7 +39,7 @@ const Hemstad: FC = () => {
     {
       title: "Kök",
       icon: (
-        <KitchenIcon sx={{ fontSize: 30, color: "#d29bbf", marginRight: 1 }} />
+        <KitchenIcon sx={{ fontSize: 30, color: "#e48bb1", marginRight: 1 }} />
       ),
       items: [
         "Våttorkning av kaklet ovanför diskbänken, fläckar på köksluckor, kaffebryggare, mikrovågsugn invändigt och utvändigt, brödrost, bord, stolar och",

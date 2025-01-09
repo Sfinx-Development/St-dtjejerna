@@ -17,7 +17,7 @@ const Foretagsstad: FC = () => {
       title: "Kontor",
       icon: (
         <MeetingRoomIcon
-          sx={{ fontSize: 30, color: "#d29bbf", marginRight: 1 }}
+          sx={{ fontSize: 30, color: "#e48bb1", marginRight: 1 }}
         />
       ),
       items: [
@@ -27,7 +27,7 @@ const Foretagsstad: FC = () => {
     {
       title: "Toaletter",
       icon: (
-        <BathtubIcon sx={{ fontSize: 30, color: "#d29bbf", marginRight: 1 }} />
+        <BathtubIcon sx={{ fontSize: 30, color: "#e48bb1", marginRight: 1 }} />
       ),
       items: [
         "Dammsugning och våttorkning av golven. Handfat och toaletter skuras både in- och utvändigt.",
@@ -36,7 +36,7 @@ const Foretagsstad: FC = () => {
     {
       title: "Kök/Pentry",
       icon: (
-        <KitchenIcon sx={{ fontSize: 30, color: "#d29bbf", marginRight: 1 }} />
+        <KitchenIcon sx={{ fontSize: 30, color: "#e48bb1", marginRight: 1 }} />
       ),
       items: [
         "Dammsugning och våttorkning av golven. Arbetsbänk och diskbänk rengörs grundligt.",
