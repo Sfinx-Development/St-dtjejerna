@@ -221,7 +221,7 @@ export default function CustomHeader2(): JSX.Element {
                           >
                             <ListItemButton
                               aria-label="Close menu"
-                              sx={{ pl: 4 }}
+                              sx={{ pl: 4, pb: 0.5 }}
                               component={Link}
                               to={item.href}
                               onClick={handleCloseMenu}

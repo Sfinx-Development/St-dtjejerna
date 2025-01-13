@@ -68,7 +68,7 @@ export const serviceDescriptions = {
         Allt för att våra kunder ska känna sig nöjda och trygga med att flyttstädningen blir ordentligt genomförd. Ett grundligt städschema utformas tillsammans med kunden och vi går igenom varje moment och specifika önskemål punkt för punkt. Du som kund kan också känna dig trygg med att Städtjejerna ser till att de som flyttar in i ditt gamla boende blir nöjda. De har sista ordet och kan kräva att vissa punkter ska åtgärdas. Detta behöver du inte tänka på, eftersom det ingår i vårt städuppdrag att följa upp eventuella anmärkningar och vi kan därför garantera att samtliga parter blir nöjda med resultatet i slutändan.<br><br>
     
         <div style="background-color: #f4f4f4; padding: 10px;">
-          <b>Städoment som utförs i alla rum:</b><br>
+          <b>Städmoment som utförs i alla rum:</b><br>
           - Fönsterputsning<br>
           - Dammsugning och våtmoppning av golv, lister, dörrar, dörrkarmar, fönsterbrädor, fria ytor, element, garderobsdörrar och skåpdörrar<br>
           - Torkning utvändigt och invändigt i garderober, skåp, och bokhyllor<br>

@@ -14,7 +14,7 @@ const Hemstad: FC = () => {
 
   const sections = [
     {
-      title: "Städoment som utförs i alla rum",
+      title: "Städmoment som utförs i alla rum",
       icon: (
         <HomeIcon sx={{ fontSize: 30, color: "#e48bb1", marginRight: 1 }} />
       ),
@@ -149,7 +149,7 @@ const Hemstad: FC = () => {
                 key={idx}
                 sx={{
                   display: "flex",
-                  alignItems: "center",
+                  alignItems: "start",
                   marginBottom: "0.3rem",
                 }}
               >
