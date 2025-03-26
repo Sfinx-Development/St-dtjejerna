@@ -74,7 +74,7 @@ export const serviceDescriptions = {
           - Torkning utvändigt och invändigt i garderober, skåp, och bokhyllor<br>
           - Dammtorkning av väggar, eluttag, ytterdörrar och lampor<br>
           - Spegelputsning<br>
-          - Fönsterputs<br><br>
+          - Fönsterputs<br>
     
           <b>Badrumsstädning:</b><br>
           - Rengöring av väggar och golv<br>
@@ -83,7 +83,7 @@ export const serviceDescriptions = {
           - Rengöring av golvbrunnen<br>
           - Rengöring av dusch/badkar, inklusive under badkaret<br>
           - Torkar badrumsskåp in- och utvändigt samt ovanpå<br>
-          - Rengöring av kran, handfat och toalettstol samt utsidan av vitvaror och tvättmedelsbehållaren på tvättmaskinen<br><br>
+          - Rengöring av kran, handfat och toalettstol samt utsidan av vitvaror och tvättmedelsbehållaren på tvättmaskinen<br>
     
           <b>Köksstädning:</b><br>
           - Rengöring av kyl och frys ut- och invändigt<br>

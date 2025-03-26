@@ -6,6 +6,8 @@ import { useEffect, useState } from "react";
 import { Link, useNavigate } from "react-router-dom";
 import { useScreenSize } from "../screenSizeContext";
 import CustomButton from "./CustomButton";
+import HelmetWrapper from "./HelmetWrapper"; // justera path om filen ligger annorlunda
+
 
 export default function PresentingImage() {
   const { isMobile } = useScreenSize();
@@ -17,6 +19,15 @@ export default function PresentingImage() {
   }, []);
 
   return (
+    <>
+    <HelmetWrapper
+      title="Städfirma i Borås | Städtjejerna – Hemstäd, Flyttstäd & Företagsstäd"
+      description="Städtjejerna i Borås erbjuder trygg och professionell städning – hemstäd, flyttstädning, företagsstäd, fönsterputs och mer. Fasta priser & personlig service."
+      url="https://www.stadtjejerna.se"
+      image="https://i.imgur.com/T0MT49r.jpeg"
+    />
+
+
     <Box
       sx={{
         display: "flex",
@@ -80,6 +91,19 @@ export default function PresentingImage() {
           }}
         >
           Låt Städtjejerna göra jobbet
+        </Typography>
+
+        <Typography
+          sx={{
+            fontSize: 18,
+            fontWeight: 400,
+            color: "white",
+            marginTop: 2,
+            maxWidth: 600,
+            textShadow: "0px 0px 10px rgba(0,0,0,0.4)",
+          }}
+        >
+          Din lokala <strong>städfirma i centrala Borås</strong>
         </Typography>
 
         <CustomButton
@@ -195,5 +219,7 @@ export default function PresentingImage() {
         />
       </Box>
     </Box>
+    </>
   );
+  
 }

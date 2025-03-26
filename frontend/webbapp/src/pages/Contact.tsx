@@ -5,6 +5,7 @@ import Fade from "@mui/material/Fade";
 import ContactForm from "../components/ContactForm";
 import EmbeddedMap from "../components/MapComponent";
 import { useScreenSize } from "../screenSizeContext";
+import HelmetWrapper from "../components/HelmetWrapper";
 
 export default function Contact() {
   const images = [
@@ -15,20 +16,28 @@ export default function Contact() {
   ];
   const { isMobile } = useScreenSize();
   return (
-    <Fade in timeout={500}>
-      <Box
-        sx={{
-          display: "flex",
-          flexDirection: "column",
-          alignItems: "center",
-          width: "100%",
-          borderRadius: "10px",
-          boxShadow: "0 4px 12px rgba(0, 0, 0, 0.1)",
-          backgroundColor: "#fff",
-          gap: "20px",
-        }}
-      >
-        {/* <Typography
+    <>
+      <HelmetWrapper
+        title="Kontakta Städtjejerna i Borås | Boka Städning"
+        description="Kontakta oss för frågor, offert eller bokning av hemstäd, flyttstäd, företagsstäd eller fönsterputs i Borås. Vi svarar snabbt och personligt."
+        url="https://www.stadtjejerna.se/contact"
+        image="https://i.imgur.com/T0MT49r.jpeg"
+      />
+
+      <Fade in timeout={500}>
+        <Box
+          sx={{
+            display: "flex",
+            flexDirection: "column",
+            alignItems: "center",
+            width: "100%",
+            borderRadius: "10px",
+            boxShadow: "0 4px 12px rgba(0, 0, 0, 0.1)",
+            backgroundColor: "#fff",
+            gap: "20px",
+          }}
+        >
+          {/* <Typography
           variant={isMobile ? "h4" : "h2"}
           component="h2"
           gutterBottom
@@ -42,122 +51,123 @@ export default function Contact() {
         >
           Kontakt
         </Typography> */}
-        <ContactForm />
-        {/* <Divider sx={{ width: "100%" }} /> */}
-        <Box
-          sx={{
-            display: "flex",
-            flexDirection: { xs: "column", sm: "row" },
-            alignItems: "center",
-            marginLeft: { xs: 0, sm: 2 },
-            width: isMobile ? "95%" : "100%",
-            gap: "20px",
-          }}
-        >
+          <ContactForm />
+          {/* <Divider sx={{ width: "100%" }} /> */}
           <Box
             sx={{
-              flex: 1,
-              padding: 3,
-              backgroundColor: "rgba(255, 255, 255, 0.9)",
-              borderRadius: "16px",
-              boxShadow: "0 2px 8px rgba(0, 0, 0, 0.1)",
-              textAlign: "center",
+              display: "flex",
+              flexDirection: { xs: "column", sm: "row" },
+              alignItems: "center",
+              marginLeft: { xs: 0, sm: 2 },
+              width: isMobile ? "95%" : "100%",
+              gap: "20px",
             }}
           >
-            <Typography
-              variant="h4"
+            <Box
               sx={{
-                marginBottom: 2,
-                fontWeight: 600,
-                textTransform: "uppercase",
-                color: "#333",
+                flex: 1,
+                padding: 3,
+                backgroundColor: "rgba(255, 255, 255, 0.9)",
+                borderRadius: "16px",
+                boxShadow: "0 2px 8px rgba(0, 0, 0, 0.1)",
+                textAlign: "center",
               }}
             >
-              Följ oss
-            </Typography>
-            <Box sx={{ display: "flex", justifyContent: "center", gap: 2 }}>
-              <IconButton
-                aria-label="Instagram"
+              <Typography
+                variant="h4"
                 sx={{
-                  backgroundColor: "#833ab4",
-                  color: "#fff",
-                  transition: "transform 0.3s ease",
-                  "&:hover": {
-                    transform: "scale(1.1)",
-                    backgroundColor: "#8e44ad",
-                  },
+                  marginBottom: 2,
+                  fontWeight: 600,
+                  textTransform: "uppercase",
+                  color: "#333",
                 }}
               >
-                <InstagramIcon sx={{ fontSize: 36 }} />
-              </IconButton>
-              <IconButton
-                aria-label="Facebook"
+                Följ oss
+              </Typography>
+              <Box sx={{ display: "flex", justifyContent: "center", gap: 2 }}>
+                <IconButton
+                  aria-label="Instagram"
+                  sx={{
+                    backgroundColor: "#833ab4",
+                    color: "#fff",
+                    transition: "transform 0.3s ease",
+                    "&:hover": {
+                      transform: "scale(1.1)",
+                      backgroundColor: "#8e44ad",
+                    },
+                  }}
+                >
+                  <InstagramIcon sx={{ fontSize: 36 }} />
+                </IconButton>
+                <IconButton
+                  aria-label="Facebook"
+                  sx={{
+                    backgroundColor: "#3b5998",
+                    color: "#fff",
+                    transition: "transform 0.3s ease",
+                    "&:hover": {
+                      transform: "scale(1.1)",
+                      backgroundColor: "#344e86",
+                    },
+                  }}
+                >
+                  <FacebookIcon sx={{ fontSize: 36 }} />
+                </IconButton>
+              </Box>
+              <Typography
+                variant="h6"
                 sx={{
-                  backgroundColor: "#3b5998",
-                  color: "#fff",
-                  transition: "transform 0.3s ease",
-                  "&:hover": {
-                    transform: "scale(1.1)",
-                    backgroundColor: "#344e86",
-                  },
+                  marginTop: 3,
+                  color: "#555",
+                  fontSize: "1rem",
+                  lineHeight: 1.5,
                 }}
               >
-                <FacebookIcon sx={{ fontSize: 36 }} />
-              </IconButton>
+                Följ oss på sociala medier för de senaste uppdateringarna från
+                Städtjejerna!
+              </Typography>
             </Box>
-            <Typography
-              variant="h6"
+
+            <Box
               sx={{
-                marginTop: 3,
-                color: "#555",
-                fontSize: "1rem",
-                lineHeight: 1.5,
+                flex: 1,
+                borderRadius: "16px",
+                overflow: "hidden",
+                boxShadow: "0 2px 8px rgba(0, 0, 0, 0.1)",
               }}
             >
-              Följ oss på sociala medier för de senaste uppdateringarna från
-              Städtjejerna!
-            </Typography>
+              <EmbeddedMap width="100%" height="220px" />
+            </Box>
           </Box>
-
+          {/* <Divider sx={{ width: "100%" }} /> */}
           <Box
             sx={{
-              flex: 1,
-              borderRadius: "16px",
-              overflow: "hidden",
-              boxShadow: "0 2px 8px rgba(0, 0, 0, 0.1)",
+              display: "flex",
+              justifyContent: "space-evenly",
+              alignItems: "center",
+              gap: "20px",
+              width: "98%",
+              padding: 2,
+              flexWrap: "wrap",
             }}
           >
-            <EmbeddedMap width="100%" height="220px" />
+            {images.map((src, index) => (
+              <img
+                key={index}
+                alt={`Image ${index + 1}`}
+                src={src}
+                style={{
+                  flex: "1 1 250px",
+                  maxWidth: "100%",
+                  borderRadius: "8px",
+                  maxHeight: 350,
+                  transition: "transform 0.3s ease",
+                }}
+              />
+            ))}
           </Box>
         </Box>
-        {/* <Divider sx={{ width: "100%" }} /> */}
-        <Box
-          sx={{
-            display: "flex",
-            justifyContent: "space-evenly",
-            alignItems: "center",
-            gap: "20px",
-            width: "98%",
-            padding: 2,
-            flexWrap: "wrap",
-          }}
-        >
-          {images.map((src, index) => (
-            <img
-              key={index}
-              alt={`Image ${index + 1}`}
-              src={src}
-              style={{
-                flex: "1 1 250px",
-                maxWidth: "100%",
-                borderRadius: "8px",
-                maxHeight: 350,
-                transition: "transform 0.3s ease",
-              }}
-            />
-          ))}
-        </Box>
-      </Box>
-    </Fade>
+      </Fade>
+    </>
   );
 }

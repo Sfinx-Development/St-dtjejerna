@@ -6,6 +6,7 @@ import { useNavigate } from "react-router-dom";
 import CustomButton from "../components/CustomButton";
 import Info from "../components/Info";
 import { useScreenSize } from "../screenSizeContext";
+import HelmetWrapper from "../components/HelmetWrapper";
 
 const Flyttstad = () => {
   const { isMobile } = useScreenSize();
@@ -60,6 +61,13 @@ const Flyttstad = () => {
 
   return (
     <>
+      <HelmetWrapper
+        title="Flyttstädning i Borås med Garanti | Städtjejerna"
+        description="Behöver du flyttstäd i Borås? Vi erbjuder garanti, fasta priser och noggrann städning enligt checklistor. Låt Städtjejerna göra jobbet!"
+        url="https://www.stadtjejerna.se/flyttstad"
+        image="https://i.imgur.com/liZhO4v.jpeg"
+      />
+
       <Box
         sx={{
           backgroundImage: 'url("https://i.imgur.com/KhVvozY.jpeg")',

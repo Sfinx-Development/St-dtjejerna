@@ -4,6 +4,7 @@ import { useNavigate } from "react-router-dom";
 import CustomButton from "../components/CustomButton";
 import Info from "../components/Info";
 import { useScreenSize } from "../screenSizeContext";
+import HelmetWrapper from "../components/HelmetWrapper";
 
 const Trappstad: FC = () => {
   const { isMobile } = useScreenSize();
@@ -12,6 +13,13 @@ const Trappstad: FC = () => {
 
   return (
     <>
+      <HelmetWrapper
+        title="Trappstäd i Borås | Rent och Välkomnande – Städtjejerna"
+        description="Vi erbjuder trappstädning i Borås för bostadsrättsföreningar och fastighetsägare. Låt Städtjejerna skapa en fräsch entré – regelbundet och noggrant."
+        url="https://www.stadtjejerna.se/trappstad"
+        image="https://i.imgur.com/QyIFH1z.jpeg" // byt till rätt bild om du har en specifik
+      />
+
       <Box
         sx={{
           background:
