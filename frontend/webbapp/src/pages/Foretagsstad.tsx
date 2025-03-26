@@ -7,6 +7,7 @@ import { useNavigate } from "react-router-dom";
 import CustomButton from "../components/CustomButton";
 import Info from "../components/Info";
 import { useScreenSize } from "../screenSizeContext";
+import HelmetWrapper from "../components/HelmetWrapper";
 
 const Foretagsstad: FC = () => {
   const { isMobile } = useScreenSize();
@@ -46,6 +47,13 @@ const Foretagsstad: FC = () => {
 
   return (
     <>
+      <HelmetWrapper
+        title="Företagsstäd i Borås | Kontorsstäd med Kvalitet – Städtjejerna"
+        description="Städtjejerna erbjuder professionell företagsstädning i Borås för kontor, butiker och verksamheter. Flexibla upplägg med fasta priser."
+        url="https://www.stadtjejerna.se/foretagsstad"
+        image="https://i.imgur.com/aCLoUIE.jpeg"
+      />
+
       <Box
         sx={{
           backgroundImage: 'url("https://i.imgur.com/aCLoUIE.jpeg")',

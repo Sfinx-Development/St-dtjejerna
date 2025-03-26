@@ -4,6 +4,7 @@ import { useNavigate } from "react-router-dom";
 import CustomButton from "../components/CustomButton";
 import Info from "../components/Info";
 import { useScreenSize } from "../screenSizeContext";
+import HelmetWrapper from "../components/HelmetWrapper";
 
 const Fonsterputs: FC = () => {
   const { isMobile } = useScreenSize();
@@ -11,6 +12,13 @@ const Fonsterputs: FC = () => {
 
   return (
     <>
+      <HelmetWrapper
+        title="Fönsterputs i Borås | Skinande Rena Fönster – Städtjejerna"
+        description="Professionell fönsterputs för både privatpersoner och företag i Borås med omnejd. Inga ränder – bara skinande resultat. Boka enstaka eller med abonnemang."
+        url="https://www.stadtjejerna.se/fonsterputs"
+        image="https://i.imgur.com/H4CO2Hw.jpeg"
+      />
+
       <Box
         sx={{
           background:
