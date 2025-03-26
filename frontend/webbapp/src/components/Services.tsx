@@ -10,14 +10,20 @@ export default function Services() {
       nav: "/hemstad",
       description: (
         <>
-          Vi på <strong>Städtjejerna</strong> ser till att du kommer hem till
-          ett
-          <em> rent, nystädat och ett väldoftande hem</em>. Allt för att du ska
-          kunna släppa tankarna på städningen och fokusera på annat under tiden.{" "}
+          Vi på <strong>Städtjejerna</strong> är en städfirma som ser till att
+          du kommer hem till ett rent, nystädat och ett väldoftande hem. Allt
+          för att du ska kunna släppa tankarna på städningen och fokusera på
+          annat under tiden. <br />
           <br />
+          Välj{" "}
+          <strong>
+            veckostädning, hemstäd varannan vecka eller engångsstädning
+          </strong>{" "}
+          – du bestämmer. Vi är en personlig och pålitlig{" "}
+          <strong>städfirma i Borås</strong> som
+          {/* förenklar din vardag.<br />
           <br />
-          Vår hemstädning gör din vardag lättare så att du har mer tid att lägga
-          på din hobby eller familj.
+          <a href="/hemstad">Läs mer om vår hemstädning i Borås här</a>. */}
         </>
       ),
       image: "https://i.imgur.com/sKCfjdv.jpeg",
@@ -28,12 +34,16 @@ export default function Services() {
       nav: "/flyttstad",
       description: (
         <>
-          Allt för att våra kunder ska känna sig{" "}
-          <strong>nöjda och trygga</strong> med att flyttstädningen blir
-          ordentligt genomförd. <br />
+          Behöver du hjälp med <strong>flyttstädning i Borås</strong>? Vår{" "}
+          <strong>städfirma</strong> utför flyttstäd med garanti – så att du kan
+          fokusera på ditt nya hem och lämna det gamla skinande rent. <br />
           <br />
-          Ett <em>grundligt städschema</em> utformas tillsammans med kunden och
-          vi går igenom varje moment och specifika önskemål punkt för punkt.{" "}
+          <strong>Städtjejerna Borås</strong> erbjuder tydliga priser och
+          punktliga leveranser. Allt för att våra kunder ska känna sig{" "}
+          <strong>nöjda och trygga</strong> med att flyttstädningen blir
+          ordentligt genomförd.
+          {/* Ett <em>grundligt städschema</em> utformas tillsammans med kunden och
+          vi går igenom varje moment och specifika önskemål punkt för punkt.{" "} */}
         </>
       ),
       image: "https://i.imgur.com/liZhO4v.jpeg",
@@ -44,11 +54,20 @@ export default function Services() {
       nav: "/foretagsstad",
       description: (
         <>
-          Städtjejerna tar med sig de <strong>rengöringsmedel</strong> som
-          behövs och alla medel ingår i priset. <br />
+         Behöver ditt företag hjälp med{" "}
+          <strong>företagsstädning i Borås</strong>?{" "}
+          <strong>Städtjejerna</strong> erbjuder professionell städning för
+          kontor, butiker och andra verksamheter – alltid med samma höga
+          kvalitet. <br />
           <br />
-          Det finns möjlighet att beställa <em>förbrukningsmaterial</em> som
-          exempelvis tvål, toalettpapper, och pappershanddukar via oss.
+          Vi tar med oss miljövänliga <strong>rengöringsmedel</strong> som ingår
+          i priset. Det finns även möjlighet att beställa{" "}
+          förbrukningsmaterial som tvål, toalettpapper och
+          pappershanddukar via oss. <br />
+          <br />
+          Som en etablerad <strong>städfirma i Borås</strong> värdesätter vi
+          punktlighet, tydlig kommunikation och en ren arbetsmiljö.{" "}
+          {/* <a href="/foretagsstad">Läs mer om våra tjänster för företag här</a>. */}
         </>
       ),
       image: "https://i.imgur.com/aCLoUIE.jpeg",

@@ -82,6 +82,19 @@ export default function PresentingImage() {
           Låt Städtjejerna göra jobbet
         </Typography>
 
+        <Typography
+          sx={{
+            fontSize: 18,
+            fontWeight: 400,
+            color: "white",
+            marginTop: 2,
+            maxWidth: 600,
+            textShadow: "0px 0px 10px rgba(0,0,0,0.4)",
+          }}
+        >
+          Din lokala <strong>städfirma i centrala Borås</strong>
+        </Typography>
+
         <CustomButton
           ariaLabel="Till Startsidan"
           handleOnClik={() => navigate("/contact")}
