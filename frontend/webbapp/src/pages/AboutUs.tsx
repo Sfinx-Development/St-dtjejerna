@@ -86,12 +86,14 @@ const AboutUs: FC = () => {
                 // color: "#666",
               }}
             >
-              Det började en dag för snart 10 år sedan. Två flickor slöt an på
-              ett städföretag i Borås. Helt olika men ändå så lika. Victoria med
-              hennes lugna harmoniska personlighet och Josephine med hennes
-              spralliga, energiska personlighet. Hur bra fungerar inte dessa två
-              personligheter ihop för att arbeta effektivt, noggrant och driva
-              Städtjejerna i 7Härad tillsammans?
+              Städtjejerna i Borås grundades för snart 10 år sedan av två tjejer
+              med olika men kompletterande personligheter – Victoria och
+              Josephine. Sedan dess har vi vuxit till ett städföretag med stark
+              lokal förankring, personlig service och ett hjärta för noggrannhet
+              och kvalitet. Victoria med hennes lugna harmoniska personlighet och
+              Josephine med hennes spralliga, energiska personlighet. Hur bra
+              fungerar inte dessa två ihop för att arbeta
+              effektivt, noggrant och driva Städtjejerna i 7Härad tillsammans?
             </Typography>
 
             <Box

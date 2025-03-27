@@ -4,6 +4,8 @@ import { useNavigate } from "react-router-dom";
 import CustomButton from "../components/CustomButton";
 import Info from "../components/Info";
 import { useScreenSize } from "../screenSizeContext";
+import HelmetWrapper from "../components/HelmetWrapper";
+import CheckCircleIcon from "@mui/icons-material/CheckCircle";
 
 const Byggstad: FC = () => {
   const { isMobile } = useScreenSize();
@@ -11,6 +13,13 @@ const Byggstad: FC = () => {
 
   return (
     <>
+      <HelmetWrapper
+        title="Byggstädning i Borås | Professionell byggstäd – Städtjejerna"
+        description="Behöver du byggstädning i Borås? Vi hjälper både privatpersoner och företag efter renovering eller nybygge. Miljövänligt, noggrant och klart för inflytt."
+        url="https://www.stadtjejerna.se/byggstad"
+        image="https://i.imgur.com/fL4AjiZ.jpeg"
+      />
+
       <Box
         sx={{
           background:
@@ -71,9 +80,43 @@ const Byggstad: FC = () => {
             textAlign: "left",
             marginX: isMobile ? 6 : 0,
             marginBottom: "20px",
+            color: "#555",
           }}
         >
-          <Typography variant="h6" paragraph sx={{ color: "#555" }}>
+          <Typography variant="h5" paragraph sx={{ color: "#555" }}>
+            <strong>
+              Byggstädning i Borås – för ett inflyttningsklart resultat
+            </strong>
+          </Typography>
+
+          <Typography variant="body1" paragraph>
+            Har du renoverat eller byggt nytt? Då behöver du en noggrann
+            byggstädning innan inflytt. Vi på Städtjejerna erbjuder
+            professionell byggstäd i Borås för både privatpersoner och företag –
+            alltid med fasta priser och ett skinande resultat.
+          </Typography>
+
+          <Typography variant="body1" paragraph>
+            Vi städar bort allt byggdamm, putsar ytor och ser till att varje
+            hörn är redo för inflytt eller verksamhetsstart. Oavsett om det
+            gäller en nyproducerad villa, ett nybyggt kontor eller en renoverad
+            lägenhet så har vi rätt utrustning och erfarenhet.
+          </Typography>
+
+          <Typography variant="body1" paragraph>
+            Vår byggstädning i Borås följer en tydlig checklista och utförs med
+            miljövänliga produkter. Vi garanterar ett dammfritt, tryggt och
+            fräscht slutresultat. Har du särskilda önskemål? Berätta för oss så
+            anpassar vi uppdraget efter dina behov.
+          </Typography>
+
+          <Typography variant="body1" paragraph>
+            Efter vår byggstädning kan du direkt börja möblera och inreda – utan
+            att behöva oroa dig för slipdamm eller byggrester. Kontakta oss för
+            mer information och få en kostnadsfri offert redan idag.
+          </Typography>
+
+          {/* <Typography variant="h6" paragraph sx={{ color: "#555" }}>
             <strong>Med känsla för ett dammfritt resultat</strong>
           </Typography>
           <Typography variant="body1" paragraph>
@@ -99,7 +142,44 @@ const Byggstad: FC = () => {
             inredning. Känn dig trygg med att ha gjort rätt val av städfirma i
             Borås. Vår checklista täcker behovet av byggstädning och utöver den
             är kunden alltid välkommen att berätta om sina speciella önskemål.
+          </Typography> */}
+          <Typography
+            variant="h6"
+            sx={{ fontWeight: 600, color: "#555", marginTop: 8 }}
+          >
+            Vad ingår i vår byggstädning?
           </Typography>
+
+          <Box
+            component="ul"
+            sx={{ listStyle: "none", paddingLeft: 0, marginTop: 1 }}
+          >
+            {[
+              "Dammsugning och våttorkning av alla golvytor",
+              "Rengöring av lister, dörrkarmar, eluttag och strömbrytare",
+              "Fönsterputs – in- och utvändigt (vid behov)",
+              "Avtorkning av alla ytor, hyllor och skåp – invändigt och utvändigt",
+              "Borttagning av byggdamm från väggar, tak och svåråtkomliga ytor",
+              "Rengöring av sanitetsutrustning, kök och vitvaror",
+              "Tömning av sopor och byggrester",
+            ].map((item, index) => (
+              <Box
+                component="li"
+                key={index}
+                sx={{
+                  display: "flex",
+                  alignItems: "center",
+                  marginBottom: 1,
+                }}
+              >
+                <CheckCircleIcon sx={{ color: "#e48bb1", marginRight: 1 }} />
+                <Typography variant="body1" sx={{ color: "#e48bb1" }}>
+                  {item}
+                </Typography>
+              </Box>
+            ))}
+          </Box>
+
           <CustomButton
             title="Få ett kostnadsförslag"
             ariaLabel="Till offertsidan"
