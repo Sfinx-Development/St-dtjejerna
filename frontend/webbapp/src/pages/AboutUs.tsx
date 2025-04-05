@@ -90,10 +90,10 @@ const AboutUs: FC = () => {
               med olika men kompletterande personligheter – Victoria och
               Josephine. Sedan dess har vi vuxit till ett städföretag med stark
               lokal förankring, personlig service och ett hjärta för noggrannhet
-              och kvalitet. Victoria med hennes lugna harmoniska personlighet och
-              Josephine med hennes spralliga, energiska personlighet. Hur bra
-              fungerar inte dessa två ihop för att arbeta
-              effektivt, noggrant och driva Städtjejerna i 7Härad tillsammans?
+              och kvalitet. Lugna, harmoniska Victoria ihop med spralliga och
+              energiska Josephine. Hur bra fungerar inte dessa två ihop för att
+              arbeta effektivt, noggrant och driva Städtjejerna i 7Härad
+              tillsammans?
             </Typography>
 
             <Box
