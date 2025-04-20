@@ -50,12 +50,17 @@ const MenuLink = ({
       <Typography
         variant="body1"
         sx={{
-          marginY: 1,
-          color: "#555556",
+          paddingY: 1.5,
+          paddingX: 1.5,
+          color: "#333",
           fontSize: 16,
+          lineHeight: "1.4",
+          fontWeight: 100,
+          letterSpacing: 0.5,
+          transition: "all 0.3s ease",
           "&:hover": {
             color: "#e48bb1",
-            transform: "scale(1.1)",
+            transform: "scale(1.08)",
           },
         }}
       >
@@ -220,20 +225,32 @@ export default function CustomHeader2(): JSX.Element {
     <Box
       component={"header"}
       sx={{
+        position: "sticky",
+        top: 0,
+        zIndex: 9999,
+        width: "100%",
+
+        background: "white",
         display: "flex",
         alignItems: "center",
         justifyContent: "space-between",
-        width: "100%",
-        boxShadow: hasScrolled ? "0px 4px 10px rgba(0, 0, 0, 0.3)" : "none",
         flexDirection: isMobile ? "column" : "row",
         height: "90px",
-        zIndex: 9999,
-        position: "sticky",
-        background: "white",
-        top: 0,
+        boxShadow: hasScrolled ? "0px 4px 10px rgba(0, 0, 0, 0.1)" : "none",
+        transition: "box-shadow 0.3s ease-in-out",
+        "&::after": {
+          content: '""',
+          position: "absolute",
+          bottom: 0,
+          left: 0,
+          width: "100%",
+          height: "40px", // justera höjden på toningen
+
+          pointerEvents: "none",
+        },
       }}
     >
-      <Box>
+      <Box sx={{ height: "100%" }}>
         <Link
           href="/"
           sx={{
@@ -246,7 +263,7 @@ export default function CustomHeader2(): JSX.Element {
             src="https://i.imgur.com/Zcgk1vf.png"
             alt="Logo saying dailyvibe"
             style={{
-              marginLeft: 10,
+              marginLeft: 20,
               height: "90px",
               objectFit: "contain",
               color: "white",
