@@ -114,7 +114,7 @@ export default function ContactForm(props: ContactFormProps) {
     >
       <Box
         sx={{
-          textAlign: { xs: "center", md: "left" },
+          textAlign: { xs: "left", md: "left" },
           maxWidth: 400,
           height: "100%",
           display: "flex",
@@ -149,13 +149,15 @@ export default function ContactForm(props: ContactFormProps) {
           <PhoneIcon
             sx={{ color: "rgba(0,0,0,0.8)", fontSize: 22, marginRight: 1 }}
           />
-          <Typography sx={{ color: "rgba(0,0,0,0.8)", fontSize: 22 }}>
+          <Typography
+            sx={{ color: "rgba(0,0,0,0.8)", fontSize: { xs: 20, md: 22 } }}
+          >
             <a
               href="tel:033-7269676"
               style={{
                 color: "inherit",
                 textDecoration: "none",
-                fontSize: 22,
+                // fontSize: {xs:20, md:22},
               }}
             >
               033-726 96 76
@@ -164,9 +166,15 @@ export default function ContactForm(props: ContactFormProps) {
         </Box>
         <Box sx={{ display: "flex", alignItems: "center", marginBottom: 1 }}>
           <EmailIcon
-            sx={{ color: "rgba(0,0,0,0.8)", fontSize: 22, marginRight: 1 }}
+            sx={{
+              color: "rgba(0,0,0,0.8)",
+              fontSize: { xs: 20, md: 22 },
+              marginRight: 1,
+            }}
           />
-          <Typography sx={{ color: "rgba(0,0,0,0.8)", fontSize: 22 }}>
+          <Typography
+            sx={{ color: "rgba(0,0,0,0.8)", fontSize: { xs: 20, md: 22 } }}
+          >
             <a
               href="mailto:stadtjejerna@hotmail.com"
               style={{ color: "inherit", textDecoration: "none" }}
@@ -177,14 +185,24 @@ export default function ContactForm(props: ContactFormProps) {
         </Box>
         <Box sx={{ display: "flex", alignItems: "center", marginBottom: 1 }}>
           <LocationOnIcon
-            sx={{ color: "rgba(0,0,0,0.8)", fontSize: 22, marginRight: 1 }}
+            sx={{
+              color: "rgba(0,0,0,0.8)",
+              fontSize: { xs: 20, md: 22 },
+              marginRight: 1,
+            }}
           />
           <Typography
-            sx={{ color: "rgba(0,0,0,0.8)", fontSize: 22, marginRight: 0.5 }}
+            sx={{
+              color: "rgba(0,0,0,0.8)",
+              fontSize: { xs: 20, md: 22 },
+              marginRight: 0.5,
+            }}
           >
             Tredje villagatan 17
           </Typography>
-          <Typography sx={{ color: "rgba(0,0,0,0.8)", fontSize: 22 }}>
+          <Typography
+            sx={{ color: "rgba(0,0,0,0.8)", fontSize: { xs: 20, md: 22 } }}
+          >
             50453 Borås
           </Typography>
         </Box>

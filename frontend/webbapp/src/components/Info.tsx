@@ -3,10 +3,10 @@ import AttachMoneyIcon from "@mui/icons-material/AttachMoney";
 import CalendarTodayIcon from "@mui/icons-material/CalendarToday";
 import CoronavirusIcon from "@mui/icons-material/Coronavirus";
 import LooksTwoIcon from "@mui/icons-material/LooksTwo";
-import MailOutlineIcon from "@mui/icons-material/MailOutline";
-import PhoneIcon from "@mui/icons-material/Phone";
 import { Box, IconButton, SvgIconProps, Typography } from "@mui/material";
 import { useScreenSize } from "../screenSizeContext";
+import MailOutlineIcon from "@mui/icons-material/MailOutline";
+import PhoneIcon from "@mui/icons-material/Phone";
 
 type InfoItemProps = {
   icon: React.ReactElement<SvgIconProps>;
@@ -52,40 +52,12 @@ export default function Info() {
         <Box
           sx={{
             display: "flex",
+            flexDirection: "column",
             justifyContent: "center",
             alignItems: "center",
-            gap: 2,
+            // gap: 2,
           }}
         >
-          <IconButton
-            aria-label="Mail Icon"
-            sx={{
-              color: "#555",
-              transition: "transform 0.3s ease",
-              "&:hover": {
-                transform: "scale(1.1)",
-              },
-            }}
-          >
-            <MailOutlineIcon sx={{ fontSize: isMobile ? 24 : 28 }} />
-          </IconButton>
-          <IconButton
-            aria-label="Phone number"
-            sx={{
-              color: "#555",
-              transition: "transform 0.3s ease",
-              "&:hover": {
-                transform: "scale(1.1)",
-              },
-            }}
-          >
-            <a
-              href="tel:033-7269676"
-              style={{ color: "inherit", textDecoration: "none" }}
-            >
-              <PhoneIcon sx={{ fontSize: isMobile ? 24 : 28 }} />
-            </a>
-          </IconButton>
           <Typography
             sx={{
               color: "#666",
@@ -96,6 +68,39 @@ export default function Info() {
           >
             Vid frågor är du välkommen att kontakta oss
           </Typography>
+          <Box
+            sx={{ width: "100%", display: "flex", justifyContent: "center" }}
+          >
+            <IconButton
+              aria-label="Mail Icon"
+              sx={{
+                color: "#555",
+                transition: "transform 0.3s ease",
+                "&:hover": {
+                  transform: "scale(1.1)",
+                },
+              }}
+            >
+              <MailOutlineIcon sx={{ fontSize: isMobile ? 24 : 28 }} />
+            </IconButton>
+            <IconButton
+              aria-label="Phone number"
+              sx={{
+                color: "#555",
+                transition: "transform 0.3s ease",
+                "&:hover": {
+                  transform: "scale(1.1)",
+                },
+              }}
+            >
+              <a
+                href="tel:033-7269676"
+                style={{ color: "inherit", textDecoration: "none" }}
+              >
+                <PhoneIcon sx={{ fontSize: isMobile ? 24 : 28 }} />
+              </a>
+            </IconButton>
+          </Box>
         </Box>
       </Box>
 

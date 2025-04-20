@@ -140,6 +140,7 @@ export default function OffertForm() {
             letterSpacing: "2px",
             marginBottom: 2,
             marginTop: 4,
+            fontSize: { xs: 28, md: 42 },
           }}
         >
           Offertförfrågan
@@ -186,7 +187,7 @@ export default function OffertForm() {
               "&.Mui-focused fieldset": {
                 borderColor: "rgba(0, 0, 0, 0.8)",
               },
-              backgroundColor: "rgba(255, 255, 255, 0.4)",
+              backgroundColor: "rgba(255, 255, 255, 0.5)",
               color: "rgba(0, 0, 0, 0.8)",
             },
             input: {
@@ -213,7 +214,7 @@ export default function OffertForm() {
               "&.Mui-focused fieldset": {
                 borderColor: "rgba(0, 0, 0, 0.8)",
               },
-              backgroundColor: "rgba(255, 255, 255, 0.4)",
+              backgroundColor: "rgba(255, 255, 255, 0.5)",
               color: "rgba(0, 0, 0, 0.8)",
             },
             input: {
@@ -240,7 +241,7 @@ export default function OffertForm() {
               "&.Mui-focused fieldset": {
                 borderColor: "rgba(0, 0, 0, 0.8)",
               },
-              backgroundColor: "rgba(255, 255, 255, 0.4)",
+              backgroundColor: "rgba(255, 255, 255, 0.5)",
               color: "rgba(0, 0, 0, 0.8)",
             },
             input: {
@@ -252,7 +253,18 @@ export default function OffertForm() {
           }}
         />
 
-        <Box sx={{ display: "flex", gap: 2, flexWrap: "wrap" }}>
+        <Box
+          sx={{
+            display: "flex",
+            gap: 2,
+            width: "100%",
+            // backgroundColor: "red",
+            flexWrap: "wrap",
+            marginLeft: { xs: 1.5 },
+            justifyContent: "center",
+            alignItems: "center",
+          }}
+        >
           {serviceChoices.map((service, index) => (
             <FormControlLabel
               key={index}
@@ -263,6 +275,7 @@ export default function OffertForm() {
                   value={service}
                   sx={{
                     color: "rgba(0, 0, 0, 0.6)",
+
                     "&.Mui-checked": {
                       color: "rgba(0, 0, 0, 0.6)",
                     },
@@ -270,7 +283,12 @@ export default function OffertForm() {
                 />
               }
               label={service}
-              sx={{ flex: "1 1 45%", color: "rgba(0, 0, 0, 0.8)" }}
+              sx={{
+                flex: "1 1 45%",
+                borderRadius: 1,
+                color: "rgba(0, 0, 0, 0.8)",
+                // backgroundColor: "rgba(255, 255, 255, 0.5)",
+              }}
             />
           ))}
         </Box>
