@@ -23,7 +23,7 @@ const RootLayout = () => {
       >
         Hoppa till innehåll
       </a>
-
+      <ScrollToTop />
       {/* <header aria-label="Webbplatsens huvudmeny"> */}
       {isMobile ? <MobileHeader /> : <CustomHeader />}
       {/* </header> */}
@@ -39,7 +39,6 @@ const RootLayout = () => {
           alignItems: "center",
         }}
       >
-        <ScrollToTop />
         <Outlet />
       </main>
 

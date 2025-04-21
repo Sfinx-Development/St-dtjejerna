@@ -1,5 +1,4 @@
 import { Box, Typography } from "@mui/material";
-import { useNavigate } from "react-router-dom";
 import CustomButton from "./CustomButton";
 
 export default function Services() {
@@ -54,16 +53,15 @@ export default function Services() {
       nav: "/foretagsstad",
       description: (
         <>
-         Behöver ditt företag hjälp med{" "}
+          Behöver ditt företag hjälp med{" "}
           <strong>företagsstädning i Borås</strong>?{" "}
           <strong>Städtjejerna</strong> erbjuder professionell städning för
           kontor, butiker och andra verksamheter – alltid med samma höga
           kvalitet. <br />
           <br />
           Vi tar med oss miljövänliga <strong>rengöringsmedel</strong> som ingår
-          i priset. Det finns även möjlighet att beställa{" "}
-          förbrukningsmaterial som tvål, toalettpapper och
-          pappershanddukar via oss. <br />
+          i priset. Det finns även möjlighet att beställa förbrukningsmaterial
+          som tvål, toalettpapper och pappershanddukar via oss. <br />
           <br />
           Som en etablerad <strong>städfirma i Borås</strong> värdesätter vi
           punktlighet, tydlig kommunikation och en ren arbetsmiljö.{" "}
@@ -74,7 +72,7 @@ export default function Services() {
     },
   ];
 
-  const navigate = useNavigate();
+  // const navigate = useNavigate();
 
   return (
     <Box
@@ -154,7 +152,9 @@ export default function Services() {
             </Typography>
             <CustomButton
               ariaLabel={`Till ${service.title}-sidan`}
-              handleOnClik={() => navigate(service.nav)}
+              handleOnClik={() => {
+                window.location.href = service.nav;
+              }}
               title={`Till ${service.title}`}
               animation={false}
               disabled={false}
