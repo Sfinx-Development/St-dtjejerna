@@ -127,7 +127,7 @@ export default function Services() {
             sx={{
               flex: 1,
               padding: { xs: 2, md: 4 },
-              textAlign: { xs: "center", md: "left" },
+              textAlign: { xs: "left", md: "left" },
             }}
           >
             <Typography
