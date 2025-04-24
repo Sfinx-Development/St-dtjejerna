@@ -1,30 +1,17 @@
-// import { useEffect } from "react";
-// import { useLocation } from "react-router-dom";
-
-// const ScrollToTop = () => {
-//   const { pathname } = useLocation();
-
-//   useEffect(() => {
-//     window.scrollTo(0, 0);
-//     document.documentElement.scrollTop = 0;
-//     document.body.scrollTop = 0;
-//   }, [pathname]);
-
-//   return null;
-// };
-
-// export default ScrollToTop;
 import { useEffect } from "react";
-import { useLocation } from "react-router-dom";
+import { useLocation, useParams } from "react-router-dom";
 
 const ScrollToTop = () => {
-  const { pathname } = useLocation();
+  const { pathname, key } = useLocation();
+  const { id } = useParams();
 
   useEffect(() => {
-    requestAnimationFrame(() => {
-      window.scrollTo({ top: 0, left: 0, behavior: "smooth" });
-    });
-  }, [pathname]);
+    const timeout = setTimeout(() => {
+      window.scrollTo({ top: 0, behavior: "auto" });
+    }, 100);
+
+    return () => clearTimeout(timeout);
+  }, [pathname, key, id]);
 
   return null;
 };
