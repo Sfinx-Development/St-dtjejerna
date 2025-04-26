@@ -55,7 +55,7 @@ export default function Security() {
       >
         <Box
           sx={{
-            textAlign: { xs: "center", md: "left" },
+            textAlign: { xs: "left", md: "left" },
             padding: 3,
             marginBottom: 2,
             maxWidth: 400,
@@ -111,7 +111,7 @@ export default function Security() {
       >
         <Box
           sx={{
-            textAlign: { xs: "center", md: "left" },
+            textAlign: { xs: "left", md: "left" },
             padding: 3,
             marginBottom: 2,
             maxWidth: 400,
@@ -131,7 +131,7 @@ export default function Security() {
               color: "#444",
             }}
           >
-            <LockIcon sx={{ marginRight: 1, color: "#444" }} />
+            <LockIcon sx={{ marginRight: 1, color: "#444",  }} />
             SEKRETESS
           </Typography>
           <Typography
