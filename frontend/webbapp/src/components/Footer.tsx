@@ -96,6 +96,30 @@ export default function Footer() {
 
       <Divider sx={{ backgroundColor: "#ffff", marginY: 4 }} />
 
+      <Box
+        sx={{
+          display: "flex",
+          justifyContent: "center",
+          alignItems: "center",
+          flexDirection: "column",
+          gap: 1,
+          mb: 3,
+        }}
+      >
+        <Box
+          component="img"
+          src={"https://i.imgur.com/OGJeGhw.jpeg"}
+          alt="Vi stöttar Borås Hockey"
+          sx={{
+            height: 100,
+            opacity: 0.85,
+            filter: "brightness(0.95)",
+            transition: "transform 0.3s ease",
+            "&:hover": { transform: "scale(1.05)" },
+          }}
+        />
+      </Box>
+
       {/* Company Information */}
       <Box>
         <Typography fontWeight={600} fontSize={24} sx={{ marginBottom: 2 }}>
