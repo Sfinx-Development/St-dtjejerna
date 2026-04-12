@@ -108,7 +108,7 @@ const AboutUs: FC = () => {
               <Box
                 component="img"
                 src="https://i.imgur.com/FhsHGOs.jpeg"
-                alt="Victoria"
+                alt="Victoria – medgrundare av Städtjejerna i Borås"
                 sx={{
                   width: isMobile ? "100%" : "auto",
                   maxHeight: "350px",
@@ -163,7 +163,7 @@ const AboutUs: FC = () => {
               <Box
                 component="img"
                 src="https://i.imgur.com/yZSk2SB.jpeg"
-                alt="Josephine"
+                alt="Josephine – medgrundare av Städtjejerna i Borås"
                 sx={{
                   width: isMobile ? "100%" : "auto",
                   maxHeight: "350px",
