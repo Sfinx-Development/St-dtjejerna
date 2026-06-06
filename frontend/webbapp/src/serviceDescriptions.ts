@@ -1,46 +1,6 @@
 
 export const serviceDescriptions = {
-    // hemstad: {
-    //   image: "/images/hemstad.jpg",
-    //   title: "Hemstäd",
-    //   description: "Information om Hemstäd. Här kan du lägga till all information om tjänsten Hemstäd."
-    // },
-    // hemstad: {
-    //   image: "/images/hemstad.jpg",
-    //   title: "Hemstäd",
-    //   description: `
-    //     Har du svårt att få vardagspusslet att gå ihop? Vill du få mer tid över till sådant som du verkligen uppskattar? Starta då ett städabonnemang och låt Städtjejerna göra jobbet! Vi är vana vid att ta hand om olika typer av boenden och behov runt om i Borås med omnejd. Därför skräddarsys hemstädningen med ett upplägg som matchar just dina unika behov. Kanske önskas lakansbyte, strykning eller hjälp med tvätt?<br><br>
-    
-    //     Berätta vad du önskar få hjälp med så sammanställer vi allt tillsammans i en städbeskrivning där det också framgår vilka rum som ska ingå och hur du vill ha städningen utförd. Som kund hos oss bestämmer du själv intervallen på städningen. Det finns möjlighet att boka veckostäd, varannan vecka eller en gång i månaden.<br><br>
-    
-    //     Städtjejerna sätter kundens trygghet i första rummet när du anlitar våra tjänster och därför utförs städningen på samma veckodag och av samma person vid varje tillfälle. Det ger ett resultat med god kvalitet och kontinuitet. Allt för att du ska kunna släppa tankarna på städningen och fokusera på annat under tiden.<br><br>
-    
-    //     Följande städmoment ingår som grund i abonnemanget:<br><br>
-    
-    //     <b>Alla rum:</b><br><br>
-    
-    //     - Dammsugning av golv, lister, elkontakter, element, mattor och möbler med stoppning som till exempel soffor och fåtöljer.<br>
-    //     - Fuktmoppning av alla golv.<br>
-    //     - Dammtorkning/våttorkning av alla öppna ytor som till exempel bord, bänkar, fönsterbrädor, dörrar och hyllor samt golvlister, socklar och lampor (som nås utan pall).<br>
-    //     - Putsning av speglar.<br>
-    //     - Lösa föremål plockas i ordning som till exempel leksaker, kläder, tidningar.<br><br>
-    
-    //     <b>Badrum:</b><br><br>
-    
-    //     - Rengöring av badkar, dusch, handfat, kran och toalett samt kaklet runt omkring.<br>
-    //     - Våttorkning av fläckar på badrumsskåp, väggar, tvättmaskin och torktumlare.<br>
-    //     - Putsning av speglar.<br><br>
-    
-    //     <b>Kök:</b><br><br>
-    
-    //     - Våttorkning av kaklet ovanför diskbänken, fläckar på köksluckor, kaffebryggare, mikrovågsugn invändigt och utvändigt, brödrost, bord, stolar och fläkt.<br>
-    //     - Lägger in disken i diskmaskinen.<br>
-    //     - Rengöring av diskhon, kranar och spis.<br>
-    //     - Tömning av sopor och utrymmet under diskbänken.<br><br>
-    
-    //     Utöver städabonnemang erbjuder vi även storstädning eller hemstäd vid enskilda tillfällen när behov finns.
-    //   `
-    // },
+
     
     byggstad: {
       image: "/images/byggstad.jpg",
@@ -54,11 +14,7 @@ export const serviceDescriptions = {
       `
     },
     
-    // byggstad: {
-    //   image: "/images/byggstad.jpg",
-    //   title: "Byggstäd",
-    //   description: "Information om Byggstäd. Här kan du lägga till all information om tjänsten Byggstäd."
-    // },
+  
     flyttstad: {
       image: "/images/flyttstad.jpg",
       title: "Flyttstäd",
@@ -99,11 +55,7 @@ export const serviceDescriptions = {
       `
     },
     
-    // flyttstad: {
-    //   image: "/images/flyttstad.jpg",
-    //   title: "Flyttstäd",
-    //   description: "Information om Flyttstäd. Här kan du lägga till all information om tjänsten Flyttstäd."
-    // },
+   
     fonsterputs: {
       image: "/images/fonsterputs.jpg",
       title: "Fönsterputs",
@@ -116,11 +68,7 @@ export const serviceDescriptions = {
       `
     },
     
-    // fonsterputs: {
-    //   image: "/images/fonsterputs.jpg",
-    //   title: "Fönsterputs",
-    //   description: "Information om Fönsterputs. Här kan du lägga till all information om tjänsten Fönsterputs."
-    // },
+
     foretagsstad: {
       image: "/images/foretagsstad.jpg",
       title: "Företagsstäd",
@@ -146,28 +94,20 @@ export const serviceDescriptions = {
       ]
     },
     
-    // foretagsstad: {
-    //   image: "/images/foretagsstad.jpg",
-    //   title: "Företagsstäd",
-    //   description: "Information om Företagsstäd. Här kan du lägga till all information om tjänsten Företagsstäd."
-    // },
+  
     trappstad: {
       image: "/images/trappstad.jpg",
       title: "Trappstäd",
       description: `
         Trapphuset är första anhalten i en fastighet och det är där de boende eller besökarna får sitt första intryck av inomhusmiljön. Regelbunden rengöring av trapporna bidrar till att ge en positiv känsla i samma ögonblick som du kliver in genom porten.<br><br>
         Gör ett klokt val och anlita Städtjejerna som garanterar ett proffsigt utfört arbete med skinande rent resultat utan damm, grus och annan smuts så du kan ta trapporna med lätta steg. Vi finns i Borås med omnejd och vänder oss till fastighetsägare, företag, bostadsrättsföreningar och privatpersoner.<br><br>
-        Det lönar sig på flera sätt att vara noggrann med trappstädningen. Inomhusmiljön och luften håller sig fräsch och ökar hälsan och välbefinnandet för de som rör sig i byggnaden. Slitage och olyckor minskar också i samband med regelbunden städning av trapporna. En annan fördel är att Städtjejerna använder miljövänliga städprodukter som rengör skonsamt.<br><br>
+        Det lönar sig på flera sätt att vara noggrann med trappstädningen. Inomhusmiljön och luften håller sig fräsch och ökar hälsan och välbefinnandet för de som rör sig i byggnaden. Slitage och olyckor minskar också i samband med regelbunden städning av trapporna.<br><br>
         Borås är en stad med varierande arkitektur och det återspeglar sig även i designen på trappor och trapphus som kan se ut på många olika sätt beroende på typ av byggnad, byggår och andra faktorer. Därför utformar Städtjejerna uppdraget efter varje kunds enskilda önskemål. Varje kund är unik för oss och bemöts därefter med en nära dialog kring upplägget.<br><br>
         När du kontaktat oss kommer vi ut och tittar på trapphuset för att gå igenom hur vi på bästa sätt utför städningen. Tidsåtgång och intervall på tjänsten påverkar priset och vi presenterar en offert som matchar beställarens behov. Det finns också möjlighet att kombinera trappstädningen med andra tjänster hos oss såsom hemstäd, företagsstäd och fönsterputsning.
       `,
-      features: ["Regelbunden rengöring", "Miljövänliga produkter", "Skräddarsydda lösningar"]
+      features: ["Regelbunden rengöring", "Skräddarsydda lösningar"]
     },
-    // trappstad: {
-    //   image: "/images/trappstad.jpg",
-    //   title: "Trappstäd",
-    //   description: "Trapphuset är första anhalten i en fastighet och det är där de boende eller besökarna får sitt första intryck av inomhusmiljön. Regelbunden rengöring av trapporna bidrar till att ge en positiv känsla i samma ögonblick som du kliver in genom porten. Gör ett klokt val och anlita Städtjejerna som garanterar ett proffsigt utfört arbete med skinande rent resultat utan damm, grus och annan smuts så du kan ta trapporna med lätta steg. Vi finns i Borås med omnejd och vänder oss till fastighetsägare, företag, bostadsrättsföreningar och privatpersoner. Det lönar sig på flera sätt att vara noggrann med trappstädningen. Inomhusmiljön och luften håller sig fräsch och ökar hälsan och välbefinnandet för de som rör sig i byggnaden. Slitage och olyckor minskar också i samband med regelbunden städning av trapporna. En annan fördel är att Städtjejerna använder miljövänliga städprodukter som rengör skonsamt. Borås är en stad med varierande arkitektur och det återspeglar sig även i designen på trappor och trapphus som kan se ut på många olika sätt beroende på typ av byggnad, byggår och andra faktorer. Därför utformar Städtjejerna uppdraget efter varje kunds enskilda önskemål. Varje kund är unik för oss och bemöts därefter med en nära dialog kring upplägget. När du kontaktat oss kommer vi ut och tittar på trapphuset för att gå igenom hur vi på bästa sätt utför städningen. Tidsåtgång och intervall på tjänsten påverkar priset och vi presenterar en offert som matchar beställarens behov. Det finns också möjlighet att kombinera trappstädningen med andra tjänster hos oss såsom hemstäd, företagsstäd och fönsterputsning."
-    // },
+   
     tradgardsfix: {
       image: "/images/tradgardsfix.jpg",
       title: "Trädgårdsfix",

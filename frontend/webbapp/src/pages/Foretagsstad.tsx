@@ -238,7 +238,7 @@ const Foretagsstad: FC = () => {
     <>
       <HelmetWrapper
         title="Företagsstädning i Borås | Professionell kontorsstäd – Städtjejerna"
-        description="Vi erbjuder noggrann och flexibel företagsstädning i Borås för kontor, butiker och verksamheter. Fast pris, miljövänliga medel och god service."
+        description="Vi erbjuder noggrann och flexibel företagsstädning i Borås för kontor, butiker och verksamheter. Fast pris och god service."
         url="https://www.stadtjejerna.se/foretagsstad"
         image="https://i.imgur.com/aCLoUIE.jpeg"
       />
@@ -296,7 +296,7 @@ const Foretagsstad: FC = () => {
         </Typography>
 
         <Typography variant="body1" paragraph>
-          Vårt team arbetar utifrån beprövade checklistor men anpassar oss alltid efter dina behov. Vi erbjuder fasta priser, använder miljövänliga produkter och ser till att du får samma städare vid varje tillfälle för trygghet och kontinuitet.
+          Vårt team arbetar utifrån beprövade checklistor men anpassar oss alltid efter dina behov. Vi erbjuder fasta priser, 
         </Typography>
 
         <Typography variant="body1" paragraph>

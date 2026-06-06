@@ -290,7 +290,7 @@ const Flyttstad = () => {
           När du står inför en flytt kan det vara skönt att slippa tänka på städningen. Vi på Städtjejerna erbjuder professionell flyttstädning i Borås enligt fast pris – alltid med garanti och enligt Mäklarsamfundets riktlinjer.
         </Typography>
         <Typography variant="body1" sx={{ lineHeight: 1.8, color: "#555" }}>
-          Vår flyttstäd passar både lägenheter, villor och radhus i Borås och omkringliggande områden. Vi arbetar strukturerat efter en checklista och använder miljövänliga rengöringsmedel.
+          Vår flyttstäd passar både lägenheter, villor och radhus i Borås och omkringliggande områden.
         </Typography>
 
         <Typography
@@ -301,7 +301,7 @@ const Flyttstad = () => {
         </Typography>
 
         <Box component="ul" sx={{ listStyle: "none", paddingLeft: 0, marginTop: 1 }}>
-          {["Städgaranti – vi kommer tillbaka om något missas", "Fasta och transparenta priser", "Noggrann städning enligt checklista", "Miljövänliga produkter ingår"].map((text, index) => (
+          {["Städgaranti – vi kommer tillbaka om något missas", "Fasta och transparenta priser", "Noggrann städning enligt checklista"].map((text, index) => (
             <Box
               component="li"
               key={index}

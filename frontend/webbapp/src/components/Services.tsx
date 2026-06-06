@@ -59,7 +59,7 @@ export default function Services() {
           kontor, butiker och andra verksamheter – alltid med samma höga
           kvalitet. <br />
           <br />
-          Vi tar med oss miljövänliga <strong>rengöringsmedel</strong> som ingår
+          Vi tar med oss <strong>rengöringsmedel</strong> som ingår
           i priset. Det finns även möjlighet att beställa förbrukningsmaterial
           som tvål, toalettpapper och pappershanddukar via oss. <br />
           <br />

@@ -80,8 +80,7 @@ const Byggstad: FC = () => {
           har vi rätt utrustning och erfarenhet. 
         </Typography>
         <Typography variant="body1" sx={{ lineHeight: 1.8, color: "#555" }}>
-          {/* Vår byggstädning i Borås följer en tydlig checklista och utförs med
-          miljövänliga produkter.*/} Vi garanterar ett dammfritt, tryggt och
+          Vi garanterar ett dammfritt, tryggt och
           fräscht slutresultat. Har du särskilda önskemål? Berätta för oss så 
           anpassar vi uppdraget efter dina behov.
         </Typography>

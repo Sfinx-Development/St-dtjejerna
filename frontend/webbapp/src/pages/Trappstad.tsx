@@ -95,8 +95,7 @@ const Trappstad: FC = () => {
             smuts så du kan ta trapporna med lätta steg.
           </Typography>
           <Typography variant="body1" paragraph>
-            En annan fördel är att Städtjejerna använder miljövänliga
-            städprodukter som rengör skonsamt. Borås är en stad med varierande
+            Borås är en stad med varierande
             arkitektur och det återspeglar sig även i designen på trappor och
             trapphus som kan se ut på många olika sätt beroende på typ av
             byggnad, byggår och andra faktorer. Därför utformar Städtjejerna

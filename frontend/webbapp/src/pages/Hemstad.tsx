@@ -300,8 +300,7 @@ const Hemstad: FC = () => {
         <Typography variant="body1" sx={{ lineHeight: 1.8, color: "#555" }}>
           Välj Städtjejerna i Borås för en pålitlig och personlig städtjänst. Vi
           kan även hjälpa till med exempelvis strykning, tvätt och byte av
-          sängkläder. Vår hemstädning håller hög kvalitet och vi använder
-          miljövänliga rengöringsprodukter.
+          sängkläder. Kontakta oss idag så berättar vi mer om hur vi kan anpassa hemstädningen.
         </Typography>
         <Typography
           variant="body1"
@@ -317,7 +316,6 @@ const Hemstad: FC = () => {
           {[
             "Skräddarsytt upplägg efter dina behov",
             "Städare vid varje tillfälle du känner igen",
-            "Miljövänliga rengöringsmedel ingår",
             "Hög kvalitet och personlig service",
           ].map((text, index) => (
             <Box

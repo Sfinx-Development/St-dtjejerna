@@ -321,7 +321,7 @@ const Fonsterputs: FC = () => {
             "Skinande resultat utan ränder",
             "Fasta priser – inga överraskningar",
             "Både in- och utvändig fönsterputs",
-            "Miljövänliga medel och professionell utrustning",
+        
             "Tjänster för fönsterbleck och karmar",
           ].map((text, index) => (
             <Box
