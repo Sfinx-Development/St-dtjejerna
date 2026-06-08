@@ -175,16 +175,16 @@
 
 // export default Hemstad;
 import BathtubIcon from "@mui/icons-material/Bathtub";
+import CheckCircleIcon from "@mui/icons-material/CheckCircle";
 import HomeIcon from "@mui/icons-material/Home";
 import KitchenIcon from "@mui/icons-material/Kitchen";
 import { Box, Typography } from "@mui/material";
 import { FC } from "react";
 import { useNavigate } from "react-router-dom";
 import CustomButton from "../components/CustomButton";
+import HelmetWrapper from "../components/HelmetWrapper";
 import Info from "../components/Info";
 import { useScreenSize } from "../screenSizeContext";
-import HelmetWrapper from "../components/HelmetWrapper";
-import CheckCircleIcon from "@mui/icons-material/CheckCircle";
 
 const Hemstad: FC = () => {
   const { isMobile } = useScreenSize();
@@ -220,8 +220,7 @@ const Hemstad: FC = () => {
         <KitchenIcon sx={{ fontSize: 30, color: "#e48bb1", marginRight: 1 }} />
       ),
       items: [
-        "Våttorkning av kaklet ovanför diskbänken, fläckar på köksluckor, kaffebryggare, mikrovågsugn invändigt och utvändigt, brödrost, bord, stolar och",
-        "Lägger in disken i diskmaskinen.",
+        "Våttorkning av kaklet ovanför diskbänken, fläckar på köksluckor, kaffebryggare, mikrovågsugn invändigt och utvändigt, brödrost, bord och stolar.",
         "Rengöring av diskhon, kranar och spis.",
         "Tömning av sopor och utrymmet under diskbänken.",
       ],
@@ -300,7 +299,8 @@ const Hemstad: FC = () => {
         <Typography variant="body1" sx={{ lineHeight: 1.8, color: "#555" }}>
           Välj Städtjejerna i Borås för en pålitlig och personlig städtjänst. Vi
           kan även hjälpa till med exempelvis strykning, tvätt och byte av
-          sängkläder. Kontakta oss idag så berättar vi mer om hur vi kan anpassa hemstädningen.
+          sängkläder. Kontakta oss idag så berättar vi mer om hur vi kan anpassa
+          hemstädningen.
         </Typography>
         <Typography
           variant="body1"
